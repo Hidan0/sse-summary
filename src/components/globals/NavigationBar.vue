@@ -7,20 +7,16 @@
         <div class="container row">
             <div class="col">
                 <RouterLink :to="{ name: 'home' }" class="link bold">
-                    Tuemplate
+                    <FontAwesome icon="truck-medical" /> SSE
                 </RouterLink>
             </div>
             <div class="col right">
-                <RouterLink :to="{ name: 'about' }" class="link">
-                    About
+                <RouterLink :to="{ name: 'home' }" class="link">
+                    Argomenti
                 </RouterLink>
-                <a class="link"
-                   href="https://github.com/Byloth/tuemplate"
-                   target="_blank"
-                   title="Tuemplate on GitHub">
-                    GitHub
-                    <FontAwesome icon="square-arrow-up-right" />
-                </a>
+                <RouterLink :to="{ name: 'glossario' }" class="link">
+                    Glossario
+                </RouterLink>
             </div>
         </div>
     </nav>
@@ -48,6 +44,11 @@
         {
             display: inline-block;
             padding: 0.75em 1.5em;
+
+            @media (max-width: variables.$max-mobile-size)
+            {
+                padding: 0.75em 0.75em;
+            }
 
             &.bold
             {

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+    import InfoSheet from "./components/content/InfoSheet.vue";
     import AlertHandler from "./components/handlers/AlertHandler.vue";
     import DefaultLayout from "./layouts/DefaultLayout.vue";
 </script>
@@ -11,6 +12,7 @@
             </Transition>
         </RouterView>
     </DefaultLayout>
+    <InfoSheet />
     <AlertHandler />
 </template>
 

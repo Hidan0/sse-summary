@@ -1,122 +1,130 @@
 <script lang="ts" setup>
-    import { useVuert } from "@byloth/vuert";
+    import FontAwesome from "@/components/ui/FontAwesome.vue";
+    import { capitoli, getRiassuntiByCapitolo } from "@/content";
 
-    import AppButton from "@/components/ui/AppButton.vue";
-    import VueLogo from "@/components/VueLogo.vue";
-
-    const $vuert = useVuert();
-
-    const emitSuccess = () => $vuert.emit({
-        icon: "circle-check",
-        title: "Success",
-        message: "This is a success message.",
-        type: "success",
-        dismissible: true,
-        timeout: 5000,
-        actions: [
-            {
-                label: "Ok",
-                type: "primary"
-            },
-            {
-                label: "Cancel",
-                type: "secondary"
-            }
-        ]
-    });
-    const emitInfo = () => $vuert.emit({
-        icon: "circle-info",
-        title: "Info",
-        message: "This is an informative message.",
-        type: "info",
-        dismissible: true,
-        timeout: 5000,
-        actions: [
-            {
-                label: "Ok",
-                type: "primary"
-            },
-            {
-                label: "Cancel",
-                type: "secondary"
-            }
-        ]
-    });
-    const emitWarning = () => $vuert.emit({
-        icon: "circle-exclamation",
-        title: "Warning",
-        message: "This is a warning message.",
-        type: "warning",
-        dismissible: true,
-        timeout: 5000,
-        actions: [
-            {
-                label: "Ok",
-                type: "primary"
-            },
-            {
-                label: "Cancel",
-                type: "secondary"
-            }
-        ]
-    });
-    const emitDanger = () => $vuert.emit({
-        icon: "circle-xmark",
-        title: "Danger",
-        message: "This is a danger message.",
-        type: "error",
-        dismissible: true,
-        timeout: 5000,
-        actions: [
-            {
-                label: "Ok",
-                type: "primary"
-            },
-            {
-                label: "Cancel",
-                type: "secondary"
-            }
-        ]
-    });
+    const sezioni = capitoli.map((capitolo) => ({ capitolo: capitolo, riassunti: getRiassuntiByCapitolo(capitolo) }));
 </script>
 
 <template>
-    <div id="home-page" class="page">
-        <header>
-            <VueLogo />
+    <div id="home-page" class="container page">
+        <header class="hero">
+            <h1>Riassunti SSE</h1>
+            <p class="lead">
+                Ripasso del corso di Soccorso Sanitario Extraospedaliero, argomento per argomento.
+            </p>
+            <p class="disclaimer">
+                <FontAwesome icon="circle-info" />
+                Riassunti non ufficiali basati sul materiale del corso AREU:
+                non sostituiscono le lezioni né i protocolli.
+            </p>
         </header>
-        <h1>Your Tuemplate is up and running! 🚀</h1>
-        <div>
-            <AppButton theme="success" @click="emitSuccess">
-                Success
-            </AppButton>
-            <AppButton theme="info" @click="emitInfo">
-                Informative
-            </AppButton>
-            <AppButton theme="warning" @click="emitWarning">
-                Warning
-            </AppButton>
-            <AppButton theme="danger" @click="emitDanger">
-                Danger
-            </AppButton>
+
+        <div class="chapters">
+            <section v-for="{ capitolo, riassunti } in sezioni"
+                     :key="capitolo.numero"
+                     class="chapter card">
+                <div class="card-body">
+                    <h2>
+                        <span class="chapter-icon">
+                            <FontAwesome :icon="capitolo.icona" />
+                        </span>
+                        <span>
+                            <small>Capitolo {{ capitolo.numero }}</small>
+                            {{ capitolo.titolo }}
+                        </span>
+                    </h2>
+                    <ul v-if="riassunti.length">
+                        <li v-for="riassunto in riassunti" :key="riassunto.slug">
+                            <RouterLink :to="{ name: 'riassunto', params: { slug: riassunto.slug } }">
+                                {{ riassunto.titolo }}
+                            </RouterLink>
+                        </li>
+                    </ul>
+                    <p v-else class="text-secondary small mb-0">
+                        In preparazione.
+                    </p>
+                </div>
+            </section>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+    @use "@/assets/scss/variables";
+
     #home-page
     {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 100dvh;
-        padding-top: var(--navigation-bar-height);
-        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: calc(var(--navigation-bar-height) + 2rem);
 
-        .btn
+        .hero
         {
-            margin: 0.5em;
+            margin-bottom: 2rem;
+
+            h1
+            {
+                font-weight: 700;
+            }
+
+            .disclaimer
+            {
+                color: variables.$secondary;
+                font-size: 0.9em;
+            }
+        }
+
+        .chapters
+        {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+        }
+
+        .chapter
+        {
+            border: none;
+            box-shadow: 0px 0.125em 0.5em rgba(0, 0, 0, 0.08);
+
+            h2
+            {
+                align-items: center;
+                display: flex;
+                font-size: 1.15rem;
+                gap: 0.75rem;
+                margin-bottom: 0.75rem;
+
+                small
+                {
+                    color: variables.$secondary;
+                    display: block;
+                    font-size: 0.7em;
+                    text-transform: uppercase;
+                }
+            }
+
+            .chapter-icon
+            {
+                align-items: center;
+                background-color: rgba(variables.$primary, 0.1);
+                border-radius: 50%;
+                color: variables.$primary;
+                display: flex;
+                flex-shrink: 0;
+                height: 2.5rem;
+                justify-content: center;
+                width: 2.5rem;
+            }
+
+            ul
+            {
+                margin-bottom: 0;
+                padding-left: 1.25rem;
+
+                li
+                {
+                    padding: 0.15rem 0;
+                }
+            }
         }
     }
 </style>

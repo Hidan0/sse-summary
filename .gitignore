@@ -29,3 +29,7 @@ Desktop.ini
 # Not ignored
 #
 !.gitkeep
+
+# Claude Code instructions (local only)
+#
+/CLAUDE.md

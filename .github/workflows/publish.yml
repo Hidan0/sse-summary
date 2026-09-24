@@ -1,8 +1,8 @@
 name: Publish on GitHub Pages
 on:
   workflow_dispatch:
-  release:
-    types: [published]
+  push:
+    branches: [master]
 
 concurrency:
   group: pages
@@ -33,7 +33,7 @@ jobs:
       - name: Uploading the artifact
         uses: actions/upload-artifact@v4
         with:
-          name: byloth-tuemplate
+          name: sse-summary
           path: dist
 
   deploy:
@@ -48,7 +48,7 @@ jobs:
       - name: Download the artifact
         uses: actions/download-artifact@v4
         with:
-          name: byloth-tuemplate
+          name: sse-summary
 
       - name: Configuring GitHub Pages
         uses: actions/configure-pages@v4

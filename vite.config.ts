@@ -3,9 +3,11 @@ import { defineConfig } from "vite";
 
 import Vue from "@vitejs/plugin-vue";
 
+import markdown from "./vite/markdown";
+
 export default defineConfig({
-  base: "/tuemplate/",
-  plugins: [Vue()],
+  base: "/sse-summary/",
+  plugins: [markdown(), Vue()],
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) }
   }

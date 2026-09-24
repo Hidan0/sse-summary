@@ -7,16 +7,22 @@
 <template>
     <footer class="hidden-footer">
         <p>
-            Made with <FontAwesome icon="heart"
-                                   alt="Lots of love!"
-                                   title="Lots of love!" /> by
+            Fatto con <FontAwesome icon="heart"
+                                   alt="Tanto amore!"
+                                   title="Tanto amore!" /> per i soccorritori ·
             <a class="link bold"
-               href="https://www.byloth.dev/"
+               href="https://github.com/Hidan0/sse-summary"
                target="_blank"
-               title="Byloth's Website">Byloth</a>.
+               title="Codice sorgente su GitHub">GitHub</a>
         </p>
         <p>
-            <small>Copywrong ©️ 2024 - {{ currentYear }} “<b>Tuemplate</b>”. All the wrongs reserved.</small>
+            <small>
+                Riassunti non ufficiali, non sostituiscono il corso · {{ currentYear }} ·
+                template di <a class="link"
+                               href="https://www.byloth.dev/"
+                               target="_blank"
+                               title="Byloth's Website">Byloth</a>
+            </small>
         </p>
     </footer>
 </template>

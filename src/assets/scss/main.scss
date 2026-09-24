@@ -16,3 +16,9 @@ body
     font-family: variables.$font-family;
     margin-bottom: var(--hidden-footer-height);
 }
+
+.container.page
+{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

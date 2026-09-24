@@ -1,5 +1,5 @@
 {
-  "name": "@byloth/tuemplate",
+  "name": "sse-summary",
   "version": "1.4.1",
   "description": "A Vue.js 3 template app based on Vite with TypeScript, Pinia, Vue Router and more.",
   "keywords": [
@@ -49,10 +49,15 @@
   "devDependencies": {
     "@byloth/eslint-config-nuxt": "^4.0.2",
     "@eslint/compat": "^2.1.0",
+    "@types/markdown-it": "^14.2.0",
+    "@types/markdown-it-container": "^4.0.1",
     "@types/node": "^24.13.2",
     "@vitejs/plugin-vue": "^6.0.7",
     "eslint": "^10.6.0",
+    "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
+    "markdown-it": "^15.0.2",
+    "markdown-it-container": "^4.0.0",
     "sass": "^1.101.0",
     "typescript": "^6.0.3",
     "vite": "^8.1.3",
