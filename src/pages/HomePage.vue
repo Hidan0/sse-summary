@@ -14,8 +14,8 @@
             </p>
             <p class="disclaimer">
                 <FontAwesome icon="circle-info" />
-                Riassunti non ufficiali basati sul materiale del corso AREU:
-                non sostituiscono le lezioni né i protocolli.
+                Riassunti non ufficiali basati sul materiale del corso AREU (revisione 2017):
+                non sostituiscono le lezioni né i protocolli attuali.
             </p>
         </header>
 
