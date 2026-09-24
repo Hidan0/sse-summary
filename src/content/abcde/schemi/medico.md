@@ -40,7 +40,7 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 ### Fai
 
 - Incosciente che respira normalmente: **[[posizione laterale di sicurezza|PLS]]**. [@tss-c3:6]
-- Saturazione **prima in aria**, poi, se serve, maschera con **O2 ad alti flussi**. [@tss-c:1]
+- Saturazione **prima in aria** [@tss-c:1]; poi, se serve, maschera con **O2 ad alti flussi** (voce delle griglie d'esame). [@scenari:33,53]
 
 ## C
 
