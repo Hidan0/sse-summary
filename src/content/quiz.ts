@@ -1,3 +1,6 @@
+import type { RouteLocationRaw } from "vue-router";
+
+import { riassuntiBySlug } from "./index";
 import type { ArgomentoQuiz, Domanda, LivelloQuiz, QuizMeta, QuizModule } from "./types";
 
 export const LIVELLI: { id: LivelloQuiz, nome: string, descrizione: string }[] = [
@@ -33,6 +36,40 @@ export async function loadDomande(argomenti: ArgomentoQuiz[]): Promise<DomandaCo
 
     return moduli.flatMap((modulo, index) => modulo.domande
         .map((domanda) => ({ ...domanda, argomento: argomenti[index] })));
+}
+
+/*
+ * Carica le domande indicate, nell'ordine dato. Gli id non più presenti (domande rimosse) restano `undefined`.
+ */
+export async function loadDomandePerId(ids: string[]): Promise<(DomandaConArgomento | undefined)[]>
+{
+    const tutte = new Map((await loadDomande(argomentiQuiz)).map((domanda) => [domanda.id, domanda]));
+
+    return ids.map((id) => tutte.get(id));
+}
+
+/*
+ * Link alla sezione del riassunto da ripassare per una domanda.
+ */
+export function ripassoDomanda(domanda: Domanda): { to: RouteLocationRaw, titolo: string } | undefined
+{
+    if (!domanda.ripasso) { return undefined; }
+
+    const [slug, sezione] = domanda.ripasso.split("#");
+    const riassunto = riassuntiBySlug.get(slug);
+    if (!riassunto) { return undefined; }
+
+    return {
+        to: { name: "riassunto", params: { slug: slug }, hash: sezione ? `#${sezione}` : "" },
+        titolo: riassunto.titolo
+    };
+}
+
+export function formatDurata(secondi: number): string
+{
+    const totale = Math.max(0, Math.floor(secondi));
+
+    return `${Math.floor(totale / 60)}:${String(totale % 60).padStart(2, "0")}`;
 }
 
 export function shuffle<T>(values: T[]): T[]

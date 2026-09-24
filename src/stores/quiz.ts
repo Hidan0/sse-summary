@@ -16,6 +16,13 @@ export interface DomandaSessione extends DomandaConArgomento
     ordine: number[];
 }
 
+export interface Sfida
+{
+    corrette: number;
+    totale: number;
+    durata?: number;
+}
+
 export interface OpzioniAllenamento
 {
     argomenti: ArgomentoQuiz[];
@@ -31,6 +38,11 @@ export const useQuiz = defineStore("quiz", () =>
     const indice = ref(0);
     const inizio = ref(0);
     const fine = ref(0);
+
+    /*
+     * Punteggio di chi ha lanciato la sfida, se il quiz arriva da un link "sfida".
+     */
+    const sfida = ref<Sfida | null>(null);
 
     /*
      * Id delle domande sbagliate, salvati nel browser per il ripasso degli errori.
@@ -51,20 +63,35 @@ export const useQuiz = defineStore("quiz", () =>
     const sbagliate = computed(() => domande.value.filter((_, index) => !isCorretta(index)).length);
     const superata = computed(() => sbagliate.value <= SIMULAZIONE.erroriMassimi);
 
-    const avvia = (tipo: ModalitaQuiz, lista: DomandaConArgomento[]) =>
+    const inizia = (tipo: ModalitaQuiz, lista: DomandaSessione[]) =>
     {
         modalita.value = tipo;
-        domande.value = shuffle(lista).map((domanda) =>
+        domande.value = lista;
+        risposte.value = lista.map(() => null);
+        indice.value = 0;
+        inizio.value = Date.now();
+        fine.value = 0;
+        sfida.value = null;
+    };
+
+    const avvia = (tipo: ModalitaQuiz, lista: DomandaConArgomento[]) =>
+    {
+        inizia(tipo, shuffle(lista).map((domanda) =>
         {
             const ordine = domanda.opzioni.map((_, index) => index);
 
             // Con `fissa` l'ordine resta quello scritto (es. opzioni tipo "tutte le precedenti").
             return { ...domanda, ordine: domanda.fissa ? ordine : shuffle(ordine) };
-        });
-        risposte.value = domande.value.map(() => null);
-        indice.value = 0;
-        inizio.value = Date.now();
-        fine.value = 0;
+        }));
+    };
+
+    /*
+     * Avvia un quiz ricevuto con un link: stesse domande e stesso ordine delle opzioni, niente rimescolamento.
+     */
+    const avviaSfida = (tipo: ModalitaQuiz, lista: DomandaSessione[], datiSfida: Sfida | null) =>
+    {
+        inizia(tipo, lista);
+        sfida.value = datiSfida;
     };
 
     const avviaAllenamento = async ({ argomenti, livelli, numero }: OpzioniAllenamento) =>
@@ -131,6 +158,7 @@ export const useQuiz = defineStore("quiz", () =>
         domande.value = [];
         risposte.value = [];
         fine.value = 0;
+        sfida.value = null;
     };
     const azzeraErrori = () => { errori.value = []; };
 
@@ -141,6 +169,7 @@ export const useQuiz = defineStore("quiz", () =>
         indice,
         inizio,
         fine,
+        sfida,
         errori,
         attiva,
         terminata,
@@ -150,6 +179,7 @@ export const useQuiz = defineStore("quiz", () =>
         avviaAllenamento,
         avviaSimulazione,
         avviaErrori,
+        avviaSfida,
         rispondi,
         avanti,
         indietro,

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
     import { computed, onUnmounted, ref } from "vue";
     import { useRouter } from "vue-router";
-    import type { RouteLocationRaw } from "vue-router";
 
     import MarkdownContent from "@/components/content/MarkdownContent.vue";
+    import CondividiQuiz from "@/components/quiz/CondividiQuiz.vue";
+    import QuizRisultati from "@/components/quiz/QuizRisultati.vue";
     import FontAwesome from "@/components/ui/FontAwesome.vue";
-    import { riassuntiBySlug } from "@/content";
-    import { LIVELLI, SIMULAZIONE } from "@/content/quiz";
+    import { formatDurata, LIVELLI, ripassoDomanda } from "@/content/quiz";
     import { useQuiz } from "@/stores/quiz";
     import type { DomandaSessione } from "@/stores/quiz";
 
@@ -26,20 +26,6 @@
 
     const livello = (value: DomandaSessione) => LIVELLI.find(({ id }) => id === value.livello)?.nome;
 
-    const ripasso = (value: DomandaSessione): { to: RouteLocationRaw, titolo: string } | undefined =>
-    {
-        if (!value.ripasso) { return undefined; }
-
-        const [slug, sezione] = value.ripasso.split("#");
-        const riassunto = riassuntiBySlug.get(slug);
-        if (!riassunto) { return undefined; }
-
-        return {
-            to: { name: "riassunto", params: { slug: slug }, hash: sezione ? `#${sezione}` : "" },
-            titolo: riassunto.titolo
-        };
-    };
-
     const classeOpzione = (posizione: number) =>
     {
         const selezionata = risposta.value === posizione;
@@ -56,22 +42,8 @@
     const timer = setInterval(() => { adesso.value = Date.now(); }, 1000);
     onUnmounted(() => clearInterval(timer));
 
-    const durata = computed(() =>
-    {
-        const secondi = Math.floor(((quiz.fine || adesso.value) - quiz.inizio) / 1000);
-
-        return `${Math.floor(secondi / 60)}:${String(secondi % 60).padStart(2, "0")}`;
-    });
-
-    const esitoClasse = computed(() => ({
-        ok: !simulazione.value || quiz.superata,
-        ko: simulazione.value && !quiz.superata
-    }));
-
-    const sbagliate = computed(() => quiz.domande
-        .map((value, index) => ({ domanda: value, index: index }))
-        .filter(({ index }) => !quiz.isCorretta(index)));
-    const corrette = computed(() => quiz.domande.filter((_, index) => quiz.isCorretta(index)));
+    const durataSecondi = computed(() => ((quiz.fine || adesso.value) - quiz.inizio) / 1000);
+    const durata = computed(() => formatDurata(durataSecondi.value));
 
     /*
      * Conferma dentro la pagina invece di `window.confirm`: alcuni browser (per esempio quelli integrati
@@ -146,10 +118,10 @@
                         {{ quiz.isCorretta(quiz.indice) ? "Corretto" : "Sbagliato" }}
                     </p>
                     <MarkdownContent :html="domanda.spiegazione" />
-                    <RouterLink v-if="ripasso(domanda)"
+                    <RouterLink v-if="ripassoDomanda(domanda)"
                                 class="ripasso"
-                                :to="ripasso(domanda)!.to">
-                        <FontAwesome icon="book-open" /> Ripassa: {{ ripasso(domanda)!.titolo }}
+                                :to="ripassoDomanda(domanda)!.to">
+                        <FontAwesome icon="book-open" /> Ripassa: {{ ripassoDomanda(domanda)!.titolo }}
                     </RouterLink>
                 </div>
             </article>
@@ -210,87 +182,23 @@
         </template>
 
         <template v-else-if="quiz.terminata">
-            <section class="risultato card" :class="esitoClasse">
-                <p v-if="simulazione" class="verdetto">
-                    <FontAwesome :icon="quiz.superata ? 'circle-check' : 'circle-xmark'" />
-                    {{ quiz.superata ? "Superata" : "Non superata" }}
-                </p>
-                <p class="punteggio">
-                    <strong>{{ quiz.domande.length - quiz.sbagliate }}</strong> corrette su {{ quiz.domande.length }}
-                    · {{ quiz.sbagliate }} {{ quiz.sbagliate === 1 ? "errore" : "errori" }}
-                    <template v-if="simulazione">
-                        (massimo {{ SIMULAZIONE.erroriMassimi }}) · {{ durata }}
-                    </template>
-                </p>
-                <div class="azioni">
+            <QuizRisultati :domande="quiz.domande"
+                           :risposte="quiz.risposte"
+                           :modalita="quiz.modalita"
+                           :durata="simulazione ? durataSecondi : undefined"
+                           :sfida="quiz.sfida">
+                <template #azioni>
                     <RouterLink class="btn btn-primary"
                                 :to="{ name: 'quiz' }"
                                 @click="quiz.esci">
                         Torna ai quiz
                     </RouterLink>
-                </div>
-            </section>
-
-            <section v-if="sbagliate.length" class="errori">
-                <h2>Da ripassare</h2>
-                <!-- eslint-disable vue/no-v-html -->
-                <article v-for="{ domanda: value, index } in sbagliate"
-                         :key="value.id"
-                         class="card errore">
-                    <p class="meta">
-                        {{ value.argomento.titolo }}
-                    </p>
-                    <p class="testo" v-html="value.domanda"></p>
-                    <p v-if="quiz.risposte[index] !== null" class="tua">
-                        <FontAwesome icon="circle-xmark" />
-                        <span v-html="value.opzioni[value.ordine[quiz.risposte[index]!]]"></span>
-                    </p>
-                    <p v-else class="tua">
-                        <FontAwesome icon="circle-xmark" /> Nessuna risposta
-                    </p>
-                    <p class="giusta">
-                        <FontAwesome icon="circle-check" />
-                        <span v-html="value.opzioni[value.corretta]"></span>
-                    </p>
-                    <MarkdownContent :html="value.spiegazione" />
-                    <RouterLink v-if="ripasso(value)"
-                                class="ripasso"
-                                :to="ripasso(value)!.to">
-                        <FontAwesome icon="book-open" /> Ripassa: {{ ripasso(value)!.titolo }}
-                    </RouterLink>
-                </article>
-                <!-- eslint-enable vue/no-v-html -->
-            </section>
-
-            <details v-if="corrette.length" class="corrette">
-                <summary>
-                    <FontAwesome icon="circle-check" />
-                    Risposte corrette ({{ corrette.length }})
-                </summary>
-                <!-- eslint-disable vue/no-v-html -->
-                <article v-for="value in corrette"
-                         :key="value.id"
-                         class="card corretta">
-                    <p class="meta">
-                        {{ value.argomento.titolo }}
-                    </p>
-                    <p class="testo" v-html="value.domanda"></p>
-                    <p class="giusta">
-                        <FontAwesome icon="circle-check" />
-                        <span v-html="value.opzioni[value.corretta]"></span>
-                    </p>
-                    <details class="spiegazione">
-                        <summary>Spiegazione</summary>
-                        <MarkdownContent :html="value.spiegazione" />
-                        <RouterLink v-if="ripasso(value)"
-                                    class="ripasso"
-                                    :to="ripasso(value)!.to">
-                            <FontAwesome icon="book-open" /> Ripassa: {{ ripasso(value)!.titolo }}
-                        </RouterLink>
-                    </details>
-                </article>
-                <!-- eslint-enable vue/no-v-html -->
-            </details>
+                    <CondividiQuiz :domande="quiz.domande"
+                                   :risposte="quiz.risposte"
+                                   :modalita="quiz.modalita"
+                                   :durata="simulazione ? durataSecondi : undefined" />
+                </template>
+            </QuizRisultati>
         </template>
     </div>
 </template>
@@ -475,77 +383,5 @@
             margin-top: 1rem;
         }
 
-        .risultato
-        {
-            border-top: 4px solid var(--app-accent);
-            margin-bottom: 1.5rem;
-
-            &.ok { border-top-color: variables.$success; }
-            &.ko { border-top-color: variables.$danger; }
-
-            .verdetto
-            {
-                font-size: 1.6rem;
-                font-weight: 700;
-                margin-bottom: 0.25rem;
-            }
-            &.ok .verdetto { color: variables.$success; }
-            &.ko .verdetto { color: variables.$danger; }
-        }
-
-        .errori,
-        .corrette
-        {
-            display: grid;
-            gap: 1rem;
-
-            h2
-            {
-                font-size: 1.2rem;
-            }
-
-            .testo
-            {
-                font-size: 1.05rem;
-            }
-
-            .tua,
-            .giusta
-            {
-                display: flex;
-                gap: 0.5rem;
-                margin-bottom: 0.35rem;
-            }
-            .tua .fa { color: variables.$danger; margin-top: 0.25rem; }
-            .giusta
-            {
-                font-weight: 500;
-
-                .fa { color: variables.$success; margin-top: 0.25rem; }
-            }
-        }
-
-        .corrette
-        {
-            margin-top: 1.5rem;
-
-            & > summary
-            {
-                background-color: var(--app-surface);
-                border-radius: 0.375rem;
-                box-shadow: 0px 0.125em 0.5em var(--app-shadow);
-                font-size: 1.1rem;
-                font-weight: 500;
-                padding: 0.75rem 1rem;
-
-                .fa { color: variables.$success; }
-            }
-
-            .spiegazione summary
-            {
-                color: var(--app-accent);
-                font-size: 0.9em;
-            }
-        }
     }
 </style>
