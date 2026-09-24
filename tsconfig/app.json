@@ -1,0 +1,21 @@
+{
+  "extends": "./_base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker"
+    ],
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "paths": { "@/*": ["../src/*"] },
+    "tsBuildInfoFile": "../node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "types": ["vite/client"]
+  },
+  "include": [
+    "../src/**/*",
+    "../src/**/*.vue"
+  ]
+}
