@@ -33,7 +33,7 @@ Nel trauma la sequenza è **[[AcBCDE]]**: la "c" ricorda di proteggere la **colo
 - Un soccorritore mantiene **a mano il rachide cervicale** in [[posizione neutra]] fin dall'inizio. [@1.2.1:6]
 - Incosciente: **non estendere il capo**, [[sublussazione della mandibola]], aspira il cavo orale, [[cannula orofaringea]]. [@1.2.1:8]
 - Vomito o sangue dal volto: gira **tutto il paziente in asse**. [@1.2.1:10]
-- [[Collare cervicale]] (a volte opzionale nelle griglie), sempre con un'immobilizzazione completa. [@1.2.1:11] [@1.3.2:15]
+- [[Collare cervicale]], sempre associato a un'immobilizzazione completa. [@1.2.1:11] [@1.3.2:15]
 
 ### Attenzione
 
@@ -67,7 +67,7 @@ Nel trauma la sequenza è **[[AcBCDE]]**: la "c" ricorda di proteggere la **colo
 ### Attenzione
 
 - Alterazioni di coscienza e respiro possono essere segni di un **deficit del circolo**. [@1.2.1:18]
-- Non allertare la SOREU davanti a un problema a rischio di vita **invalida lo scenario**. [@scenari:13,21]
+- **Se il problema è grave e non chiami la SOREU, lo scenario è bocciato.** Il contrario non è un errore grave: una chiamata in più, se sai motivarla, è accettabile. Nel dubbio, chiama. [@scenario-trauma-libero:2]
 
 ## D
 
@@ -99,10 +99,12 @@ Nel trauma la sequenza è **[[AcBCDE]]**: la "c" ricorda di proteggere la **colo
 
 ### Fai
 
-1. **Comunicazione alla SOREU**, in ordine: dinamica, coscienza, respiro, emorragie, polso, stato neurologico, esito del testa-piedi. [@1.2.1:24]
-2. **Immobilizzazione** con i presidi adatti. [@scenari:1,2]
-3. **Rivalutazione** dell'ABCDE e dei parametri; relazione con il paziente. [@scenario-trauma-libero:2]
-4. **Consegna** a PS o MSA. [@scenari:1,2]
+1. **Comunicazione alla SOREU**: conferma della dinamica, stato di coscienza, parametri rilevati, lesioni rilevate, patologie pregresse, manovre eseguite. [@scenario-trauma-libero:2] L'ordine della lezione: dinamica, coscienza, respiro, emorragie, polso, stato neurologico, esito del testa-piedi. [@1.2.1:24]
+2. **Immobilizzazione** con i presidi adatti. [@1.3.2:3]
+3. **Rivalutazione**: rivaluta secondo l'**ABCDE** e **monitora i parametri vitali**. [@scenario-trauma-libero:2]
+4. Mantieni una **relazione adeguata con il paziente**. [@scenario-trauma-libero:2]
+5. Usa **presidi adeguati per il trasporto**. [@scenario-trauma-libero:2]
+6. **Consegna** a PS o MSA: trasmetti le informazioni raccolte in modo **completo e corretto**. [@scenario-trauma-libero:2]
 
 ### Attenzione
 

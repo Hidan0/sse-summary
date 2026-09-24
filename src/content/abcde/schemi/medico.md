@@ -40,7 +40,7 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 ### Fai
 
 - Incosciente che respira normalmente: **[[posizione laterale di sicurezza|PLS]]**. [@tss-c3:6]
-- Saturazione **prima in aria**, poi maschera con **O2 ad alti flussi**. [@tss-c:1] [@scenari:25,29]
+- Saturazione **prima in aria**, poi, se serve, maschera con **O2 ad alti flussi**. [@tss-c:1]
 
 ## C
 
@@ -60,7 +60,7 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 
 ### Attenzione
 
-- Nelle griglie d'esame, non allertare la SOREU davanti a un problema a rischio di vita **invalida lo scenario**. [@scenari:27,31,49]
+- **Se il problema è grave e non chiami la SOREU, lo scenario è bocciato.** Il contrario non è un errore grave: una chiamata in più, se sai motivarla, è accettabile. Nel dubbio, chiama. [@scenari:25]
 - Con il misuratore elettronico verifica che i battiti corrispondano al **polso radiale**. [@abcde-note:6]
 
 ## D
@@ -91,6 +91,8 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 
 ### Fai
 
-1. **Comunicazione alla SOREU**: coscienza, parametri, problemi, patologie, manovre eseguite. [@scenari:25-26]
-2. **Rivalutazione** dell'ABCDE e dei parametri; presidi adeguati per il trasporto. [@scenari:25-26]
-3. **Consegna** a PS o MSA con informazioni complete. [@scenari:25-26]
+1. **Comunicazione alla SOREU**: stato di coscienza, parametri rilevati, problemi riscontrati, patologie pregresse, manovre eseguite. [@scenari:25]
+2. **Rivalutazione**: rivaluta secondo l'**ABCDE** e **monitora i parametri vitali**. [@scenari:25]
+3. Mantieni una **relazione adeguata con il paziente**. [@scenari:25]
+4. Usa **presidi adeguati per il trasporto**. [@scenari:25]
+5. **Consegna** a PS o MSA: trasmetti le informazioni raccolte in modo **completo e corretto**. [@scenari:26]

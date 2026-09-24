@@ -81,7 +81,6 @@ export interface SchedaAbcdeFrontmatter
     categoria: CategoriaAbcde;
     schema: TipoSchema;
     riassunti?: string[];
-    scenari?: number[];
 }
 export interface SchedaAbcde extends SchedaAbcdeFrontmatter
 {

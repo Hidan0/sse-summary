@@ -113,7 +113,7 @@
                 </ol>
             </template>
 
-            <section v-if="riassunti.length || scheda.scenari?.length" class="collegamenti">
+            <section v-if="riassunti.length" class="collegamenti">
                 <h2>Per approfondire</h2>
                 <RouterLink v-for="riassunto in riassunti"
                             :key="riassunto.slug"
@@ -121,9 +121,6 @@
                             :to="{ name: 'riassunto', params: { slug: riassunto.slug } }">
                     <FontAwesome icon="book-open" /> {{ riassunto.titolo }}
                 </RouterLink>
-                <p v-if="scheda.scenari?.length" class="scenari">
-                    Scenari d'esame: {{ scheda.scenari.map((numero) => String(numero).padStart(2, "0")).join(", ") }}
-                </p>
             </section>
         </template>
         <template v-else>
@@ -258,12 +255,6 @@
                 margin: 0 0.5rem 0.5rem 0;
                 padding: 0.5em 0.75em;
                 white-space: normal;
-            }
-
-            .scenari
-            {
-                color: var(--app-muted);
-                font-size: 0.9em;
             }
         }
     }

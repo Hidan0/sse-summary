@@ -21,4 +21,4 @@ Il corso la elenca tra i segni e sintomi di molti quadri:
 | Ipertensione (PAs > 150 mmHg) | possibile associazione, con vertigini e ronzii nelle orecchie | [@tss-f:19] |
 | Bambino con febbre | la febbre lieve con mal di testa è una delle condizioni in cui si può usare l'antipiretico | [@ped-approfondimenti:6] |
 
-Compare anche negli scenari: un paziente con febbre alta, cefalea intensa e difficoltà a muovere il collo (scenario infettivo) [@scenari:45] e una vittima di maxiemergenza che lamenta cefalea (esercizio di triage). [@triage:32]
+Compare anche in una vittima di maxiemergenza che lamenta cefalea (esercizio di triage). [@triage:32]
