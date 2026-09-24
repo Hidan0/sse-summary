@@ -7,7 +7,7 @@ import { capitoli } from "@/content/capitoli";
 import { fonti } from "@/content/fonti";
 import { slugify } from "@/content/slug";
 
-import { compileAbcde, compileMarkdown } from "../vite/markdown";
+import { compileAbcde, compileMarkdown, compileQuiz } from "../vite/markdown";
 
 const CONTENT_DIR = join(__dirname, "..", "src", "content");
 
@@ -43,6 +43,15 @@ const abcde = listMarkdown(join(CONTENT_DIR, "abcde")).map((path) =>
     };
 });
 
+const quiz = readdirSync(join(CONTENT_DIR, "quiz"))
+    .filter((file) => file.endsWith(".yaml"))
+    .map((file) =>
+    {
+        const path = join(CONTENT_DIR, "quiz", file);
+
+        return { path: path, ...compileQuiz(readFileSync(path, "utf-8")) };
+    });
+
 const glossarioKeys = new Set(glossario.flatMap(({ slug, frontmatter }) => [
     slug,
     slugify(String(frontmatter.termine)),
@@ -50,7 +59,7 @@ const glossarioKeys = new Set(glossario.flatMap(({ slug, frontmatter }) => [
 ]));
 const riassuntiSlugs = new Set(riassunti.map(({ slug }) => slug));
 
-const documenti = [...riassunti, ...glossario, ...abcde];
+const documenti = [...riassunti, ...glossario, ...abcde, ...quiz];
 
 describe("Riassunti", () =>
 {
@@ -144,6 +153,46 @@ describe("Schede ABCDE", () =>
 
         expect(new Set(schede.map(({ slug }) => slug)).size).toBe(schede.length);
         expect(missing).toEqual([]);
+    });
+});
+
+describe("Quiz", () =>
+{
+    const domande = quiz.flatMap(({ domande: lista }) => lista);
+    const ancore = new Map(riassunti.map(({ slug, toc }) => [slug, new Set(toc.map(({ id }) => id))]));
+
+    it("hanno titolo, modulo e domande", () =>
+    {
+        const invalid = quiz.filter(({ meta, domande: lista }) =>
+            !meta.titolo || !["TSS", "SSE"].includes(meta.modulo) || !lista.length);
+
+        expect(invalid.map(({ path }) => basename(path))).toEqual([]);
+    });
+    it("hanno domande ben formate, con fonte e una sola risposta corretta", () =>
+    {
+        const errori = quiz.flatMap(({ path, errori: lista }) => lista.map((errore) => `${basename(path)}: ${errore}`));
+
+        expect(errori).toEqual([]);
+    });
+    it("hanno id unici", () =>
+    {
+        const ids = domande.map(({ id }) => id);
+
+        expect(ids.filter((id, index) => ids.indexOf(id) !== index)).toEqual([]);
+    });
+    it("rimandano a sezioni di riassunti esistenti", () =>
+    {
+        const broken = domande
+            .filter(({ ripasso }) => ripasso)
+            .filter(({ ripasso }) =>
+            {
+                const [slug, sezione] = ripasso!.split("#");
+
+                return !ancore.has(slug) || (sezione !== undefined && !ancore.get(slug)!.has(sezione));
+            })
+            .map(({ id, ripasso }) => `${id} → ${ripasso}`);
+
+        expect(broken).toEqual([]);
     });
 });
 

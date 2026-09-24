@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import container from "markdown-it-container";
 import type { Plugin } from "vite";
+import { parse as parseYaml } from "yaml";
 
 import { fonti } from "../src/content/fonti";
 import { slugify } from "../src/content/slug";
@@ -270,9 +271,91 @@ export function compileAbcde(source: string): CompiledAbcde
     };
 }
 
+export const LIVELLI_QUIZ = ["base", "esame", "numeri"];
+
+export interface DomandaQuiz
+{
+    id: string;
+    livello: string;
+    domanda: string;
+    opzioni: string[];
+    corretta: number;
+    spiegazione: string;
+    ripasso?: string;
+}
+export interface CompiledQuiz
+{
+    meta: { titolo: string, modulo: string, ordine: number };
+    domande: DomandaQuiz[];
+    errori: string[];
+    glossario: string[];
+    fonti: string[];
+}
+
+/*
+ * I quiz sono file YAML (`src/content/quiz/<argomento>.yaml`) con `titolo`, `modulo`, `ordine`
+ * e una lista `domande`. Testi, opzioni e spiegazioni supportano la sintassi dei contenuti.
+ */
+export function compileQuiz(source: string): CompiledQuiz
+{
+    const data = parseYaml(source) as Record<string, unknown>;
+
+    const errori: string[] = [];
+    const glossario = new Set<string>();
+    const sources = new Set<string>();
+
+    const prepare = (text: unknown) => replaceCustomSyntax(String(text ?? ""), glossario, sources);
+    const inline = (text: unknown) => renderer.renderInline(prepare(text));
+    const block = (text: unknown) => renderer.render(prepare(text));
+
+    const domande = ((data.domande ?? []) as Record<string, unknown>[]).map((domanda, index) =>
+    {
+        const id = String(domanda.id ?? `#${index + 1}`);
+        const opzioni = (domanda.opzioni ?? []) as unknown[];
+        const corretta = Number(domanda.corretta);
+
+        if (!LIVELLI_QUIZ.includes(String(domanda.livello))) { errori.push(`${id}: livello non valido`); }
+        if (!domanda.domanda) { errori.push(`${id}: testo mancante`); }
+        if ((opzioni.length < 3) || (opzioni.length > 4)) { errori.push(`${id}: servono 3 o 4 opzioni`); }
+        if (new Set(opzioni.map(String)).size !== opzioni.length) { errori.push(`${id}: opzioni duplicate`); }
+        if (!Number.isInteger(corretta) || (corretta < 0) || (corretta >= opzioni.length))
+        {
+            errori.push(`${id}: indice della risposta corretta non valido`);
+        }
+        if (!domanda.spiegazione) { errori.push(`${id}: spiegazione mancante`); }
+        if (!String(domanda.spiegazione ?? "").includes("[@"))
+        {
+            errori.push(`${id}: la spiegazione non cita una fonte`);
+        }
+
+        return {
+            id: id,
+            livello: String(domanda.livello),
+            domanda: inline(domanda.domanda),
+            opzioni: opzioni.map(inline),
+            corretta: corretta,
+            spiegazione: block(domanda.spiegazione),
+            ripasso: domanda.ripasso ? String(domanda.ripasso) : undefined
+        };
+    });
+
+    return {
+        meta: {
+            titolo: String(data.titolo ?? ""),
+            modulo: String(data.modulo ?? ""),
+            ordine: Number(data.ordine ?? 0)
+        },
+        domande: domande,
+        errori: errori,
+        glossario: [...glossario],
+        fonti: [...sources]
+    };
+}
+
 /*
  * Importare un file `.md` restituisce `{ frontmatter, html, toc }`; per le schede ABCDE
- * (`src/content/abcde/`) restituisce invece `{ frontmatter, intro, sezioni }`.
+ * (`src/content/abcde/`) restituisce invece `{ frontmatter, intro, sezioni }` e per i quiz
+ * (`src/content/quiz/*.yaml`) `{ titolo, modulo, ordine, domande }`.
  * Con il suffisso `?meta` restituisce solo i metadati (frontmatter, TOC, termini citati o sezioni presenti),
  * così gli indici non includono l'HTML di tutti i contenuti nel bundle principale.
  */
@@ -285,12 +368,27 @@ export default function markdown(): Plugin
         load: function(id: string)
         {
             const [path, query] = id.split("?");
-            if (!path.endsWith(".md")) { return null; }
+            const isQuiz = path.includes("/content/quiz/") && path.endsWith(".yaml");
+            if (!path.endsWith(".md") && !isQuiz) { return null; }
 
             this.addWatchFile(path);
 
             const source = readFileSync(path, "utf-8");
             const isMeta = new URLSearchParams(query).has("meta");
+
+            if (isQuiz)
+            {
+                const { meta, domande } = compileQuiz(source);
+                if (isMeta)
+                {
+                    const livelli = Object.fromEntries(LIVELLI_QUIZ
+                        .map((livello) => [livello, domande.filter((domanda) => domanda.livello === livello).length]));
+
+                    return `export default ${JSON.stringify({ ...meta, livelli: livelli, totale: domande.length })};`;
+                }
+
+                return `export default ${JSON.stringify({ ...meta, domande })};`;
+            }
 
             if (path.includes("/content/abcde/"))
             {

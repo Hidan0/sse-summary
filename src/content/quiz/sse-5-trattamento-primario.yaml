@@ -1,0 +1,124 @@
+titolo: Il trattamento primario (BLSD, PBLSD, ostruzione)
+modulo: SSE
+ordine: 5
+
+domande:
+  - id: sse5-001
+    livello: base
+    domanda: Con quale frequenza vanno eseguite le compressioni toraciche esterne nell'adulto?
+    opzioni:
+      - Almeno 100 e non più di 120 al minuto
+      - Tra 60 e 80 al minuto
+      - Tra 80 e 100 al minuto
+      - Più di 120 al minuto
+    corretta: 0
+    spiegazione: La frequenza delle CTE è **almeno 100 e non più di 120** al minuto, uguale a tutte le età. [@5.1:27] [@5.2:17]
+    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+
+  - id: sse5-002
+    livello: base
+    domanda: Quanto devono essere profonde le compressioni toraciche nell'adulto?
+    opzioni:
+      - Almeno 5 cm e non più di 6 cm
+      - Circa 3 cm
+      - Almeno 7 cm
+      - Circa un terzo del diametro del torace, senza limite massimo
+    corretta: 0
+    spiegazione: Nell'adulto si comprime per **almeno 5 cm e non più di 6 cm**. Il "terzo del torace" è il riferimento per bambino e infante. [@5.1:27] [@5.2:16-17]
+    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+
+  - id: sse5-003
+    livello: base
+    domanda: In un bambino in arresto cardiaco, con due soccorritori, qual è il rapporto tra compressioni e ventilazioni?
+    opzioni:
+      - 15:2
+      - 30:2
+      - 5:1
+      - 3:1
+    corretta: 0
+    spiegazione: Nel bambino e nell'infante il rapporto è **15:2**; nell'adulto è 30:2. Il 3:1 è quello della rianimazione del neonato alla nascita. [@5.2:38] [@5.1:46] [@3:27]
+    ripasso: pblsd#confronto-adulto-bambino-infante
+
+  - id: sse5-004
+    livello: numeri
+    domanda: Secondo la lezione sul BLSD, in quale percentuale degli arresti cardiaci il ritmo di presentazione è una FV o una TV senza polso?
+    opzioni:
+      - Circa il 25%
+      - Circa il 50%
+      - Circa il 75%
+      - Circa il 90%
+    corretta: 0
+    spiegazione: "La lezione indica **FV/TV nel 25%** dei ritmi di presentazione e **altri ritmi (asistolia, PEA) nel 75%**. Il 90% è il dato dei primi studi degli anni '90, non quello attuale. [@5.1:4] [@blsd-manuale:4-5]"
+    ripasso: blsd#ritmi-di-presentazione
+
+  - id: sse5-005
+    livello: numeri
+    domanda: Senza RCP, di quanto diminuisce ogni minuto la probabilità che la defibrillazione abbia successo?
+    opzioni:
+      - Del 7-10% ogni minuto
+      - Del 3-4% ogni minuto
+      - Dell'1-2% ogni minuto
+      - Del 20-25% ogni minuto
+    corretta: 0
+    spiegazione: Senza RCP la probabilità di successo cala del **7-10% al minuto**; **con la RCP** il calo si riduce al **3-4% al minuto**. [@5.1:5] [@tss-g1:5]
+    ripasso: blsd#arresto-cardiaco-definizioni-ed-epidemiologia
+
+  - id: sse5-006
+    livello: numeri
+    domanda: Con RCP precoce e defibrillazione entro 3-5 minuti dal collasso, quale sopravvivenza si può raggiungere?
+    opzioni:
+      - Fino al 75%
+      - Fino al 30%
+      - Non oltre il 10%
+      - Fino al 95%
+    corretta: 0
+    spiegazione: "RCP precoce + defibrillazione entro **3-5 minuti**: sopravvivenza **fino al 75%**. Senza trattamento la sopravvivenza è **inferiore al 10%**, mentre un soccorso tempestivo in generale ne salva **fino al 30%**. [@blsd-manuale:9] [@tss-manuale-blsd:4]"
+    ripasso: blsd#arresto-cardiaco-definizioni-ed-epidemiologia
+
+  - id: sse5-007
+    livello: esame
+    domanda: Dopo uno shock il paziente riprende a respirare normalmente e apre gli occhi. Cosa fate?
+    opzioni:
+      - Interrompete la RCP senza staccare le placche, valutate con l'ABCDE e contattate la SOREU
+      - Staccate le placche, spegnete il DAE e mettete il paziente in posizione laterale di sicurezza
+      - Continuate comunque la RCP fino alla successiva analisi del DAE
+      - Interrompete la RCP e preparate il trasporto in ospedale senza avvisare la SOREU
+    corretta: 0
+    spiegazione: "Se il paziente si riprende: **interrompi la RCP ma non staccare le placche**, valutalo con l'**ABCDE** e **contatta la SOREU**, comunicando ogni variazione. Se invece hai **dubbi** sulla ripresa del circolo, continua la RCP. [@5.1:49-50] [@blsd-manuale:21]"
+    ripasso: blsd#evoluzione
+
+  - id: sse5-008
+    livello: esame
+    domanda: Un infante di 8 mesi è in arresto cardiaco. Come si usa il DAE?
+    opzioni:
+      - Solo su indicazione della SOREU
+      - Appena disponibile, con le placche da adulto
+      - Appena disponibile, con placche pediatriche o attenuatore
+      - Mai, sotto l'anno il DAE è controindicato in ogni caso
+    corretta: 0
+    spiegazione: "Sotto l'anno il DAE si usa **solo seguendo le indicazioni della SOREU**. Sopra l'anno si usa appena disponibile, con attenuatori o placche pediatriche (fino a 8 anni e 25 kg). [@5.2:23] [@pblsd-manuale:17]"
+    ripasso: pblsd#il-dae-nel-bambino
+
+  - id: sse5-009
+    livello: esame
+    domanda: Siete l'equipaggio di un MSB impegnato in una RCP con DAE e la SOREU vi comunica che non arriverà nessun mezzo avanzato. Come procedete?
+    opzioni:
+      - Completate 3 analisi, poi comunicate con la SOREU e seguite le sue indicazioni sull'uso del DAE
+      - Continuate l'algoritmo del DAE senza limite finché il paziente non si riprende
+      - Sospendete la RCP dopo la prima analisi con "shock non consigliato"
+      - Caricate subito il paziente e proseguite la RCP solo durante il trasporto
+    corretta: 0
+    spiegazione: "Con l'MSB sul posto e **MSA/MSI non in arrivo** si completano **3 analisi**, poi si comunica con la SOREU e se ne seguono le indicazioni. Se l'MSA/MSI è in arrivo, si continua l'algoritmo del DAE fino all'arrivo dell'équipe. [@5.1:48]"
+    ripasso: blsd#evoluzione
+
+  - id: sse5-010
+    livello: esame
+    domanda: "Durante una RCP notate che il paziente ha le pupille dilatate e non reattive alla luce (midriasi fissa). Tutte le affermazioni sono corrette TRANNE:"
+    opzioni:
+      - Indica un danno cerebrale irreversibile, quindi la RCP va sospesa
+      - Può comparire pochi secondi dopo l'arresto
+      - Può durare ore anche dopo la ripresa del circolo
+      - Non deve ritardare né interrompere la RCP
+    corretta: 0
+    spiegazione: "La [[midriasi]] fissa può comparire pochi secondi dopo l'arresto e durare ore anche dopo la ripresa del circolo: **non indica** un danno irreversibile e **non deve ritardare** la RCP. [@blsd-manuale:9-10]"
+    ripasso: blsd#la-catena-della-sopravvivenza

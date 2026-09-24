@@ -40,6 +40,16 @@ const router = createRouter({
             props: true
         },
         {
+            path: "/quiz",
+            name: "quiz",
+            component: () => import("@/pages/QuizPage.vue")
+        },
+        {
+            path: "/quiz/sessione",
+            name: "quiz-sessione",
+            component: () => import("@/pages/QuizSessionePage.vue")
+        },
+        {
             path: "/glossario",
             name: "glossario",
             component: () => import("@/pages/GlossarioPage.vue")

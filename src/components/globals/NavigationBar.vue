@@ -16,6 +16,9 @@
                 <RouterLink :to="{ name: 'abcde' }" class="link">
                     ABCDE
                 </RouterLink>
+                <RouterLink :to="{ name: 'quiz' }" class="link">
+                    Quiz
+                </RouterLink>
                 <RouterLink :to="{ name: 'glossario' }" class="link">
                     Glossario
                 </RouterLink>
@@ -68,7 +71,7 @@
         /*
          * In `em`, così la soglia tiene conto anche del carattere ingrandito dalle impostazioni del telefono.
          */
-        @container (max-width: 18em)
+        @container (max-width: 24em)
         {
             .brand-text
             {
@@ -79,11 +82,19 @@
         /*
          * Su schermi molto stretti "Argomenti" è ridondante: il logo porta alla stessa pagina.
          */
-        @container (max-width: 17.5em)
+        @container (max-width: 21.5em)
         {
             .link-home
             {
                 display: none;
+            }
+        }
+        @container (max-width: 16em)
+        {
+            .link
+            {
+                padding-left: 0.35em;
+                padding-right: 0.35em;
             }
         }
 

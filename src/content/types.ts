@@ -89,3 +89,37 @@ export interface SchedaAbcde extends SchedaAbcdeFrontmatter
     sezioni: IdSezioneAbcde[];
     load: () => Promise<AbcdeModule<SchedaAbcdeFrontmatter>>;
 }
+
+export type LivelloQuiz = "base" | "esame" | "numeri";
+export type ModuloQuiz = "TSS" | "SSE";
+
+export interface Domanda
+{
+    id: string;
+    livello: LivelloQuiz;
+    domanda: string;
+    opzioni: string[];
+    corretta: number;
+    spiegazione: string;
+    ripasso?: string;
+}
+export interface QuizModule
+{
+    titolo: string;
+    modulo: ModuloQuiz;
+    ordine: number;
+    domande: Domanda[];
+}
+export interface QuizMeta
+{
+    titolo: string;
+    modulo: ModuloQuiz;
+    ordine: number;
+    livelli: Record<LivelloQuiz, number>;
+    totale: number;
+}
+export interface ArgomentoQuiz extends QuizMeta
+{
+    slug: string;
+    load: () => Promise<QuizModule>;
+}
