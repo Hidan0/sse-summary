@@ -1,5 +1,6 @@
 import { capitoli } from "./capitoli";
 import type { Capitolo } from "./capitoli";
+import { compareOrdine, parseOrdineSlug } from "./ordine";
 import { slugify } from "./slug";
 import type {
     MarkdownMeta,
@@ -37,36 +38,10 @@ function basename(path: string): string
     return path.slice(path.lastIndexOf("/") + 1, -".md".length);
 }
 
-/*
- * I file dei riassunti si chiamano `<ordine>-<slug>.md`, es. `1.6-trauma-toracico.md`.
- */
-function parseRiassuntoName(path: string): { ordine: number[], slug: string }
-{
-    const name = basename(path);
-    const separator = name.indexOf("-");
-
-    return {
-        ordine: name.slice(0, separator).split(".")
-            .map(Number),
-        slug: name.slice(separator + 1)
-    };
-}
-
-function compareOrdine(a: number[], b: number[]): number
-{
-    for (let index = 0; index < Math.max(a.length, b.length); index += 1)
-    {
-        const difference = (a[index] ?? -1) - (b[index] ?? -1);
-        if (difference !== 0) { return difference; }
-    }
-
-    return 0;
-}
-
 export const riassunti: Riassunto[] = Object.entries(riassuntiMeta)
     .map(([path, { frontmatter, toc, glossario: terms }]) => ({
         ...frontmatter,
-        ...parseRiassuntoName(path),
+        ...parseOrdineSlug(path),
         toc: toc,
         glossario: terms,
         load: riassuntiFull[path]

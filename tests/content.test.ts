@@ -7,7 +7,7 @@ import { capitoli } from "@/content/capitoli";
 import { fonti } from "@/content/fonti";
 import { slugify } from "@/content/slug";
 
-import { compileMarkdown } from "../vite/markdown";
+import { compileAbcde, compileMarkdown } from "../vite/markdown";
 
 const CONTENT_DIR = join(__dirname, "..", "src", "content");
 
@@ -30,6 +30,19 @@ const glossario = listMarkdown(join(CONTENT_DIR, "glossario")).map((path) => ({
     ...compileMarkdown(readFileSync(path, "utf-8"))
 }));
 
+const abcde = listMarkdown(join(CONTENT_DIR, "abcde")).map((path) =>
+{
+    const source = readFileSync(path, "utf-8");
+
+    return {
+        path: path,
+        slug: basename(path, ".md").replace(/^[\d.]+-/, ""),
+        scheda: basename(dirname(path)) === "schede",
+        ...compileMarkdown(source),
+        struttura: compileAbcde(source)
+    };
+});
+
 const glossarioKeys = new Set(glossario.flatMap(({ slug, frontmatter }) => [
     slug,
     slugify(String(frontmatter.termine)),
@@ -37,7 +50,7 @@ const glossarioKeys = new Set(glossario.flatMap(({ slug, frontmatter }) => [
 ]));
 const riassuntiSlugs = new Set(riassunti.map(({ slug }) => slug));
 
-const documenti = [...riassunti, ...glossario];
+const documenti = [...riassunti, ...glossario, ...abcde];
 
 describe("Riassunti", () =>
 {
@@ -89,6 +102,48 @@ describe("Riassunti", () =>
         });
 
         expect(broken).toEqual([]);
+    });
+});
+
+describe("Schede ABCDE", () =>
+{
+    const schede = abcde.filter(({ scheda }) => scheda);
+
+    it("esistono i due schemi di base", () =>
+    {
+        const schemi = abcde.filter(({ scheda }) => !scheda).map(({ path }) => basename(path, ".md"));
+
+        expect(schemi.sort()).toEqual(["medico", "trauma"]);
+    });
+    it("usano solo le sezioni e le sottosezioni previste", () =>
+    {
+        const errori = abcde.flatMap(({ path, struttura }) => struttura.errori
+            .map((errore) => `${basename(path)}: ${errore}`));
+
+        expect(errori).toEqual([]);
+    });
+    it("hanno frontmatter valido", () =>
+    {
+        const invalid = schede.filter(({ path, frontmatter }) =>
+            !(/^[\d.]+-[a-z0-9-]+\.md$/).test(basename(path)) ||
+            (typeof frontmatter.titolo !== "string") ||
+            !["trauma", "medico", "ostetrico", "ambientale"].includes(frontmatter.categoria as string) ||
+            !["trauma", "medico"].includes(frontmatter.schema as string));
+
+        expect(invalid.map(({ path }) => path)).toEqual([]);
+    });
+    it("hanno slug unici e riassunti collegati esistenti", () =>
+    {
+        const missing = schede.flatMap(({ slug, frontmatter }) =>
+        {
+            const collegati = (frontmatter.riassunti as string[] | undefined) ?? [];
+
+            return collegati.filter((riassunto) => !riassuntiSlugs.has(riassunto))
+                .map((riassunto) => `${slug} → ${riassunto}`);
+        });
+
+        expect(new Set(schede.map(({ slug }) => slug)).size).toBe(schede.length);
+        expect(missing).toEqual([]);
     });
 });
 

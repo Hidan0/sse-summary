@@ -17,6 +17,29 @@ const router = createRouter({
             props: true
         },
         {
+            path: "/abcde",
+            name: "abcde",
+            component: () => import("@/pages/AbcdePage.vue")
+        },
+        {
+            path: "/abcde/schema/:schema",
+            name: "schema-abcde",
+            component: () => import("@/pages/SchemaAbcdePage.vue"),
+            props: true
+        },
+        {
+            path: "/abcde/fase/:sezione",
+            name: "lettera-abcde",
+            component: () => import("@/pages/LetteraAbcdePage.vue"),
+            props: true
+        },
+        {
+            path: "/abcde/:slug",
+            name: "scheda-abcde",
+            component: () => import("@/pages/SchedaAbcdePage.vue"),
+            props: true
+        },
+        {
             path: "/glossario",
             name: "glossario",
             component: () => import("@/pages/GlossarioPage.vue")

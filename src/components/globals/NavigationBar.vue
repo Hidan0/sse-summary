@@ -10,8 +10,11 @@
                 <span class="brand-text">SSE</span>
             </RouterLink>
             <div class="links">
-                <RouterLink :to="{ name: 'home' }" class="link">
+                <RouterLink :to="{ name: 'home' }" class="link link-home">
                     Argomenti
+                </RouterLink>
+                <RouterLink :to="{ name: 'abcde' }" class="link">
+                    ABCDE
                 </RouterLink>
                 <RouterLink :to="{ name: 'glossario' }" class="link">
                     Glossario
@@ -68,6 +71,17 @@
         @container (max-width: 18em)
         {
             .brand-text
+            {
+                display: none;
+            }
+        }
+
+        /*
+         * Su schermi molto stretti "Argomenti" è ridondante: il logo porta alla stessa pagina.
+         */
+        @container (max-width: 17.5em)
+        {
+            .link-home
             {
                 display: none;
             }

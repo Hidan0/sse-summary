@@ -163,9 +163,117 @@ export function compileMarkdown(source: string): CompiledMarkdown
     };
 }
 
+export const SEZIONI_ABCDE: Record<string, string> = {
+    "Scena": "scena",
+    "A": "a",
+    "B": "b",
+    "C": "c",
+    "D": "d",
+    "E": "e",
+    "Dopo": "dopo"
+};
+export const VOCI_ABCDE: Record<string, string> = {
+    "Cerca": "cerca",
+    "Chiedi": "chiedi",
+    "Fai": "fai",
+    "Attenzione": "attenzione"
+};
+
+export interface VoceAbcde
+{
+    tipo: string;
+    html: string;
+}
+export interface SezioneAbcde
+{
+    id: string;
+    intro: string;
+    voci: VoceAbcde[];
+}
+export interface CompiledAbcde
+{
+    frontmatter: Record<string, unknown>;
+    intro: string;
+    sezioni: SezioneAbcde[];
+    errori: string[];
+}
+
+function renderFragment(source: string): string
+{
+    return renderer.render(replaceCustomSyntax(source, new Set(), new Set()));
+}
+
 /*
- * Importare un file `.md` restituisce `{ frontmatter, html, toc }`.
- * Con il suffisso `?meta` restituisce solo frontmatter, TOC e termini del glossario citati,
+ * Le schede ABCDE hanno una struttura fissa: sezioni `## Scena`, `## A` … `## E`, `## Dopo`,
+ * ognuna con sottosezioni `### Cerca`, `### Chiedi`, `### Fai`, `### Attenzione`.
+ * Il testo prima della prima sezione (o della prima sottosezione) è un'introduzione.
+ */
+export function compileAbcde(source: string): CompiledAbcde
+{
+    const { data, content } = matter(source);
+
+    const errori: string[] = [];
+    const sezioni: SezioneAbcde[] = [];
+    const intro: string[] = [];
+
+    let sezione: { id: string, intro: string[], voci: { tipo: string, righe: string[] }[] } | undefined;
+    const chiudiSezione = () =>
+    {
+        if (!sezione) { return; }
+
+        sezioni.push({
+            id: sezione.id,
+            intro: renderFragment(sezione.intro.join("\n")),
+            voci: sezione.voci.map(({ tipo, righe }) => ({ tipo: tipo, html: renderFragment(righe.join("\n")) }))
+        });
+    };
+
+    for (const riga of content.split("\n"))
+    {
+        const h2 = (/^## (.+)$/).exec(riga);
+        const h3 = (/^### (.+)$/).exec(riga);
+
+        if (h2)
+        {
+            chiudiSezione();
+
+            const id = SEZIONI_ABCDE[h2[1].trim()];
+            if (!id) { errori.push(`Sezione sconosciuta: ${h2[1]}`); }
+
+            sezione = { id: id ?? slugify(h2[1]), intro: [], voci: [] };
+        }
+        else if (h3 && sezione)
+        {
+            const tipo = VOCI_ABCDE[h3[1].trim()];
+            if (!tipo) { errori.push(`Sottosezione sconosciuta: ${h3[1]}`); }
+
+            sezione.voci.push({ tipo: tipo ?? slugify(h3[1]), righe: [] });
+        }
+        else if (sezione)
+        {
+            const voce = sezione.voci.at(-1);
+            if (voce) { voce.righe.push(riga); }
+            else { sezione.intro.push(riga); }
+        }
+        else if (!(/^# /).test(riga))
+        {
+            intro.push(riga);
+        }
+    }
+    chiudiSezione();
+
+    return {
+        frontmatter: data,
+        intro: renderFragment(intro.join("\n")),
+        sezioni: sezioni,
+        errori: errori
+    };
+}
+
+/*
+ * Importare un file `.md` restituisce `{ frontmatter, html, toc }`; per le schede ABCDE
+ * (`src/content/abcde/`) restituisce invece `{ frontmatter, intro, sezioni }`.
+ * Con il suffisso `?meta` restituisce solo i metadati (frontmatter, TOC, termini citati o sezioni presenti),
  * così gli indici non includono l'HTML di tutti i contenuti nel bundle principale.
  */
 export default function markdown(): Plugin
@@ -181,8 +289,24 @@ export default function markdown(): Plugin
 
             this.addWatchFile(path);
 
-            const { frontmatter, html, toc, glossario } = compileMarkdown(readFileSync(path, "utf-8"));
-            if (new URLSearchParams(query).has("meta"))
+            const source = readFileSync(path, "utf-8");
+            const isMeta = new URLSearchParams(query).has("meta");
+
+            if (path.includes("/content/abcde/"))
+            {
+                const { frontmatter, intro, sezioni } = compileAbcde(source);
+                if (isMeta)
+                {
+                    const presenti = sezioni.map((sezione) => sezione.id);
+
+                    return `export default ${JSON.stringify({ frontmatter: frontmatter, sezioni: presenti })};`;
+                }
+
+                return `export default ${JSON.stringify({ frontmatter, intro, sezioni })};`;
+            }
+
+            const { frontmatter, html, toc, glossario } = compileMarkdown(source);
+            if (isMeta)
             {
                 return `export default ${JSON.stringify({ frontmatter, toc, glossario })};`;
             }
