@@ -14,8 +14,12 @@
             </p>
             <p class="disclaimer">
                 <FontAwesome icon="circle-info" />
-                Riassunti non ufficiali basati sul materiale del corso AREU (revisione 2017):
-                non sostituiscono le lezioni né i protocolli attuali.
+                Riassunti non ufficiali scritti con l'intelligenza artificiale sul materiale del corso AREU
+                (revisione 2017). Alcuni protocolli sono superati: i riassunti non sostituiscono le lezioni
+                né i protocolli in vigore.
+                <RouterLink :to="{ name: 'avvertenze' }">
+                    Leggi le avvertenze
+                </RouterLink>
             </p>
         </header>
 

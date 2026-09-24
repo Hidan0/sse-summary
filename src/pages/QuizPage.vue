@@ -77,6 +77,9 @@
                 esaminatori. Sono scritte a partire dal materiale del corso e verificate in automatico, ma possono
                 contenere errori: nel dubbio fa fede il materiale del corso. Ogni risposta indica la fonte e il
                 riassunto da ripassare.
+                <RouterLink :to="{ name: 'avvertenze' }">
+                    Avvertenze
+                </RouterLink>
             </div>
         </aside>
 

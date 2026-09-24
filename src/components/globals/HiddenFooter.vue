@@ -15,7 +15,8 @@
         </p>
         <p>
             <small>
-                Riassunti non ufficiali, non sostituiscono il corso ·
+                <RouterLink class="link" :to="{ name: 'avvertenze' }">Avvertenze</RouterLink> ·
+                riassunti non ufficiali, non sostituiscono il corso ·
                 contenuti <a class="link"
                              href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
                              target="_blank"
