@@ -17,6 +17,8 @@
     const totale = computed(() => argomentiQuiz.reduce((sum, argomento) => sum + argomento.totale, 0));
 
     const selezionati = ref(new Set(argomentiQuiz.map(({ slug }) => slug)));
+    const selezionaTutti = () => { selezionati.value = new Set(argomentiQuiz.map(({ slug }) => slug)); };
+    const deselezionaTutti = () => { selezionati.value = new Set(); };
     const livelli = ref(new Set<LivelloQuiz>(LIVELLI.map(({ id }) => id)));
     const numero = ref<number | null>(20);
     const caricamento = ref(false);
@@ -150,6 +152,21 @@
         <section class="card allenamento">
             <h2><FontAwesome icon="dumbbell" /> Allenamento</h2>
             <p>Scegli argomenti e livelli: dopo ogni risposta vedi subito la soluzione e la spiegazione.</p>
+
+            <div class="selezione-rapida">
+                <button type="button"
+                        class="btn btn-link btn-sm"
+                        :disabled="selezionati.size === argomentiQuiz.length"
+                        @click="selezionaTutti">
+                    Seleziona tutti
+                </button>
+                <button type="button"
+                        class="btn btn-link btn-sm"
+                        :disabled="!selezionati.size"
+                        @click="deselezionaTutti">
+                    Deseleziona tutti
+                </button>
+            </div>
 
             <div v-for="{ modulo, argomenti } in moduli"
                  :key="modulo"
@@ -298,6 +315,19 @@
             {
                 align-self: flex-start;
                 margin-top: 0.5rem;
+            }
+        }
+
+        .selezione-rapida
+        {
+            display: flex;
+            gap: 0.5rem;
+            margin: -0.5rem 0 0.5rem;
+
+            .btn
+            {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
