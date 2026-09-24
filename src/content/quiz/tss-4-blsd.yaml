@@ -1,0 +1,219 @@
+titolo: BLSD e ostruzione delle vie aeree
+modulo: TSS
+ordine: 4
+
+domande:
+  - id: tss4-001
+    livello: base
+    domanda: In Lombardia, con il NUE 112, cosa succede quando un cittadino compone il 118?
+    opzioni:
+      - Arriva alla Centrale Unica di Risposta, che localizza il luogo e la inoltra alla centrale sanitaria
+      - Arriva direttamente alla SOREU, che la gestisce senza passare da nessun'altra centrale
+      - Viene respinta da un messaggio registrato che invita il cittadino a comporre il 112
+      - Arriva alla centrale dei Vigili del Fuoco, che valuta l'evento e smista quelli sanitari alla centrale 118
+    corretta: 0
+    spiegazione: "Con il [[NUE 112]] tutte le chiamate di emergenza (112, 113, 115, 118) confluiscono nella Centrale Unica di Risposta, che localizza, individua la natura dell'esigenza e inoltra la richiesta alla centrale di secondo livello competente. [@tss-manuale-blsd:6]"
+    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+
+  - id: tss4-003
+    livello: esame
+    domanda: Sei solo, trovi una persona a terra e da dove ti trovi non riesci a contattare il 112. Secondo il manuale TSS, come ti comporti?
+    opzioni:
+      - Valuti coscienza e respiro e solo dopo ti allontani per raggiungere un telefono
+      - Ti allontani subito per telefonare, prima di qualsiasi valutazione della vittima
+      - Inizi la RCP e non ti allontani finché non arriva qualcuno che possa telefonare
+      - La metti in posizione laterale di sicurezza e vai a telefonare senza valutare il respiro
+    corretta: 0
+    spiegazione: "Se si è soli e non si riesce a contattare il 112/118, ci si allontana per telefonare **solo dopo aver valutato coscienza e respiro**; se possibile si usa il cellulare, per non lasciare sola la vittima. [@tss-manuale-blsd:13]"
+
+  - id: tss4-007
+    livello: base
+    domanda: Mentre metti una vittima in posizione laterale di sicurezza, dove va posizionato il braccio più lontano da te?
+    opzioni:
+      - Sul torace, con il dorso della mano appoggiato alla guancia
+      - Disteso verso l'alto, oltre la testa, con il palmo rivolto in su
+      - Lungo il fianco, sotto il corpo della vittima, con il palmo in giù
+      - Piegato dietro la schiena, con il dorso della mano sul bacino
+    corretta: 0
+    spiegazione: Il braccio dal lato del soccorritore si distende verso l'alto; l'**altro braccio** va sul torace, con il **dorso della mano sulla guancia**; poi si flette la gamba più lontana e si fa ruotare la vittima verso di sé. [@tss-manuale-blsd:13]
+    ripasso: blsd#incosciente-ma-con-respiro-normale-la-pls
+
+  - id: tss4-008
+    livello: base
+    domanda: Qual è la posizione corretta del soccorritore durante le compressioni toraciche?
+    opzioni:
+      - Braccia tese e perpendicolari al torace, fulcro nel bacino, forza data dal peso del corpo
+      - Braccia leggermente piegate, fulcro nelle spalle, forza data dai muscoli delle braccia
+      - Braccia tese ma inclinate verso la testa della vittima, fulcro nei gomiti, forza dalle spalle
+      - Soccorritore in piedi a cavallo della vittima, fulcro nelle ginocchia, forza data dalle gambe
+    corretta: 0
+    spiegazione: "Braccia **perpendicolari** al torace, **gomiti non piegati**, il **bacino** fa da fulcro e la forza viene dal **peso del corpo**. Una spinta non verticale rende le compressioni meno efficaci. [@tss-g1:22] [@tss-manuale-blsd:14]"
+    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+
+  - id: tss4-009
+    livello: esame
+    domanda: Quale abbinamento tra errore nelle compressioni toraciche e possibile complicanza è corretto?
+    opzioni:
+      - Troppo in basso, verso l'addome → lacerazioni di fegato o milza e rigurgito
+      - Troppo in alto, sulla parte superiore dello sterno → lacerazioni della milza
+      - Troppo superficiali, con il torace poco abbassato → frattura dello sterno
+      - Di lato, sulle coste → rigurgito del contenuto dello stomaco e inalazione
+    corretta: 0
+    spiegazione: "Troppo profonde o in basso: lesioni di **fegato o milza** e rigurgito; di lato sulle coste: fratture costali che possono perforare i polmoni; troppo in alto: **frattura dello sterno**; troppo superficiali: **inefficaci**. [@tss-manuale-blsd:15]"
+    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+
+  - id: tss4-010
+    livello: base
+    domanda: Quale affermazione sulla ventilazione bocca-bocca è corretta?
+    opzioni:
+      - Si chiude il naso con pollice e indice e si soffia per circa 1 secondo, finché il torace inizia a salire
+      - Un fazzoletto di carta sulla bocca della vittima è una protezione sufficiente contro le infezioni
+      - Si soffia con forza per circa 3 secondi, così da riempire bene i polmoni della vittima
+      - Si tiene il capo flesso in avanti, mento verso il petto, per evitare che l'aria vada nello stomaco
+    corretta: 0
+    spiegazione: "Capo esteso, naso chiuso con pollice e indice, insufflazione lenta di **circa 1 secondo** finché il torace inizia a salire, poi si lascia espirare. Meglio usare una protezione: il **fazzoletto di carta non protegge**. [@tss-manuale-blsd:18] [@tss-g1:31]"
+    ripasso: blsd#senza-pallone-bocca-maschera-e-bocca-bocca
+
+  - id: tss4-011
+    livello: base
+    domanda: Come si posiziona sul viso della vittima la maschera tascabile (pocket mask), di forma triangolare?
+    opzioni:
+      - Apice sulla radice del naso, base tra il labbro inferiore e il mento
+      - Apice sul mento, base appoggiata sulla fronte sopra le sopracciglia
+      - Apice sulla punta del naso, base sotto il mento, appoggiata al collo
+      - Apice sulla radice del naso, base appoggiata sopra il labbro superiore
+    corretta: 0
+    spiegazione: La maschera va con l'**apice sulla radice del naso** e la **base tra labbro inferiore e mento**, premendo abbastanza da non far uscire aria dai lati; poi si insuffla lentamente nel boccaglio guardando il torace. [@tss-manuale-blsd:19,23]
+    ripasso: blsd#senza-pallone-bocca-maschera-e-bocca-bocca
+
+  - id: tss4-012
+    livello: base
+    domanda: Secondo il materiale TSS, quando si usa il pallone autoespandibile durante la RCP?
+    opzioni:
+      - Quando ci sono due soccorritori, uno alla testa che ventila e uno al fianco che comprime
+      - Quando il soccorritore è da solo, perché è più rapido e semplice della pocket mask
+      - Solo dopo le prime tre analisi del DAE, quando la RCP si prolunga
+      - Solo dopo l'arrivo del mezzo avanzato, che porta pallone e reservoir
+    corretta: 0
+    spiegazione: Per usare il [[pallone autoespandibile]] la RCP va fatta **in due**, uno alla testa che ventila e uno al fianco che comprime. [@tss-g1:33] [@tss-manuale-blsd:19]
+    ripasso: blsd#vie-aeree-e-ventilazioni
+
+  - id: tss4-013
+    livello: esame
+    domanda: "Secondo il materiale TSS, chi fa la RCP su un adulto la continua finché si verifica una di queste condizioni. Quale NON è tra quelle indicate?"
+    opzioni:
+      - Sono passati 20 minuti senza segni di ripresa
+      - Arriva sul posto un mezzo di soccorso sanitario
+      - Arriva un medico che prende in carico la vittima
+      - Il soccorritore è esausto e non riesce a proseguire
+    corretta: 0
+    spiegazione: "Il materiale TSS indica di continuare la RCP finché arriva un **mezzo di soccorso**, arriva un **medico** che prende in carico la vittima, oppure il soccorritore è **esausto**. Non indica un limite di tempo. [@tss-manuale-blsd:20] [@tss-g1:48]"
+    ripasso: blsd#evoluzione
+
+  - id: tss4-014
+    livello: base
+    domanda: Come si prepara il torace prima di applicare le placche del DAE?
+    opzioni:
+      - Si depila, se serve, solo la zona delle placche e si asciuga tutto il torace
+      - Si depila tutto il torace e si asciuga rapidamente solo la zona delle placche
+      - Si depila e si asciuga, se serve, solo la zona in cui vanno le placche
+      - Si depila tutto il torace e lo si asciuga con cura, sospendendo le compressioni
+    corretta: 0
+    spiegazione: "Si depila **solo** dove vanno le placche e si asciuga **tutto** il torace se bagnato o sudato, riducendo al minimo le interruzioni delle CTE. [@tss-g1:39-40] [@tss-manuale-blsd:15]"
+    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+
+  - id: tss4-015
+    livello: base
+    domanda: Mentre recita la filastrocca di sicurezza durante l'analisi del DAE, dove deve guardare l'operatore?
+    opzioni:
+      - Il paziente, per verificare che nessuno lo tocchi
+      - Il display del DAE, per leggere il ritmo analizzato
+      - Il tasto shock, per essere pronto a premerlo subito
+      - Il collega alla testa, per sapere quando sta per ventilare
+    corretta: 0
+    spiegazione: "Durante l'uso del DAE si **guarda sempre il paziente e non il DAE**: mentre si dice \"io sono via, voi siete via, tutti sono via\" si verifica con gli occhi che nessuno sia a contatto con la vittima. [@tss-g1:42] [@tss-manuale-blsd:16]"
+    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+
+  - id: tss4-016
+    livello: numeri
+    domanda: Secondo il manuale TSS, di quanto aumenta la probabilità di ripresa se la RCP viene iniziata prima che arrivi il defibrillatore?
+    opzioni:
+      - Diventa 2-3 volte maggiore
+      - Aumenta di circa il 10%
+      - Diventa 5-6 volte maggiore
+      - "Non cambia: conta solo la defibrillazione"
+    corretta: 0
+    spiegazione: Con la RCP prima dell'arrivo del defibrillatore la probabilità di ripresa è **2-3 volte maggiore**, perché la sopravvivenza cala solo del 3-4% al minuto invece del 7-10%. [@tss-manuale-blsd:5]
+    ripasso: blsd#ritmi-di-presentazione
+
+  - id: tss4-017
+    livello: numeri
+    domanda: Nel materiale TSS sulla RCP pediatrica, chi viene considerato "infante"?
+    opzioni:
+      - La vittima fino a 1 anno di età o di circa 10 kg
+      - La vittima fino a 3 anni di età o di circa 15 kg
+      - La vittima fino a 8 anni di età o di 25 kg
+      - Solo il neonato nel primo mese di vita
+    corretta: 0
+    spiegazione: "Il materiale TSS definisce **infante** la vittima fino a **1 anno** o di **circa 10 kg**, e **bambino** quella **da 1 a 8 anni** o fino a **25 kg**. [@tss-g1:54] [@tss-manuale-blsd:25]"
+    ripasso: pblsd#confronto-adulto-bambino-infante
+
+  - id: tss4-018
+    livello: base
+    domanda: Qual è lo scopo di tutte le manovre di disostruzione delle vie aeree?
+    opzioni:
+      - Aumentare bruscamente la pressione nel torace per creare una tosse artificiale
+      - Far scendere il corpo estraneo nello stomaco
+      - Spostare il corpo estraneo in un bronco per liberare l'altro polmone
+      - Far rilassare i muscoli della gola per permettere il passaggio del corpo estraneo
+    corretta: 0
+    spiegazione: Colpi interscapolari e compressioni servono tutti ad **aumentare di colpo la pressione intratoracica** e creare una **tosse artificiale** che spinga fuori il corpo estraneo. [@tss-g2:5]
+    ripasso: ostruzione-vie-aeree#classificazione
+
+  - id: tss4-019
+    livello: esame
+    domanda: "Un uomo al ristorante tossisce con forza, ha qualche sibilo e il viso un po' scuro. Gli chiedi \"Stai soffocando?\" e risponde di sì. Cosa fai?"
+    opzioni:
+      - Lo incoraggi a tossire, non fai manovre e lo tieni in osservazione
+      - Inizi subito con 5 colpi interscapolari, sostenendogli il torace con una mano
+      - Esegui subito la manovra di Heimlich, mettendoti alle sue spalle
+      - Lo fai sdraiare a terra e inizi le compressioni toraciche
+    corretta: 0
+    spiegazione: "Tosse, sibili, subcianosi e capacità di parlare indicano un'ostruzione **moderata**: **se parla, non fare nulla**, incoraggialo a tossire e tienilo in osservazione. Le manovre servono solo nell'ostruzione grave. [@tss-g2:4] [@tss-manuale-blsd:33]"
+    ripasso: ostruzione-vie-aeree#classificazione
+
+  - id: tss4-020
+    livello: base
+    domanda: Come si posiziona un infante cosciente con ostruzione grave per dargli i colpi dorsali?
+    opzioni:
+      - Prono sull'avambraccio appoggiato alla coscia, con la testa più in basso del tronco
+      - Supino sulle ginocchia del soccorritore, con la testa più in alto del tronco
+      - In verticale, sostenuto sotto le ascelle dal soccorritore, con la testa dritta e il collo esteso
+      - Prono su un piano rigido come un tavolo, con la testa più in alto del tronco
+    corretta: 0
+    spiegazione: "L'infante va **prono sull'avambraccio**, che fa da piano rigido ed è appoggiato alla **coscia**, con la **testa più in basso del tronco**; si danno 5 colpi vigorosi tra le scapole con via di fuga laterale, senza colpire la nuca. [@tss-g2:14] [@tss-manuale-blsd:36]"
+    ripasso: ostruzione-vie-aeree#infante-sotto-l-anno-cosciente-con-ostruzione-grave
+
+  - id: tss4-021
+    livello: esame
+    domanda: "Durante le manovre di disostruzione su un adulto cosciente con ostruzione grave, quando ti fermi?"
+    opzioni:
+      - Quando la vittima inizia a tossire vigorosamente, oppure se perde coscienza
+      - Dopo 5 colpi interscapolari e 5 compressioni addominali, qualunque sia l'esito
+      - Solo quando vedi il corpo estraneo uscire dalla bocca
+      - Quando la vittima smette di tossire
+    corretta: 0
+    spiegazione: "Si alternano 5 colpi e 5 compressioni fino alla risoluzione o alla **perdita di coscienza**, e ci si **ferma appena la vittima inizia a tossire vigorosamente** (nell'infante: quando piange con forza). [@tss-skill-ostr-adulto:1] [@tss-skill-ostr-infante:1]"
+    ripasso: ostruzione-vie-aeree#adulto-cosciente-con-ostruzione-grave
+
+  - id: tss4-022
+    livello: esame
+    domanda: Un adulto con ostruzione grave perde coscienza mentre lo soccorri. Qual è la sequenza corretta?
+    opzioni:
+      - "Piano rigido, 30 compressioni, ispezione della bocca, 2 insufflazioni e, se non entrano, RCP 30:2"
+      - Piano rigido e manovra di Heimlich da terra, ripetuta fino all'espulsione del corpo estraneo
+      - Posizione laterale di sicurezza, colpi interscapolari ripetuti e attesa dell'arrivo dei soccorsi
+      - "Piano rigido, 2 insufflazioni, 15 compressioni, ispezione della bocca e, se non entrano, RCP 15:2"
+    corretta: 0
+    spiegazione: "Vittima che diventa incosciente: sequenza BLSD, **supina su piano rigido**, **30 CTE**, **ispezione visiva** del cavo orale, **2 insufflazioni** e, se inefficaci, **RCP 30:2**. [@tss-g2:11] [@tss-manuale-blsd:35]"
+    ripasso: ostruzione-vie-aeree#adulto

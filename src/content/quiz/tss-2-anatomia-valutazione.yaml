@@ -1,0 +1,429 @@
+titolo: Anatomia, parametri vitali e valutazione
+modulo: TSS
+ordine: 2
+
+domande:
+  # Sistema nervoso
+  - id: tss2-001
+    livello: base
+    domanda: Da quali strutture è formato il sistema nervoso centrale (SNC)?
+    opzioni:
+      - Encefalo e midollo spinale
+      - Encefalo e nervi periferici
+      - Midollo spinale e nervi sensitivi e motori
+      - Cervelletto e nervi che collegano il cervello agli organi
+    corretta: 0
+    spiegazione: Il SNC è formato dall'**encefalo**, racchiuso nella scatola cranica, e dal **midollo spinale**, contenuto nel canale vertebrale. I nervi che collegano il SNC agli organi formano invece il sistema nervoso periferico. [@tss-c1:7-8]
+    ripasso: meningite#definizione
+
+  - id: tss2-002
+    livello: numeri
+    domanda: Quanto è lungo, circa, il midollo spinale di un adulto?
+    opzioni:
+      - 43-45 cm
+      - 25-30 cm
+      - 60-65 cm
+      - 70-75 cm
+    corretta: 0
+    spiegazione: Il midollo spinale è lungo circa **43-45 cm** nell'adulto ed è **molto più breve della colonna vertebrale**. Si estende dalla prima vertebra cervicale alla prima-seconda lombare. [@tss-c1:11]
+
+  - id: tss2-003
+    livello: numeri
+    domanda: Come si distribuiscono le vertebre nei primi tre tratti della colonna vertebrale?
+    opzioni:
+      - 7 cervicali, 12 dorsali, 5 lombari
+      - 12 cervicali, 7 dorsali, 5 lombari
+      - 7 cervicali, 5 dorsali, 12 lombari
+      - 5 cervicali, 12 dorsali, 7 lombari
+    corretta: 0
+    spiegazione: La colonna ha **7 vertebre cervicali, 12 dorsali (toraciche), 5 lombari**, poi 5 sacrali e 4-5 coccigee, per un totale di **33-34** ossa. [@tss-c1:13-14,86]
+
+  - id: tss2-004
+    livello: esame
+    domanda: Quale affermazione sul sistema nervoso periferico (SNP) è corretta?
+    opzioni:
+      - Riceve gli stimoli esterni, li invia al SNC e porta alla periferia le risposte
+      - È la sede dell'intelligenza, della memoria e dell'apprendimento
+      - È formato dall'encefalo e dal midollo spinale
+      - Integra ed elabora le informazioni sensoriali prima di inviarle al cervello
+    corretta: 0
+    spiegazione: Il SNP, formato dai **nervi sensitivi e motori**, ha essenzialmente il compito di **trasmettere** i segnali tra il SNC e il resto del corpo. Integrare ed elaborare le informazioni, così come memoria e apprendimento, sono compiti del SNC. [@tss-c1:8,15-16,19]
+
+  # Apparato respiratorio
+  - id: tss2-005
+    livello: base
+    domanda: Quali sono le tre funzioni del naso sull'aria inspirata?
+    opzioni:
+      - Filtraggio, riscaldamento, umidificazione
+      - Filtraggio, raffreddamento, deumidificazione
+      - Riscaldamento, umidificazione, scambio dei gas
+      - Filtraggio, scambio dei gas, eliminazione della CO2
+    corretta: 0
+    spiegazione: Le vie nasali sono la prima barriera contro le particelle estranee e **filtrano, riscaldano e umidificano** l'aria. Lo scambio dei gas avviene solo negli alveoli. [@tss-c1:25,30]
+    ripasso: difficolta-respiratoria-adulto#un-richiamo-di-fisiologia
+
+  - id: tss2-006
+    livello: base
+    domanda: Cosa fa l'epiglottide durante la deglutizione?
+    opzioni:
+      - Si piega verso il basso, copre la laringe e indirizza il cibo verso l'esofago
+      - Si piega verso l'alto, lascia libera la laringe e chiude l'ingresso dell'esofago
+      - Si piega verso l'alto e indirizza il cibo verso la trachea
+      - Resta ferma, mentre è la faringe a chiudere l'ingresso della laringe
+    corretta: 0
+    spiegazione: Durante la respirazione l'epiglottide si piega **verso l'alto** e l'aria entra nella laringe; durante la **deglutizione** si piega **verso il basso**, copre la laringe e manda il cibo nell'esofago. [@tss-c1:27]
+
+  - id: tss2-007
+    livello: numeri
+    domanda: A quale altezza, circa, la trachea si divide nei due bronchi principali?
+    opzioni:
+      - Alla quarta vertebra toracica
+      - Alla settima vertebra cervicale
+      - Alla dodicesima vertebra toracica
+      - Alla prima vertebra lombare
+    corretta: 0
+    spiegazione: La trachea, lunga 10-15 cm e rinforzata da 15-20 anelli cartilaginei a ferro di cavallo, si biforca circa all'altezza della **quarta vertebra toracica**. [@tss-c1:29]
+
+  - id: tss2-008
+    livello: esame
+    domanda: "Le seguenti strutture servono solo a condurre l'aria e non partecipano allo scambio dei gas, TRANNE:"
+    opzioni:
+      - Gli alveoli
+      - La trachea
+      - I bronchioli
+      - La laringe
+    corretta: 0
+    spiegazione: Naso, faringe, laringe, trachea, bronchi e **bronchioli** trasportano l'aria agli **alveoli** e la riportano fuori, ma non partecipano allo scambio dei gas, che avviene negli alveoli. [@tss-c1:28,30]
+    ripasso: difficolta-respiratoria-adulto#un-richiamo-di-fisiologia
+
+  - id: tss2-009
+    livello: base
+    domanda: Come si chiama la membrana a due strati che avvolge ciascun polmone?
+    opzioni:
+      - Pleura
+      - Pericardio
+      - Meningi
+      - Periostio
+    corretta: 0
+    spiegazione: "Ogni polmone è avvolto dalla **pleura**, una membrana umida e liscia a due strati: tra i due c'è lo spazio pleurico, che li fa scorrere l'uno sull'altro. Il pericardio avvolge il cuore, il periostio le ossa. [@tss-c1:31,33,40,78]"
+
+  # Apparato cardiocircolatorio
+  - id: tss2-010
+    livello: base
+    domanda: Dove si trova il nodo seno-atriale, il regolatore del ritmo cardiaco?
+    opzioni:
+      - Nell'atrio destro
+      - Nell'atrio sinistro
+      - Nel ventricolo destro
+      - Nel setto tra i due ventricoli
+    corretta: 0
+    spiegazione: La contrazione del cuore è **involontaria e automatica**, regolata dal **nodo seno-atriale**, posto nel tessuto cardiaco a livello dell'**atrio destro**. [@tss-c1:41]
+    ripasso: aritmie#il-battito-normale
+
+  - id: tss2-011
+    livello: base
+    domanda: Nella rivoluzione cardiaca, cosa sono sistole e diastole?
+    opzioni:
+      - La sistole è la contrazione, la diastole il rilasciamento
+      - La sistole è il rilasciamento, la diastole la contrazione
+      - La sistole è la contrazione degli atri, la diastole quella dei ventricoli
+      - Sono le due valvole tra atrio e ventricolo
+    corretta: 0
+    spiegazione: La rivoluzione cardiaca alterna una fase di **contrazione (sistole)** e una di **rilasciamento o riposo (diastole)**. [@tss-c1:42]
+    ripasso: aritmie#il-battito-normale
+
+  - id: tss2-012
+    livello: esame
+    domanda: Quale descrizione corrisponde alla piccola circolazione?
+    opzioni:
+      - Porta il sangue ricco di anidride carbonica dal cuore ai polmoni, dove si ossigena, e lo riporta al cuore
+      - Porta il sangue ricco di ossigeno dal cuore a tutto l'organismo e lo riporta al cuore ricco di anidride carbonica
+      - Porta il sangue ossigenato dai polmoni direttamente al cervello
+      - È la rete dei capillari in cui il sangue cede i gas ai tessuti
+    corretta: 0
+    spiegazione: La **piccola circolazione** va dal cuore ai **polmoni** e ritorno, per ossigenare il sangue. Quella che porta l'ossigeno all'organismo e torna ricca di CO2 è la **grande circolazione**. [@tss-c1:43-44]
+
+  - id: tss2-013
+    livello: esame
+    domanda: Quale affermazione sui vasi sanguigni è corretta?
+    opzioni:
+      - Le arterie portano il sangue dal cuore alla periferia
+      - Le vene portano il sangue dal cuore alla periferia
+      - Le arterie riportano il sangue dalla periferia al cuore
+      - Il passaggio di gas e nutrienti ai tessuti avviene attraverso la parete delle arterie
+    corretta: 0
+    spiegazione: Le **arterie** vanno dal cuore alla periferia, le **vene** dalla periferia al cuore. Gli scambi di gas e sostanze nutritive con i tessuti avvengono nei **capillari**, la parte terminale e sottilissima di arterie e vene. [@tss-c1:46-48]
+
+  - id: tss2-014
+    livello: numeri
+    domanda: Secondo la lezione di anatomia, in quanto tempo può morire un tessuto rimasto completamente senza circolazione?
+    opzioni:
+      - Nel giro di pochi minuti
+      - In circa un'ora
+      - In 6-8 ore
+      - Non prima di 24 ore
+    corretta: 0
+    spiegazione: "Il sangue trasporta nutrienti, gas, ormoni e scorie: un tessuto **completamente privo di circolazione** può morire **nel giro di pochi minuti**. [@tss-c1:45]"
+    ripasso: shock#definizione
+
+  # Digerente, urinario, riproduttivo
+  - id: tss2-016
+    livello: base
+    domanda: In quale tratto dell'apparato digerente avviene la maggior parte dell'assorbimento delle sostanze nutritive?
+    opzioni:
+      - Nell'intestino tenue
+      - Nello stomaco
+      - Nell'intestino crasso
+      - Nell'esofago
+    corretta: 0
+    spiegazione: Nello stomaco il cibo si mescola con il succo gastrico; è nell'**intestino tenue**, con i succhi digestivi, che avviene la **maggior parte dell'assorbimento**. [@tss-c1:56]
+
+  - id: tss2-017
+    livello: esame
+    domanda: "Fanno parte dell'intestino tenue tutti i seguenti tratti TRANNE:"
+    opzioni:
+      - Il cieco
+      - Il duodeno
+      - Il digiuno
+      - L'ileo
+    corretta: 0
+    spiegazione: L'intestino tenue comprende **duodeno, digiuno e ileo**. Il **cieco** è il primo tratto dell'intestino crasso, seguito dal colon ascendente, trasverso, discendente e sigmoideo. [@tss-c1:54]
+
+  - id: tss2-018
+    livello: base
+    domanda: Quali condotti portano l'urina dai reni alla vescica?
+    opzioni:
+      - Gli ureteri
+      - L'uretra
+      - Le vescicole seminali
+      - La colecisti
+    corretta: 0
+    spiegazione: Gli **ureteri** portano l'urina dai reni alla vescica; l'**uretra** parte dalla vescica e sbocca all'esterno. [@tss-c1:61-62]
+
+  - id: tss2-019
+    livello: esame
+    domanda: Tra le malattie a trasmissione sessuale elencate nella lezione di anatomia, quale è una dermatite pruriginosa provocata da un acaro?
+    opzioni:
+      - La scabbia
+      - La candidosi
+      - La gonorrea
+      - L'ulcera venerea
+    corretta: 0
+    spiegazione: La **scabbia** è una dermatite pruriginosa provocata da un **acaro**. La candidosi è un'infezione da **fungo** con perdite biancastre, la gonorrea dà secrezione purulenta con minzione frequente e bruciore, l'ulcera venerea papule che evolvono in ulcere. [@tss-c1:70]
+
+  # Apparato locomotore
+  - id: tss2-020
+    livello: base
+    domanda: Quali sono esempi di articolazioni fisse?
+    opzioni:
+      - Le suture craniche e la sinfisi pubica
+      - Il ginocchio e il gomito
+      - Le articolazioni tra le vertebre
+      - La spalla e l'anca
+    corretta: 0
+    spiegazione: "Le articolazioni **fisse** hanno continuità tra le ossa e creano una struttura rigida: **suture craniche** e **sinfisi pubica**. Quelle degli arti e delle vertebre sono **mobili**. [@tss-c1:81-82]"
+
+  - id: tss2-021
+    livello: esame
+    domanda: "Sono funzioni dello scheletro tutte le seguenti TRANNE:"
+    opzioni:
+      - Depurare il sangue dalle scorie
+      - Proteggere gli organi vitali
+      - Produrre le cellule del sangue (funzione emopoietica)
+      - Fare da impalcatura e sostegno agli organi
+    corretta: 0
+    spiegazione: Lo scheletro sostiene gli organi, consente il movimento con le articolazioni, **protegge gli organi vitali** e ha **funzione emopoietica**. La depurazione del sangue è compito dei **reni**. [@tss-c1:84,62]
+
+  # Parametri vitali
+  - id: tss2-022
+    livello: numeri
+    domanda: Qual è la frequenza respiratoria normale a riposo di un adulto (eupnea)?
+    opzioni:
+      - 12-20 atti al minuto
+      - 8-12 atti al minuto
+      - 20-30 atti al minuto
+      - 25-35 atti al minuto
+    corretta: 0
+    spiegazione: "L'[[eupnea]] è una FR di **12-20 atti/min**; sopra 20 si parla di [[tachipnea]], sotto 10 di [[bradipnea]]. [@tss-c2:4] [@tss-abcde-note:5]"
+    ripasso: valutazione-abcde-medico#nel-paziente-cosciente-cosa-valutare
+
+  - id: tss2-023
+    livello: esame
+    domanda: Quale di questi adulti, a riposo, ha una bradipnea?
+    opzioni:
+      - Un paziente con 8 atti respiratori al minuto
+      - Un paziente con 14 atti respiratori al minuto
+      - Un paziente con 18 atti respiratori al minuto
+      - Un paziente con 26 atti respiratori al minuto
+    corretta: 0
+    spiegazione: La [[bradipnea]] è una FR **sotto i 10 atti/min**. 14 e 18 sono nella norma (12-20), 26 è una tachipnea (> 20). [@tss-c2:4] [@tss-abcde-note:5]
+    ripasso: valutazione-abcde-medico#nel-paziente-cosciente-cosa-valutare
+
+  - id: tss2-024
+    livello: esame
+    domanda: Secondo la scheda di valutazione ABCDE, in quale condizione si rileva la saturazione nella fase B?
+    opzioni:
+      - In aria ambiente, prima di dare ossigeno
+      - Dopo 5 minuti di ossigeno ad alti flussi
+      - Solo se il paziente è cianotico
+      - Solo durante il trasporto in ambulanza
+    corretta: 0
+    spiegazione: "Nella scheda di valutazione la voce è \"saturimetria **senza O2**\"; nelle griglie degli scenari segue la maschera con O2 ad alti flussi e la rivalutazione. Attenzione ai valori **< 90%** e ai **limiti dello strumento**. [@tss-c:1] [@tss-c2:9]"
+    ripasso: valutazione-abcde-medico#l-opacs
+
+  - id: tss2-025
+    livello: esame
+    domanda: Misurate la pressione con un apparecchio elettronico. Oltre al corretto posizionamento e funzionamento, cosa va controllato?
+    opzioni:
+      - Che i battiti rilevati corrispondano a quelli del polso radiale
+      - Che la saturazione rilevata in quel momento sia superiore al 90%
+      - Che la temperatura della cute sia normale al tatto sul braccio
+      - Che il paziente resti in piedi per tutta la durata della misura
+    corretta: 0
+    spiegazione: Con un apparecchio **elettronico** se ne verificano posizionamento e funzionamento, controllando che i **battiti rilevati corrispondano** a quelli sentiti al **polso radiale**. [@tss-abcde-note:7]
+    ripasso: valutazione-abcde-medico#pressione-arteriosa
+
+  - id: tss2-026
+    livello: esame
+    domanda: Un adulto ha PA sistolica 85 mmHg e FC 130 battiti al minuto. Come si classificano questi valori?
+    opzioni:
+      - Ipotensione e tachicardia
+      - Pressione normale e tachicardia
+      - Ipotensione e frequenza cardiaca normale
+      - Ipertensione e bradicardia
+    corretta: 0
+    spiegazione: L'[[ipotensione]] è una PA sistolica **< 90 mmHg**, la [[tachicardia]] una FC **> 100** battiti/min. [@tss-c2:5-6] [@tss-f:17-18]
+    ripasso: valutazione-abcde-medico#pressione-arteriosa
+
+  - id: tss2-027
+    livello: esame
+    domanda: Un maratoneta a riposo ha una FC di 52 battiti al minuto, è sveglio e sta bene. Qual è la condotta corretta?
+    opzioni:
+      - Tenere presente che negli sportivi la bradicardia può essere normale e chiedergli il suo valore abituale
+      - Iniziare subito la RCP con il DAE, perché una FC sotto 60 indica un arresto imminente
+      - Trattarla come un segno di shock grave, metterlo supino a gambe sollevate e ripetere la misura
+      - Non registrare il valore, perché la FC si misura e si riferisce solo nei pazienti incoscienti
+    corretta: 0
+    spiegazione: "I valori di riferimento cambiano molto negli **sportivi** (bradicardia normale) e con farmaci o sostanze: va sempre chiesto al paziente il **suo valore abituale**. [@tss-abcde-note:6]"
+    ripasso: valutazione-abcde-medico#frequenza-cardiaca-e-polso
+
+  # Valutazione primaria
+  - id: tss2-028
+    livello: base
+    domanda: Quale affermazione sul colpo d'occhio è corretta?
+    opzioni:
+      - Si fa prima di toccare la vittima e non fa parte della sequenza ABCDE
+      - Corrisponde alla lettera A della sequenza ABCDE e comprende il triplice stimolo
+      - Si fa al termine dell'esame testa-piedi, prima dell'AMPIA
+      - Consiste nel misurare i parametri vitali appena arrivati
+    corretta: 0
+    spiegazione: "Il [[colpo d'occhio]] è una valutazione **visiva e globale**, fatta mentre ci si avvicina e **prima di toccare la vittima** (si muove? parla? postura, colorito, sangue...). **Non fa parte** della sequenza ABCDE, ma ne anticipa una parte. [@tss-c3:3] [@tss-abcde-note:2]"
+    ripasso: valutazione-abcde-medico#il-colpo-d-occhio
+
+  - id: tss2-029
+    livello: base
+    domanda: Nel colpo d'occhio, a cosa può far pensare una cianosi generalizzata?
+    opzioni:
+      - A un'insufficienza respiratoria
+      - A una febbre o al morbo di Parkinson
+      - A un'emorragia cerebrale
+      - A un'ipertensione arteriosa
+    corretta: 0
+    spiegazione: "La [[cianosi]] indica un apporto di ossigeno carente ai tessuti periferici; se **generalizzata** fa pensare a un'**insufficienza respiratoria**. Febbre e Parkinson sono i possibili significati dei tremori. [@tss-abcde-note:2,5]"
+    ripasso: valutazione-abcde-medico#il-colpo-d-occhio
+
+  - id: tss2-030
+    livello: esame
+    domanda: Un paziente è incosciente ma respira normalmente. Secondo l'algoritmo universale, cosa fate?
+    opzioni:
+      - Lo mettete in posizione laterale di sicurezza
+      - "Iniziate le compressioni toraciche con rapporto 30:2"
+      - Fate 2 ventilazioni e poi rivalutate il respiro
+      - Proseguite con l'ABCDE lasciandolo supino senza altre azioni
+    corretta: 0
+    spiegazione: "Algoritmo universale: coscienza e respiro presenti → **ABCDE**; **incosciente con respiro normale** → **[[posizione laterale di sicurezza]]**; incosciente senza respiro (o respiro non normale) → **RCP 30:2** e DAE appena possibile. [@tss-c3:6]"
+    ripasso: valutazione-abcde-medico#nel-paziente-incosciente
+
+  - id: tss2-031
+    livello: esame
+    domanda: Secondo le note sullo schema ABCDE, come si valuta il respiro in un paziente incosciente?
+    opzioni:
+      - In modo rapido, guardando il torace per cercare un'espansione simile a un atto normale
+      - Con l'OPACS completo, contando la frequenza respiratoria per un minuto intero
+      - Applicando prima il saturimetro e decidendo in base al valore rilevato
+      - Ascoltando i rumori respiratori per almeno 30 secondi prima di decidere
+    corretta: 0
+    spiegazione: "Nell'incosciente la B è **veloce**: si guarda il torace cercando un'espansione che ricordi un atto normale. Se il respiro manca o è molto irregolare si avvia la sequenza **BLSD** e si chiede il **DAE**; la valutazione completa (FR, ritmo, ampiezza, rumori, OPACS) è quella di norma. [@tss-abcde-note:5] [@tss-c3:6]"
+    ripasso: valutazione-abcde-medico#nel-paziente-incosciente
+
+  - id: tss2-032
+    livello: base
+    domanda: Nell'OPACS, in quale lettera rientra la ricerca di crepitii e dolore al tocco del torace?
+    opzioni:
+      - P
+      - O
+      - A
+      - C
+    corretta: 0
+    spiegazione: "[[OPACS]]: **O**sservo il torace (movimenti, espansione, deformità), **P**alpo (integrità, deformità, **crepitii, dolore al tocco**), **A**scolto i rumori respiratori, **C**onto la FR, **S**aturazione. [@tss-abcde-note:5] [@tss-c3:8]"
+    ripasso: valutazione-abcde-medico#l-opacs
+
+  - id: tss2-033
+    livello: base
+    domanda: Un rumore respiratorio simile a un fischio come si chiama e in quali pazienti è tipico?
+    opzioni:
+      - Sibilo, tipico dell'asma o di una reazione allergica
+      - Rantolo, tipico dell'asma o di una reazione allergica
+      - Sibilo, tipico delle vie aeree ostruite da liquidi
+      - Rantolo, tipico del paziente con liquido nei polmoni
+    corretta: 0
+    spiegazione: I [[sibili]] somigliano a un **fischio** e sono tipici dell'**asma** o di una **reazione allergica**. I [[rantoli]] somigliano a russamento o gorgoglio e compaiono con vie aeree ostruite e/o liquido nei polmoni. [@tss-abcde-note:5]
+    ripasso: valutazione-abcde-medico#nel-paziente-cosciente-cosa-valutare
+
+  - id: tss2-034
+    livello: esame
+    domanda: Un paziente ha gli occhi chiusi e non parla spontaneamente, ma apre gli occhi e si muove quando lo chiamate ad alta voce. Come lo classificate con l'AVPU?
+    opzioni:
+      - V
+      - A
+      - P
+      - U
+    corretta: 0
+    spiegazione: "[[AVPU]]: **V** (Verbal) è il paziente che risponde, anche solo con gli occhi o con un movimento, **allo stimolo verbale**. A è sveglio e risponde chiaramente, P reagisce solo al dolore, U non reagisce a nessuno stimolo. [@tss-c3:10] [@tss-abcde-note:8]"
+    ripasso: valutazione-abcde-medico#d-stato-neurologico
+
+  - id: tss2-035
+    livello: base
+    domanda: Un paziente ha la motilità volontaria bloccata; si risveglia solo con stimoli vigorosi e ripetuti, apre gli occhi con lo sguardo fisso e risponde poco o per nulla ai comandi. Quale stato di coscienza è?
+    opzioni:
+      - Stuporoso
+      - Soporoso
+      - Confusionale
+      - Comatoso
+    corretta: 0
+    spiegazione: "È lo [[stato stuporoso]]. Nel **soporoso** l'incoscienza recede con il semplice stimolo verbale e ritorna quando finisce; il **confusionale** è disorientato ma sveglio; il **comatoso** non reagisce ad alcuno stimolo. [@tss-abcde-note:3]"
+    ripasso: valutazione-abcde-medico#gli-stati-di-coscienza
+
+  - id: tss2-036
+    livello: base
+    domanda: Nell'anamnesi AMPIA, quali farmaci si raccolgono sotto la lettera M?
+    opzioni:
+      - Sia quelli per il problema attuale sia le terapie abituali
+      - Solo le terapie che il paziente assume regolarmente
+      - Solo i farmaci presi per il problema del momento
+      - Solo i farmaci a cui il paziente ha avuto reazioni allergiche
+    corretta: 0
+    spiegazione: "La M dell'[[AMPIA]] comprende i medicinali **assunti per il problema del momento** (per esempio analgesici) **e le terapie abituali**. Le allergie ai farmaci vanno sotto la prima A. [@tss-abcde-note:9] [@tss-c3:12]"
+    ripasso: valutazione-abcde-medico#l-anamnesi-ampia
+
+  - id: tss2-037
+    livello: esame
+    domanda: Avete concluso l'esposizione e l'esame testa-piedi di un paziente. Cosa va fatto subito dopo la valutazione?
+    opzioni:
+      - La protezione termica del paziente
+      - Una nuova misurazione della saturazione con il paziente scoperto
+      - Rimuovere tutti i presidi medico-chirurgici trovati
+      - Lasciare il paziente scoperto fino all'arrivo in ospedale
+    corretta: 0
+    spiegazione: Nella fase E il paziente viene scoperto e osservato nella sua globalità; **dopo la valutazione** va fatta la **protezione termica**. [@tss-c3:11] [@tss-c:1]
+    ripasso: valutazione-abcde-medico#e-esposizione-e-valutazione-testa-piedi

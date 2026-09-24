@@ -1,0 +1,244 @@
+titolo: Urgenze ostetrico-ginecologiche
+modulo: SSE
+ordine: 3
+
+domande:
+  - id: sse3-001
+    livello: base
+    domanda: Secondo la lezione, in quale periodo avviene il parto a termine?
+    opzioni:
+      - Tra la 38ª e la 40ª settimana
+      - Tra la 35ª e la 37ª settimana
+      - Tra la 36ª e la 38ª settimana
+      - Tra la 40ª e la 42ª settimana
+    corretta: 0
+    spiegazione: "Il parto a termine avviene tra la **38ª e la 40ª settimana**; fino alla 37ª è pre-termine, oltre la 40ª è post-termine (il manuale precisa fino alla 42ª). [@3:5] [@ost-manuale:3]"
+    ripasso: gravidanza-e-travaglio#termini-da-conoscere
+
+  - id: sse3-002
+    livello: base
+    domanda: In quale posizione va trasportata una gravida in travaglio?
+    opzioni:
+      - Decubito laterale sinistro
+      - Supina con le gambe sollevate
+      - Decubito laterale destro
+      - Supina con lo schienale a 45°
+    corretta: 0
+    spiegazione: "Durante il travaglio la posizione indicata è il **decubito laterale sinistro**; il manuale consiglia di evitare, se possibile, la posizione supina anche durante il trasporto. [@3:8] [@ost-manuale:11]"
+    ripasso: gravidanza-e-travaglio#trasporto-della-gravida
+
+  - id: sse3-003
+    livello: numeri
+    domanda: Secondo la lezione, entro quali limiti di perdita ematica il secondamento si considera nella norma?
+    opzioni:
+      - Meno di 500 ml
+      - Meno di 200 ml
+      - Meno di 1000 ml
+      - Meno di 1500 ml
+    corretta: 0
+    spiegazione: "Il [[secondamento]] avviene **entro un'ora** dal parto con perdite **inferiori a 500 ml**; perdite maggiori o continue fanno pensare a un'emorragia post-partum. [@3:13]"
+    ripasso: assistenza-al-parto#il-secondamento
+
+  - id: sse3-004
+    livello: esame
+    domanda: "Una gravida a termine ha contrazioni. Tutti i seguenti elementi indicano un parto imminente TRANNE:"
+    opzioni:
+      - Contrazioni irregolari e dolore lombo-sacrale
+      - Bisogno irrefrenabile di spingere a ogni contrazione
+      - Perineo disteso con la testa del bambino già visibile
+      - Perdite ematiche di colore rosso vivo
+    corretta: 0
+    spiegazione: "Premito, distensione del perineo e perdite rosso vivo indicano un parto **imminente**, da assistere sul posto secondo la SOREU. Contrazioni **irregolari** con dolore lombo-sacrale descrivono invece la fase **prodromica**, l'inizio del travaglio. [@3:15] [@ost-manuale:8,10]"
+    ripasso: assistenza-al-parto#riconoscere-il-parto-imminente
+
+  - id: sse3-005
+    livello: base
+    domanda: Dopo la nascita, come si gestisce il cordone ombelicale?
+    opzioni:
+      - Secondo la SOREU, senza clampare né tagliare di propria iniziativa
+      - Si clampa e si taglia subito, prima di asciugare e coprire il neonato
+      - Si clampa e si taglia solo dopo il secondamento, di propria iniziativa
+      - Si clampa sempre con i due clamp monouso, ma non si taglia mai
+    corretta: 0
+    spiegazione: "Il funicolo si gestisce **secondo le indicazioni della SOREU**: di propria iniziativa non si clampa e non si taglia. [@3:22] [@ost-manuale:13]"
+    ripasso: assistenza-al-parto#il-cordone-ombelicale
+
+  - id: sse3-006
+    livello: numeri
+    domanda: A quale pressione massima va regolato l'aspiratore per il neonato?
+    opzioni:
+      - 100 mmHg
+      - 50 mmHg
+      - 200 mmHg
+      - 300 mmHg
+    corretta: 0
+    spiegazione: "L'aspiratore per neonati va regolato a un **massimo di 100 mmHg**, con il sondino più piccolo (di solito nero). [@3:16] [@ost-manuale:21]"
+    ripasso: assistenza-al-parto#materiale
+
+  - id: sse3-007
+    livello: base
+    domanda: Alla rottura delle acque il liquido amniotico è verdastro. Cosa può indicare?
+    opzioni:
+      - Presenza di meconio, possibile sofferenza fetale
+      - Nulla di particolare, è il colore normale a termine
+      - Un distacco di placenta in corso
+      - Una placenta previa
+    corretta: 0
+    spiegazione: "Il liquido normale è **limpido o rosato**. Un liquido **verdastro**, tinto di [[meconio]], può indicare **sofferenza fetale**: va segnalato subito alla SOREU e bisogna prepararsi a rianimare il neonato. [@ost-manuale:7,20] [@3:14]"
+    ripasso: gravidanza-e-travaglio#placenta-sacco-amniotico-e-liquido
+
+  - id: sse3-008
+    livello: esame
+    domanda: Una donna al terzo trimestre ha un sanguinamento abbondante rosso vivo, non ha dolore ed è tranquilla. Cosa sospetti e come lo consideri?
+    opzioni:
+      - Placenta previa, un'emergenza anche se la paziente è tranquilla
+      - Placenta previa, non urgente perché manca il dolore
+      - Distacco di placenta, un'emergenza per il dolore che comparirà
+      - Metrorragia, da gestire in posizione supina senza urgenza
+    corretta: 0
+    spiegazione: "Sanguinamento **rosso vivo senza dolore** è tipico della [[placenta previa]], che è un'**emergenza anche se la paziente è tranquilla**, perché i parametri possono peggiorare rapidamente. Nel distacco di placenta il dolore è intenso fin dall'inizio. [@3:37,38] [@ost-manuale:16]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#distacco-di-placenta-e-placenta-previa
+
+  - id: sse3-009
+    livello: esame
+    domanda: Quale quadro è tipico del distacco intempestivo di placenta normalmente impiantata (DIPNI)?
+    opzioni:
+      - Dolore intenso, improvviso e costante; utero contratto; sangue da assente ad abbondante, rosso scuro; segni di shock
+      - Dolore assente; utero morbido; sangue medio-abbondante rosso vivo; peggioramento rapido dei parametri
+      - Dolore "a lama di pugnale" nel primo trimestre; sangue rosso vivo; utero morbido; parametri stabili
+      - Dolore a ondate regolari; utero morbido tra una contrazione e l'altra; sangue scarso e rosato
+    corretta: 0
+    spiegazione: "Nella [[DIPNI]] il dolore è **intenso, improvviso e costante**, l'utero è **contratto in modo costante** e il sangue, se c'è, è **rosso scuro**: può anche non vedersi. Il secondo quadro è quello della placenta previa. [@3:37,38] [@ost-manuale:16]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#distacco-di-placenta-e-placenta-previa
+
+  - id: sse3-010
+    livello: base
+    domanda: Donna nel primo trimestre con dolore addominale "a lama di pugnale", lipotimia e segni di shock. Oltre a ossigeno e monitoraggio, quale posizione è indicata?
+    opzioni:
+      - Antishock
+      - Supina con un panno pulito sui genitali
+      - Semiseduta
+      - Decubito laterale sinistro
+    corretta: 0
+    spiegazione: "Il quadro fa pensare a una [[gravidanza extrauterina]], che è un'**emergenza**: monitoraggio di ABC e parametri, **ossigeno** e **posizione antishock**. La posizione supina con un panno sui genitali è quella dell'aborto. [@3:32,33]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#gravidanza-extrauterina
+
+  - id: sse3-011
+    livello: esame
+    domanda: Una gravida ipertesa ha una crisi convulsiva. Qual è la condotta corretta?
+    opzioni:
+      - Durante la crisi allontani gli oggetti e allenti gli abiti; dopo la crisi ossigeno e fianco sinistro
+      - Durante la crisi la tieni ferma per evitare traumi; dopo la crisi ossigeno e posizione supina
+      - Durante la crisi le metti qualcosa tra i denti; dopo la crisi ossigeno e Trendelenburg
+      - Durante la crisi le sollevi le gambe; dopo la crisi ossigeno e posizione semiseduta
+    corretta: 0
+    spiegazione: "Nell'[[eclampsia]] si assiste come in ogni crisi convulsiva: si allontanano gli oggetti, **non si immobilizza**, si allentano gli abiti e **non si mette nulla in bocca**. Dopo la crisi: **ossigeno**, **fianco sinistro** e monitoraggio. [@3:36] [@ost-manuale:17]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#eclampsia
+
+  - id: sse3-012
+    livello: numeri
+    domanda: Secondo il manuale, quale assistenza è indicata nell'emorragia post-partum?
+    opzioni:
+      - Ossigeno a 10-15 L/min e posizione di Trendelenburg
+      - Ossigeno a 3 L/min e posizione di Trendelenburg
+      - Ossigeno a 10-15 L/min e decubito laterale sinistro
+      - Ossigeno a 3 L/min e posizione semiseduta
+    corretta: 0
+    spiegazione: "Nell'emorragia post-partum: **ossigeno a 10-15 L/min**, monitoraggio dei parametri e **Trendelenburg**, agendo entro la golden hour. I 3 L/min sono il flusso della rianimazione neonatale. [@ost-manuale:15,22]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#emorragia-post-partum
+
+  - id: sse3-013
+    livello: esame
+    domanda: Durante il travaglio vedete una corda pulsante che sporge dai genitali. Cosa fate?
+    opzioni:
+      - Trendelenburg o carponi a testa in basso, cordone avvolto in un telino bagnato di fisiologica
+      - Riposizionate delicatamente il cordone all'interno della vagina e fate sdraiare la donna supina
+      - Clampate il cordone in due punti e fate spingere la donna il più possibile a ogni contrazione
+      - Posizione semiseduta con le gambe flesse e cordone coperto con un telino sterile asciutto
+    corretta: 0
+    spiegazione: "È un [[prolasso del funicolo]]: si spiega alla donna che è un'emergenza, la si mette in **Trendelenburg** o **carponi con la testa più in basso del corpo** per non schiacciare il cordone e lo si avvolge con un **telino bagnato di fisiologica**. [@ost-manuale:15]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#prolasso-del-funicolo
+
+  - id: sse3-014
+    livello: esame
+    domanda: Il podice del bambino distende già il perineo. Come assistete il parto podalico?
+    opzioni:
+      - Aspettate che il bambino esca da solo senza toccarlo, con la donna carponi, eretta o accovacciata
+      - Tirate delicatamente le gambe del bambino a ogni contrazione, con la donna supina
+      - Aspettate che il bambino esca da solo senza toccarlo, con la donna supina
+      - Accompagnate il bambino con una lieve trazione sul bacino, con la donna accovacciata
+    corretta: 0
+    spiegazione: "Nel parto podalico imminente: **aspetta che esca da solo e non toccare**. La donna **non va sdraiata**: vanno bene carponi, eretta o accovacciata; si somministra ossigeno. [@ost-manuale:17]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#parto-podalico
+
+  - id: sse3-015
+    livello: base
+    domanda: Una donna nel primo trimestre ha un sanguinamento lieve e dolore addominale, in buone condizioni generali. Si sospetta un aborto. Quale assistenza indica la lezione?
+    opzioni:
+      - Posizione supina o antalgica e un panno pulito sui genitali
+      - Posizione antishock con gambe sollevate e ossigeno ad alti flussi
+      - Posizione di Trendelenburg e ossigeno a 10-15 L/min con maschera
+      - Carponi con la testa più in basso del corpo e ossigeno
+    corretta: 0
+    spiegazione: "L'[[aborto]] **non è per forza un'emergenza**: si assiste in posizione **supina o antalgica** con un **panno pulito sui genitali**. La posizione antishock è quella della gravidanza extrauterina. [@3:32,33]"
+    ripasso: emergenze-ostetriche-e-ginecologiche#aborto
+
+  - id: sse3-016
+    livello: esame
+    domanda: "Un neonato è appena nato. Tutti i seguenti sono segni di pericolo TRANNE:"
+    opzioni:
+      - Mani e piedi bluastri subito dopo la nascita
+      - Tono flaccido e ipotonico, "a bambola di pezza"
+      - Pianto flebile o assente dopo la nascita
+      - Apnea o gasping subito dopo la nascita
+    corretta: 0
+    spiegazione: "La **cianosi periferica** di mani e piedi è **normale** subito dopo la nascita. Tono flaccido, pianto flebile o assente e apnea o [[gasping]] sono segni di pericolo che richiedono la rianimazione. [@ost-manuale:13,21] [@3:21]"
+    ripasso: assistenza-al-neonato#la-valutazione
+
+  - id: sse3-017
+    livello: numeri
+    domanda: Secondo il manuale, quale percentuale dei neonati inizia a respirare da sola senza manovre particolari?
+    opzioni:
+      - Circa il 90%
+      - Circa il 50%
+      - Circa il 70%
+      - Circa l'80%
+    corretta: 0
+    spiegazione: "Il **90%** dei neonati respira da solo; una piccola parte ha bisogno di assistenza e circa l'**1%** di manovre rianimatorie avanzate. [@ost-manuale:18]"
+    ripasso: assistenza-al-neonato#perche-serve-prepararsi
+
+  - id: sse3-018
+    livello: base
+    domanda: Un neonato è in apnea dopo le azioni iniziali. Dopo aver aperto le vie aeree, come si eseguono le prime insufflazioni?
+    opzioni:
+      - 5 insufflazioni lente di 3 secondi l'una, in aria ambiente
+      - 2 insufflazioni di 1 secondo l'una, con ossigeno a 3 L/min
+      - 5 insufflazioni di 1 secondo l'una, con ossigeno ad alti flussi
+      - 15 ventilazioni di 1 secondo l'una, in aria ambiente
+    corretta: 0
+    spiegazione: "Si eseguono **5 insufflazioni lente e profonde da 3 secondi** in **aria ambiente** con il pallone autoespandibile; le 15 ventilazioni da 1 secondo servono dopo, se il torace si espande, la FC è sopra 60 e il neonato non respira. [@rian-neonatale:1] [@ost-manuale:22]"
+    ripasso: rianimazione-alla-nascita#3-vie-aeree-e-insufflazioni-iniziali
+
+  - id: sse3-019
+    livello: numeri
+    domanda: Il torace del neonato si espande ma la FC resta sotto i 60/min. Come procedete?
+    opzioni:
+      - "RCP 3:1 per 15 cicli, ventilando con ossigeno a 3 L/min senza reservoir, poi rivalutate la FC"
+      - "RCP 15:2 per 2 minuti, ventilando con ossigeno a 3 L/min con reservoir, poi rivalutate la FC"
+      - "RCP 3:1 per 5 cicli, ventilando in aria ambiente, poi rivalutate la FC"
+      - "RCP 30:2 per 5 cicli, ventilando con ossigeno ad alti flussi con reservoir, poi rivalutate la FC"
+    corretta: 0
+    spiegazione: "Con **FC ≤ 60** e torace che si espande: **RCP 3:1** (90 compressioni e 30 ventilazioni al minuto) per **15 cicli**, con pallone **senza reservoir** collegato all'**ossigeno a 3 L/min**, poi si rivaluta la FC. [@rian-neonatale:1] [@rian-nascita-cte:1] [@ost-manuale:22,23]"
+    ripasso: rianimazione-alla-nascita#6-compressioni-toraciche-rcp-3-1
+
+  - id: sse3-020
+    livello: base
+    domanda: Nella rianimazione alla nascita, dove si applica il saturimetro neonatale?
+    opzioni:
+      - Sul palmo della mano destra, accendendolo dopo averlo applicato
+      - Sul palmo della mano sinistra, accendendolo prima di applicarlo
+      - Sul piede destro, accendendolo prima di applicarlo
+      - Sul lobo dell'orecchio, accendendolo dopo averlo applicato
+    corretta: 0
+    spiegazione: "Il saturimetro va sul **palmo della mano destra** e si accende **solo dopo** averlo applicato; serve soprattutto a leggere la frequenza cardiaca. [@rian-neonatale:1] [@ost-manuale:21,23]"
+    ripasso: rianimazione-alla-nascita#5-la-frequenza-cardiaca

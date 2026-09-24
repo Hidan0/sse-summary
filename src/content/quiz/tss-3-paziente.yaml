@@ -1,0 +1,293 @@
+titolo: Il paziente, l'approccio psicologico e le tecniche assistenziali
+modulo: TSS
+ordine: 3
+
+domande:
+  # Caratteristiche del paziente (tss-d)
+  - id: tss3-001
+    livello: base
+    domanda: Che cos'è la PEG?
+    opzioni:
+      - Un tubicino che collega lo stomaco all'esterno, per nutrire chi non riesce a deglutire
+      - Una sonda che, inserita in una narice, scende lungo l'esofago fino allo stomaco
+      - Una cannula che, dopo un'incisione chirurgica, collega la trachea alla cute del collo
+      - Una sonda inserita in vescica attraverso l'uretra, che drena l'urina in un sacchetto
+    corretta: 0
+    spiegazione: La **PEG** (gastrostomia endoscopica percutanea) collega la cavità gastrica all'esterno con un tubicino, per l'assunzione di cibi e liquidi in chi non riesce a deglutire. Le altre descrizioni sono il sondino naso-gastrico, la cannula tracheostomica e il catetere vescicale. [@tss-d:9-10]
+    ripasso: patologie-neurodegenerative#il-paziente-con-ventilazione-domiciliare
+
+  - id: tss3-002
+    livello: esame
+    domanda: Dovete trasferire in barella un paziente con drenaggio toracico e catetere vescicale. Qual è la raccomandazione del corso?
+    opzioni:
+      - Informarsi prima sui presidi e muoverlo con la massima attenzione perché non si spostino
+      - Chiudere i drenaggi e staccare il catetere prima di muoverlo, poi ricollegarli in ambulanza
+      - Chiedere ai familiari di togliere i presidi, perché durante il trasporto non servono più
+      - Muoverlo come di consueto, perché i presidi sono ben fissati e non possono spostarsi
+    corretta: 0
+    spiegazione: Prima di mobilizzare e trasportare il paziente ci si **informa dei presidi medico-chirurgici** presenti e si presta la **massima attenzione** perché non si spostino dalla loro sede anatomica. [@tss-d:11]
+    ripasso: patologie-neurodegenerative#il-paziente-con-ventilazione-domiciliare
+
+  - id: tss3-003
+    livello: esame
+    domanda: Trasportate una persona in dialisi che ha una fistola artero-venosa al braccio sinistro e dopo la seduta si sente male. Cosa fate?
+    opzioni:
+      - La valutate con l'ABCDE e misurate la pressione sul braccio destro, controllando che la fistola non sanguini
+      - La valutate con l'ABCDE e misurate la pressione sul braccio sinistro, dove la fistola dà un valore più affidabile
+      - La valutate con l'ABCDE ma non misurate la pressione, perché nel dializzato il valore non è mai attendibile
+      - Comprimete la fistola per tutto il trasporto anche se non sanguina, e misurate la pressione sul braccio sinistro
+    corretta: 0
+    spiegazione: In caso di malore il dializzato si valuta con l'**ABCDE**, **senza misurare la pressione sull'arto con la fistola**, e si controlla la fistola nel caso sanguini. [@tss-d:22-23]
+
+  - id: tss3-004
+    livello: numeri
+    domanda: Secondo il corso, entro quanto tempo la malattia porta in genere a morte una persona in fase terminale?
+    opzioni:
+      - Entro tre mesi
+      - Entro una settimana
+      - Entro un anno
+      - Entro tre anni
+    corretta: 0
+    spiegazione: Il paziente terminale è nella fase irreversibile di una malattia mortale, senza trattamenti specifici possibili, con sintomi invalidanti e una rapida evoluzione che porta a morte **in genere entro tre mesi**. Nel soccorso si considera la **sua volontà e quella dei parenti**. [@tss-d:14-15]
+
+  - id: tss3-005
+    livello: esame
+    domanda: "Tra le problematiche della persona ustionata da considerare nel trasporto ci sono tutte le seguenti TRANNE:"
+    opzioni:
+      - Ipertensione
+      - Termoregolazione
+      - Infezioni
+      - Ansia
+    corretta: 0
+    spiegazione: Le problematiche dell'ustionato sono **termoregolazione, dolore, infezioni e ansia**; durante il trasporto va anzi assicurata una **buona protezione termica**, con posizione antalgica e vano sanitario accuratamente deterso. [@tss-d:17-18]
+    ripasso: ustioni#trasporto
+
+  - id: tss3-007
+    livello: base
+    domanda: Secondo il modulo TSS, qual è il miglior trattamento per il feto quando si trasporta una donna in gravidanza con un problema?
+    opzioni:
+      - Portare la madre in ospedale nelle migliori condizioni
+      - Far nascere il bambino sul posto, prima di partire
+      - Trasportare la madre supina, per controllarle meglio l'addome
+      - Ascoltare il battito del feto a ogni rivalutazione della madre
+    corretta: 0
+    spiegazione: "Il materiale lo dice in modo esplicito: **il miglior trattamento per il feto è portare la madre in ospedale nelle migliori condizioni**. Si monitora costantemente la donna e, se ci sono problemi e la gravidanza è avanzata, la si trasporta se possibile in decubito laterale sinistro; la posizione supina va evitata. [@tss-d:31-32] [@ost-manuale:11]"
+    ripasso: gravidanza-e-travaglio#trasporto-della-gravida
+
+  - id: tss3-008
+    livello: base
+    domanda: Quale accorgimento raccomanda il corso per il trasporto di una persona anziana non autosufficiente?
+    opzioni:
+      - Se possibile, far salire a bordo un parente o un conoscente, per il suo benessere
+      - Evitare la presenza di familiari a bordo, per non aumentare la sua agitazione
+      - Lasciarla salire e scendere dal mezzo da sola, per rispettarne l'autonomia residua
+      - Toglierle occhiali e apparecchio acustico, che durante il viaggio non le servono
+    corretta: 0
+    spiegazione: L'anziano non autosufficiente va aiutato negli spostamenti, soprattutto in salita e discesa dal mezzo; se possibile si trasporta con lui un **parente o un conoscente**, che lo aiuta a controllare paure e disagio. Gli ausili come occhiali e apparecchio acustico vanno lasciati. [@tss-d:26] [@tss-e:8]
+    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+
+  - id: tss3-009
+    livello: base
+    domanda: Quale affermazione sulla barella a cucchiaio è corretta?
+    opzioni:
+      - Serve a trasferire il paziente da un piano all'altro, ma non immobilizza la colonna
+      - Immobilizza completamente il rachide e tutto il paziente durante il trasporto
+      - Si conforma al corpo del paziente e permette di immobilizzarlo in posizioni anomale
+      - Si può usare da sola, senza collare, quando si sospetta una lesione della colonna
+    corretta: 0
+    spiegazione: "La [[barella a cucchiaio]] serve a **trasferire** il paziente da un piano all'altro e **non immobilizza la colonna**. Immobilizzare tutto il rachide è compito della [[tavola spinale]]; conformarsi al corpo è la caratteristica del [[materasso a depressione]]. [@tss-d:45-47]"
+    ripasso: immobilizzazione-atraumatica#barella-a-cucchiaio
+
+  - id: tss3-010
+    livello: esame
+    domanda: "Secondo il modulo TSS, sono caratteristiche del manicotto a depressione tutte le seguenti TRANNE:"
+    opzioni:
+      - Comprime l'arto per ridurre il gonfiore
+      - Permette di immobilizzare arti in posizioni anomale
+      - Garantisce una buona immobilizzazione
+      - È rapido da posizionare
+    corretta: 0
+    spiegazione: Il [[manicotti a depressione|manicotto a depressione]] dà una buona immobilizzazione, anche di arti in posizioni anomale, è rapido da posizionare, **non comprime** e non tende a raddrizzare l'arto. [@tss-d:49] [@1.3.2:33-34]
+    ripasso: immobilizzazione-atraumatica#immobilizzazione-degli-arti
+
+  # Approccio psicologico e relazionale (tss-e)
+  - id: tss3-011
+    livello: base
+    domanda: Quali sono le quattro basi di una comunicazione efficace con il paziente?
+    opzioni:
+      - Presentarsi, ascoltare, spiegare, rassicurare
+      - Presentarsi, interrogare, decidere, trasportare
+      - Ascoltare, giudicare, spiegare, rassicurare
+      - Presentarsi, ascoltare, promettere, rassicurare
+    corretta: 0
+    spiegazione: La base di una comunicazione efficace è **presentarsi, ascoltare, spiegare, rassicurare**. Promettere esiti che non si possono garantire crea **aspettative irreali**, da evitare. [@tss-e:3,6]
+    ripasso: comunicazione-con-il-paziente#cosa-fare
+
+  - id: tss3-012
+    livello: esame
+    domanda: Quale dei seguenti comportamenti va EVITATO nella comunicazione con il paziente?
+    opzioni:
+      - Cercare un'eccessiva confidenza
+      - Chiamare la persona con il suo nome
+      - Mantenere il contatto visivo
+      - Chiedere informazioni ai familiari
+    corretta: 0
+    spiegazione: Tra i comportamenti da evitare ci sono **cercare un'eccessiva confidenza**, creare aspettative irreali, farsi guidare dai pregiudizi, violare la privacy, interrompere il paziente e parlare troppo. Le altre opzioni sono regole della comunicazione efficace. [@tss-e:5-6]
+    ripasso: comunicazione-con-il-paziente#cosa-evitare
+
+  - id: tss3-013
+    livello: esame
+    domanda: Soccorrete un bambino di 5 anni accompagnato dalla madre. Quale approccio è corretto?
+    opzioni:
+      - Assistere due pazienti, favorire il contatto con la madre e parlare al bambino alla sua altezza
+      - Allontanare la madre, così da valutare il bambino con più calma e senza interferenze emotive
+      - Rivolgersi solo alla madre, perché a quell'età il bambino non è ancora in grado di farsi capire
+      - Parlare al bambino restando in piedi e con tono deciso, per mantenere un ruolo autorevole
+    corretta: 0
+    spiegazione: Con il bambino si assistono **due pazienti**, il bambino e il genitore o tutore. Si favorisce il loro contatto, si parla al bambino **alla sua altezza**, mai dall'alto in basso, con voce calma, rispettando i suoi tempi. [@tss-e:7] [@tss-d:35-36]
+    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+
+  - id: tss3-014
+    livello: esame
+    domanda: Dovete trasportare un paziente con una dipendenza da alcol o droghe. Quale indicazione dà il corso sulla relazione con lui?
+    opzioni:
+      - Cercare sempre di aprire un canale comunicativo, senza sottovalutare i segni clinici
+      - Parlargli il meno possibile finché è sotto l'effetto delle sostanze, per non innervosirlo
+      - Attribuire i sintomi alla sostanza assunta, senza perdere tempo a cercare altre cause
+      - Chiamare le forze di polizia prima di avvicinarlo, anche se è tranquillo e collaborante
+    corretta: 0
+    spiegazione: Con il paziente dipendente da alcol o droghe si cerca **sempre di aprire un canale comunicativo**, con voce calma e rassicurante, e **non si sottovalutano i segni clinici**. Solo in caso di eccessiva aggressività o rifiuto del trasporto ci si mette in sicurezza e si contatta il sistema di emergenza. [@tss-e:10]
+    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+
+  - id: tss3-015
+    livello: base
+    domanda: Chi deve avvisare le forze di polizia quando un paziente agli arresti domiciliari viene trasportato?
+    opzioni:
+      - Il paziente stesso, personalmente
+      - Il capo equipaggio, prima di partire
+      - L'ospedale di destinazione, all'arrivo
+      - Nessuno, se il trasporto è programmato
+    corretta: 0
+    spiegazione: I pazienti agli arresti domiciliari sono tenuti ad avvisare **personalmente** le forze di polizia. In urgenza (per esempio un paziente incosciente) si attiva il sistema di emergenza e si **riferisce** la condizione di custodia cautelare. [@tss-e:13]
+    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+
+  - id: tss3-016
+    livello: base
+    domanda: Quale definizione corrisponde alla nevrosi?
+    opzioni:
+      - Sofferenza psichica legata a conflitti, senza perdita della capacità di aderire alla realtà
+      - Disturbo che interrompe in modo più o meno grave il rapporto del soggetto con la realtà
+      - Deficit intellettivo congenito o acquisito con una causa organica evidenziabile
+      - Deficit intellettivo progressivo e irreversibile in chi aveva completato lo sviluppo psichico
+    corretta: 0
+    spiegazione: "La [[nevrosi]] è una sofferenza psichica legata a situazioni conflittuali **senza compromettere l'aderenza alla realtà**. Le altre definizioni sono, nell'ordine, la [[psicosi]], gli stati deficitari e la demenza. [@tss-e:20,25]"
+    ripasso: disturbi-del-comportamento#le-malattie-mentali
+
+  - id: tss3-017
+    livello: esame
+    domanda: Quale gruppo di sintomi è tipico di un attacco di panico?
+    opzioni:
+      - Senso di soffocamento, palpitazioni, tremori, sudorazione, dolore toracico, paura di morire
+      - Profonda tristezza, rallentamento motorio, perdita dell'appetito, disturbi del sonno, calo della memoria
+      - Allucinazioni, tremore delle mani, convulsioni, stato confusionale dopo la sospensione dell'alcol
+      - Disturbi di memoria e orientamento, poi afasia, mancato riconoscimento degli oggetti, esplosioni di collera
+    corretta: 0
+    spiegazione: L'[[attacco di panico]] è un episodio acuto di **ansia intensa** con senso di catastrofe, difficoltà respiratoria, **palpitazioni**, tremori, sudorazione, **dolore toracico**, paura di morire. Gli altri gruppi descrivono depressione, astinenza da alcol e Alzheimer. [@tss-e:22,24,27,31]
+    ripasso: disturbi-del-comportamento#attacco-di-panico
+
+  - id: tss3-018
+    livello: base
+    domanda: Quale segno fa parte dell'astinenza da alcol (delirium tremens)?
+    opzioni:
+      - Tremore delle mani con allucinazioni
+      - Alito che sa di alcol e volto arrossato
+      - Andatura ondeggiante e incerta
+      - Nausea e vomito subito dopo aver bevuto
+    corretta: 0
+    spiegazione: "Il [[delirium tremens]] dà stato confusionale, irrequietezza, **allucinazioni**, **tremore delle mani**, sudorazione, comportamento atipico e convulsioni. Alito alcolico, volto arrossato, andatura incerta, nausea e vomito sono segni dell'**abuso** di alcol. [@tss-e:30-31]"
+    ripasso: disturbi-del-comportamento#astinenza-da-alcol-delirium-tremens
+
+  - id: tss3-019
+    livello: esame
+    domanda: Un paziente è agitato e ha un comportamento strano. Come va impostata la valutazione?
+    opzioni:
+      - Ipotizzando prima un'urgenza medica, e solo dopo una patologia psichiatrica o l'abuso di sostanze
+      - Ipotizzando prima un disturbo psichiatrico o l'abuso di sostanze, e solo dopo un problema medico
+      - Lasciando la valutazione al capo equipaggio, che ne è il responsabile anche se non se la sente
+      - Rinviando la valutazione all'arrivo delle forze di polizia, per ragioni di sicurezza
+    corretta: 0
+    spiegazione: Segni e sintomi si valutano **ipotizzando sempre prima un'urgenza medica** (per esempio un malore), poi una patologia psichiatrica o un abuso. La gestione va a **chi è in grado e se la sente**, non necessariamente il capo equipaggio. [@tss-e:34]
+    ripasso: disturbi-del-comportamento#gestire-il-comportamento-non-prevedibile
+
+  # Tecniche assistenziali (tss-f)
+  - id: tss3-020
+    livello: esame
+    domanda: "Secondo il modulo TSS, sono segni di respiro difficoltoso (dispnea) tutti i seguenti TRANNE:"
+    opzioni:
+      - Una FR di 16 atti al minuto
+      - Impossibilità a dire frasi lunghe
+      - Posizione seduta obbligata
+      - Saturazione generalmente sotto il 90%
+    corretta: 0
+    spiegazione: "Segni di [[dispnea]]: impossibilità a dire frasi lunghe, respiro rumoroso, tachipnea (> 20/min) o bradipnea (< 10/min), cianosi, saturazione generalmente < 90%, posizione seduta obbligata. Una FR di **16** è nella norma (12-20). [@tss-f:14] [@tss-c2:4]"
+    ripasso: difficolta-respiratoria-adulto#la-dispnea
+
+  - id: tss3-021
+    livello: numeri
+    domanda: Secondo il modulo TSS, quanto dura al massimo la perdita di coscienza di una sincope?
+    opzioni:
+      - 5 minuti
+      - 30 secondi
+      - 1 minuto
+      - 15 minuti
+    corretta: 0
+    spiegazione: La [[sincope]] è una perdita di coscienza a insorgenza rapida, di durata variabile (**massimo 5 minuti**), con perdita del tono muscolare. Nella [[lipotimia]] invece la coscienza non si perde del tutto. [@tss-f:31-32]
+    ripasso: valutazione-abcde-medico#lipotimia-e-sincope
+
+  - id: tss3-023
+    livello: base
+    domanda: Nella fase clonica di una crisi convulsiva, cosa distingue la forma parziale da quella generalizzata?
+    opzioni:
+      - La parziale interessa solo una parte del corpo
+      - La parziale si verifica solo nei bambini con febbre
+      - La parziale dura più di 30 minuti
+      - La parziale non ha contrazioni, solo rigidità
+    corretta: 0
+    spiegazione: "Nella fase clonica **generalizzata** ci sono contrazioni violente e ritmiche agli arti, bava alla bocca, cianosi, perdita di feci e urine; quella **parziale** interessa **solo una parte del corpo**. Il corpo rigido è tipico della fase tonica. [@tss-f:38]"
+    ripasso: convulsioni#le-fasi-della-crisi
+
+  - id: tss3-025
+    livello: esame
+    domanda: Quale affermazione distingue correttamente l'angina pectoris dall'infarto miocardico acuto?
+    opzioni:
+      - L'angina è un dolore di pochi minuti che può passare col riposo; l'infarto è la necrosi del miocardio da ischemia prolungata
+      - L'angina è la necrosi del miocardio da ischemia prolungata; l'infarto è un dolore di pochi minuti che passa col riposo
+      - L'angina è causata da un'infezione del muscolo cardiaco; l'infarto da un'aritmia che riduce la portata del cuore
+      - Angina e infarto sono sinonimi, e il termine cambia solo in base all'età del paziente e alla durata del dolore
+    corretta: 0
+    spiegazione: L'**angina** è un dolore al petto che dura **pochi minuti**, per un aumento del fabbisogno di ossigeno non compensato, e può scomparire con il riposo. L'**infarto** è la **necrosi** del muscolo cardiaco dovuta a **ischemia prolungata**. [@tss-f:59-60]
+    ripasso: infarto-miocardico-acuto#definizione
+
+  - id: tss3-026
+    livello: base
+    domanda: Secondo il modulo TSS, chi colpisce più spesso lo scompenso cardiaco, e in quale momento?
+    opzioni:
+      - Anziani e cardiopatici noti, soprattutto di notte
+      - Giovani sportivi, soprattutto durante uno sforzo
+      - Bambini sotto i due anni, soprattutto dopo i pasti
+      - Donne in gravidanza, soprattutto nel terzo trimestre
+    corretta: 0
+    spiegazione: Nello scompenso il cuore non pompa abbastanza sangue e i liquidi si accumulano negli arti inferiori, nei polmoni e in altri tessuti. Colpisce più spesso **anziani** e **cardiopatici noti**, **prevalentemente di notte**. [@tss-f:64]
+    ripasso: difficolta-respiratoria-adulto#scompenso-cardiaco-ed-edema-polmonare-acuto
+
+  - id: tss3-027
+    livello: base
+    domanda: Nella fase A di un paziente con alterazione dello stato di coscienza, a cosa dice di prestare attenzione il modulo TSS?
+    opzioni:
+      - Protesi dentarie mobili, cibo non deglutito e vomito
+      - Colorito, temperatura e sudorazione della cute
+      - Frequenza respiratoria, saturazione e rumori del respiro
+      - Sensibilità e motilità di tutti e quattro gli arti
+    corretta: 0
+    spiegazione: "Nei pazienti con coscienza alterata la A richiede attenzione alle vie aeree: **protesi dentarie mobili, cibo non deglutito, vomito** (aspiratore); se la [[cannula orofaringea]] non è tollerata va tolta. Cute, respiro e arti si valutano in C, B e D. [@tss-f:12-13,15] [@tss-c:1]"
+    ripasso: valutazione-abcde-medico#a-coscienza-e-vie-aeree

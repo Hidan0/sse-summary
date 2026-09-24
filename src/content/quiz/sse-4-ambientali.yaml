@@ -1,0 +1,244 @@
+titolo: Emergenze ambientali
+modulo: SSE
+ordine: 4
+
+domande:
+  - id: sse4-001
+    livello: base
+    domanda: Qual è la differenza principale tra collasso da calore e colpo di calore?
+    opzioni:
+      - Nel collasso da calore la termoregolazione è conservata, nel colpo di calore è alterata
+      - Nel collasso da calore la termoregolazione è alterata, nel colpo di calore è conservata
+      - Il collasso da calore è dovuto al sole, il colpo di calore al clima caldo e umido
+      - Nel collasso da calore la temperatura supera i 40 °C, nel colpo di calore no
+    corretta: 0
+    spiegazione: "Nel [[collasso da calore]] la termoregolazione **funziona ancora** e il problema è la disidratazione; nel [[colpo di calore]] è **alterata** e la temperatura supera i 40 °C. Il sole è la causa del colpo di sole. [@4.1:6,9]"
+    ripasso: emergenze-da-calore#collasso-da-calore-e-colpo-di-calore-a-confronto
+
+  - id: sse4-002
+    livello: numeri
+    domanda: Quale temperatura corporea caratterizza il colpo di calore?
+    opzioni:
+      - Oltre 40 °C
+      - Oltre 38 °C
+      - Tra 37 e 38 °C
+      - Oltre 42 °C
+    corretta: 0
+    spiegazione: "Nel colpo di calore e nel colpo di sole la temperatura corporea supera i **40 °C**; nel collasso da calore è normale o solo leggermente aumentata. [@4.1:7,10]"
+    ripasso: emergenze-da-calore#colpo-di-calore-e-colpo-di-sole
+
+  - id: sse4-003
+    livello: esame
+    domanda: Quale quadro è tipico del colpo di calore?
+    opzioni:
+      - Temperatura oltre 40 °C, volto arrossato, mucose asciutte, confusione mentale, convulsioni
+      - Temperatura normale, cute arrossata e sudata, sete intensa, crampi, ipotensione ortostatica
+      - Temperatura sotto 35 °C, brivido, cute pallida, coscienza conservata
+      - Temperatura normale, zona periferica dura e livida, sensibilità persa
+    corretta: 0
+    spiegazione: "Il colpo di calore dà temperatura **oltre 40 °C**, mucose asciutte e **segni neurologici** (confusione, convulsioni). Il secondo quadro, con temperatura normale e cute sudata, è il **collasso da calore**. [@4.1:7,10]"
+    ripasso: emergenze-da-calore#colpo-di-calore-e-colpo-di-sole
+
+  - id: sse4-004
+    livello: esame
+    domanda: Un escursionista con collasso da calore, cosciente, vi chiede insistentemente da bere. Cosa fate?
+    opzioni:
+      - Lo portate al fresco, a riposo, e gli date da bere solo su indicazione della SOREU
+      - Lo portate al fresco e gli fate bere subito acqua fresca in abbondanza
+      - Lo portate al fresco e gli date da bere solo se la temperatura supera i 40 °C
+      - Lo portate al fresco e non gli date da bere fino all'arrivo in ospedale
+    corretta: 0
+    spiegazione: "Nel collasso da calore: **ambiente fresco**, **nessuno sforzo**, parametri monitorati e liquidi **solo secondo le indicazioni della SOREU**. La regola sui liquidi vale anche per il colpo di calore. [@4.1:8,11]"
+    ripasso: emergenze-da-calore#assistenza
+
+  - id: sse4-005
+    livello: esame
+    domanda: "Tutte le seguenti sono modalità di dispersione del calore TRANNE:"
+    opzioni:
+      - Brivido
+      - Irradiazione
+      - Convezione
+      - Evaporazione
+    corretta: 0
+    spiegazione: "La [[termodispersione]] avviene per **irradiazione, conduzione, convezione ed evaporazione**. Il **brivido** serve invece a **produrre** calore, insieme a metabolismo basale ed esercizio fisico. [@4.1:5]"
+    ripasso: emergenze-da-calore#la-temperatura-corporea
+
+  - id: sse4-006
+    livello: base
+    domanda: Un alpinista ha le dita dei piedi congelate. Quale azione è corretta?
+    opzioni:
+      - Su indicazione della SOREU, riscaldarle gradualmente a contatto con un'altra parte calda del corpo
+      - Massaggiare e strofinare energicamente la parte con le mani per riattivare la circolazione
+      - Bucare le bolle con un ago sterile per evitare che si infettino
+      - Dargli una bevanda alcolica calda per favorire la vasodilatazione periferica e scaldarlo
+    corretta: 0
+    spiegazione: "Nel [[congelamento]] si riscalda **gradualmente** e **solo su indicazione della SOREU**. Non si massaggia, non si danno alcolici e non si bucano le [[flittene]]. [@4.1:16-17]"
+    ripasso: freddo-e-ipotermia#congelamento
+
+  - id: sse4-007
+    livello: esame
+    domanda: Quando NON si deve iniziare a riscaldare una parte congelata?
+    opzioni:
+      - Se non si è sicuri di poterlo mantenere costante fino al PS
+      - Se la parte è ancora dolente e ha conservato la sensibilità
+      - Se la cute è ancora arrossata, gonfia e morbida
+      - Se il paziente è cosciente, collaborante e riesce a muoversi
+    corretta: 0
+    spiegazione: "Il riscaldamento non va iniziato se non si è certi di poterlo **mantenere costante fino al pronto soccorso**. Dolore e cute arrossata e gonfia sono solo i segni della prima fase. [@4.1:15,17]"
+    ripasso: freddo-e-ipotermia#congelamento
+
+  - id: sse4-008
+    livello: base
+    domanda: Come si presenta la seconda fase del congelamento?
+    opzioni:
+      - Sensibilità persa, dolore scomparso, cute livida e dura
+      - Zona dolente, cute cerea o arrossata, gonfia e morbida
+      - Zona dolente, cute livida e morbida
+      - Sensibilità conservata, cute arrossata e dura
+    corretta: 0
+    spiegazione: "Nella **seconda fase** la sensibilità è **persa**, il dolore **scompare** e la cute è **livida** e **dura**. Nella prima fase la zona fa male ed è gonfia e morbida. [@4.1:15]"
+    ripasso: freddo-e-ipotermia#congelamento
+
+  - id: sse4-009
+    livello: numeri
+    domanda: Quale associazione tra stadio dell'ipotermia e temperatura corporea è corretta?
+    opzioni:
+      - III stadio, 28-24 °C
+      - I stadio, 32-28 °C
+      - II stadio, 35-32 °C
+      - IV stadio, sotto i 28 °C
+    corretta: 0
+    spiegazione: "Gli stadi sono: **I 35-32 °C**, **II 32-28 °C**, **III 28-24 °C**, **IV sotto i 24 °C** (ACC). [@4.1:18]"
+    ripasso: freddo-e-ipotermia#gli-stadi
+
+  - id: sse4-010
+    livello: base
+    domanda: In quale stadio dell'ipotermia è presente il brivido?
+    opzioni:
+      - Solo nel I stadio
+      - Nel I e nel II stadio
+      - In tutti gli stadi tranne il IV
+      - Solo nel III stadio
+    corretta: 0
+    spiegazione: "Il brivido c'è **solo nel I stadio** (cosciente); dal II stadio in poi è assente e nell'ipotermia severa manca **sempre**. [@4.1:18,22]"
+    ripasso: freddo-e-ipotermia#gli-stadi
+
+  - id: sse4-011
+    livello: base
+    domanda: Che cos'è l'after drop?
+    opzioni:
+      - Il ritorno di sangue freddo dalle estremità al cuore, con rischio di arresto cardiaco
+      - La caduta della temperatura dell'ambiente dopo il tramonto, che aggrava l'ipotermia
+      - Il calo improvviso della pressione arteriosa quando il paziente ipotermico viene messo seduto
+      - La scomparsa del brivido nel passaggio dal I al II stadio di ipotermia
+    corretta: 0
+    spiegazione: "L'[[after drop]] è il ritorno di **sangue freddo dalle estremità al cuore**, che può causare l'ACC: per evitarlo la vittima si tiene **supina** e si muove **con cautela**. [@4.1:19,23]"
+    ripasso: freddo-e-ipotermia#ipotermia-di-i-e-ii-stadio-assistenza
+
+  - id: sse4-012
+    livello: esame
+    domanda: Un ipotermico in II stadio è supino e protetto dalla dispersione di calore. Dove applicate gli impacchi caldi?
+    opzioni:
+      - Collo, ascelle, inguine, cavi poplitei, gomiti
+      - Mani, piedi, orecchie, naso, guance
+      - Solo sul tronco, senza impacchi su testa e arti
+      - Addome, schiena, cosce, polpacci, avambracci
+    corretta: 0
+    spiegazione: "Negli stadi I e II gli impacchi caldi vanno sulle zone più vascolarizzate: **collo, ascelle, inguine, cavi poplitei, gomiti**, con attenzione alle ustioni. Il riscaldamento del **solo tronco** vale per gli stadi III e IV. [@4.1:19-20,23]"
+    ripasso: freddo-e-ipotermia#ipotermia-di-i-e-ii-stadio-assistenza
+
+  - id: sse4-013
+    livello: esame
+    domanda: Un ipotermico incosciente, raccolto in posizione fetale, respira e ha polso. Cosa fate, su indicazione della SOREU?
+    opzioni:
+      - Lo tenete supino evitando movimenti bruschi, ossigeno, protezione termica e riscaldamento del solo tronco
+      - Lo mettete in posizione laterale di sicurezza e gli frizionate gli arti per riscaldarlo
+      - Lo tenete supino e mettete impacchi caldi su collo, ascelle, inguine, cavi poplitei e gomiti
+      - Lo fate sedere per favorire la respirazione e lo coprite con una metallina
+    corretta: 0
+    spiegazione: "Incosciente in posizione fetale fa pensare a un'ipotermia **severa** (III stadio): movimenti bruschi evitati, ABCDE, **ossigeno**, protezione termica e riscaldamento del **solo tronco**, per il rischio di [[after drop]]. [@4.1:18,22-23]"
+    ripasso: freddo-e-ipotermia#ipotermia-di-iii-e-iv-stadio-severa
+
+  - id: sse4-014
+    livello: esame
+    domanda: Trovate un ipotermico in arresto cardiaco, senza lesioni incompatibili con la vita e con il torace comprimibile. Come vi comportate?
+    opzioni:
+      - "Iniziate il BLSD: non si considera morto finché non è stato riscaldato in ospedale"
+      - Non iniziate la RCP, perché sotto i 24 °C non ha più senso rianimare un ipotermico
+      - Lo riscaldate in ambulanza e iniziate la RCP solo quando la temperatura risale
+      - Chiedete il medico per la constatazione del decesso senza iniziare alcuna manovra rianimatoria
+    corretta: 0
+    spiegazione: "In caso di ACC si applica il **BLSD**: l'ipotermico viene dichiarato morto solo **dopo il riscaldamento con procedure ospedaliere** senza esito delle manovre. Prima della RCP si contatta subito la SOREU solo se ci sono lesioni incompatibili con la vita o un torace troppo rigido. [@4.1:24]"
+    ripasso: freddo-e-ipotermia#se-e-in-arresto-cardiaco
+
+  - id: sse4-015
+    livello: numeri
+    domanda: Sotto quale temperatura corporea il torace dell'ipotermico può diventare così rigido da rendere difficile la RCP?
+    opzioni:
+      - 15 °C
+      - 24 °C
+      - 28 °C
+      - 32 °C
+    corretta: 0
+    spiegazione: "Sotto i **15 °C** il torace può essere troppo rigido per la RCP: si seguono le indicazioni della SOREU. I 24 °C sono il limite del IV stadio. [@4.1:18]"
+    ripasso: freddo-e-ipotermia#gli-stadi
+
+  - id: sse4-016
+    livello: base
+    domanda: Secondo la classificazione del corso, a quale tipo di ambiente acquatico appartiene un torrente?
+    opzioni:
+      - Luogo impervio
+      - Acque libere
+      - Acque delimitate
+      - Acque interne
+    corretta: 0
+    spiegazione: "Gli ambienti sono tre: **acque libere** (mare, lago), **acque delimitate** (piscina, zone per i bagnanti) e **luogo impervio** (fiume, canale, torrente, grotte). [@4.2:6]"
+    ripasso: ambiente-acquatico#peculiarita-del-soccorso-in-acqua
+
+  - id: sse4-017
+    livello: base
+    domanda: In quale fase dell'annegamento si verifica il laringospasmo?
+    opzioni:
+      - Apnea, la seconda fase
+      - Sorpresa, la prima fase
+      - Arresto respiratorio, la quarta fase
+      - Terminale, la quinta fase
+    corretta: 0
+    spiegazione: "Le 5 fasi sono sorpresa, **apnea**, dispnea, arresto respiratorio e terminale (ACC). Nell'apnea la vittima trattiene il respiro, il liquido entra nelle vie aeree e compare il [[laringospasmo]]. [@4.2:8]"
+    ripasso: ambiente-acquatico#come-avviene
+
+  - id: sse4-018
+    livello: esame
+    domanda: "Una vittima è stata recuperata dall'acqua e non è chiaro cosa sia successo. Tutte le seguenti azioni sono corrette TRANNE:"
+    opzioni:
+      - Trattarla come un paziente medico, perché l'annegamento non è un trauma
+      - Valutare con attenzione le vie aeree per la possibile presenza di vomito e acqua
+      - Fare la protezione termica della vittima per il rischio di ipotermia
+      - Chiedere ai presenti quanto tempo la vittima è rimasta in acqua
+    corretta: 0
+    spiegazione: "La vittima va trattata **sempre come un trauma**, soprattutto se il meccanismo di lesione non è chiaro. Vie aeree, protezione termica e tempo di permanenza in acqua fanno parte della valutazione. [@4.2:9-10]"
+    ripasso: ambiente-acquatico#valutazione-e-assistenza
+
+  - id: sse4-019
+    livello: base
+    domanda: Qual è la causa della patologia da disbarismo nel subacqueo?
+    opzioni:
+      - Bolle di gas nel sangue e nei tessuti per una risalita troppo rapida
+      - Ingresso di acqua nei polmoni durante l'immersione
+      - Calo della temperatura corporea per la lunga permanenza in acqua fredda
+      - Carenza di ossigeno per l'esaurimento della miscela respirata
+    corretta: 0
+    spiegazione: "Il [[disbarismo]] nasce dalla formazione di **bolle di gas nel sangue e nei tessuti** in chi ha respirato aria sotto pressione, quando la pressione cala **troppo in fretta**, cioè con una risalita troppo rapida. [@4.2:12]"
+    ripasso: ambiente-acquatico#patologia-da-disbarismo
+
+  - id: sse4-020
+    livello: esame
+    domanda: Un subacqueo, dopo una risalita di emergenza, ha dolori articolari, vertigini e un rash cutaneo. Quale condotta è corretta?
+    opzioni:
+      - Ossigeno ad alti flussi, protezione termica, e computer da polso portato in PS con il paziente
+      - Ossigeno ad alti flussi, acqua da bere subito, e computer da polso lasciato ai compagni di immersione
+      - Ossigeno solo se la saturazione è bassa, protezione termica, e computer da polso portato in PS con il paziente
+      - Ossigeno ad alti flussi, nessuna protezione termica, e attrezzatura lasciata sul posto
+    corretta: 0
+    spiegazione: "Nel disbarismo: **O2 ad alti flussi**, **protezione termica**, monitoraggio, acqua solo se lo indica la SOREU. Il **computer da polso va sempre portato in PS** e l'attrezzatura segue il paziente, salvo sequestro. [@4.2:13-14,16]"
+    ripasso: ambiente-acquatico#assistenza

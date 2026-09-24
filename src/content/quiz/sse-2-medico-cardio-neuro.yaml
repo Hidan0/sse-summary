@@ -1,0 +1,490 @@
+titolo: "Emergenze mediche: ABCDE, cuore, circolo e neurologia"
+modulo: SSE
+ordine: 2
+
+domande:
+  # --- Valutazione ABCDE del paziente medico ---
+  - id: sse2a-001
+    livello: base
+    domanda: Un paziente è incosciente, si risveglia quando lo chiami ma torna incosciente appena smetti di stimolarlo. Come si definisce questo stato di coscienza?
+    opzioni:
+      - Soporoso
+      - Stuporoso
+      - Confusionale
+      - Comatoso
+    corretta: 0
+    spiegazione: "Nello stato **soporoso** l'incoscienza si interrompe con lo stimolo verbale e ritorna appena lo stimolo finisce. Lo **stuporoso** invece si risveglia solo con stimoli forti e ripetuti. [@abcde-note:3]"
+    ripasso: valutazione-abcde-medico#gli-stati-di-coscienza
+
+  - id: sse2a-002
+    livello: base
+    domanda: Che cosa distingue la lipotimia dalla sincope?
+    opzioni:
+      - Nella lipotimia la coscienza si riduce senza perdersi, nella sincope c'è una breve perdita di coscienza
+      - Nella lipotimia c'è una breve perdita di coscienza, nella sincope la coscienza si riduce senza perdersi
+      - La lipotimia ha sempre origine cardiaca, la sincope sempre origine vaso-vagale
+      - La lipotimia dura pochi secondi, la sincope almeno qualche ora
+    corretta: 0
+    spiegazione: "La [[lipotimia]] è una breve **riduzione** della coscienza **senza perdita**; la [[sincope]] è una breve **perdita** di coscienza per un disturbo reversibile delle funzioni cerebrali. [@abcde-note:3]"
+    ripasso: valutazione-abcde-medico#lipotimia-e-sincope
+
+  - id: sse2a-003
+    livello: esame
+    domanda: Un uomo in piedi in coda all'ufficio postale riferisce vista offuscata e nausea e si sente mancare. È cosciente e respira normalmente. Come lo posizioni?
+    opzioni:
+      - Supino con le gambe sollevate
+      - In posizione laterale di sicurezza
+      - Semiseduto con lo schienale a 45°
+      - Seduto con il busto piegato in avanti
+    corretta: 0
+    spiegazione: "È il quadro di una lipotimia: il trattamento è il paziente **supino con le gambe sollevate**, **solo se respira**. La PLS è per il paziente incosciente che respira. [@abcde-note:3] [@tss-c3:6]"
+    ripasso: valutazione-abcde-medico#lipotimia-e-sincope
+
+  - id: sse2a-004
+    livello: base
+    domanda: Qual è il meccanismo della sincope cardiogena?
+    opzioni:
+      - Minore portata del cuore per alterazioni della frequenza e/o del ritmo
+      - Calo della pressione arteriosa che riduce la perfusione del cervello
+      - Chiusura di un'arteria cerebrale per trombosi o embolia
+      - Improvvisa vasodilatazione dovuta a una reazione allergica
+    corretta: 0
+    spiegazione: "La sincope **cardiogena** dipende da una minore portata cardiaca per [[aritmia|aritmie]]. Il calo di PA è il meccanismo della sincope **vaso-vagale**, la chiusura di un'arteria cerebrale quello della sincope **ostruttiva**. [@abcde-note:3]"
+    ripasso: valutazione-abcde-medico#lipotimia-e-sincope
+
+  - id: sse2a-005
+    livello: base
+    domanda: Nella scala AVPU, quali livelli indicano una grave compromissione della coscienza e il coma?
+    opzioni:
+      - P e U
+      - Solo U
+      - V e P
+      - V, P e U
+    corretta: 0
+    spiegazione: "I livelli **P** (reagisce solo al dolore) e **U** (nessuna reazione) indicano una grave compromissione della coscienza e il coma. **V** indica una coscienza alterata che reagisce allo stimolo verbale. [@abcde-note:7]"
+    ripasso: valutazione-abcde-medico#d-stato-neurologico
+
+  - id: sse2a-006
+    livello: base
+    domanda: Nell'anamnesi AMPIA, che cosa indica la lettera I?
+    opzioni:
+      - Ingestione, cioè quantità e tipo dell'ultimo pasto
+      - Interventi chirurgici subiti in passato
+      - Intensità del dolore su una scala da 1 a 10
+      - Inizio dei sintomi, cioè l'ora in cui sono comparsi
+    corretta: 0
+    spiegazione: "La I dell'[[AMPIA]] è l'**Ingestione** (ultimo pasto). Gli interventi chirurgici vanno raccolti sotto la **P** (patologie pregresse). [@abcde-note:9] [@tss-c3:12]"
+    ripasso: valutazione-abcde-medico#l-anamnesi-ampia
+
+  - id: sse2a-007
+    livello: esame
+    domanda: La chiamata è filtrata come malore. Trovate un uomo di 78 anni seduto a terra in cucina; la figlia vi dice che si è sentito male ed è caduto battendo la testa sul tavolo. Come procedete?
+    opzioni:
+      - Fate mantenere il rachide cervicale in asse e lo valutate come un paziente traumatizzato
+      - Proseguite con l'ABCDE medico, perché la centrale ha segnalato un malore
+      - Lo aiutate a sedersi su una sedia per valutarlo più comodamente
+      - Lo mettete subito in posizione laterale di sicurezza
+    corretta: 0
+    spiegazione: "Chiedere subito \"Che succede?\" serve a capire se c'è anche un trauma: se la risposta lo fa sospettare, si fa mantenere il rachide in asse e si segue lo schema del trauma (indicazione degli istruttori). Già il colpo d'occhio valuta la posizione del paziente rispetto all'evento. [@abcde-note:2]"
+    ripasso: valutazione-abcde-medico#che-succede
+
+  - id: sse2a-008
+    livello: esame
+    domanda: Trovi un paziente incosciente e ne valuti rapidamente il respiro. In quale di questi casi NON parti con la sequenza BLSD?
+    opzioni:
+      - Il torace si espande con atti regolari, simili a un respiro normale
+      - Il paziente boccheggia "come un pesce"
+      - Gli atti respiratori sono molto lenti e profondi, con rumori tipo rantolo
+      - Il respiro è a singhiozzo
+    corretta: 0
+    spiegazione: "Se il respiro **manca o è molto irregolare** (boccheggiamento, atti molto lenti e profondi con rantolo, respiro a singhiozzo) si parte con il BLSD e si chiede il DAE. L'incosciente che respira normalmente va in PLS. [@abcde-note:4] [@tss-c3:6]"
+    ripasso: valutazione-abcde-medico#nel-paziente-incosciente
+
+  - id: sse2a-009
+    livello: esame
+    domanda: Una donna di 25 anni è a terra e non risponde al triplice stimolo; il polso radiale non si sente. Quale elemento decide se iniziare la RCP?
+    opzioni:
+      - Il respiro, se è assente o non normale
+      - L'assenza del polso radiale, che basta da sola
+      - La pressione arteriosa misurata con l'apparecchio elettronico
+      - La saturazione, se è inferiore al 90%
+    corretta: 0
+    spiegazione: "Nell'incosciente la B è rapida: se il respiro è **assente o non normale** si parte con la sequenza BLSD. Il polso radiale assente indica solo una PAS **< 80 mmHg**. [@abcde-note:4] [@tss-c3:6,9]"
+    ripasso: valutazione-abcde-medico#nel-paziente-incosciente
+
+  - id: sse2a-010
+    livello: numeri
+    domanda: Nell'OPACS di un adulto, quali valori devono allarmarti?
+    opzioni:
+      - FR inferiore a 10 o superiore a 20 atti/min, SpO2 inferiore al 90%
+      - FR inferiore a 12 o superiore a 30 atti/min, SpO2 inferiore al 95%
+      - FR inferiore a 8 o superiore a 24 atti/min, SpO2 inferiore al 94%
+      - FR inferiore a 10 o superiore a 25 atti/min, SpO2 inferiore all'85%
+    corretta: 0
+    spiegazione: "Nell'[[OPACS]] si fa attenzione a una FR **< 10 o > 20** atti/min e a una [[SpO2]] **< 90%**. [@abcde-note:4] [@tss-c3:8]"
+    ripasso: valutazione-abcde-medico#l-opacs
+
+  - id: sse2a-011
+    livello: esame
+    domanda: Un paziente cosciente, pallido e sudato, respira; il polso radiale non è palpabile. Che cosa indica e come procedi?
+    opzioni:
+      - Una PA sistolica inferiore a 80 mmHg; al termine della C lo comunichi alla SOREU
+      - Un arresto cardiaco; inizi subito le compressioni toraciche
+      - Nulla di preoccupante se il polso carotideo è presente; prosegui senza avvisare la SOREU
+      - Una PA sistolica inferiore a 120 mmHg; prosegui con la D
+    corretta: 0
+    spiegazione: "Polso radiale assente = PAS **< 80 mmHg**. Al termine della C si comunicano alla SOREU i segni che mettono a rischio la vita e se ne seguono le indicazioni. [@tss-c3:9] [@2.1:44]"
+    ripasso: valutazione-abcde-medico#pressione-arteriosa
+
+  # --- Ictus e TIA ---
+  - id: sse2a-012
+    livello: base
+    domanda: Che cosa distingue il TIA dall'ictus?
+    opzioni:
+      - Nel TIA segni e sintomi scompaiono entro 24 ore
+      - Nel TIA segni e sintomi scompaiono entro 72 ore
+      - Il TIA è sempre emorragico, l'ictus sempre ischemico
+      - Nel TIA non c'è ischemia del cervello, ma solo un calo di pressione
+    corretta: 0
+    spiegazione: "Il [[TIA]] è un'ischemia cerebrale **temporanea**, con segni e sintomi che **scompaiono entro 24 ore**; per questo spesso è già regredito all'arrivo dei soccorsi. [@2.1:7,18]"
+    ripasso: ictus-e-tia#definizioni
+
+  - id: sse2a-013
+    livello: numeri
+    domanda: Come si distribuiscono i tipi di ictus?
+    opzioni:
+      - Ischemico 80%, emorragico 15%, non classificabile 5%
+      - Ischemico 50%, emorragico 45%, non classificabile 5%
+      - Ischemico 15%, emorragico 80%, non classificabile 5%
+      - Ischemico 65%, emorragico 30%, non classificabile 5%
+    corretta: 0
+    spiegazione: "L'ictus è **ischemico nell'80%** dei casi, **emorragico nel 15%** e non classificabile nel 5%. [@2.1:9]"
+    ripasso: ictus-e-tia#definizioni
+
+  - id: sse2a-014
+    livello: numeri
+    domanda: Quale posizione occupa l'ictus tra le cause di morte e di disabilità?
+    opzioni:
+      - 3ª causa di morte nel mondo e 1ª causa di disabilità nell'adulto
+      - 1ª causa di morte nel mondo e 3ª causa di disabilità nell'adulto
+      - 2ª causa di morte nel mondo e 2ª causa di disabilità nell'adulto
+      - 1ª causa di morte nel mondo e 1ª causa di disabilità nell'adulto
+    corretta: 0
+    spiegazione: "L'[[ictus]] è la **3ª causa di morte** nel mondo e la **1ª causa di disabilità** nell'adulto, con un'incidenza di 2 casi ogni 1000 abitanti l'anno. [@2.1:8]"
+    ripasso: ictus-e-tia#definizioni
+
+  - id: sse2a-015
+    livello: base
+    domanda: Nell'ictus ischemico da embolia, dove si forma il coagulo che chiude l'arteria?
+    opzioni:
+      - In un altro punto del circolo, da cui viaggia fino al cervello
+      - Nel punto stesso in cui l'arteria si chiude, di solito su una placca
+      - Non c'è coagulo, perché l'arteria cerebrale si rompe
+      - Nelle vene del collo, per il ristagno di sangue
+    corretta: 0
+    spiegazione: "Nell'**embolia** il coagulo nasce altrove e viaggia fino al cervello; nella **trombosi** si forma nel punto stesso in cui l'arteria si chiude. La rottura dell'arteria è l'ictus **emorragico**. [@2.1:9-13]"
+    ripasso: ictus-e-tia#i-tipi-di-ictus
+
+  - id: sse2a-016
+    livello: esame
+    domanda: Quale di queste prove NON fa parte della scala di Cincinnati (CPSS)?
+    opzioni:
+      - Controllo del diametro e della reattività delle pupille
+      - Sorridere o mostrare i denti per valutare la mimica
+      - Chiudere gli occhi e sollevare le braccia per vedere se una cade
+      - Ripetere una frase per valutare il linguaggio
+    corretta: 0
+    spiegazione: "La [[CPSS]] valuta **mimica facciale**, **sollevamento delle braccia** a occhi chiusi e **linguaggio**. Le pupille non ne fanno parte. [@2.1:20-22]"
+    ripasso: ictus-e-tia#la-scala-di-cincinnati-cpss
+
+  - id: sse2a-017
+    livello: esame
+    domanda: Un paziente sorride in modo simmetrico e ripete correttamente la frase, ma a occhi chiusi il braccio destro gli cade. Come interpreti la scala di Cincinnati?
+    opzioni:
+      - Positiva, perché basta una sola prova anormale
+      - Negativa, perché servono almeno due prove anormali
+      - Negativa, perché il linguaggio è normale
+      - Dubbia, da ripetere dopo 15 minuti prima di avvisare la SOREU
+    corretta: 0
+    spiegazione: "La CPSS è **positiva anche con una sola prova anormale**: qui c'è un segno di lato al sollevamento delle braccia, quindi sospetto ictus. [@2.1:20-22,25]"
+    ripasso: ictus-e-tia#la-scala-di-cincinnati-cpss
+
+  - id: sse2a-018
+    livello: base
+    domanda: Che cosa significa emiparesi?
+    opzioni:
+      - Calo di forza dell'arto superiore e inferiore dello stesso lato
+      - Assenza di forza dell'arto superiore e inferiore dello stesso lato
+      - Calo di forza di entrambi gli arti inferiori
+      - Calo di forza di un solo arto
+    corretta: 0
+    spiegazione: "[[Paresi]] è il **calo** di forza, plegia l'**assenza**; *emi-* indica arto superiore e inferiore **dello stesso lato**. Gli arti inferiori sono *para-*, un solo arto *mono-*. [@2.1:23]"
+    ripasso: ictus-e-tia#terminologia-neurologica
+
+  - id: sse2a-019
+    livello: base
+    domanda: Nel sospetto ictus, qual è il dato più importante da raccogliere con l'anamnesi?
+    opzioni:
+      - L'ora esatta di inizio dei sintomi
+      - Quantità e tipo dell'ultimo pasto
+      - Le allergie ai farmaci
+      - Da quanto tempo il paziente è cardiopatico
+    corretta: 0
+    spiegazione: "L'ictus è una **patologia tempo-dipendente**: il dato chiave è l'**ora esatta di inizio** dei sintomi, insieme a se è il primo episodio. [@2.1:24]"
+    ripasso: ictus-e-tia#ampia-le-domande-chiave
+
+  - id: sse2a-020
+    livello: esame
+    domanda: "Assistenza al paziente con sospetto ictus: tutte le azioni sono corrette TRANNE:"
+    opzioni:
+      - Fargli bere un sorso d'acqua per verificare se deglutisce
+      - Somministrare ossigeno, salvo diverse indicazioni della SOREU
+      - Proteggere gli arti paretici dagli urti
+      - Fare attenzione al vomito e proteggere le vie aeree
+    corretta: 0
+    spiegazione: "Il paziente con ictus può avere **disturbi della deglutizione** e vomitare: le vie aeree sono a rischio. L'assistenza prevede ossigeno, protezione degli arti paretici, attenzione al vomito e monitoraggio dei parametri. [@2.1:16,27]"
+    ripasso: ictus-e-tia#assistenza
+
+  - id: sse2a-021
+    livello: base
+    domanda: Con una scala di Cincinnati positiva, verso quale ospedale porta il percorso ictus?
+    opzioni:
+      - Un ospedale idoneo al trattamento trombolitico
+      - Un ospedale con emodinamica per l'angioplastica
+      - Il pronto soccorso più vicino, qualunque sia
+      - Un centro traumi di secondo livello
+    corretta: 0
+    spiegazione: "Nel percorso ictus, dopo la conferma del sospetto, il paziente va all'**ospedale idoneo al trattamento trombolitico**. L'emodinamica è la destinazione del percorso per l'infarto. [@2.1:25,34]"
+    ripasso: ictus-e-tia#il-percorso-ictus
+
+  # --- Dolore toracico e infarto ---
+  - id: sse2a-022
+    livello: numeri
+    domanda: Quale quota dei decessi annui in Italia è dovuta alle cardiopatie ischemiche?
+    opzioni:
+      - Il 44%, prima causa di morte
+      - Il 24%, seconda causa di morte
+      - Il 14%, terza causa di morte
+      - Il 64%, prima causa di morte
+    corretta: 0
+    spiegazione: "Le cardiopatie ischemiche sono la **prima causa di morte in Italia**, con il **44%** dei decessi annui. [@2.1:3]"
+    ripasso: infarto-miocardico-acuto#il-dolore-toracico
+
+  - id: sse2a-023
+    livello: base
+    domanda: Che cos'è l'infarto miocardico acuto?
+    opzioni:
+      - La morte delle cellule del miocardio di una zona del cuore rimasta senza sangue per un certo tempo
+      - Un dolore toracico dovuto a uno spasmo temporaneo delle coronarie che non lascia danni al cuore
+      - La rottura di un'arteria coronaria con versamento di sangue nel pericardio che comprime il cuore dall'esterno
+      - Un'alterazione del ritmo cardiaco che riduce la portata del cuore e la perfusione degli organi
+    corretta: 0
+    spiegazione: "L'[[IMA]] è la **necrosi** delle cellule del miocardio di una zona del cuore che, per un certo periodo, non riceve sangue. [@2.1:28]"
+    ripasso: infarto-miocardico-acuto#definizione
+
+  - id: sse2a-024
+    livello: numeri
+    domanda: Secondo la lezione, in quale area si può presentare il dolore di origine cardiaca?
+    opzioni:
+      - Davanti dalla base del naso all'ombelico, dietro dalla nuca alla 12ª vertebra
+      - Davanti dal mento al processo xifoideo, dietro tra le due scapole
+      - Davanti dalle clavicole all'ombelico, dietro dalla nuca alla 5ª vertebra
+      - Davanti dalla base del naso allo sterno, dietro dalla 7ª alla 12ª vertebra
+    corretta: 0
+    spiegazione: "Il fastidio o dolore cardiaco può interessare l'area **dalla base del naso all'ombelico** e, dietro, **dalla nuca alla 12ª vertebra**; può irradiarsi a collo, mandibola, spalle e braccio sinistro. [@2.1:29]"
+    ripasso: infarto-miocardico-acuto#sede-e-irradiazione
+
+  - id: sse2a-025
+    livello: esame
+    domanda: Un uomo di 58 anni riferisce un dolore "a morsa" alla parte alta dell'addome, comparso mentre guardava la televisione. Cosa ne pensi?
+    opzioni:
+      - Può essere di origine cardiaca, quindi lo valuti anche come un possibile infarto
+      - È di origine gastrica, perché il dolore dell'infarto è sempre toracico
+      - L'infarto è escluso, perché il dolore è comparso a riposo
+      - L'infarto è escluso, perché il dolore non si irradia al braccio sinistro
+    corretta: 0
+    spiegazione: "Un dolore **epigastrico** vissuto come oppressione o morsa può essere **cardiaco**, e il dolore dell'infarto può comparire **anche a riposo**; l'irradiazione è possibile, non obbligatoria. [@2.2:26] [@2.1:29-30]"
+    ripasso: infarto-miocardico-acuto#sede-e-irradiazione
+
+  - id: sse2a-026
+    livello: esame
+    domanda: Quale di queste domande NON è tra quelle che la lezione indica per il paziente con dolore toracico?
+    opzioni:
+      - Ha fumato nelle ultime ore?
+      - È comparso a riposo o dopo uno sforzo?
+      - È la prima volta?
+      - Quanto è intenso, su una scala da 1 a 10?
+    corretta: 0
+    spiegazione: "Le domande indicate sono: da quanto tempo, a riposo o dopo sforzo, se è la prima volta, se è cardiopatico, quali farmaci ha preso e l'intensità **da 1 a 10**. [@2.1:31]"
+    ripasso: infarto-miocardico-acuto#le-domande-da-fare
+
+  - id: sse2a-027
+    livello: base
+    domanda: Nel sospetto infarto, che cosa valuti in particolare nella C?
+    opzioni:
+      - Polso, FC e ritmo, pressione arteriosa, colorito e temperatura della cute
+      - Saturazione, frequenza respiratoria, rumori respiratori e uso dei muscoli accessori
+      - Stato di coscienza con l'AVPU, pupille e scala di Cincinnati
+      - Caratteristiche del dolore, irradiazione e anamnesi con l'AMPIA
+    corretta: 0
+    spiegazione: "Nel sospetto infarto la C comprende **polso, FC e ritmo, PA, colorito e temperatura**; la saturimetria è in B, il dolore e l'AMPIA in E. [@2.1:33]"
+    ripasso: infarto-miocardico-acuto#valutazione
+
+  - id: sse2a-028
+    livello: esame
+    domanda: Quale di questi NON è un fattore di rischio cardiovascolare indicato dal corso?
+    opzioni:
+      - Pressione bassa
+      - Diabete
+      - Stress
+      - Storia familiare
+    corretta: 0
+    spiegazione: "I fattori di rischio indicati sono fumo, **pressione alta**, colesterolo alto, poca attività fisica, obesità, diabete, stress e storia familiare. [@2.1:5]"
+    ripasso: infarto-miocardico-acuto#il-problema-di-fondo-l-aterosclerosi
+
+  # --- Shock ---
+  - id: sse2a-029
+    livello: base
+    domanda: Come si definisce lo shock?
+    opzioni:
+      - Uno squilibrio tra il sangue che arriva ai tessuti e il loro fabbisogno di ossigeno e nutrienti
+      - Una pressione sistolica inferiore a 90 mmHg, qualunque ne sia la causa e la durata
+      - Una breve perdita di coscienza dovuta a un calo improvviso e transitorio della perfusione del cervello
+      - Una grave reazione allergica che coinvolge più apparati e può portare alla morte
+    corretta: 0
+    spiegazione: "Lo [[shock]] è lo squilibrio tra la quantità di sangue che arriva ai tessuti e il loro **fabbisogno di ossigeno e sostanze nutritive**; se dura porta a danni irreversibili e alla morte. [@2.1:35]"
+    ripasso: shock#definizione
+
+  - id: sse2a-030
+    livello: esame
+    domanda: Quale di questi quadri corrisponde a uno shock scompensato?
+    opzioni:
+      - FC 130, PA 80, cute pallida, fredda e sudata, paziente agitato
+      - FC 110, PA normale, cute normale, paziente ansioso
+      - FC 45, PA non rilevabile, cute cianotica e marezzata, paziente soporoso
+      - FC 90, PA 150, cute calda e arrossata, paziente vigile
+    corretta: 0
+    spiegazione: "Scompensato: FC **> 120**, PA **< 90**, cute pallida, fredda e sudata, agitazione o confusione. FC 100-120 con PA normale è il compensato; bradicardia, PA non rilevabile e cute [[marezzatura|marezzata]] sono lo shock grave. [@2.1:37]"
+    ripasso: shock#riconoscerlo-la-tabella-dei-parametri
+
+  - id: sse2a-031
+    livello: esame
+    domanda: In un paziente in shock la FC passa da 130 a 45 battiti al minuto, il polso radiale scompare e il paziente diventa soporoso. Come interpreti il cambiamento?
+    opzioni:
+      - È l'evoluzione verso lo shock grave, lo stadio più avanzato
+      - È un miglioramento, perché la frequenza torna verso la norma
+      - È il ritorno allo shock compensato
+      - È l'effetto atteso della posizione supina
+    corretta: 0
+    spiegazione: "La **bradicardia < 50** con polso radiale assente e sopore è il segno dello **shock grave**: nello shock non è mai un miglioramento. [@2.1:37]"
+    ripasso: shock#riconoscerlo-la-tabella-dei-parametri
+
+  - id: sse2a-032
+    livello: esame
+    domanda: "Assistenza al paziente in shock: tutte le azioni sono corrette TRANNE:"
+    opzioni:
+      - Metterlo semiseduto per aiutarlo a respirare
+      - Somministrare ossigeno
+      - Cercare le cause, in particolare le emorragie
+      - Contattare tempestivamente la SOREU
+    corretta: 0
+    spiegazione: "Nello shock si somministra ossigeno, si cercano le cause (emorragie), si mette il paziente in **posizione supina**, si monitorano i parametri e si contatta subito la SOREU. [@2.1:38]"
+    ripasso: shock#assistenza
+
+  # --- Aritmie ---
+  - id: sse2a-033
+    livello: numeri
+    domanda: Quale abbinamento delle soglie di bradicardia è corretto?
+    opzioni:
+      - Sotto 60 bpm nella valutazione ABCDE, sotto 50 bpm nella lezione sulle aritmie
+      - Sotto 50 bpm nella valutazione ABCDE, sotto 60 bpm nella lezione sulle aritmie
+      - Sotto 60 bpm sia nella valutazione ABCDE sia nella lezione sulle aritmie
+      - Sotto 40 bpm nella valutazione ABCDE, sotto 50 bpm nella lezione sulle aritmie
+    corretta: 0
+    spiegazione: "In ABCDE la [[bradicardia]] è FC **< 60** (tachicardia > 100); la lezione sulle aritmie usa **< 50** (tachicardia > 120), le stesse soglie della tabella dello shock. [@abcde-note:5] [@2.1:39]"
+    ripasso: aritmie#soglie-attenzione-al-contesto
+
+  - id: sse2a-034
+    livello: base
+    domanda: Quale affermazione sulle bradicardie è corretta?
+    opzioni:
+      - Sono spesso associate a episodi sincopali e possono essere normali negli sportivi
+      - Sono patologiche anche negli sportivi e vanno sempre segnalate alla SOREU come grave aritmia
+      - Danno raramente sincopi e non possono causare dolore toracico
+      - Sono causate soprattutto da tensione emotiva, affaticamento e menopausa
+    corretta: 0
+    spiegazione: "Le bradicardie si associano spesso a **sincopi**, possono dare **dolore toracico**, possono dipendere dai farmaci per il ritmo e sono **fisiologiche negli sportivi**. Tensione emotiva e affaticamento sono cause di **tachicardia**. [@2.1:41-42]"
+    ripasso: aritmie#aritmie-lente-le-bradicardie
+
+  - id: sse2a-035
+    livello: base
+    domanda: Secondo la lezione sulle aritmie veloci, qual è l'aritmia più nota?
+    opzioni:
+      - La fibrillazione atriale
+      - La fibrillazione ventricolare
+      - La tachicardia ventricolare senza polso
+      - La bradicardia sinusale
+    corretta: 0
+    spiegazione: "Tra le tachicardie la lezione indica come aritmia più nota la **[[fibrillazione atriale]]**; il paziente avverte di solito **palpitazioni**. [@2.1:41]"
+    ripasso: aritmie#aritmie-veloci-le-tachicardie
+
+  # --- Convulsioni ---
+  - id: sse2a-036
+    livello: base
+    domanda: "In quale fase della crisi convulsiva si osservano perdita di coscienza, morsicatura della lingua, corpo rigido e apnea, per circa 30 secondi?"
+    opzioni:
+      - Fase tonica
+      - Fase clonica generalizzata
+      - Fase clonica parziale
+      - Fase post-critica
+    corretta: 0
+    spiegazione: "La fase **tonica** (circa 30 secondi) ha corpo rigido, apnea e morsicatura della lingua. La **clonica** ha contrazioni violente e ritmiche; la **post-critica** confusione, sopore, cefalea e agitazione. [@2.3:49]"
+    ripasso: convulsioni#le-fasi-della-crisi
+
+  - id: sse2a-037
+    livello: esame
+    domanda: Arrivate mentre un ragazzo ha una crisi convulsiva generalizzata, con contrazioni violente degli arti. Cosa fate?
+    opzioni:
+      - Non lo trattenete, allontanate gli oggetti pericolosi e osservate la crisi per descriverla
+      - Gli bloccate con decisione braccia e gambe per evitare che si ferisca urtando gli oggetti intorno
+      - Gli inserite un oggetto rigido tra i denti per evitare che si morda la lingua
+      - Lo mettete subito seduto e lo sostenete per favorire il respiro durante la crisi
+    corretta: 0
+    spiegazione: "In fase critica il paziente **non va trattenuto**: si allontanano oggetti e pericoli e si osservano durata, sede e simmetria delle contrazioni da riferire. [@2.3:50,52]"
+    ripasso: convulsioni#assistenza
+
+  - id: sse2a-038
+    livello: esame
+    domanda: La crisi convulsiva è terminata e il bambino è confuso e soporoso. Cosa fate?
+    opzioni:
+      - ABCDE, ossigeno ad alti flussi, monitoraggio dei parametri, dell'AVPU e delle pupille
+      - Lo lasciate riposare senza ossigeno né monitoraggio, perché la crisi è finita e respira bene
+      - Lo scuotete con energia e lo chiamate forte finché non torna completamente vigile
+      - Lo fate alzare e camminare con il vostro aiuto per verificare che abbia recuperato
+    corretta: 0
+    spiegazione: "In **fase post-critica**: ABCDE, **O2 ad alti flussi**, monitoraggio delle funzioni vitali e dello stato neurologico (**AVPU e diametro delle pupille**). La ripresa della coscienza può non essere immediata. [@2.3:50,52] [@ped-approfondimenti:8]"
+    ripasso: convulsioni#assistenza
+
+  - id: sse2a-039
+    livello: numeri
+    domanda: Oltre quale durata una crisi convulsiva si definisce stato di male epilettico?
+    opzioni:
+      - Oltre 30 minuti
+      - Oltre 5 minuti
+      - Oltre 15 minuti
+      - Oltre 60 minuti
+    corretta: 0
+    spiegazione: "Lo [[stato di male epilettico]] è una crisi **> 30 minuti**, o con attacchi rapidamente subentranti o senza ripresa neurologica. Di solito una crisi dura **meno di 10-15 minuti**. [@ped-approfondimenti:7]"
+    ripasso: convulsioni#definizioni
+
+  - id: sse2a-040
+    livello: numeri
+    domanda: Quali sono età e durata tipiche delle convulsioni febbrili?
+    opzioni:
+      - Da 6 mesi a 5 anni, di solito meno di 5 minuti
+      - Da 0 a 6 mesi, di solito 10-15 minuti
+      - Da 5 a 12 anni, di solito meno di 5 minuti
+      - Da 1 a 3 anni, di solito più di 30 minuti
+    corretta: 0
+    spiegazione: "Le convulsioni febbrili colpiscono i bambini **da 6 mesi a 5 anni**, durano di solito **meno di 5 minuti** e compaiono per lo più nelle prime **24-36 ore** di febbre. [@2.3:53-54]"
+    ripasso: convulsioni#le-convulsioni-febbrili

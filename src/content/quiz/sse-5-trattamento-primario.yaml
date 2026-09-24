@@ -8,9 +8,9 @@ domande:
     domanda: Con quale frequenza vanno eseguite le compressioni toraciche esterne nell'adulto?
     opzioni:
       - Almeno 100 e non più di 120 al minuto
-      - Tra 60 e 80 al minuto
-      - Tra 80 e 100 al minuto
-      - Più di 120 al minuto
+      - Almeno 60 e non più di 80 al minuto
+      - Almeno 80 e non più di 100 al minuto
+      - Almeno 120 e non più di 140 al minuto
     corretta: 0
     spiegazione: La frequenza delle CTE è **almeno 100 e non più di 120** al minuto, uguale a tutte le età. [@5.1:27] [@5.2:17]
     ripasso: blsd#le-compressioni-toraciche-esterne-cte
@@ -31,10 +31,10 @@ domande:
     livello: base
     domanda: In un bambino in arresto cardiaco, con due soccorritori, qual è il rapporto tra compressioni e ventilazioni?
     opzioni:
-      - 15:2
-      - 30:2
-      - 5:1
-      - 3:1
+      - "15:2"
+      - "30:2"
+      - "5:1"
+      - "3:1"
     corretta: 0
     spiegazione: Nel bambino e nell'infante il rapporto è **15:2**; nell'adulto è 30:2. Il 3:1 è quello della rianimazione del neonato alla nascita. [@5.2:38] [@5.1:46] [@3:27]
     ripasso: pblsd#confronto-adulto-bambino-infante
@@ -104,9 +104,9 @@ domande:
     domanda: Siete l'equipaggio di un MSB impegnato in una RCP con DAE e la SOREU vi comunica che non arriverà nessun mezzo avanzato. Come procedete?
     opzioni:
       - Completate 3 analisi, poi comunicate con la SOREU e seguite le sue indicazioni sull'uso del DAE
-      - Continuate l'algoritmo del DAE senza limite finché il paziente non si riprende
-      - Sospendete la RCP dopo la prima analisi con "shock non consigliato"
-      - Caricate subito il paziente e proseguite la RCP solo durante il trasporto
+      - Continuate l'algoritmo del DAE senza alcun limite di analisi, finché il paziente non dà segni di ripresa
+      - Sospendete la RCP dopo la prima analisi con "shock non consigliato" e attendete la SOREU
+      - Caricate subito il paziente e proseguite la RCP solo durante il trasporto in ospedale
     corretta: 0
     spiegazione: "Con l'MSB sul posto e **MSA/MSI non in arrivo** si completano **3 analisi**, poi si comunica con la SOREU e se ne seguono le indicazioni. Se l'MSA/MSI è in arrivo, si continua l'algoritmo del DAE fino all'arrivo dell'équipe. [@5.1:48]"
     ripasso: blsd#evoluzione
@@ -116,9 +116,381 @@ domande:
     domanda: "Durante una RCP notate che il paziente ha le pupille dilatate e non reattive alla luce (midriasi fissa). Tutte le affermazioni sono corrette TRANNE:"
     opzioni:
       - Indica un danno cerebrale irreversibile, quindi la RCP va sospesa
-      - Può comparire pochi secondi dopo l'arresto
-      - Può durare ore anche dopo la ripresa del circolo
-      - Non deve ritardare né interrompere la RCP
+      - Può comparire già pochi secondi dopo l'arresto cardiaco
+      - Può durare anche per diverse ore dopo la ripresa del circolo spontaneo
+      - Non deve ritardare l'inizio della RCP né portare a interromperla
     corretta: 0
     spiegazione: "La [[midriasi]] fissa può comparire pochi secondi dopo l'arresto e durare ore anche dopo la ripresa del circolo: **non indica** un danno irreversibile e **non deve ritardare** la RCP. [@blsd-manuale:9-10]"
     ripasso: blsd#la-catena-della-sopravvivenza
+
+  - id: sse5-011
+    livello: base
+    domanda: Nella posizione standard antero-laterale, dove va la placca apicale del DAE?
+    opzioni:
+      - Con il centro sulla linea ascellare media, all'altezza del 5° spazio intercostale
+      - Con il centro sulla linea emiclaveare sinistra, all'altezza del 2° spazio intercostale
+      - Sotto la clavicola sinistra, a lato dello sterno
+      - Al centro della schiena, tra le scapole
+    corretta: 0
+    spiegazione: "Placca **sternale** sotto la clavicola destra accanto allo sterno; placca **apicale** con il centro sulla **linea ascellare media** al **5° spazio intercostale**, circa quattro dita sotto l'ascella. La schiena si usa solo nella posizione antero-posteriore. [@5.1:32] [@blsd-manuale:14,28]"
+    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+
+  - id: sse5-012
+    livello: numeri
+    domanda: Dopo l'erogazione dello shock, quanto può durare al massimo la pausa prima di riprendere le compressioni?
+    opzioni:
+      - Non più di 5 secondi
+      - Non più di 10 secondi
+      - Non più di 20 secondi
+      - Il tempo necessario a verificare il polso centrale
+    corretta: 0
+    spiegazione: "Dopo la scarica le CTE si riprendono **subito**: la pausa **non deve superare i 5 secondi**. I 10 secondi sono il limite per le interruzioni delle CTE in generale. [@blsd-manuale:16] [@5.1:28,38-39]"
+    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+
+  - id: sse5-013
+    livello: base
+    domanda: Un paziente in arresto ha un pacemaker sotto la pelle proprio dove andrebbe una placca. Come si applicano le placche?
+    opzioni:
+      - In posizione alternativa, latero-laterale o antero-posteriore
+      - Nella posizione standard antero-laterale, sopra il dispositivo
+      - "Non si applicano: il DAE è controindicato in chi ha un pacemaker"
+      - Si aspetta l'arrivo del mezzo avanzato prima di defibrillare
+    corretta: 0
+    spiegazione: "Con medicazioni, pacemaker, defibrillatori impiantati o altri dispositivi sottocutanei si usa una **posizione alternativa** (latero-laterale o antero-posteriore): ognuna è accettabile, l'importante è **non ritardare la defibrillazione**. [@5.1:61-62] [@blsd-manuale:24]"
+    ripasso: defibrillatore-dae#placche-problemi-e-posizioni-alternative
+
+  - id: sse5-014
+    livello: esame
+    domanda: "Il soccorritore deve cercare di ridurre l'impedenza transtoracica. Tutte queste azioni vanno in questa direzione TRANNE:"
+    opzioni:
+      - Usare placche più piccole per concentrare la corrente
+      - Radere i peli nella zona delle placche
+      - Asciugare l'acqua presente sul torace
+      - Rispettare i punti di repere per la posizione delle placche
+    corretta: 0
+    spiegazione: "Placche **più grandi** danno impedenza **minore**, non il contrario. Aiutano invece la pelle integra e senza peli, l'assenza di acqua tra le placche (devierebbe la corrente) e la posizione corretta. [@blsd-manuale:27-28]"
+    ripasso: defibrillatore-dae#l-impedenza-transtoracica
+
+  - id: sse5-016
+    livello: esame
+    domanda: Durante l'analisi il DAE segnala "rilevato movimento". Cosa fai?
+    opzioni:
+      - Controlli se qualcuno comprime o tocca i cavi, o se ci sono interferenze, e rimuovi la causa
+      - Spegni e riaccendi il DAE, così l'analisi riparte da capo senza disturbi
+      - Stacchi le placche e le riapplichi in posizione antero-posteriore, poi rianalizzi
+      - Premi comunque il tasto shock, perché l'analisi è già partita e il DAE è carico
+    corretta: 0
+    spiegazione: "L'analisi è disturbata da CTE, respiro agonico, ventilazioni, contatti e **interferenze radio**. Al messaggio \"rilevato movimento\" si cerca subito la causa e la si rimuove; in generale, con allarmi o malfunzionamenti si continua la RCP e si elimina la causa se possibile. [@pblsd-manuale:18] [@blsd-manuale:26-27] [@blsd-skill:1]"
+    ripasso: defibrillatore-dae#cosa-disturba-l-analisi
+
+  - id: sse5-017
+    livello: base
+    domanda: Perché prima dello shock bisogna allontanare la fonte di ossigeno?
+    opzioni:
+      - Perché l'ossigeno vicino alla scarica può causare un'esplosione o un incendio
+      - Perché l'ossigeno aumenta l'impedenza del torace e rende lo shock inefficace
+      - Perché con l'ossigeno collegato il DAE non riesce ad analizzare il ritmo
+      - Perché la scarica può danneggiare la bombola e il riduttore di pressione collegato
+    corretta: 0
+    spiegazione: "L'**ossigeno** a contatto con la scarica elettrica può favorire **esplosione o incendio**: va sempre allontanato prima dello shock. [@blsd-manuale:15] [@5.1:36]"
+    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+
+  - id: sse5-018
+    livello: base
+    domanda: Che differenza c'è tra un DAE "a tre tasti" e uno "a due tasti"?
+    opzioni:
+      - Nel DAE a tre tasti l'analisi si avvia con il tasto ANALIZZA, in quello a due tasti parte da sola
+      - Nel DAE a tre tasti lo shock parte da solo dopo la carica, in quello a due tasti lo eroga l'operatore
+      - Il DAE a tre tasti si usa sugli adulti, quello a due tasti sui bambini sopra l'anno
+      - Il DAE a tre tasti ha l'attenuatore di energia, quello a due tasti non lo prevede
+    corretta: 0
+    spiegazione: "A tre tasti: ON → **ANALIZZA** → SHOCK; a due tasti: ON → placche e connettore → **analisi automatica** → SHOCK. In entrambi il DAE si carica da solo, ma la scarica parte **solo se l'operatore preme** il tasto. [@blsd-manuale:26]"
+    ripasso: defibrillatore-dae#com-e-fatto
+
+  - id: sse5-019
+    livello: esame
+    domanda: "Bambino di 3 anni in arresto: avete solo le placche da adulto e sul suo torace non riuscite a tenerle distanti almeno 3 cm. Cosa fate?"
+    opzioni:
+      - Usate la posizione antero-posteriore, una placca al centro del torace e l'altra sulla schiena
+      - Applicate le placche nella posizione standard, sovrapponendole in parte sul torace
+      - "Rinunciate al DAE perché mancano le placche pediatriche e proseguite soltanto con la RCP 15:2"
+      - Applicate entrambe le placche sulla schiena, una per lato, sotto le scapole
+    corretta: 0
+    spiegazione: "Le placche da adulto sul bambino sono consentite **solo se mancano quelle pediatriche**; tra le placche servono **almeno 3 cm**. Se non ci stanno, o con placche da adulto su un torace piccolo, si usa la posizione **antero-posteriore**. [@5.2:22-23] [@tss-g1:59] [@tss-manuale-blsd:27]"
+    ripasso: pblsd#il-dae-nel-bambino
+
+  - id: sse5-020
+    livello: numeri
+    domanda: Fino a quale età e peso sono indicate le placche pediatriche del DAE?
+    opzioni:
+      - Fino a 8 anni e 25 kg
+      - Fino a 1 anno e 10 kg
+      - Fino a 12 anni e 40 kg
+      - Fino a 5 anni e 20 kg
+    corretta: 0
+    spiegazione: "Le **placche pediatriche** sono indicate fino a **8 anni** e **25 kg**; sopra l'anno si usano appena disponibili, con placche pediatriche o [[attenuatore di energia|attenuatori]]. [@5.2:23] [@tss-g1:57]"
+    ripasso: pblsd#il-dae-nel-bambino
+
+  - id: sse5-021
+    livello: esame
+    domanda: Quale gruppo di segni indica un'ostruzione GRAVE delle vie aeree in un adulto?
+    opzioni:
+      - Cianosi, non tossisce, non riesce a parlare, si afferra il collo con le mani
+      - Subcianosi, tosse ripetuta, sibili, risponde a fatica alla domanda "stai soffocando?"
+      - Tosse insistente, voce rauca, lacrimazione, respiro rumoroso tra un colpo di tosse e l'altro
+      - Viso arrossato, tosse forte, agitazione, riesce a dire poche parole
+    corretta: 0
+    spiegazione: "Ostruzione **grave**: [[cianosi]], **non tossisce**, **non parla**, **segnale universale di soffocamento** (mani al collo), pessimo passaggio d'aria. Subcianosi, tosse e sibili con capacità di rispondere indicano un'ostruzione **moderata**. [@5.3:4,6] [@blsd-manuale:34]"
+    ripasso: ostruzione-vie-aeree#classificazione
+
+  - id: sse5-022
+    livello: esame
+    domanda: "Un adulto con un corpo estraneo è cosciente, ma la tosse è debole e inefficace, c'è stridore inspiratorio e il respiro diventa sempre più difficile. Come lo tratti?"
+    opzioni:
+      - Come un'ostruzione grave, iniziando le manovre di disostruzione
+      - Come un'ostruzione moderata, incoraggiandolo a tossire e osservandolo
+      - Lo fai sdraiare e inizi subito la RCP
+      - Aspetti che perda coscienza prima di intervenire
+    corretta: 0
+    spiegazione: "Un'ostruzione moderata con **scambi insufficienti** (tosse debole e inefficace, [[stridore]] inspiratorio, respiro sempre più difficile, eventuale cianosi) va **trattata come un'ostruzione grave**. [@blsd-manuale:34]"
+    ripasso: ostruzione-vie-aeree#classificazione
+
+  - id: sse5-023
+    livello: base
+    domanda: Quali manovre si alternano in un infante (sotto l'anno) cosciente con ostruzione grave?
+    opzioni:
+      - 5 colpi dorsali e 5 compressioni toraciche con due dita
+      - 5 colpi dorsali e 5 compressioni addominali (manovra di Heimlich)
+      - 15 compressioni toraciche e 2 ventilazioni
+      - Solo colpi dorsali, finché il corpo estraneo non esce
+    corretta: 0
+    spiegazione: "Nell'[[infante]] si alternano **5 colpi dorsali** (prono sull'avambraccio) e **5 compressioni toraciche** con due dita sulla metà inferiore dello sterno. Le compressioni addominali si fanno solo sopra l'anno. [@5.4:6-8] [@tss-skill-ostr-infante:1]"
+    ripasso: ostruzione-vie-aeree#infante-sotto-l-anno-cosciente-con-ostruzione-grave
+
+  - id: sse5-024
+    livello: base
+    domanda: Perché nell'infante con ostruzione grave non si fanno le compressioni addominali?
+    opzioni:
+      - Perché possono danneggiare il fegato, relativamente grande e poco protetto
+      - Perché l'addome dell'infante è troppo piccolo per posizionare correttamente il pugno
+      - Perché spingerebbero il corpo estraneo più in profondità nei bronchi
+      - Perché nell'infante il diaframma non trasmette la pressione al torace
+    corretta: 0
+    spiegazione: "Nell'infante le compressioni addominali **non si fanno**: possono danneggiare il **fegato**, che è relativamente grande e poco protetto. La [[manovra di Heimlich]] si usa solo sopra l'anno. [@pblsd-manuale:29-30]"
+    ripasso: ostruzione-vie-aeree#infante-sotto-l-anno-cosciente-con-ostruzione-grave
+
+  - id: sse5-025
+    livello: numeri
+    domanda: In quale fascia di età l'ostruzione delle vie aeree da corpo estraneo ha la massima incidenza?
+    opzioni:
+      - Tra i 6 mesi e i 2 anni
+      - Nelle prime settimane di vita
+      - Tra i 3 e i 6 anni
+      - Tra gli 8 e i 12 anni
+    corretta: 0
+    spiegazione: L'incidenza è **massima tra i 6 mesi e i 2 anni**; nei piccoli i corpi estranei sono soprattutto pezzi di giocattolo o cibo, durante il gioco o i pasti. [@5.4:3] [@pblsd-manuale:29]
+    ripasso: ostruzione-vie-aeree#cause-e-quando-sospettarla
+
+  - id: sse5-026
+    livello: base
+    domanda: Nell'adulto, qual è la causa più comune di ostruzione delle vie aeree da corpo estraneo?
+    opzioni:
+      - Il bolo di carne
+      - Le protesi dentarie mobili
+      - I piccoli oggetti tenuti in bocca, come tappi o monete
+      - Le caramelle dure
+    corretta: 0
+    spiegazione: "Nell'adulto la causa più comune è il **bolo di carne**, di solito **durante i pasti**. Il corpo estraneo va sospettato in chi smette all'improvviso di respirare, diventa cianotico e perde coscienza senza motivo evidente. [@blsd-manuale:33]"
+    ripasso: ostruzione-vie-aeree#cause-e-quando-sospettarla
+
+  - id: sse5-027
+    livello: esame
+    domanda: "Un bambino di 4 anni con ostruzione grave perde coscienza durante le manovre. Qual è la sequenza corretta?"
+    opzioni:
+      - "Piano rigido, 15 compressioni, ispezione della bocca, 2 insufflazioni e, se non entrano, RCP 15:2"
+      - "Piano rigido, 30 compressioni, ispezione della bocca, 2 insufflazioni e, se non entrano, RCP 30:2"
+      - Posizione laterale di sicurezza e ricerca del corpo estraneo con le dita, alla cieca
+      - A terra si continua ad alternare colpi interscapolari e compressioni addominali
+    corretta: 0
+    spiegazione: "Bambino o infante che diventa incosciente: **piano rigido**, **15 CTE**, **guarda in bocca** e togli il corpo estraneo visibile, **2 insufflazioni** e, se non entrano, **RCP 15:2**, seguendo le indicazioni della SOREU. Nell'adulto invece si parte con 30 CTE. [@5.4:12] [@tss-g2:19]"
+    ripasso: ostruzione-vie-aeree#bambino-e-infante
+
+  - id: sse5-028
+    livello: esame
+    domanda: "Un adulto con ostruzione da corpo estraneo è diventato incosciente ed è supino a terra. Tutte queste affermazioni sono corrette TRANNE:"
+    opzioni:
+      - Da supino, la manovra di Heimlich è la tecnica più efficace
+      - Le compressioni toraciche sono efficaci quanto la manovra di Heimlich e meno dannose
+      - I corpi estranei visibili si rimuovono con pinza o aspiratore; le dita solo se questi mancano
+      - I segni di circolo si cercano solo quando si riesce a ventilare in modo efficace
+    corretta: 0
+    spiegazione: "Nel paziente **incosciente e supino** la manovra di Heimlich **non è raccomandata**: le **compressioni toraciche** sono altrettanto efficaci e meno dannose. [@blsd-manuale:35-36]"
+    ripasso: ostruzione-vie-aeree#se-la-vittima-perde-coscienza
+
+  - id: sse5-029
+    livello: base
+    domanda: In quale situazione il materiale del corso vieta di mettere una vittima incosciente che respira normalmente in posizione laterale di sicurezza?
+    opzioni:
+      - Se ha subito un trauma
+      - Se ha vomitato
+      - Se è un anziano
+      - Se è una donna in gravidanza
+    corretta: 0
+    spiegazione: "La [[PLS]] serve alla vittima incosciente con respiro normale, ma **non si usa in caso di trauma**. [@tss-manuale-blsd:13] [@tss-g1:46]"
+    ripasso: blsd#incosciente-ma-con-respiro-normale-la-pls
+
+  - id: sse5-030
+    livello: base
+    domanda: Nella catena della sopravvivenza del manuale pediatrico, qual è il primo anello?
+    opzioni:
+      - La prevenzione e l'immediato riconoscimento dell'arresto
+      - La defibrillazione precoce
+      - L'attivazione immediata del sistema di emergenza con il 112/118
+      - Il supporto vitale avanzato
+    corretta: 0
+    spiegazione: "Nel bambino il **primo anello** è la **prevenzione** (con l'immediato riconoscimento dell'arresto): eliminare le situazioni pericolose riduce la mortalità. Nell'adulto il primo anello è il riconoscimento con l'attivazione del sistema di emergenza. [@pblsd-manuale:10-12] [@5.1:9]"
+    ripasso: pblsd#la-catena-della-sopravvivenza-pediatrica
+
+  - id: sse5-031
+    livello: numeri
+    domanda: "Ventili con pallone autoespandibile collegato all'ossigeno, ma senza reservoir. Quale concentrazione di ossigeno ottieni, secondo le slide?"
+    opzioni:
+      - Circa il 60%
+      - Circa il 21%
+      - Circa il 40%
+      - Circa il 90%
+    corretta: 0
+    spiegazione: "Aria ambiente **21%**, pallone con ossigeno **senza reservoir 60%**, **con reservoir 90%** (il manuale dice 90-100%). Per questo si usa sempre il [[reservoir]]. [@5.1:44] [@tss-g1:34] [@blsd-manuale:18]"
+    ripasso: blsd#vie-aeree-e-ventilazioni
+
+  - id: sse5-032
+    livello: base
+    domanda: Come si sceglie la misura della cannula orofaringea?
+    opzioni:
+      - Misurando la distanza tra l'angolo della bocca e il lobo dell'orecchio
+      - Misurando la distanza tra la punta del naso e il margine della mandibola
+      - Misurando la distanza tra gli incisivi e l'angolo della mandibola
+      - In base al peso e all'età del paziente, con una tabella
+    corretta: 0
+    spiegazione: "La [[cannula orofaringea]] si misura **dall'angolo della bocca al lobo dell'orecchio**: una cannula troppo lunga o troppo corta ingombra le vie aeree. [@blsd-manuale:23] [@5.2:48]"
+    ripasso: blsd#ventilazione-difficile-la-cannula-orofaringea
+
+  - id: sse5-033
+    livello: esame
+    domanda: Durante la RCP di un bambino posizionate la cannula orofaringea, ma provoca conati di vomito. Cosa fate?
+    opzioni:
+      - La togliete subito e non riprovate
+      - La spingete più a fondo, così supera il riflesso
+      - La togliete e riprovate con una misura più grande
+      - La lasciate e aspirate il vomito se compare
+    corretta: 0
+    spiegazione: "Se la cannula provoca **riflessi faringei** va **tolta subito, senza altri tentativi**; se il bambino la espelle da solo non va reinserita. Si usa solo in pazienti **incoscienti** e non deve ritardare le CTE. [@pblsd-manuale:26-27] [@5.2:48]"
+    ripasso: pblsd#particolarita
+
+  - id: sse5-034
+    livello: numeri
+    domanda: Nella RCP dell'adulto, quanto deve durare ogni ventilazione e quale volume si insuffla?
+    opzioni:
+      - 1 secondo, 500-600 ml
+      - 1 secondo, 1000-1200 ml
+      - 3 secondi, 500-600 ml
+      - 2 secondi, 200-300 ml
+    corretta: 0
+    spiegazione: "Nell'adulto si fanno **2 ventilazioni** di **1 secondo** ciascuna, con flusso lento e progressivo e un volume che basta a sollevare il torace, **500-600 ml**. [@5.1:42] [@blsd-manuale:17]"
+    ripasso: blsd#vie-aeree-e-ventilazioni
+
+  - id: sse5-035
+    livello: base
+    domanda: Quali sono le conseguenze di ventilazioni con volumi eccessivi o troppo brusche?
+    opzioni:
+      - Aria nello stomaco, con rischio di vomito, e più pressione nel torace, con meno sangue al cuore
+      - Nessuna, purché il paziente sia intubato e ventilato dal medico
+      - Una migliore ossigenazione del sangue, utile soprattutto nei primi minuti della RCP
+      - Aumento del ritorno venoso al cuore e quindi compressioni toraciche più efficaci e profonde
+    corretta: 0
+    spiegazione: "Volumi eccessivi o bruschi mandano aria nello **stomaco** (rigurgito, vomito, inalazione) e aumentano la **pressione intratoracica**, riducendo il ritorno venoso e il flusso a cuore e cervello. [@5.1:45] [@blsd-manuale:17]"
+    ripasso: blsd#vie-aeree-e-ventilazioni
+
+  - id: sse5-036
+    livello: esame
+    domanda: Motociclista a terra in arresto cardiaco dopo un incidente. Come gestite rachide e vie aeree durante la RCP?
+    opzioni:
+      - Rachide fermo con le mani, niente collare, vie aeree con la sublussazione della mandibola
+      - Collare cervicale prima di iniziare le compressioni, poi estensione del capo per ventilare
+      - "Nessuna attenzione particolare al rachide: in arresto conta solo iniziare la RCP"
+      - Tavola spinale e collare prima delle compressioni, poi sublussazione della mandibola
+    corretta: 0
+    spiegazione: "Nel trauma in ACC si segue il protocollo abituale: rachide **fermo con le mani**, **collare sconsigliato durante la RCP**, vie aeree con la [[sublussazione della mandibola]]. Se non riesci, una modica estensione del capo: non respirare è peggio del rischio per il rachide. [@5.1:54-55] [@blsd-manuale:22]"
+    ripasso: blsd#vittima-di-trauma
+
+  - id: sse5-037
+    livello: numeri
+    domanda: In un paziente intubato in arresto, come si coordinano compressioni e ventilazioni?
+    opzioni:
+      - Compressioni continue e ventilazioni indipendenti, 8-10 al minuto
+      - "Rapporto 30:2, come nel paziente non intubato"
+      - Compressioni continue e ventilazioni indipendenti, 20-25 al minuto
+      - "Rapporto 15:2, perché la ventilazione è più efficace"
+    corretta: 0
+    spiegazione: "Nel paziente intubato le CTE proseguono **senza interruzioni** e si ventila in modo indipendente, **8-10 volte al minuto** (una ogni 6-8 secondi). [@5.1:59] [@tss-manuale-blsd:23]"
+    ripasso: blsd#altre-situazioni
+
+  - id: sse5-038
+    livello: esame
+    domanda: In quale caso la profondità delle compressioni toraciche è corretta?
+    opzioni:
+      - Infante di 6 mesi, circa 4 cm
+      - Adulto di 50 anni, circa 4 cm
+      - Bambino di 5 anni, circa 7 cm
+      - Infante di 3 mesi, circa 6 cm
+    corretta: 0
+    spiegazione: "Si comprime per **un terzo del diametro del torace**: circa **4 cm nell'infante** e circa **5 cm nel bambino**; nell'adulto **almeno 5 e non più di 6 cm**. [@tss-g1:53] [@5.1:27] [@5.2:16-17]"
+    ripasso: pblsd#confronto-adulto-bambino-infante
+
+  - id: sse5-039
+    livello: base
+    domanda: Come si aprono le vie aeree di un infante in arresto?
+    opzioni:
+      - Con il capo in posizione neutra, mettendo uno spessore sotto le spalle
+      - Con l'estensione del capo e il sollevamento del mento, come nell'adulto
+      - Con il capo flesso in avanti, mettendo uno spessore sotto la nuca
+      - Con il capo ruotato di lato, per far defluire le secrezioni
+    corretta: 0
+    spiegazione: "L'infante ha l'**occipite grande e prominente**: serve uno **spessore sotto le spalle** per tenere il capo in **posizione neutra**. Dal primo anno si usa l'estensione del capo con sollevamento del mento. [@pblsd-manuale:20] [@5.2:31]"
+    ripasso: pblsd#vie-aeree-e-ventilazioni
+
+  - id: sse5-040
+    livello: base
+    domanda: Qual è la prima causa di arresto cardiaco nel bambino?
+    opzioni:
+      - L'insufficienza respiratoria
+      - Le malattie cardiache congenite
+      - La fibrillazione ventricolare primitiva
+      - L'ipoglicemia
+    corretta: 0
+    spiegazione: Nel bambino l'arresto è quasi sempre **la fine di un'insufficienza respiratoria** (o di uno shock), non un evento cardiaco; le patologie cardiache sono una causa rara e il ritmo più frequente è l'[[asistolia]]. [@pblsd-manuale:4-5] [@5.2:4]
+    ripasso: pblsd#perche-il-bambino-e-diverso
+
+  - id: sse5-041
+    livello: esame
+    domanda: Siete in RCP su un infante di 5 mesi. Cosa comunicate alla SOREU?
+    opzioni:
+      - La conferma dell'ACC e l'ospedale di destinazione
+      - La conferma dell'ACC, l'esito dell'analisi del DAE e l'ospedale di destinazione
+      - Solo l'esito della prima analisi del DAE
+      - Solo l'ospedale di destinazione, dopo 3 analisi
+    corretta: 0
+    spiegazione: "Nell'**infante** (dove l'algoritmo non prevede il DAE) si comunicano **conferma dell'ACC** e **ospedale di destinazione**; nel bambino sopra l'anno e nell'adulto si aggiunge l'**esito dell'analisi**. [@5.2:39-40] [@5.1:47]"
+    ripasso: pblsd#l-algoritmo-sotto-l-anno
+
+  - id: sse5-042
+    livello: esame
+    domanda: "Sulle particolarità del BLSD, tutte queste affermazioni sono corrette TRANNE:"
+    opzioni:
+      - Nella donna in gravidanza si segue un protocollo diverso, senza uso del DAE
+      - Un paziente bagnato va spostato all'asciutto e il torace va asciugato prima delle placche
+      - Se l'arresto avviene durante il trasporto si ferma il mezzo, anche se l'ospedale è in vista
+      - I massaggiatori automatici permettono di defibrillare durante le compressioni
+    corretta: 0
+    spiegazione: "In **gravidanza** si usa il **protocollo BLSD abituale**, cercando anche di proteggere il feto. Le altre sono corrette: l'acqua disperde la corrente ed è pericolosa per i soccorritori; in ambulanza si ferma il mezzo e si continua anche in vista dell'ospedale. [@blsd-manuale:25] [@5.1:60,66]"
+    ripasso: blsd#altre-situazioni

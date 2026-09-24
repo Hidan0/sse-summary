@@ -1,0 +1,112 @@
+titolo: Aspetti psicologici del soccorso
+modulo: SSE
+ordine: 6
+
+domande:
+  - id: sse6-001
+    livello: base
+    domanda: Quali sono, nell'ordine, le tre fasi emotive che il soccorritore attraversa in una missione?
+    opzioni:
+      - Allarme, mobilit-azione, decompressione
+      - Mobilit-azione, allarme, decompressione
+      - Allarme, decompressione, mobilit-azione
+      - Impatto, reazione, recupero
+    corretta: 0
+    spiegazione: La missione comincia con l'**allarme** (la chiamata), prosegue con la **mobilit-azione**, in cui ci si prepara e si agisce, e si chiude con la **decompressione**, fino al ritorno alla routine. [@6.1:3-5]
+    ripasso: reazioni-del-soccorritore#le-fasi-emotive-della-missione
+
+  - id: sse6-002
+    livello: esame
+    domanda: Nella fase di allarme, quale di queste è una reazione di tipo cognitivo?
+    opzioni:
+      - Difficoltà a interpretare e dare peso alle informazioni ricevute
+      - Aumento della frequenza cardiaca e respiratoria, con rialzo della pressione
+      - Ansia, paura e inibizione di fronte alla notizia dell'evento
+      - Minore efficienza nei gesti e difficoltà di comunicazione con la squadra
+    corretta: 0
+    spiegazione: Le reazioni all'allarme sono **emozionali** (ansia, paura, inibizione), **fisiche** (aumento di FC, FR e pressione), **cognitive** (disorientamento, difficoltà a interpretare e pesare le informazioni) e **comportamentali** (minore efficienza, difficoltà di comunicazione). [@6.1:3]
+    ripasso: reazioni-del-soccorritore#1-allarme
+
+  - id: sse6-003
+    livello: base
+    domanda: Nella fase di mobilit-azione, cosa aiuta il soccorritore a sciogliere la tensione e a recuperare l'autocontrollo?
+    opzioni:
+      - Agire, con un'azione finalizzata e coordinata insieme agli altri
+      - Restare fermo e in disparte finché l'ansia non è passata del tutto
+      - Isolarsi dalla squadra per concentrarsi meglio sui propri compiti
+      - Fare subito un debriefing tecnico per rivedere cosa sta succedendo
+    corretta: 0
+    spiegazione: Superato l'impatto iniziale, **agire aiuta a sciogliere la tensione**; ritrovare l'equilibrio è favorito dal passare del tempo, dal passaggio a un'**azione finalizzata e coordinata** e dall'**interazione** con gli altri. [@6.1:4]
+    ripasso: reazioni-del-soccorritore#2-mobilit-azione
+
+  - id: sse6-004
+    livello: base
+    domanda: Quali reazioni possono comparire nella fase di decompressione?
+    opzioni:
+      - Difficoltà a rilassarsi e ad addormentarsi, tristezza, ricordi che riaffiorano
+      - Difficoltà a interpretare e a dare peso alle informazioni della chiamata appena ricevuta
+      - Tensione che si scioglie grazie al passaggio a un'azione finalizzata e coordinata
+      - Nessuna reazione emotiva, perché a servizio concluso lo stress si esaurisce da solo
+    corretta: 0
+    spiegazione: "La **decompressione** va dalla **fine del servizio al ritorno alla routine**: possono comparire difficoltà a rilassarsi e ad addormentarsi, tristezza, tensione, episodi ed emozioni che riaffiorano. La difficoltà a interpretare le informazioni è una reazione dell'allarme, l'azione che scioglie la tensione è tipica della mobilit-azione. [@6.1:3-5]"
+    ripasso: reazioni-del-soccorritore#3-decompressione
+
+  - id: sse6-005
+    livello: base
+    domanda: Che cos'è il servizio "Benessere in emergenza" di AREU?
+    opzioni:
+      - Un servizio di ascolto tra pari dopo un evento critico, affiancato da uno psicologo
+      - Un percorso di psicoterapia obbligatorio per chi ha partecipato a un intervento grave
+      - Un debriefing tecnico per analizzare gli errori commessi durante il soccorso
+      - Una commissione che valuta l'idoneità psicologica dei soccorritori al servizio
+    corretta: 0
+    spiegazione: "[[Benessere in emergenza]] offre un primo **ascolto tra pari** (peer-to-peer) dopo un evento critico, gestito da pari formati e affiancato da uno **psicologo dell'emergenza sanitaria**. [@6.1:7-8]"
+    ripasso: reazioni-del-soccorritore#il-servizio-benessere-in-emergenza
+
+  - id: sse6-006
+    livello: esame
+    domanda: Quale delle seguenti cose il servizio Benessere in emergenza NON offre?
+    opzioni:
+      - Cure psicoterapeutiche
+      - Ascolto empatico e non giudicante
+      - Ascolto individuale o di gruppo
+      - Rispetto della riservatezza e della privacy del soccorritore
+    corretta: 0
+    spiegazione: Il servizio offre ascolto **empatico, non clinico, non giudicante**, individuale o di gruppo, nel rispetto della riservatezza. **Non** offre debriefing tecnico, **cure psicoterapeutiche**, valutazioni o diagnosi. [@6.1:13,15]
+    ripasso: reazioni-del-soccorritore#come-funziona
+
+  - id: sse6-007
+    livello: esame
+    domanda: Un collega, da qualche settimana dopo un intervento pesante, beve alcolici la sera per riuscire a dormire. Come va interpretato?
+    opzioni:
+      - Come un segnale di disagio, per cui può essere utile rivolgersi al servizio Benessere in emergenza
+      - Come un comportamento normale, che non merita attenzione finché il collega continua a fare servizio
+      - Come la prova che il collega è inadatto al soccorso e va sospeso
+      - Come un problema che riguarda solo i soccorritori alle prime armi
+    corretta: 0
+    spiegazione: "La tendenza ad **auto-medicarsi** con alcol o sostanze è un segnale di disagio, come i disturbi del sonno. Stare male dopo un intervento non vuol dire essere deboli, e il servizio è **anche per il collega**: il disagio non distingue tra ruoli. [@6.1:9-12]"
+    ripasso: reazioni-del-soccorritore#segnali-di-disagio
+
+  - id: sse6-008
+    livello: esame
+    domanda: Un paziente con una patologia respiratoria diventa improvvisamente agitato e irrequieto. A cosa dovete pensare per primo?
+    opzioni:
+      - A un ridotto apporto di ossigeno al cervello, di cui l'agitazione è spesso il primo segnale
+      - A un attacco di panico, perché in questi pazienti l'agitazione ha di solito un'origine psicologica
+      - A un disturbo psichiatrico preesistente, da chiarire con i familiari prima di proseguire
+      - A una reazione normale alla presenza dei soccorritori, che non richiede di rivalutare il paziente
+    corretta: 0
+    spiegazione: "L'**agitazione psicomotoria** è spesso il **primo segnale di [[ipossia]]** cerebrale e può evolvere nel coma; tra le cause ci sono le patologie respiratorie. Davanti a un comportamento anomalo si pensa sempre **prima a un'urgenza medica**. [@6.2:15] [@tss-e:29,34]"
+    ripasso: disturbi-del-comportamento#ipossia
+
+  - id: sse6-009
+    livello: esame
+    domanda: Un soggetto con alterazioni del comportamento, inizialmente calmo, diventa minaccioso. Cosa fate?
+    opzioni:
+      - Vi allontanate in un luogo sicuro senza perderlo di vista e chiedete la polizia alla SOREU
+      - Lo contenete subito tutti insieme, prima che la situazione peggiori e diventi pericolosa
+      - Vi chiudete in ambulanza e lasciate il posto senza avvisare nessuno della situazione
+      - Gli rispondete con fermezza sullo stesso tono, per fargli capire che non avete paura di lui
+    corretta: 0
+    spiegazione: Anche chi sembra calmo può diventare violento. Se c'è pericolo ci si **allontana in un luogo sicuro senza perdere di vista il paziente** e si chiede alla SOREU l'intervento delle **forze di polizia**; **non si tenta di contenere** il soggetto senza la polizia. [@6.2:21] [@tss-e:35]
+    ripasso: disturbi-del-comportamento#sicurezza-della-scena

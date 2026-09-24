@@ -1,0 +1,228 @@
+titolo: Introduzione, normativa e responsabilità
+modulo: TSS
+ordine: 1
+
+domande:
+  - id: tss1-001
+    livello: numeri
+    domanda: Quante ore dura il corso per addetto al trasporto sanitario (TS)?
+    opzioni:
+      - 42 ore
+      - 78 ore
+      - 25 ore
+      - 60 ore
+    corretta: 0
+    spiegazione: "Il corso TS dura **42 ore**, più un tirocinio pratico di **25 ore**. Le 78 ore sono quelle del modulo teorico-pratico del corso SSE, le 60 ore il tirocinio SSE. [@tss-a:4] [@0.0:4-7]"
+
+  - id: tss1-004
+    livello: esame
+    domanda: "Quale tra questi NON è un obiettivo formativo del corso per addetto al trasporto sanitario?"
+    opzioni:
+      - Assistere un parto imminente
+      - Garantire l'emostasi in caso di emorragia evidente
+      - Effettuare una prima valutazione ABCDE della persona trasportata
+      - Pulire e disinfettare il mezzo e smaltire correttamente i rifiuti
+    corretta: 0
+    spiegazione: "Gli obiettivi TS comprendono trasporto in sicurezza, mobilizzazione e immobilizzazione di base, RCP e DAE, **emostasi** delle emorragie evidenti, **prima valutazione ABCDE**, attivazione del sistema, parametri vitali, **pulizia del mezzo e smaltimento dei rifiuti**. L'assistenza al parto è tra le competenze del corso SSE. [@tss-a:3] [@0.0:3]"
+
+  - id: tss1-006
+    livello: base
+    domanda: Come definisce la DGR X/5165 del 2016 il trasporto sanitario?
+    opzioni:
+      - Il trasporto di pazienti tra strutture sanitarie o al loro interno, e da e verso gli ospedali dal domicilio
+      - Il soccorso e trasporto di persone in emergenza, disposto e coordinato dalle SOREU sul territorio regionale
+      - Il trasporto in emergenza di pazienti critici dal luogo dell'evento al Pronto Soccorso più idoneo
+      - Il trasporto di sangue, emocomponenti e organi tra ospedali, su richiesta delle strutture sanitarie riceventi
+    corretta: 0
+    spiegazione: "Il trasporto sanitario è il trasporto di pazienti **tra strutture sanitarie** o al loro interno (inter e intraospedaliero) e **da e verso gli ospedali dal domicilio**. Il soccorso \"disposto e coordinato dalle SOREU\" è invece la definizione del soccorso extraospedaliero (SSE). [@tss-b:21-22] [@0.1:19]"
+    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+
+  - id: tss1-007
+    livello: numeri
+    domanda: Qual è il limite di età per l'assistente (non autista) addetto al trasporto sanitario in ambulanza?
+    opzioni:
+      - Maggiore età e non aver compiuto il 76° anno
+      - Maggiore età e non aver compiuto il 71° anno
+      - Maggiore età e non aver compiuto il 65° anno
+      - Maggiore età, senza limite massimo
+    corretta: 0
+    spiegazione: "Per l'**assistente** TS il limite è il **76° anno**; per l'**autista** TS, come per il soccorritore esecutore SSE, è il **71° anno**. [@tss-b:23-24] [@0.1:20]"
+    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+
+  - id: tss1-008
+    livello: esame
+    domanda: "Quale tra questi NON è un requisito dell'autista addetto al trasporto sanitario in ambulanza?"
+    opzioni:
+      - Aver compiuto almeno 25 anni
+      - Funzione visiva e uditiva pari a quella prevista per la patente posseduta
+      - Conoscenza della viabilità e dell'area geografica di attività
+      - Saper usare i navigatori satellitari e la radio
+    corretta: 0
+    spiegazione: "All'autista TS si chiede la **maggiore età** (e di non aver compiuto il 71° anno), i requisiti di legge per la guida, la certificazione (42 ore + 4 del modulo J), **vista e udito** adeguati alla patente, la **conoscenza della viabilità** e l'uso di **navigatore e radio**. Non c'è un'età minima di 25 anni. [@tss-b:23]"
+    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+
+  - id: tss1-009
+    livello: base
+    domanda: Cosa stabilisce l'art. 2054 del Codice Civile sul conducente di un veicolo?
+    opzioni:
+      - Deve risarcire i danni della circolazione del veicolo, se non prova di aver fatto tutto il possibile per evitarli
+      - Non risponde dei danni se guida un mezzo di soccorso in emergenza, con sirena e lampeggianti accesi
+      - Risponde dei danni della circolazione solo se ha commesso un reato doloso accertato dal giudice
+      - Deve risarcire i danni solo se è stato sanzionato dagli agenti del traffico per una violazione del Codice della Strada
+    corretta: 0
+    spiegazione: "Per l'art. 2054 c.c. il conducente **risarcisce il danno** causato a persone o cose dalla circolazione, **salvo che provi di aver fatto tutto il possibile** per evitarlo. La responsabilità del conducente di un mezzo di soccorso è anche **penale**, anche per colpa od omissione. [@tss-b:25]"
+    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+
+  - id: tss1-010
+    livello: esame
+    domanda: Due veicoli si scontrano e non è chiaro di chi sia la colpa. Cosa presume l'art. 2054 del Codice Civile, fino a prova contraria?
+    opzioni:
+      - Che ciascun conducente abbia contribuito in egual misura al danno
+      - Che la colpa sia del veicolo che proveniva da sinistra
+      - Che la colpa sia del veicolo più pesante
+      - Che nessuno dei due conducenti debba risarcire il danno
+    corretta: 0
+    spiegazione: "In caso di scontro tra più veicoli si presume, **fino a prova contraria**, che **ciascun conducente abbia concorso ugualmente** a produrre il danno. [@tss-b:25]"
+    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+
+  - id: tss1-011
+    livello: base
+    domanda: Cosa prevede il principio di cautela che l'autista del mezzo di soccorso deve osservare?
+    opzioni:
+      - Seguire le comuni regole di prudenza e diligenza, evitando manovre pericolose o fuori dalle proprie competenze
+      - Guidare sempre sotto il limite di velocità, anche durante i servizi urgenti con sirena accesa
+      - Non usare mai i dispositivi di emergenza senza l'autorizzazione esplicita della SOREU
+      - Affidare le manovre difficili al soccorritore più esperto dell'equipaggio
+    corretta: 0
+    spiegazione: "Il **principio di cautela** chiede di seguire le comuni regole di **prudenza e diligenza** e di evitare le manovre **pericolose**, **fuori dalle proprie competenze** o che rendono **incapaci di gestire l'evento** in modo controllato. [@tss-b:28]"
+    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+
+  - id: tss1-012
+    livello: esame
+    domanda: "Un soccorritore volontario si infortuna durante un servizio perché non indossava i dispositivi di protezione forniti dall'associazione. Cosa prevede la normativa sulla sicurezza citata nel corso?"
+    opzioni:
+      - Chi non rispetta le norme di sicurezza è direttamente responsabile in caso di infortunio
+      - Il datore di lavoro risponde sempre dell'infortunio, qualunque cosa abbia fatto l'operatore
+      - I volontari non sono tenuti a usare i dispositivi di protezione, che sono obbligatori solo per i dipendenti
+      - La responsabilità è sempre del caposquadra dell'equipaggio
+    corretta: 0
+    spiegazione: "Tutto l'equipaggio deve rispettare le norme di sicurezza e **usare i dispositivi di protezione** forniti; il datore di lavoro deve fornirli **anche ai volontari** e informarli. **Chi non rispetta le norme** (lavoratore o datore di lavoro) è **direttamente responsabile** in caso di infortunio. [@tss-b:29]"
+    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+
+  - id: tss1-013
+    livello: esame
+    domanda: "Nella sicurezza del trasporto, quale di queste è una condizione \"soggettiva\"?"
+    opzioni:
+      - Le condizioni psicologiche dell'autista
+      - Le condizioni meteorologiche
+      - Le condizioni del traffico e della viabilità
+      - Le condizioni del mezzo
+    corretta: 0
+    spiegazione: "Le condizioni **soggettive** sono quelle **sanitarie del trasportato** e **psicologiche dell'autista**; meteo, traffico e viabilità e stato del mezzo sono condizioni **oggettive**. [@tss-b:30]"
+
+  - id: tss1-014
+    livello: esame
+    domanda: "Tra i requisiti del conducente dei mezzi di trasporto, la conoscenza del territorio, del proprio mezzo e delle procedure di servizio fa parte:"
+    opzioni:
+      - Della perizia
+      - Dell'attitudine
+      - Dell'esperienza di guida
+      - Dell'esperienza di servizio
+    corretta: 0
+    spiegazione: "La **perizia** comprende abilità tecnica, **conoscenza** (territorio e toponomastica, proprio mezzo, procedure, situazioni particolari) e affidabilità. L'**attitudine** riguarda condizioni fisiche e psichiche, calma e concentrazione; l'**esperienza** la dimestichezza nella guida e nella gestione del servizio. [@tss-b:31-33]"
+
+  - id: tss1-015
+    livello: base
+    domanda: Cosa ha stabilito la Legge 120 del 3 aprile 2001?
+    opzioni:
+      - Che il DAE si può usare fuori dall'ospedale anche da sanitari non medici e da non sanitari formati in RCP
+      - Che il DAE fuori dall'ospedale può essere usato solo da medici e infermieri con formazione specifica in RCP
+      - L'istituzione dell'Azienda Regionale Emergenza Urgenza, che coordina il soccorso extraospedaliero lombardo
+      - La disciplina unica di trasporto sanitario semplice, trasporto sanitario e soccorso extraospedaliero
+    corretta: 0
+    spiegazione: "La **Legge 120/2001** consente l'uso del [[DAE]] fuori dall'ospedale anche al **personale sanitario non medico** e al **personale non sanitario** con **formazione specifica in RCP**. AREU è istituita dalla DGR VIII/6994 del 2008, la disciplina unica è la DGR X/5165 del 2016. [@tss-b:37] [@0.1:30]"
+    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+
+  - id: tss1-016
+    livello: base
+    domanda: Cosa stabilisce la DGR 4717 del 2013 per il personale delle ambulanze di trasporto sanitario e trasporto sanitario semplice?
+    opzioni:
+      - Deve essere addestrato alla RCP di base e abilitato all'uso del DAE
+      - Deve essere addestrato alla RCP, ma il DAE può usarlo solo il personale SSE
+      - Deve saper usare il DAE solo se l'ambulanza ne è dotata per convenzione
+      - Non ha obblighi di formazione BLSD, perché non opera in emergenza
+    corretta: 0
+    spiegazione: "La **DGR 4717/2013** prevede che **tutto il personale** delle ambulanze di trasporto sanitario e trasporto sanitario semplice sia **addestrato alla RCP di base e abilitato all'uso del DAE**. [@tss-b:39] [@0.1:33]"
+    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+
+  - id: tss1-017
+    livello: numeri
+    domanda: Per quanto tempo è valida la qualifica di operatore BLSD prima del retraining con ricertificazione?
+    opzioni:
+      - 24 mesi
+      - 12 mesi
+      - 36 mesi
+      - 5 anni
+    corretta: 0
+    spiegazione: "La qualifica di operatore BLSD vale **24 mesi**: entro questo termine va fatto il retraining con ricertificazione (CeFRA o altri enti autorizzati). I 5 anni sono la scadenza della riqualificazione del soccorritore SSE. [@tss-b:40] [@0.1:24]"
+    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+
+  - id: tss1-018
+    livello: esame
+    domanda: "Durante un BLSD il DAE consiglia lo shock e l'operatore lo eroga. Di cosa è responsabile, secondo l'Accordo Stato-Regioni del 2003?"
+    opzioni:
+      - Di eseguire lo shock in sicurezza per sé e per tutte le persone attorno al paziente
+      - Della correttezza dell'indicazione allo shock, che deve verificare sul tracciato
+      - Solo del corretto posizionamento delle placche
+      - Di nulla, perché la decisione e l'erogazione sono dell'apparecchio
+    corretta: 0
+    spiegazione: "L'operatore **non risponde dell'indicazione** allo shock, che decide l'apparecchio, ma di **eseguirlo in condizioni di sicurezza** per sé e per tutti i presenti. [@tss-b:41] [@0.1:34]"
+    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+
+  - id: tss1-019
+    livello: base
+    domanda: Secondo il D.Lgs. 196/2003 sulla privacy, chi può trattare i dati personali del paziente?
+    opzioni:
+      - Solo il personale autorizzato, vincolato al segreto professionale e d'ufficio
+      - Qualsiasi componente dell'equipaggio e i familiari del paziente, anche senza il suo consenso
+      - Chiunque partecipi al servizio, purché i dati servano per il trasporto
+      - Solo il medico di famiglia del paziente, vincolato al segreto professionale
+    corretta: 0
+    spiegazione: "Il cittadino ha diritto alla **riservatezza** sui dati della sua malattia e su ogni circostanza che lo riguarda; i dati sono trattati **solo da personale autorizzato**, vincolato al **segreto professionale e d'ufficio** (art. 326 c.p.). [@tss-b:42]"
+    ripasso: normativa-e-responsabilita#segreto-e-privacy
+
+  - id: tss1-020
+    livello: base
+    domanda: Qual è la caratteristica principale dell'app gratuita Where ARE U?
+    opzioni:
+      - Fa partire la chiamata di emergenza e invia alla centrale NUE 112 la posizione esatta del chiamante
+      - Mostra al cittadino la posizione del DAE più vicino e le istruzioni per usarlo in sicurezza
+      - Permette all'equipaggio di ricevere i dati della missione e la posizione del paziente al posto di EmMaWeb
+      - Traduce in tempo reale la chiamata di uno straniero all'operatore della SOREU o della centrale NUE 112
+    corretta: 0
+    spiegazione: "**Where ARE U** consente di effettuare la chiamata di emergenza e di **inviare la posizione esatta** del chiamante alle centrali del [[NUE 112]]. [@tss-b:14-15]"
+    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+
+  - id: tss1-021
+    livello: numeri
+    domanda: In che anno la Commissione Europea individuò il 112 come numero unico europeo per le emergenze?
+    opzioni:
+      - "1991"
+      - "2002"
+      - "2008"
+      - "2010"
+    corretta: 0
+    spiegazione: "Nel **1991** la Commissione Europea sceglie il 112; nel **2002** una direttiva obbliga gli Stati a realizzarlo; nel **2010** l'Italia viene sanzionata per circa **40 milioni di euro** per i ritardi sulla localizzazione delle chiamate. [@tss-b:8]"
+    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+
+  - id: tss1-022
+    livello: base
+    domanda: In quali città si trovano le Centrali Uniche di Risposta (CUR) del NUE 112 in Lombardia, secondo il corso?
+    opzioni:
+      - Brescia, Varese e Milano
+      - Milano, Bergamo e Pavia
+      - Como, Milano e Brescia
+      - Varese, Bergamo e Mantova
+    corretta: 0
+    spiegazione: "Le CUR lombarde indicate nel corso sono **Brescia, Varese e Milano**. [@tss-b:13]"
+    ripasso: sistema-di-emergenza-e-formazione#il-nue-112

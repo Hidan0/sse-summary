@@ -1,0 +1,196 @@
+titolo: Ruolo e responsabilità
+modulo: SSE
+ordine: 0
+
+domande:
+  - id: sse0-001
+    livello: numeri
+    domanda: Come è organizzato il sistema di emergenza urgenza di AREU in Lombardia?
+    opzioni:
+      - 4 SOREU e 12 AAT
+      - 12 SOREU e 4 AAT
+      - 4 SOREU e 4 AAT
+      - 1 SOREU regionale e 12 AAT
+    corretta: 0
+    spiegazione: "[[AREU]] opera con **4 [[SOREU]]** (Alpina, dei Laghi, Metropolitana, della Pianura) e **12 [[AAT]]**, che gestiscono le risorse territoriali provinciali. [@0.1:8,12]"
+    ripasso: sistema-di-emergenza-e-formazione#il-sistema-a-rete-soreu-e-aat
+
+  - id: sse0-002
+    livello: esame
+    domanda: "Quale tra questi compiti NON spetta alla SOREU?"
+    opzioni:
+      - Gestire mezzi, tecnologie e dotazioni delle risorse territoriali provinciali
+      - Gestire le richieste di soccorso e inviare i mezzi idonei
+      - Indirizzare il paziente alla struttura ospedaliera più idonea
+      - Comunicare con i mezzi di soccorso e con le centrali delle altre istituzioni
+    corretta: 0
+    spiegazione: "La SOREU gestisce le richieste, **invia i mezzi idonei**, **indirizza il paziente** all'ospedale più idoneo e **comunica** con mezzi e altre centrali. Mezzi, tecnologie e dotazioni sono compito delle **AAT**. [@0.1:10,13]"
+    ripasso: sistema-di-emergenza-e-formazione#il-sistema-a-rete-soreu-e-aat
+
+  - id: sse0-003
+    livello: base
+    domanda: Com'è composto l'equipaggio di un MSI?
+    opzioni:
+      - Autista, soccorritore e infermiere, oppure autista e infermiere
+      - Autista, soccorritore, medico e infermiere, oppure autista, medico e infermiere
+      - Autista e due soccorritori, oppure autista e un soccorritore
+      - Medico, infermiere e soccorso alpino
+    corretta: 0
+    spiegazione: "Il [[MSI]] ha **autista, soccorritore e infermiere** oppure **autista e infermiere**. Autista, soccorritore, medico e infermiere è l'MSA, autista, medico e infermiere l'automedica (MSA VLV); autista e due (o un) soccorritori l'MSB; medico, infermiere e soccorso alpino l'elisoccorso. [@0.1:15]"
+    ripasso: sistema-di-emergenza-e-formazione#mezzi-ed-equipaggi
+
+  - id: sse0-004
+    livello: numeri
+    domanda: Com'è la prova teorica dell'esame di certificazione SSE?
+    opzioni:
+      - 30 domande a risposta multipla, con almeno 25 risposte corrette
+      - 30 domande a risposta multipla, con almeno 18 risposte corrette
+      - 20 domande a risposta multipla, con almeno 15 risposte corrette
+      - 40 domande a risposta multipla, con almeno 30 risposte corrette
+    corretta: 0
+    spiegazione: "La prova teorica SSE ha **30 domande** a risposta multipla con minimo **75% (25 su 30)**; anche la prova pratica richiede almeno il 75%. [@0.0:4-7]"
+    ripasso: sistema-di-emergenza-e-formazione#il-percorso-formativo-e-l-abilitazione
+
+  - id: sse0-005
+    livello: numeri
+    domanda: Un soccorritore esecutore è rimasto inattivo per 18 mesi. Cosa deve fare per tornare operativo?
+    opzioni:
+      - Un aggiornamento pratico di almeno 25 ore, con prova di riqualificazione
+      - Ripetere il secondo modulo formativo, con obbligo di riqualificazione
+      - Solo la ricertificazione BLSD
+      - Nulla, la certificazione vale 5 anni
+    corretta: 0
+    spiegazione: "Con un'inattività **tra 12 e 30 mesi** serve un aggiornamento pratico di **almeno 25 ore** (BLSD, scenari medici e traumatici, immobilizzazioni) con prova di riqualificazione; **oltre 30 mesi** si ripete il secondo modulo formativo. [@0.1:25]"
+    ripasso: sistema-di-emergenza-e-formazione#mantenere-la-qualifica
+
+  - id: sse0-006
+    livello: base
+    domanda: Qual è la qualifica giuridica del soccorritore durante il servizio?
+    opzioni:
+      - Incaricato di pubblico servizio
+      - Pubblico ufficiale
+      - Esercente una professione sanitaria
+      - Semplice cittadino, senza obblighi particolari
+    corretta: 0
+    spiegazione: "Il soccorritore è un **[[incaricato di pubblico servizio]]**: per questo è vincolato al segreto professionale e al segreto d'ufficio. [@0.1:27-29]"
+    ripasso: normativa-e-responsabilita#segreto-e-privacy
+
+  - id: sse0-007
+    livello: numeri
+    domanda: Quale pena prevede l'art. 326 del Codice Penale per la violazione del segreto d'ufficio?
+    opzioni:
+      - Reclusione da 6 mesi a 3 anni
+      - Reclusione da 1 a 5 anni
+      - Solo una sanzione amministrativa
+      - Reclusione fino a 6 mesi
+    corretta: 0
+    spiegazione: "L'incaricato di pubblico servizio che rivela notizie d'ufficio che devono restare segrete è punito con la **reclusione da 6 mesi a 3 anni** (art. 326 c.p.). [@0.1:28]"
+    ripasso: normativa-e-responsabilita#segreto-e-privacy
+
+  - id: sse0-008
+    livello: base
+    domanda: A quale obbligo si riferisce l'art. 622 del Codice Penale?
+    opzioni:
+      - Al segreto professionale
+      - Al segreto d'ufficio
+      - All'omissione di soccorso
+      - Al trattamento sanitario obbligatorio
+    corretta: 0
+    spiegazione: "L'**art. 622** c.p. riguarda il **segreto professionale** (chi conosce un segreto per il proprio stato, ufficio, professione o arte); l'**art. 326** il **segreto d'ufficio**. Il TSO è regolato dalla Legge 833/78. [@0.1:27-28,36]"
+    ripasso: normativa-e-responsabilita#segreto-e-privacy
+
+  - id: sse0-009
+    livello: base
+    domanda: Secondo la lezione SSE sulla privacy, a quale condizione si possono trattare i dati che rivelano lo stato di salute e la vita sessuale di una persona?
+    opzioni:
+      - Con il consenso scritto dell'interessato
+      - Con il consenso verbale dell'interessato, anche davanti a testimoni
+      - Senza consenso, se a chiederli è un familiare
+      - Senza consenso, se servono a compilare la relazione di soccorso
+    corretta: 0
+    spiegazione: "I dati personali che rivelano **stato di salute** e **vita sessuale** si possono trattare solo con il **consenso scritto** dell'interessato. [@0.1:29]"
+    ripasso: normativa-e-responsabilita#segreto-e-privacy
+
+  - id: sse0-010
+    livello: base
+    domanda: Chi può constatare e certificare la morte di una persona?
+    opzioni:
+      - Solo un medico
+      - Il capo equipaggio del MSB, dopo 20 minuti di RCP senza risultato
+      - Un infermiere o un medico
+      - La SOREU, sulla base dei dati comunicati dall'equipaggio
+    corretta: 0
+    spiegazione: "La **morte può essere constatata e certificata solo da un medico**. [@0.1:35]"
+    ripasso: normativa-e-responsabilita#rianimazione-e-constatazione-di-morte
+
+  - id: sse0-011
+    livello: esame
+    domanda: "Un MSB può non iniziare la RCP in un paziente in arresto cardiaco in tutti questi casi TRANNE:"
+    opzioni:
+      - Il paziente è molto anziano e ha numerose malattie croniche
+      - La scena presenta un pericolo per il personale che interviene
+      - Il paziente non si può raggiungere
+      - Il paziente presenta rigor mortis
+    corretta: 0
+    spiegazione: "Si può non iniziare la RCP **solo** se c'è un **pericolo** per i soccorritori, se il paziente è **irraggiungibile** o se ci sono **segni evidenti di morte** (decapitazione, rigor mortis). L'età e le malattie non rientrano tra questi casi. [@0.1:35]"
+    ripasso: normativa-e-responsabilita#rianimazione-e-constatazione-di-morte
+
+  - id: sse0-012
+    livello: esame
+    domanda: Qual è l'iter corretto del trattamento sanitario obbligatorio (TSO)?
+    opzioni:
+      - Proposta di un medico, convalida di un secondo medico, ordinanza del sindaco entro 48 ore con informazione al giudice tutelare
+      - Proposta della SOREU, convalida del medico del PS, ordinanza del prefetto entro 24 ore
+      - Richiesta dei familiari, convalida di un medico, ordinanza del sindaco entro 72 ore
+      - Proposta di un medico, convalida delle forze dell'ordine, autorizzazione del giudice tutelare entro 48 ore
+    corretta: 0
+    spiegazione: "Il TSO (Legge 833/78) richiede **2 medici** (proposta e convalida) e l'**ordinanza del sindaco** del Comune di residenza **entro 48 ore**, informando il **giudice tutelare**. Le forze dell'ordine intervengono per l'iter, il contenimento o l'accesso al domicilio. [@0.1:36-37]"
+    ripasso: normativa-e-responsabilita#il-tso-trattamento-sanitario-obbligatorio
+
+  - id: sse0-013
+    livello: esame
+    domanda: Un paziente con un grave disturbo psichiatrico è agitato e rifiuta le cure; la forza pubblica non è ancora arrivata. Come si comporta l'equipaggio del MSB?
+    opzioni:
+      - Non lo contiene fisicamente finché non è presente la forza pubblica
+      - Lo contiene fisicamente per portarlo in ospedale, perché è un'urgenza
+      - Lo contiene solo se lo chiede un familiare
+      - Lo lascia sul posto e chiude la missione come rifiuto del trasporto
+    corretta: 0
+    spiegazione: "Il soccorritore **non contiene** un paziente con disturbi del comportamento **se non è presente la forza pubblica**, che ha l'obbligo di intervenire in ogni luogo. [@0.1:37] [@6.2:21]"
+    ripasso: normativa-e-responsabilita#il-tso-trattamento-sanitario-obbligatorio
+
+  - id: sse0-014
+    livello: esame
+    domanda: "Un soccorritore danneggia un paziente perché non ha seguito un'istruzione operativa AREU. Di che tipo di colpa si tratta?"
+    opzioni:
+      - Colpa specifica
+      - Colpa generica per negligenza
+      - Colpa generica per imprudenza
+      - Dolo
+    corretta: 0
+    spiegazione: "La colpa è **specifica** quando nasce dall'**inosservanza di norme, regolamenti, ordini e discipline**; è **generica** quando nasce da negligenza, imprudenza o imperizia. Il dolo non è colpa. [@0.1:38,42]"
+    ripasso: normativa-e-responsabilita#la-responsabilita-penale-e-la-colpa
+
+  - id: sse0-015
+    livello: base
+    domanda: "Cosa si intende per imperizia?"
+    opzioni:
+      - La mancanza del sapere e saper fare ciò che è disciplinato e normato nel proprio campo
+      - Il trascurare, per disattenzione o superficialità, le comuni regole di diligenza
+      - Il non prevedere le conseguenze del proprio operato e non scegliere il modo più opportuno di intervenire
+      - Il non rispettare regolamenti, ordini e discipline
+    corretta: 0
+    spiegazione: "L'**[[imperizia]]** è la mancanza di perizia, cioè del **sapere e saper fare**. Trascurare le regole di diligenza è **negligenza**; non prevedere le conseguenze è **imprudenza**; non rispettare i regolamenti è colpa **specifica**. [@0.1:38-41]"
+    ripasso: normativa-e-responsabilita#la-responsabilita-penale-e-la-colpa
+
+  - id: sse0-016
+    livello: base
+    domanda: Come si definiscono le istruzioni operative?
+    opzioni:
+      - Regole scritte e sintetiche che guidano nel dettaglio specifiche attività operative e vanno applicate da tutto il personale coinvolto
+      - Raccomandazioni di comportamento clinico elaborate rivedendo la letteratura e le opinioni degli esperti
+      - Documenti che orientano attività e comportamenti discrezionali, esplicitando finalità e obiettivi e valutando efficacia ed efficienza
+      - Documenti che descrivono le caratteristiche di un prodotto o di un servizio, come le dotazioni minime delle ambulanze
+    corretta: 0
+    spiegazione: "Le **[[istruzione operativa|istruzioni operative]]** sono regole **scritte e sintetiche** che guidano nel dettaglio attività operative specifiche (AAT, SOREU, equipaggi). Le raccomandazioni di comportamento clinico sono le **linee guida**, l'orientamento dei comportamenti discrezionali con valutazione di efficacia ed efficienza sono i **protocolli**, la descrizione di un prodotto o servizio sono i **documenti**. [@0.1:43-46]"
+    ripasso: normativa-e-responsabilita#le-regole-da-conoscere

@@ -1,0 +1,268 @@
+titolo: Maxiemergenza
+modulo: SSE
+ordine: 8
+
+domande:
+  - id: sse8-001
+    livello: numeri
+    domanda: In una maxiemergenza (catastrofe a effetto limitato), entro quanto tempo si stima che si concludano le operazioni di soccorso?
+    opzioni:
+      - Meno di 12 ore
+      - Meno di 6 ore
+      - Meno di 24 ore
+      - Meno di 72 ore
+    corretta: 0
+    spiegazione: "La [[maxiemergenza]] (o incidente maggiore) ha strutture di soccorso integre e operazioni che si chiudono in **meno di 12 ore**. La catastrofe vera e propria è una sproporzione che dura **oltre le 12 ore**. [@8:14] [@maxi-manuale:10,31]"
+    ripasso: maxiemergenza#i-due-scenari-previsti-per-la-parte-sanitaria
+
+  - id: sse8-002
+    livello: base
+    domanda: Nella medicina delle catastrofi, che cosa si intende per "tattica"?
+    opzioni:
+      - L'applicazione dei piani di soccorso attraverso la catena dei soccorsi
+      - L'elaborazione preventiva dei piani di soccorso da parte delle autorità
+      - La gestione delle risorse disponibili, cioè personale, mezzi e materiali
+      - La classificazione degli eventi per tipo ed estensione
+    corretta: 0
+    spiegazione: "I tre strumenti della medicina delle catastrofi sono **strategia** (elaborare i piani), **logistica** (risorse: personale, mezzi, materiali) e **tattica** (applicare i piani attraverso la [[catena dei soccorsi]]). [@8:5] [@maxi-manuale:5]"
+    ripasso: maxiemergenza#medicina-delle-catastrofi
+
+  - id: sse8-003
+    livello: base
+    domanda: Nel metodo Augustus, quale funzione di supporto riguarda la sanità, l'assistenza sociale e veterinaria?
+    opzioni:
+      - La funzione 2
+      - La funzione 1
+      - La funzione 4
+      - La funzione 7
+    corretta: 0
+    spiegazione: "Il metodo Augustus prevede **14 funzioni di supporto**: la sanità è la **Funzione 2**. La 1 è tecnico-scientifica e pianificazione, la 4 il volontariato, la 7 le telecomunicazioni. [@8:8] [@maxi-manuale:8]"
+    ripasso: maxiemergenza#metodo-augustus-le-14-funzioni-di-supporto
+
+  - id: sse8-004
+    livello: numeri
+    domanda: Secondo il materiale del corso, quale percentuale della popolazione coinvolta in una catastrofe si trova in stato di stress emotivo?
+    opzioni:
+      - Circa l'85%
+      - Circa il 70%
+      - Circa il 50%
+      - Circa il 15%
+    corretta: 0
+    spiegazione: "Solo il **15%** mantiene il sangue freddo: un altro 15% ha un comportamento inadatto e il **70%** è \"normale\" solo in apparenza. In tutto l'**85%** è in stato di stress emotivo. [@maxi-manuale:6] [@8:4]"
+    ripasso: maxiemergenza#come-reagisce-la-popolazione
+
+  - id: sse8-005
+    livello: base
+    domanda: Quale di questi eventi rientra tra le catastrofi tecnologiche?
+    opzioni:
+      - Il deragliamento di un treno
+      - Un'alluvione con esondazione di un fiume
+      - Un attentato terroristico
+      - Un'epidemia animale
+    corretta: 0
+    spiegazione: "Gli incidenti nei trasporti (aerei, treni) sono catastrofi **tecnologiche**. Alluvioni ed epidemie animali sono **naturali**; il terrorismo è una catastrofe **sociale**. [@maxi-manuale:4]"
+    ripasso: maxiemergenza#classificazione
+
+  - id: sse8-006
+    livello: base
+    domanda: Nelle prime fasi di un incidente maggiore, chi forma il Posto di Comando Avanzato Provvisorio (PCAP)?
+    opzioni:
+      - Il primo mezzo sanitario, il primo dei VVF e il primo delle Forze di Polizia
+      - I primi tre mezzi sanitari arrivati sul posto, coordinati dal capo equipaggio del primo MSB
+      - Il capo equipaggio del primo MSB insieme al Sindaco del Comune e all'operatore della SOREU
+      - Il primo mezzo dei VVF da solo, finché non arriva il Prefetto
+    corretta: 0
+    spiegazione: "Il **PCAP** nasce dal **primo mezzo sanitario**, dal **primo mezzo dei VVF** e dal **primo delle Forze di Polizia**; poi si forma il [[PCA]] definitivo. [@8:32] [@maxi-manuale:25]"
+    ripasso: primo-msb-incidente-maggiore#il-pca-provvisorio
+
+  - id: sse8-007
+    livello: base
+    domanda: Quale affermazione sul Posto di Comando Avanzato (PCA) è corretta?
+    opzioni:
+      - Va sempre istituito e, se manca, bisogna sollecitare gli altri enti a istituirlo
+      - Si istituisce solo negli eventi che durano più di 12 ore, cioè nelle catastrofi vere e proprie
+      - È presieduto dal Prefetto e ha sede in Prefettura, lontano dall'area dell'evento
+      - È formato dal personale sanitario presente sul posto, senza VVF e Forze dell'Ordine
+    corretta: 0
+    spiegazione: "Il [[PCA]] è la prima cellula di comando tecnico sul posto (VVF, soccorso sanitario, Forze dell'Ordine) e **va sempre istituito**. L'organo presieduto dal Prefetto è il **CCS**. [@8:18-19] [@maxi-manuale:25]"
+    ripasso: maxiemergenza#il-posto-di-comando-avanzato
+
+  - id: sse8-008
+    livello: base
+    domanda: Quali pazienti accedono di norma al Posto Medico Avanzato (PMA)?
+    opzioni:
+      - I codici gialli e rossi
+      - Tutti i coinvolti, compresi i codici verdi
+      - Solo i codici rossi
+      - I codici rossi e neri
+    corretta: 0
+    spiegazione: "Al [[PMA]] vanno di norma solo i **gialli e i rossi**; i verdi vengono raccolti in un'area dedicata e presidiata, i neri in un'area apposita. [@maxi-manuale:19,28]"
+    ripasso: organizzazione-sul-campo#il-posto-medico-avanzato-pma
+
+  - id: sse8-009
+    livello: base
+    domanda: Nella catena dei soccorsi, che cos'è la "piccola noria"?
+    opzioni:
+      - Il recupero delle vittime dal luogo dell'evento al PMA
+      - Il trasporto delle vittime dal PMA agli ospedali
+      - Il trasferimento dei pazienti tra un ospedale e l'altro
+      - Il percorso dei mezzi dal check point all'area di sosta
+    corretta: 0
+    spiegazione: "La **piccola noria** (di salvataggio) va dal luogo dell'evento al PMA; la **grande noria** (di evacuazione) dal PMA agli ospedali. [@8:45] [@maxi-manuale:29,33]"
+    ripasso: organizzazione-sul-campo#la-catena-dei-soccorsi
+
+  - id: sse8-010
+    livello: base
+    domanda: In una maxiemergenza, di che colore è la pettorina del Direttore dei Trasporti?
+    opzioni:
+      - Blu
+      - Rossa
+      - Bianca
+      - A scacchi gialli e rossi
+    corretta: 0
+    spiegazione: "Il Direttore dei Trasporti indossa la pettorina **blu**. La rossa è del Direttore del Triage, la bianca del Direttore del PMA, quella a scacchi giallo-rossi del CIM. [@8:35-42] [@maxi-manuale:14-18]"
+    ripasso: organizzazione-sul-campo#le-figure-di-riferimento
+
+  - id: sse8-011
+    livello: esame
+    domanda: "Sul Direttore del Triage sono corrette tutte le affermazioni TRANNE:"
+    opzioni:
+      - Contatta direttamente la SOREU per comunicare l'esito del triage
+      - Di solito è il primo infermiere che arriva sul posto
+      - Indossa la pettorina rossa
+      - Divide l'area dei soccorsi in settori e cantieri
+    corretta: 0
+    spiegazione: "Il Direttore del Triage è un **infermiere** con pettorina **rossa**, fa il triage START e **settorializza** l'area, ma **non contatta mai direttamente la SOREU**. [@maxi-manuale:16] [@8:35-42]"
+    ripasso: organizzazione-sul-campo#le-figure-di-riferimento
+
+  - id: sse8-012
+    livello: esame
+    domanda: Siete il primo MSB arrivato su un incidente con molti feriti. Qual è la prima cosa da fare?
+    opzioni:
+      - Una ricognizione a distanza di sicurezza, comunicando le informazioni alla SOREU
+      - Soccorrere subito il ferito più grave che vedete e poi comunicare alla SOREU la situazione
+      - Entrare nell'area e iniziare subito il triage START sui feriti che si trovano più vicini
+      - Attendere l'arrivo dell'MSA senza comunicare nulla, per non intasare le linee
+    corretta: 0
+    spiegazione: "Prima di tutto si fa la **ricognizione a distanza di sicurezza** e si comunica alla SOREU con il [[METHANE]]. Non si entra finché la SOREU non dà indicazione e i VVF non autorizzano l'accesso. [@8:24] [@maxi-manuale:26,28]"
+    ripasso: primo-msb-incidente-maggiore#prima-di-tutto-la-ricognizione
+
+  - id: sse8-013
+    livello: esame
+    domanda: Quale di questi NON è un compito dell'autista del primo MSB arrivato su un incidente maggiore?
+    opzioni:
+      - Allestire e sorvegliare l'area sicura per i codici verdi
+      - Posizionare il mezzo in zona sicura, ben visibile e con i lampeggianti accesi
+      - Garantire il collegamento radio con la SOREU
+      - Individuare i punti adatti all'atterraggio degli elicotteri
+    corretta: 0
+    spiegazione: "L'area dei **codici verdi** è compito del **terzo soccorritore**. L'autista gestisce mezzo, radio, accessi e check point, e cerca i punti di atterraggio per gli elicotteri. [@8:29-31] [@iop4:2]"
+    ripasso: primo-msb-incidente-maggiore#autista-soccorritore
+
+  - id: sse8-014
+    livello: base
+    domanda: Chi indossa la fascia gialla contenuta nel kit maxiemergenza del primo MSB?
+    opzioni:
+      - Il capo equipaggio, come Referente per la SOREU
+      - L'autista soccorritore
+      - Il terzo soccorritore, responsabile dell'area verdi
+      - Il primo infermiere che arriva sul posto
+    corretta: 0
+    spiegazione: "La **fascia gialla** la indossa il **capo equipaggio**, Referente prioritario per la SOREU, che fa ricognizione, METHANE e [[sweeping triage]]. [@8:26-27] [@iop4:2]"
+    ripasso: primo-msb-incidente-maggiore#capo-equipaggio-referente-prioritario-per-la-soreu
+
+  - id: sse8-015
+    livello: esame
+    domanda: "Triage START: un paziente non cammina, respira con FR 24 atti/min, ha il polso radiale presente ma non esegue ordini semplici. Che colore gli assegnate?"
+    opzioni:
+      - Rosso
+      - Giallo
+      - Verde
+      - Nero
+    corretta: 0
+    spiegazione: "Nello [[START]] chi **non esegue ordini semplici** è **rosso**, anche con FR sotto 30 e polso radiale presente. Il giallo richiede che esegua gli ordini. [@8:55] [@maxi-manuale:21-22]"
+    ripasso: triage-start#l-algoritmo-start-per-i-soccorritori
+
+  - id: sse8-016
+    livello: esame
+    domanda: "Triage START: una paziente seduta non riesce a camminare, respira con FR 20 atti/min, ha il polso radiale e risponde correttamente agli ordini semplici. Che colore le assegnate?"
+    opzioni:
+      - Giallo
+      - Rosso
+      - Verde
+      - Nessun colore, va rivalutata dopo aver visto tutti gli altri
+    corretta: 0
+    spiegazione: "Non cammina, FR **sotto 30**, polso radiale **presente**, esegue ordini semplici: è l'unico percorso che porta al **giallo**. Il verde spetta solo a chi cammina. [@8:55] [@maxi-manuale:21-22]"
+    ripasso: triage-start#l-algoritmo-start-per-i-soccorritori
+
+  - id: sse8-017
+    livello: esame
+    domanda: "Durante lo START trovate una vittima che non respira nemmeno dopo l'apertura delle vie aeree. Siete soccorritori: che colore assegnate?"
+    opzioni:
+      - Rosso
+      - Nero
+      - Giallo
+      - Nessun colore, iniziate la RCP
+    corretta: 0
+    spiegazione: "Il **nero** lo assegna **solo il personale sanitario**: il soccorritore assegna il **rosso** a chi non respira anche dopo l'apertura delle vie aeree. In un evento catastrofico **non si rianima**. [@8:54-55] [@maxi-manuale:21,23]"
+    ripasso: triage-start#i-codici-colore
+
+  - id: sse8-018
+    livello: numeri
+    domanda: Nel triage START, oltre quale frequenza respiratoria il paziente che respira riceve direttamente il codice rosso?
+    opzioni:
+      - 30 atti/min
+      - 20 atti/min
+      - 25 atti/min
+      - 40 atti/min
+    corretta: 0
+    spiegazione: "Nella flow chart START una [[frequenza respiratoria]] **oltre 30 atti/min** porta al **rosso**; sotto i 30 si passa al controllo del polso radiale. [@8:55] [@maxi-manuale:22]"
+    ripasso: triage-start#l-algoritmo-start-per-i-soccorritori
+
+  - id: sse8-019
+    livello: esame
+    domanda: Durante il triage START sul crash, quale di queste manovre NON va eseguita?
+    opzioni:
+      - La rianimazione cardiopolmonare di una vittima che non respira
+      - L'inserimento di una cannula orofaringea
+      - Il bendaggio compressivo di un'emorragia, anche facendola tamponare
+      - La posizione laterale di sicurezza di un paziente incosciente che vomita
+    corretta: 0
+    spiegazione: "Durante lo START **non si rianima**. Sono ammesse solo manovre semplici: [[cannula orofaringea]], compressione o bendaggio delle emorragie, PLS se il paziente incosciente vomita, protezione termica. [@maxi-manuale:21-24]"
+    ripasso: triage-start#le-uniche-manovre-durante-lo-start
+
+  - id: sse8-020
+    livello: numeri
+    domanda: Se una maxiemergenza coinvolge sostanze pericolose (biologiche, chimiche o radiologiche), a che distanza ci si ferma per raccogliere informazioni?
+    opzioni:
+      - 500-800 metri
+      - 50-100 metri
+      - 150-300 metri
+      - 2-3 chilometri
+    corretta: 0
+    spiegazione: "Con sostanze BCR non ci si precipita: ci si avvicina **sopravento**, ci si ferma a **500-800 m**, si aspettano i **VVF** e si avvisa la SOREU. [@maxi-manuale:30]"
+    ripasso: organizzazione-sul-campo#sostanze-pericolose-bcr
+
+  - id: sse8-021
+    livello: base
+    domanda: Secondo la lezione sugli aspetti psicologici, come si chiama la fase che va dalla fine del servizio al ritorno alla routine di lavoro, famiglia e vita sociale?
+    opzioni:
+      - Decompressione
+      - Mobilitazione
+      - Allarme
+      - Risoluzione
+    corretta: 0
+    spiegazione: "Le tre fasi sono **allarme** (la notizia dell'evento), **mobilitazione** (durante l'intervento) e **decompressione** (dalla fine del servizio al ritorno alla normalità). [@8.3:9-12]"
+    ripasso: aspetti-psicologici-maxiemergenze#le-fasi-dell-intervento-e-lo-stress
+
+  - id: sse8-022
+    livello: esame
+    domanda: Dopo una maxiemergenza un soccorritore fatica a dormire e ripensa di continuo all'intervento. Quale di queste strategie NON lo aiuta?
+    opzioni:
+      - Prendere da solo degli psicofarmaci per superare il disagio
+      - Parlare di quello che prova con una persona cara
+      - Chiedere aiuto alla rete associativa o ai peer supporter
+      - Prendersi una pausa e dedicare tempo ai propri hobby
+    corretta: 0
+    spiegazione: "Gli **psicofarmaci assunti da soli**, come alcol e troppi caffè, sono strategie sbagliate. Aiutano pause, hobby, parlare con una persona cara e le reti di supporto, compreso il [[peer support]]. [@8.3:15,22-23]"
+    ripasso: aspetti-psicologici-maxiemergenze#cosa-aiuta-e-cosa-no

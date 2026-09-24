@@ -1,0 +1,724 @@
+titolo: Trauma
+modulo: SSE
+ordine: 1
+
+domande:
+  - id: sse1-001
+    livello: numeri
+    domanda: Secondo la lezione di epidemiologia, che posto occupa il trauma tra le cause di morte?
+    opzioni:
+      - Prima causa sotto i 30 anni e terza considerando tutte le età
+      - Prima causa sotto i 40 anni e seconda considerando tutte le età
+      - Terza causa sotto i 30 anni e prima considerando tutte le età
+      - Seconda causa sotto i 30 anni e quinta considerando tutte le età
+    corretta: 0
+    spiegazione: "Il trauma è la **maggior causa di morte sotto i 30 anni** e la **terza considerando tutte le età**. [@1.1.1:7]"
+    ripasso: epidemiologia-del-trauma#definizioni
+
+  - id: sse1-002
+    livello: numeri
+    domanda: Come si distribuiscono le morti per trauma nei tre picchi (immediate, precoci, tardive)?
+    opzioni:
+      - 50% immediate, 30% precoci, 20% tardive
+      - 30% immediate, 50% precoci, 20% tardive
+      - 20% immediate, 30% precoci, 50% tardive
+      - 60% immediate, 25% precoci, 15% tardive
+    corretta: 0
+    spiegazione: "Morti **immediate 50%** (entro 5 minuti), **precoci 30%** (entro 4 ore), **tardive 20%** (da 48 ore in poi). [@1.1.1:3,4]"
+    ripasso: epidemiologia-del-trauma#quando-si-muore-di-trauma-i-tre-picchi
+
+  - id: sse1-003
+    livello: base
+    domanda: Su quale picco di mortalità del trauma incide soprattutto l'organizzazione del soccorso extraospedaliero?
+    opzioni:
+      - Sulle morti precoci, entro 4 ore dal trauma
+      - Sulle morti immediate, entro 5 minuti dal trauma
+      - Sulle morti tardive, da 48 ore in poi
+      - In ugual misura su tutti e tre i picchi
+    corretta: 0
+    spiegazione: "Le morti **precoci** (emotorace, pneumotorace, fratture di bacino e ossa lunghe, rottura di milza e fegato…) si riducono con l'**organizzazione del soccorso**. Quelle immediate si contrastano con la **prevenzione**, quelle tardive con le cure ospedaliere. [@1.1.1:3,4]"
+    ripasso: epidemiologia-del-trauma#quando-si-muore-di-trauma-i-tre-picchi
+
+  - id: sse1-004
+    livello: numeri
+    domanda: Quale quota delle lesioni traumatiche è immediatamente pericolosa per la vita, e con quale mortalità in ospedale?
+    opzioni:
+      - Il 5%, con una mortalità in ospedale del 50%
+      - Il 15%, con una mortalità in ospedale del 50%
+      - Il 5%, con una mortalità in ospedale del 20%
+      - Il 20%, con una mortalità in ospedale del 30%
+    corretta: 0
+    spiegazione: "L'**80%** delle lesioni non è urgente, il **15%** è urgente e il **5%** è immediatamente pericoloso per la vita, con **mortalità ospedaliera del 50%**. [@1.1.1:8]"
+    ripasso: epidemiologia-del-trauma#quanto-sono-gravi-le-lesioni
+
+  - id: sse1-005
+    livello: numeri
+    domanda: Tra le morti precoci da trauma, quale quota è attribuita alle emorragie non controllate?
+    opzioni:
+      - 7-25%
+      - 5-40%
+      - 30-50%
+      - 1-5%
+    corretta: 0
+    spiegazione: "Le **emorragie non controllate** causano il **7-25%** delle morti precoci; **ostruzione delle vie aeree e trauma toracico grave** il **5-40%**. [@1.1.1:6]"
+    ripasso: epidemiologia-del-trauma#cause-di-morte-precoce
+
+  - id: sse1-006
+    livello: base
+    domanda: Che cos'è la golden hour?
+    opzioni:
+      - La prima ora dopo il trauma, decisiva per la sopravvivenza
+      - Il tempo massimo per completare la valutazione primaria sul posto
+      - La prima ora dopo l'arrivo del paziente in pronto soccorso
+      - Il tempo entro cui la SOREU deve inviare il mezzo avanzato
+    corretta: 0
+    spiegazione: "La [[golden hour]] è la **prima ora dopo il trauma**: i trattamenti fatti in quest'ora pesano su sopravvivenza ed esiti invalidanti. La valutazione primaria, invece, va completata entro **10 minuti dall'arrivo sul posto**. [@1.1.1:12,13]"
+    ripasso: epidemiologia-del-trauma#golden-hour-e-regola-dei-10-minuti
+
+  - id: sse1-007
+    livello: numeri
+    domanda: Entro quanto tempo dall'arrivo sul posto l'equipaggio deve aver completato l'ABCDE primario nel traumatizzato?
+    opzioni:
+      - 10 minuti
+      - 5 minuti
+      - 20 minuti
+      - 60 minuti
+    corretta: 0
+    spiegazione: "Entro **10 minuti dall'arrivo** si esegue l'ABCDE primario: tutta la valutazione primaria, dal colpo d'occhio al testa-piedi, dura al massimo 10 minuti. [@1.1.1:13] [@1.2.1:25]"
+    ripasso: epidemiologia-del-trauma#golden-hour-e-regola-dei-10-minuti
+
+  - id: sse1-008
+    livello: esame
+    domanda: Arrivate su un incidente stradale e le forze dell'ordine non sono ancora sul posto. Dove fermate l'ambulanza?
+    opzioni:
+      - Prima dell'evento, con i segnalatori luminosi accesi, per proteggere la scena
+      - Dopo l'evento, con i segnalatori luminosi accesi, per non intralciare il traffico
+      - Prima dell'evento, spegnendo i segnalatori per non abbagliare gli altri conducenti
+      - Accanto ai veicoli coinvolti, per ridurre la distanza dal paziente
+    corretta: 0
+    spiegazione: "Senza FFO il mezzo si ferma **prima** dell'evento per proteggerlo; con le FFO già a protezione si ferma **dopo**. In entrambi i casi **segnalatori sempre accesi**. [@1.1.2:5]"
+    ripasso: valutazione-della-scena#il-mezzo-sulla-strada
+
+  - id: sse1-009
+    livello: base
+    domanda: Quale di questi NON è un indicatore di trauma grave secondo il materiale del corso?
+    opzioni:
+      - Caduta da un'altezza di 2 metri
+      - Estricazione durata più di 20 minuti
+      - Un morto nello stesso evento
+      - Motociclista investito
+    corretta: 0
+    spiegazione: "La caduta è un indicatore di trauma grave se supera i **5 metri**. Gli altri sono tutti nell'elenco: corpo non protetto, un morto nello stesso evento, estricazione **oltre 20 minuti**. [@1.1.2:31]"
+    ripasso: valutazione-della-scena#indicatori-di-trauma-grave
+
+  - id: sse1-010
+    livello: base
+    domanda: Secondo la teoria del triplice impatto, quali sono i tre urti di un incidente d'auto?
+    opzioni:
+      - Il veicolo contro l'ostacolo, il corpo contro il veicolo, gli organi contro il corpo
+      - Il veicolo contro l'ostacolo, il veicolo contro il terreno, il corpo contro il terreno
+      - Il corpo contro la cintura, il corpo contro l'airbag, il capo contro il poggiatesta
+      - Il veicolo contro l'ostacolo, il corpo contro il veicolo, il corpo contro il terreno
+    corretta: 0
+    spiegazione: "Tre urti in sequenza: **veicolo contro ostacolo**, **corpo contro veicolo**, **organi contro corpo** (per esempio il cervello contro la scatola cranica). [@1.1.2:15-19]"
+    ripasso: valutazione-della-scena#teoria-del-triplice-impatto
+
+  - id: sse1-011
+    livello: base
+    domanda: Che cos'è l'indice di sospetto?
+    opzioni:
+      - La previsione della natura e della gravità delle lesioni d'organo provocate dal trauma
+      - Il punteggio di gravità che la SOREU assegna all'evento al momento della chiamata
+      - La probabilità che la scena presenti pericoli per i soccorritori e per gli astanti
+      - Il sospetto che il paziente abbia assunto alcol, farmaci o altre sostanze prima dell'evento
+    corretta: 0
+    spiegazione: "L'[[indice di sospetto]] è la **previsione di natura e gravità delle lesioni d'organo**. Si costruisce su meccanismo di lesione, sede e modo in cui la forza ha colpito, scarsa memoria dell'evento. [@1.1.2:33,34]"
+    ripasso: valutazione-della-scena#l-indice-di-sospetto
+
+  - id: sse1-012
+    livello: base
+    domanda: Che cosa ricorda la "c" minuscola nella sequenza AcBCDE del trauma?
+    opzioni:
+      - La protezione del rachide cervicale mentre si gestiscono le vie aeree
+      - Il controllo della coscienza prima di valutare la pervietà delle vie aeree
+      - Il controllo delle emorragie catastrofiche prima delle vie aeree
+      - La comunicazione con la SOREU all'inizio della valutazione
+    corretta: 0
+    spiegazione: "La **c** sta per *cervical spine*: mentre si garantiscono le vie aeree si protegge il **rachide cervicale**, tenuto in asse a mano da un soccorritore. [@1.2.1:5,6] [@1.3.1:8]"
+    ripasso: valutazione-primaria#la-sequenza-acbcde
+
+  - id: sse1-013
+    livello: esame
+    domanda: Un traumatizzato è incosciente e le vie aeree non sono pervie. Qual è la sequenza corretta?
+    opzioni:
+      - Capo non esteso, sublussazione della mandibola, aspirazione, cannula orofaringea
+      - Iperestensione del capo, aspirazione del cavo orale, cannula orofaringea
+      - Collare subito, poi iperestensione del capo e ventilazione con il pallone
+      - Rotazione della sola testa di lato per far defluire le secrezioni, poi cannula
+    corretta: 0
+    spiegazione: "Nel traumatizzato incosciente **non si estende il capo**: sublussazione della mandibola, aspirazione, cannula orofaringea. Solo se non c'è altro modo si può **estendere moderatamente** il capo, perché l'assenza di respiro è peggio del rischio per il rachide. [@1.2.1:8,9]"
+    ripasso: valutazione-primaria#il-paziente-incosciente
+
+  - id: sse1-014
+    livello: esame
+    domanda: Un traumatizzato con sospetta lesione del rachide inizia a vomitare. Cosa fate?
+    opzioni:
+      - Girate tutto il paziente sul fianco in blocco, mantenendo il rachide in asse
+      - Ruotate solo la testa di lato per far defluire il vomito
+      - Lo mettete seduto per ridurre il rischio di inalazione
+      - Lasciate il paziente supino e aspirate solo al termine della valutazione primaria
+    corretta: 0
+    spiegazione: "Con vomito o sanguinamento importante dal volto si **gira tutto il paziente** sul fianco **mantenendo il rachide in asse**; ruotare solo la testa è un errore. [@1.2.1:10] [@1.5:8]"
+    ripasso: valutazione-primaria#vomito-o-sanguinamento-dal-volto
+
+  - id: sse1-015
+    livello: base
+    domanda: Che cosa significano le lettere dell'acronimo OPACS nella valutazione del respiro?
+    opzioni:
+      - Osserva, Palpa, Ascolta, Conta, Saturimetria
+      - Ossigena, Posiziona, Aspira, Controlla, Stabilizza
+      - Osserva, Percuoti, Ausculta, Colorito, Sudorazione
+      - Ostruzione, Pervietà, Apnea, Cianosi, Saturazione
+    corretta: 0
+    spiegazione: "[[OPACS]]: **Osserva** l'espansione, **Palpa** il torace, **Ascolta** i rumori, **Conta** la FR, **Saturimetria**. [@1.2.1:12]"
+    ripasso: valutazione-primaria#b-respiro-con-l-opacs
+
+  - id: sse1-016
+    livello: esame
+    domanda: "Un traumatizzato adulto, nella fase B, ha FR 18 atti/min e SpO2 88% in aria. Secondo le soglie di pericolo della valutazione primaria, quale valore è pericoloso?"
+    opzioni:
+      - Solo la saturazione
+      - Solo la frequenza respiratoria
+      - Entrambi i valori
+      - Nessuno dei due valori
+    corretta: 0
+    spiegazione: "Nel trauma la FR è pericolosa **sotto 10 o sopra 20** atti/min e la SpO2 **sotto il 90%**: 18 atti/min rientra nella norma, 88% è sotto la soglia. [@1.2.1:12]"
+    ripasso: valutazione-primaria#b-respiro-con-l-opacs
+
+  - id: sse1-017
+    livello: numeri
+    domanda: Quanto ossigeno si somministra a un traumatizzato e sotto quale frequenza respiratoria si ventila con il pallone autoespandibile?
+    opzioni:
+      - 12-15 L/min con maschera e reservoir; ventilare se FR < 8 atti/min
+      - 6-8 L/min con occhialini; ventilare se FR < 10 atti/min
+      - 12-15 L/min con maschera e reservoir; ventilare se FR < 12 atti/min
+      - 2-4 L/min con maschera semplice; ventilare se FR < 6 atti/min
+    corretta: 0
+    spiegazione: "Ossigeno **12-15 L/min** con maschera e reservoir a **ogni traumatizzato**; si ventila con pallone + reservoir + O2 se la **FR è sotto 8**. Nota: la soglia di pericolo è 10, quella per ventilare è 8. [@1.2.1:12-14]"
+    ripasso: valutazione-primaria#assistenza-nella-b
+
+  - id: sse1-018
+    livello: numeri
+    domanda: In un traumatizzato il polso radiale non è palpabile, mentre il carotideo è presente. Quale pressione arteriosa sistolica è indicativamente attesa?
+    opzioni:
+      - Tra 60 e 80 mmHg
+      - Tra 80 e 100 mmHg
+      - Sotto 40 mmHg
+      - Oltre 100 mmHg
+    corretta: 0
+    spiegazione: "Radiale presente → PA sistolica **> 80 mmHg**; carotideo presente → **> 60 mmHg**. Un radiale assente con carotideo presente indica quindi una sistolica tra 60 e 80 circa. [@1.2.1:17] [@tss-c3:9]"
+    ripasso: valutazione-primaria#cosa-valutare
+
+  - id: sse1-019
+    livello: esame
+    domanda: In quale momento della valutazione primaria del trauma si comunicano alla SOREU i problemi che minacciano la vita?
+    opzioni:
+      - Al termine della fase C
+      - Al termine della fase A
+      - Solo al termine dell'esame testa-piedi
+      - Solo dopo aver caricato il paziente in ambulanza
+    corretta: 0
+    spiegazione: "Al **termine della C** si comunicano alla SOREU i segni che possono compromettere la sopravvivenza e se ne seguono le indicazioni. Negli scenari, non allertarla in questi casi **invalida** la prova. [@1.2.1:19] [@scenari:13,21]"
+    ripasso: valutazione-primaria#fine-della-c-chiamare-la-soreu
+
+  - id: sse1-020
+    livello: esame
+    domanda: Un traumatizzato non risponde quando lo chiamate. Come verificate se reagisce allo stimolo doloroso (la P dell'AVPU)?
+    opzioni:
+      - Pizzicandogli la base del collo, senza scuoterlo
+      - Scuotendolo per le spalle mentre lo chiamate a voce alta
+      - Ruotandogli il capo di lato e osservando se apre gli occhi
+      - Chiamandolo più forte vicino all'orecchio, senza toccarlo
+    corretta: 0
+    spiegazione: "Nel traumatizzato lo stimolo doloroso si dà **pizzicando la base del collo**: lo **scuotimento** si usa solo nel paziente **non traumatizzato**, e il rachide va tenuto in asse. Chiamarlo più forte valuta ancora la V, non la P. [@1.2.1:20] [@tss-abcde-note:8]"
+    ripasso: valutazione-primaria#d-stato-neurologico
+
+  - id: sse1-021
+    livello: base
+    domanda: Nella fase E del traumatizzato, quale comportamento è corretto?
+    opzioni:
+      - Scoprire solo le zone utili, come gli arti con sospette fratture, poi coprirlo
+      - Spogliare completamente il paziente, così da non perdere nessuna lesione nascosta
+      - Rimandare l'esposizione all'arrivo in pronto soccorso, per evitare l'ipotermia
+      - Togliere i vestiti sfilandoli, per conservarli integri e consegnarli ai familiari
+    corretta: 0
+    spiegazione: "Si **tagliano** i vestiti (se possibile con il consenso) per mettere in evidenza le lesioni, **senza spogliare completamente** il paziente, e lo si protegge da ipotermia e ipertermia. [@1.2.1:21-23]"
+    ripasso: valutazione-primaria#e-esposizione-ed-esame-testa-piedi
+
+  - id: sse1-022
+    livello: base
+    domanda: Quale affermazione sulla valutazione secondaria del traumatizzato è corretta?
+    opzioni:
+      - È breve e schematica e non deve mai ritardare il trasporto del paziente critico
+      - Va sempre completata sul posto, prima di caricare il paziente in ambulanza
+      - Sostituisce la valutazione primaria nei pazienti stabili e collaboranti
+      - Si esegue in pronto soccorso, dopo la consegna del paziente al personale
+    corretta: 0
+    spiegazione: "La secondaria è **breve, standardizzata e schematica**, **non ritarda mai il trasporto** del paziente critico e può essere fatta anche in ambulanza su indicazione della SOREU. [@1.2.2:3]"
+    ripasso: valutazione-secondaria#scopo-e-regole
+
+  - id: sse1-023
+    livello: esame
+    domanda: Il traumatizzato è confuso e non riesce a rispondere alle domande dell'anamnesi AMPIA. Come vi comportate?
+    opzioni:
+      - Chiedete le informazioni a familiari o conoscenti presenti sul posto
+      - Rinunciate all'anamnesi, che raccoglierà il personale del pronto soccorso
+      - Chiedete alla SOREU di recuperare la storia clinica del paziente
+      - Ripetete le domande più volte finché il paziente non risponde
+    corretta: 0
+    spiegazione: "Se il paziente non è in grado di rispondere o non è attendibile, le informazioni dell'[[AMPIA]] (Allergie, Medicamenti, Patologie, Ingestione, Altro) si chiedono a **familiari o conoscenti presenti**. [@1.2.2:13] [@tss-abcde-note:9]"
+    ripasso: valutazione-secondaria#dinamica-e-anamnesi-ampia
+
+  - id: sse1-024
+    livello: numeri
+    domanda: Quale quota dei danni al rachide cervicale è causata dai soccorritori, fuori e dentro l'ospedale?
+    opzioni:
+      - Oltre il 25%
+      - Circa il 5%
+      - Oltre il 50%
+      - Circa il 70%
+    corretta: 0
+    spiegazione: "**Oltre il 25%** dei danni al rachide cervicale è provocato dai soccorritori. In un programma USA, migliorando le tecniche, il danno neurologico permanente è sceso **dal 70% al 33%**. [@1.3.1:3]"
+    ripasso: lesione-colonna-vertebrale#quanto-e-rilevante-il-problema
+
+  - id: sse1-025
+    livello: esame
+    domanda: "Un ragazzo si è tuffato in acqua bassa e ha battuto la testa. Esce dall'acqua da solo, cammina e riferisce solo formicolio alle mani. Qual è il comportamento corretto?"
+    opzioni:
+      - Sospettate una lesione della colonna e immobilizzate, perché camminare non la esclude
+      - Escludete una lesione midollare, perché il paziente riesce a camminare da solo
+      - Lo fate sedere e lo rivalutate dopo qualche minuto, prima di decidere se immobilizzare
+      - Immobilizzate il rachide solo se compare dolore al collo o alla schiena
+    corretta: 0
+    spiegazione: "**Un paziente che cammina non esclude una lesione della colonna.** Il tuffo è un meccanismo che la fa sospettare e i sintomi iniziali sono spesso **lievi e sfumati**: si immobilizza anche solo per sospetto. [@1.3.1:5,7,10,11]"
+    ripasso: lesione-colonna-vertebrale#quando-sospettarla
+
+  - id: sse1-026
+    livello: base
+    domanda: Quale danno midollare può essere prevenuto dal soccorritore?
+    opzioni:
+      - Il danno secondario, dovuto a ipossia, ischemia e movimenti scorretti
+      - Il danno primario, dovuto direttamente al trauma
+      - Entrambi, se l'immobilizzazione avviene entro 10 minuti
+      - "Nessuno dei due: il soccorritore può solo trasportare il paziente"
+    corretta: 0
+    spiegazione: "Il **danno primario** è già avvenuto (si può solo stabilizzare); il **[[danno midollare secondario]]**, dovuto a ipossia, ischemia e movimenti non corretti, si può **prevenire**. [@1.3.1:6]"
+    ripasso: lesione-colonna-vertebrale#danno-primario-e-danno-secondario
+
+  - id: sse1-027
+    livello: esame
+    domanda: Un traumatizzato non muove e non sente gli arti inferiori. Quale presidio è fortemente consigliato per trasferirlo sui presidi di immobilizzazione completi?
+    opzioni:
+      - La barella a cucchiaio
+      - L'immobilizzatore spinale
+      - La sedia portantina
+      - Il telo portaferiti
+    corretta: 0
+    spiegazione: "Con segni evidenti di lesione della colonna è **fortemente consigliata la [[barella a cucchiaio]]** per il trasferimento. Da sola però **non immobilizza** la colonna. [@1.3.1:12] [@1.3.2:24]"
+    ripasso: lesione-colonna-vertebrale#assistenza
+
+  - id: sse1-028
+    livello: base
+    domanda: Qual è il riferimento per la posizione neutra del capo?
+    opzioni:
+      - La linea dello sguardo a 90° rispetto alla colonna
+      - Il mento appoggiato allo sterno, con il collo flesso
+      - Il capo esteso di circa 30° rispetto alla colonna
+      - La linea dello sguardo parallela alla colonna
+    corretta: 0
+    spiegazione: "In [[posizione neutra]] la linea dello sguardo è **perpendicolare (90°)** alla colonna. La colonna cervicale si immobilizza a mano **prima di ogni altra manovra**. [@1.3.2:7]"
+    ripasso: immobilizzazione-atraumatica#la-posizione-neutra
+
+  - id: sse1-029
+    livello: esame
+    domanda: Mentre portate il capo in posizione neutra il paziente riferisce un forte aumento del dolore al collo. Cosa fate?
+    opzioni:
+      - "Non forzate: tenete il capo a mano, senza collare, con telini e tavola spinale"
+      - Completate il movimento fino alla posizione neutra, poi mettete collare e tavola spinale
+      - Posizionate il collare nella posizione in cui si trova il collo e passate alla fase B
+      - Lasciate il capo libero, fate sedere il paziente e rivalutate il dolore dopo qualche minuto
+    corretta: 0
+    spiegazione: "Con collo in posizione viziata o dolore al movimento: **immobilizzazione manuale**, **niente collare**, **telini** per sostenere il capo, **tavola spinale**. [@1.3.2:13,14]"
+    ripasso: immobilizzazione-atraumatica#quando-fermarsi
+
+  - id: sse1-030
+    livello: numeri
+    domanda: Quanti soccorritori servono per il sollevamento a ponte?
+    opzioni:
+      - "4"
+      - "3"
+      - "2"
+      - "5"
+    corretta: 0
+    spiegazione: "Il **sollevamento a ponte** richiede **4 soccorritori**; log-roll, pronosupinazione e abbattimento del paziente in piedi ne richiedono **3**, la rimozione del casco **2**. [@1.3.2:19-22,30]"
+    ripasso: immobilizzazione-atraumatica#le-tecniche-per-mettere-il-paziente-sulla-tavola
+
+  - id: sse1-031
+    livello: esame
+    domanda: Un motociclista è a terra prono, con il casco integrale. Come procedete per togliere il casco?
+    opzioni:
+      - Pronosupinazione a 3 soccorritori, poi rimozione del casco a 2
+      - Rimozione del casco a 2 soccorritori con il paziente prono, poi pronosupinazione
+      - Rimozione del casco da parte di 1 soccorritore, poi log-roll a 3
+      - Il casco non si toglie mai sul posto
+    corretta: 0
+    spiegazione: "Prima di togliere il casco il paziente va messo **supino** (pronosupinazione a **3**); la rimozione si fa in **2**. Il casco si toglie **sempre quando possibile**, salvo deformità o oggetti penetranti. [@1.3.2:29-31]"
+    ripasso: immobilizzazione-atraumatica#rimozione-del-casco
+
+  - id: sse1-032
+    livello: base
+    domanda: Qual è lo svantaggio del materasso a depressione indicato nella lezione?
+    opzioni:
+      - Rende più difficile l'accesso al paziente
+      - Non è radiotrasparente
+      - Non permette di immobilizzare in posizioni anomale
+      - È scomodo per il paziente
+    corretta: 0
+    spiegazione: "Il [[materasso a depressione]] si modella, immobilizza totalmente, anche in posizioni anomale, è confortevole e radiotrasparente; lo svantaggio è l'**accesso al paziente più difficile**. [@1.3.2:25]"
+    ripasso: immobilizzazione-atraumatica#materasso-a-depressione
+
+  - id: sse1-033
+    livello: esame
+    domanda: Un paziente ha una frattura esposta di gamba con l'osso visibile. Cosa NON dovete fare?
+    opzioni:
+      - Far rientrare l'osso e lavare la ferita prima di coprirla
+      - Immobilizzare l'arto manualmente
+      - Coprire la ferita e l'osso esposto con garze o telini sterili
+      - Immobilizzare con una steccobenda a depressione
+    corretta: 0
+    spiegazione: "Nella frattura esposta **non** si raddrizza, **non** si traziona, **non** si fa rientrare l'osso e **non** lo si pulisce: si immobilizza, si copre con materiale sterile e si usa la [[steccobenda]] a depressione. [@1.4:12]"
+    ripasso: parti-molli-e-ossee#frattura-esposta
+
+  - id: sse1-034
+    livello: esame
+    domanda: Un'emorragia da ferita della coscia non si ferma con la compressione diretta. Come usate la fascia emostatica?
+    opzioni:
+      - Alla radice dell'arto, annotando l'ora di applicazione
+      - Subito sopra la ferita, allentandola ogni 10 minuti
+      - Alla radice dell'arto, solo dopo aver avvisato il pronto soccorso
+      - Subito sotto la ferita, per non comprimere i vasi principali
+    corretta: 0
+    spiegazione: "La [[fascia emostatica]] si usa solo se l'emorragia è **incontrollabile** con la compressione, **alla radice dell'arto**, **registrando l'ora**. [@1.4:18-19]"
+    ripasso: parti-molli-e-ossee#amputazione
+
+  - id: sse1-035
+    livello: base
+    domanda: Come si conserva un segmento di arto amputato?
+    opzioni:
+      - Panni sterili, sacchetto di plastica, al freddo senza ghiaccio a contatto; viaggia con il paziente
+      - Immerso direttamente in acqua e ghiaccio, così resta ben freddo; viaggia con il paziente
+      - Avvolto in garze imbevute di disinfettante, a temperatura ambiente; viaggia con il paziente
+      - Sacchetto di plastica a contatto diretto con il ghiaccio; lo porta in PS un secondo mezzo
+    corretta: 0
+    spiegazione: "Parte amputata: **panni sterili → sacchetto → freddo senza ghiaccio a contatto** → trasportata **insieme al paziente**. [@1.4:20]"
+    ripasso: parti-molli-e-ossee#amputazione
+
+  - id: sse1-036
+    livello: esame
+    domanda: Un paziente caduto dalla bicicletta ha dolore all'anca e un arto inferiore più corto e ruotato. Quale comportamento è corretto?
+    opzioni:
+      - "Sospetta frattura di bacino: niente manipolazioni né log-roll, materasso a depressione"
+      - Verificare la stabilità del bacino comprimendolo più volte, poi tavola spinale con ragno
+      - Eseguire un log-roll per ispezionare la schiena, poi immobilizzare su tavola spinale
+      - "Trattarla come una lussazione d'anca: posizione antalgica e trasporto senza altri presidi"
+    corretta: 0
+    spiegazione: "Arti di lunghezza diversa o ruotati fanno pensare a una **frattura del bacino**, grave e molto emorragica: **niente manipolazioni**, **log-roll sconsigliato**, e l'**immobilizzazione** con materasso a depressione è il mezzo migliore per controllare l'emorragia. [@1.4:14-17]"
+    ripasso: parti-molli-e-ossee#trauma-del-bacino
+
+  - id: sse1-037
+    livello: base
+    domanda: Quale di queste caratteristiche è propria della lussazione?
+    opzioni:
+      - I capi articolari restano fuori posto e l'articolazione non si muove nemmeno passivamente
+      - Il colpo diretto non rompe l'integrità dei tessuti molli e lascia solo dolore locale
+      - L'osso perde in modo permanente la continuità di un suo segmento
+      - Il trauma dei tessuti articolari dà edema ed ematoma, ma i capi restano in sede
+    corretta: 0
+    spiegazione: "Nella [[lussazione]] i rapporti articolari sono persi in modo permanente, con deformità e **impotenza funzionale** anche passiva; si favorisce la **posizione antalgica**. Le altre descrivono contusione, frattura e distorsione. [@1.4:4,5,13]"
+    ripasso: parti-molli-e-ossee#lussazione
+
+  - id: sse1-038
+    livello: esame
+    domanda: Un traumatizzato cranico ha perdita di sangue dall'orecchio e una ferita sanguinante del cuoio capelluto. Cosa fate?
+    opzioni:
+      - Non tamponate l'orecchio; comprimete lo scalpo con delicatezza, su un osso stabile
+      - Tamponate l'orecchio con garze e comprimete con forza la ferita dello scalpo per fermarla
+      - Tamponate l'orecchio e lasciate sanguinare lo scalpo, che di solito si ferma da solo
+      - Non trattate nessuna delle due emorragie fino all'arrivo del mezzo di soccorso avanzato
+    corretta: 0
+    spiegazione: "Le emorragie da **naso e orecchie non si tamponano**; quelle dello **scalpo** si comprimono **con delicatezza** appoggiandosi su un **osso stabile**. [@1.5:10]"
+    ripasso: trauma-cranico#c-circolo
+
+  - id: sse1-039
+    livello: base
+    domanda: Quale di questi è un segno di trauma cranico GRAVE secondo il materiale?
+    opzioni:
+      - Vomito ripetuto
+      - Cefalea lieve
+      - Difficoltà a ricordare l'orario dell'incidente, senza altri sintomi
+      - Una piccola escoriazione della fronte
+    corretta: 0
+    spiegazione: "Segni di trauma cranico grave: **perdita di coscienza**, **vomito ripetuto**, **agitazione**, **convulsioni**. Cefalea e problemi di memoria sono segni generali, da monitorare perché possono peggiorare. [@1.5:5,6]"
+    ripasso: trauma-cranico#segni-e-sintomi
+
+  - id: sse1-040
+    livello: esame
+    domanda: Un motociclista caduto ha un ematoma sul torace e l'emitorace destro si espande meno del sinistro. Il respiro è difficoltoso. Quale quadro vi aspettate e come lo seguite?
+    opzioni:
+      - Possibile pneumotorace, con calo della SpO2 e ipotensione; monitoraggio continuo
+      - "Semplice contusione costale: basta il ghiaccio, senza bisogno di monitorare i parametri"
+      - "Ferita soffiante: va chiusa subito con una medicazione occlusiva sui quattro lati"
+      - "Volet costale: va immobilizzato fasciando stretto il torace con una benda elastica"
+    corretta: 0
+    spiegazione: "Espansione asimmetrica e dispnea dopo un trauma fanno pensare a un **[[pneumotorace]]**, che può evolvere fino all'**arresto cardiaco**: attesi calo della saturazione, ipotensione, alterazione della coscienza. Si danno **O2 ad alti flussi** e si **monitora continuamente**. [@1.6:7-9]"
+    ripasso: trauma-toracico#pneumotorace
+
+  - id: sse1-041
+    livello: numeri
+    domanda: Quale percentuale delle morti per trauma è attribuita al trauma toracico?
+    opzioni:
+      - 25%
+      - 10%
+      - 50%
+      - 5%
+    corretta: 0
+    spiegazione: "Il trauma toracico è responsabile del **25% delle morti per trauma** ed è una lesione **evolutiva**. [@1.6:3]"
+    ripasso: trauma-toracico#quando-sospettarlo
+
+  - id: sse1-042
+    livello: base
+    domanda: Come si definisce il volet costale?
+    opzioni:
+      - Almeno 3 coste vicine fratturate ciascuna in 2 punti, con movimento paradosso
+      - Almeno 2 coste vicine fratturate ciascuna in 1 punto, con enfisema sottocutaneo
+      - Una sola costa fratturata in 3 punti, con dolore vivo alla palpazione e al respiro
+      - Frattura dello sterno associata a una ferita del torace che aspira aria
+    corretta: 0
+    spiegazione: "Nel volet **almeno 3 coste vicine** sono fratturate **ciascuna in 2 punti**: il lembo rientra in inspirazione e sporge in espirazione (movimento **paradosso**). [@1.6:10]"
+    ripasso: trauma-toracico#volet-costale-lembo-costale
+
+  - id: sse1-043
+    livello: base
+    domanda: Come si tratta una ferita soffiante del torace?
+    opzioni:
+      - Con una medicazione subocclusiva, fissata su tre lati
+      - Con una medicazione occlusiva, fissata su quattro lati
+      - Lasciandola scoperta per far uscire l'aria
+      - Tamponandola con garze inserite nella ferita
+    corretta: 0
+    spiegazione: "La [[ferita soffiante]] si chiude con una **medicazione subocclusiva fissata su tre lati**. [@1.6:11,12] [@1.2.1:13]"
+    ripasso: trauma-toracico#trauma-toracico-aperto-ferita-soffiante
+
+  - id: sse1-044
+    livello: esame
+    domanda: Un operaio ha un'eviscerazione dopo una ferita addominale. Quale azione è corretta?
+    opzioni:
+      - Coprire i visceri con garze e telino sterile e avvisare subito la SOREU
+      - Rimettere delicatamente i visceri nell'addome e fasciare
+      - Lavare i visceri con disinfettante e coprirli con un telino
+      - Lasciare i visceri scoperti per poterli controllare durante il trasporto
+    corretta: 0
+    spiegazione: "Eviscerazione: si **coprono** i visceri con **garze e telino sterile** e si contatta la SOREU. **Non** si rimettono dentro e **non** si versano disinfettanti. [@1.7:7]"
+    ripasso: lesioni-addome#traumi-aperti-eviscerazioni
+
+  - id: sse1-045
+    livello: esame
+    domanda: Un paziente ha un trauma chiuso dell'addome, con addome contratto, pallore, sudorazione e tachicardia, ma senza ferite evidenti. Cosa dovete sospettare?
+    opzioni:
+      - Un'emorragia interna con segni di shock, da comunicare subito alla SOREU
+      - Un semplice dolore muscolare, perché mancano lesioni esterne evidenti
+      - Un attacco di panico dovuto allo spavento, da gestire tranquillizzando il paziente
+      - Una lesione midollare, perché la tachicardia indica un danno nervoso
+    corretta: 0
+    spiegazione: "Nel trauma chiuso anche con **poche lesioni esterne** può esserci un'**emorragia** da organi e vasi interni. Pallore, sudorazione, tachicardia e ipotensione sono **segni di shock**: rischio evolutivo elevato, SOREU subito. [@1.7:3,4,9]"
+    ripasso: lesioni-addome#segni-e-sintomi
+
+  - id: sse1-046
+    livello: base
+    domanda: Che differenza c'è tra vittima incastrata e vittima incarcerata?
+    opzioni:
+      - L'incastrata ha parti del corpo bloccate dal veicolo; l'incarcerata non esce, ma non ha parti bloccate
+      - L'incarcerata ha parti del corpo compresse, l'incastrata non riesce a uscire solo perché le porte sono bloccate
+      - "Sono sinonimi: indicano entrambe un paziente che non può uscire dal veicolo"
+      - L'incastrata è ancora cosciente e collaborante, l'incarcerata è incosciente o confusa
+    corretta: 0
+    spiegazione: "**Incastrata**: il veicolo deformato **comprime parti del corpo**. **Incarcerata**: la deformazione impedisce di uscire, ma **nessuna parte del corpo è bloccata**. [@1.8.1:3]"
+    ripasso: paziente-incastrato#incastrato-o-incarcerato
+
+  - id: sse1-047
+    livello: base
+    domanda: Quale di queste è una controindicazione ASSOLUTA all'uso dell'immobilizzatore spinale (KED)?
+    opzioni:
+      - Pericolo ambientale imminente
+      - Gravidanza avanzata
+      - Trauma toracico grave
+      - Veicolo molto deformato dall'urto
+    corretta: 0
+    spiegazione: "Controindicazioni **assolute**: arresto cardiaco, condizioni cliniche gravi, **pericolo ambientale imminente**. Gravidanza avanzata e trauma toracico grave sono **relative**; il veicolo molto deformato è un'indicazione **consigliata**. [@1.8.1:4-6]"
+    ripasso: paziente-incastrato#quando-non-usarlo
+
+  - id: sse1-048
+    livello: esame
+    domanda: Un conducente è seduto nell'auto, cosciente, e dal motore esce del fumo con principio di incendio. Quale tecnica di estricazione scegliete?
+    opzioni:
+      - La manovra di Rautek, eseguibile da 1-2 soccorritori
+      - L'immobilizzatore spinale a 3 soccorritori
+      - L'estricazione rapida a 3 soccorritori con collare e tavola spinale
+      - "Nessuna: si attende l'arrivo dei Vigili del Fuoco senza toccare il paziente"
+    corretta: 0
+    spiegazione: "Con **pericolo ambientale** (incendio, scoppio, tossici, acqua, veicolo instabile) si usa la [[manovra di Rautek]] (**1-2 soccorritori**). L'estricazione rapida a 3 con collare e tavola è per le **condizioni cliniche gravi**. [@1.8.1:10-14]"
+    ripasso: paziente-incastrato#le-due-tecniche
+
+  - id: sse1-049
+    livello: numeri
+    domanda: Secondo la regola del nove, quanto vale la testa nell'adulto e nel bambino?
+    opzioni:
+      - 9% nell'adulto, 18% nel bambino
+      - 18% nell'adulto, 9% nel bambino
+      - 9% in entrambi
+      - 9% nell'adulto, 14% nel bambino
+    corretta: 0
+    spiegazione: "Con la [[regola del nove]] la testa vale **9% nell'adulto** e **18% nel bambino**; ogni arto inferiore vale 18% nell'adulto e 14% nel bambino. [@1.8.2:10,11]"
+    ripasso: ustioni#estensione-la-regola-del-nove
+
+  - id: sse1-050
+    livello: numeri
+    domanda: Un adulto ha un'ustione che interessa tutto il tronco anteriore e l'intero braccio destro. Qual è l'estensione secondo la regola del nove?
+    opzioni:
+      - 27%
+      - 18%
+      - 36%
+      - 45%
+    corretta: 0
+    spiegazione: "Nell'adulto il tronco anteriore vale **18%** e ogni arto superiore **9%**: 18 + 9 = **27%**. [@1.8.2:10]"
+    ripasso: ustioni#estensione-la-regola-del-nove
+
+  - id: sse1-051
+    livello: base
+    domanda: Un'ustione con dolore, arrossamento e comparsa di bolle (flittene) di quale grado è?
+    opzioni:
+      - Secondo grado
+      - Primo grado
+      - Terzo grado
+      - Non si può stabilire senza conoscere l'estensione
+    corretta: 0
+    spiegazione: "Il **2° grado** interessa epidermide e derma, con dolore, eritema e **[[flittene]]**. Il 1° grado è solo arrossamento; il 3° coinvolge tutto lo spessore, con necrosi. [@1.8.2:12-13]"
+    ripasso: ustioni#profondita-i-tre-gradi
+
+  - id: sse1-052
+    livello: esame
+    domanda: Un uomo soccorso in un appartamento in fiamme ha ustioni al volto, peli del naso bruciati, voce rauca ed espettorato nerastro. Su quale fase dell'ABCDE concentrate l'attenzione?
+    opzioni:
+      - Sulla A, per una sospetta lesione da inalazione di fumi
+      - Sulla C, perché le ustioni estese causano soprattutto emorragie
+      - Sulla D, perché la voce rauca indica un danno neurologico
+      - Sulla E, perché conta prima di tutto misurare l'estensione delle ustioni
+    corretta: 0
+    spiegazione: "Ustioni al volto, **vibrisse bruciate**, **espettorato carbonaceo** e **raucedine** fanno sospettare una **lesione da inalazione**: nell'ustionato l'attenzione particolare va alla **A**. [@1.8.2:8,14]"
+    ripasso: ustioni#fattori-aggravanti-l-inalazione-di-fumi
+
+  - id: sse1-053
+    livello: esame
+    domanda: Un operaio è stato investito da una polvere caustica su braccia e torace. Qual è la condotta corretta?
+    opzioni:
+      - Rimuovere prima la polvere asciutta, poi lavare con molta acqua per 20-30 minuti
+      - Lavare subito con molta acqua per 5 minuti, senza rimuovere la polvere
+      - Neutralizzare la sostanza con un'altra sostanza chimica di segno opposto
+      - Coprire subito con telini sterili asciutti, senza lavare, per non estendere l'ustione
+    corretta: 0
+    spiegazione: "Nelle ustioni chimiche si **toglie prima la polvere asciutta**, poi si **lava abbondantemente per 20-30 minuti**; per gli occhi lavaggio continuo dall'angolo vicino al naso. [@1.8.2:16]"
+    ripasso: ustioni#ustioni-da-agenti-chimici
+
+  - id: sse1-054
+    livello: numeri
+    domanda: Quale è la principale causa dei traumi in età pediatrica, e con quale percentuale?
+    opzioni:
+      - Incidenti stradali, 52%
+      - Incidenti accidentali, 52%
+      - Incidenti stradali, 36%
+      - Incidenti sportivi, 25%
+    corretta: 0
+    spiegazione: "Cause dei traumi pediatrici: **stradali 52%**, **accidentali 36%**, sportivi 5%, scolastici 5%, varie 2%. Il trauma è la **1ª causa di morte in età pediatrica**. [@1.8.3:4]"
+    ripasso: trauma-bambino-anziano-gravida#perche-e-diverso
+
+  - id: sse1-055
+    livello: esame
+    domanda: "Un bambino di 3 anni è stato coinvolto in un incidente stradale mentre era nel seggiolino a guscio (\"ovetto\"). Quale affermazione sull'ovetto è corretta?"
+    opzioni:
+      - Non protegge il rachide, ma può servire per estrarre il bambino dall'auto
+      - Protegge bene il rachide ed è adatto anche al trasporto in ambulanza
+      - Va tolto dall'auto vuoto, dopo aver estratto a mano il bambino dal sedile
+      - Si può usare per il trasporto in ambulanza se il bambino pesa meno di 10 kg
+    corretta: 0
+    spiegazione: "L'ovetto **non protegge il rachide** e **non è adatto al trasporto** del bambino traumatizzato; può servire per **estrarlo dall'auto**, dopo aver immobilizzato il tratto cranio-cervicale. [@1.8.3:13-14]"
+    ripasso: trauma-bambino-anziano-gravida#l-ovetto
+
+  - id: sse1-056
+    livello: base
+    domanda: Un bambino traumatizzato con sospetta frattura di femore deve essere immobilizzato. Quale presidio si preferisce?
+    opzioni:
+      - L'immobilizzatore a depressione
+      - La tavola spinale pediatrica, fissata con il ragno
+      - Il seggiolino a guscio, con un collare pediatrico
+      - La sola barella a cucchiaio, per non muovere l'arto
+    corretta: 0
+    spiegazione: "Bambino allineabile → tavola spinale pediatrica; **non allineabile** o con **sospetta lesione di femore o bacino** → **immobilizzatore a depressione**. [@1.8.3:20]"
+    ripasso: trauma-bambino-anziano-gravida#quale-presidio
+
+  - id: sse1-057
+    livello: base
+    domanda: Come si ottiene la posizione neutra del capo in un bambino piccolo supino?
+    opzioni:
+      - Mettendo uno spessore sotto le spalle, perché la testa grande fa flettere il collo
+      - Mettendo uno spessore sotto la testa, perché il collo tende a estendersi
+      - Estendendo leggermente il capo, come si fa nell'adulto per aprire le vie aeree
+      - Senza accorgimenti, perché nel bambino la posizione supina è già neutra
+    corretta: 0
+    spiegazione: "Nel bambino la **testa grande** e l'occipite sporgente fanno **flettere il collo** da supino: serve uno **spessore sotto le spalle**. [@1.8.3:26] [@ped-approfondimenti:12]"
+    ripasso: trauma-bambino-anziano-gravida#collare-e-posizione-neutra
+
+  - id: sse1-058
+    livello: esame
+    domanda: Una donna al settimo mese di gravidanza è stata coinvolta in un incidente stradale. Come la trasportate?
+    opzioni:
+      - Sul fianco sinistro, con attenzione al vomito
+      - Sul fianco destro, con le gambe sollevate
+      - Supina con il capo sollevato di 45°
+      - Seduta, per ridurre la compressione sull'addome
+    corretta: 0
+    spiegazione: "La gravida traumatizzata si trasporta sul **fianco sinistro** (tavola inclinata di circa 20°), con **attenzione al vomito**: il miglior trattamento per il feto è portare la madre in ospedale nelle migliori condizioni. [@1.8.3:30]"
+    ripasso: trauma-bambino-anziano-gravida#la-donna-gravida
+
+  - id: sse1-059
+    livello: esame
+    domanda: Un uomo di 85 anni è caduto dalle scale ed è tranquillo, dice di stare bene. Quale affermazione è corretta?
+    opzioni:
+      - "Non va sottovalutato: reagisce meno al dolore e si frattura più facilmente"
+      - Se è tranquillo e collaborante si può escludere un trauma grave
+      - La posizione neutra del capo è più facile da ottenere che nel giovane
+      - "I farmaci che assume non contano: si raccolgono solo in pronto soccorso"
+    corretta: 0
+    spiegazione: "Dopo un trauma, anche grave, l'anziano appare spesso **tranquillo**: **non sottovalutarlo mai**. Reagisce meno al dolore, si frattura più facilmente, e la posizione neutra è **difficile** (si aggiungono spessori). [@1.8.3:32-34]"
+    ripasso: trauma-bambino-anziano-gravida#l-anziano
+
+  - id: sse1-060
+    livello: esame
+    domanda: Nella griglia dello scenario trauma, quale di questi errori fa fallire lo scenario?
+    opzioni:
+      - Non allertare la SOREU quando il paziente ha segni che ne compromettono la sopravvivenza
+      - Allertare la SOREU in un caso in cui non era strettamente necessario, motivando la scelta
+      - Misurare la saturazione in aria prima di mettere la maschera dell'ossigeno
+      - Non posizionare il collare quando la griglia lo indica come opzionale
+    corretta: 0
+    spiegazione: "Il **mancato allertamento della SOREU** con un problema che minaccia la vita **invalida** lo scenario, così come una tecnica insufficiente. Chiamarla senza necessità, motivando, non è un errore grave. [@scenari:2,13,21]"
+    ripasso: scenario-trauma#cosa-fa-fallire-lo-scenario

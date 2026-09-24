@@ -324,6 +324,17 @@ export function compileQuiz(source: string): CompiledQuiz
             errori.push(`${id}: indice della risposta corretta non valido`);
         }
         if (!domanda.spiegazione) { errori.push(`${id}: spiegazione mancante`); }
+        const testi = [["domanda", domanda.domanda], ["spiegazione", domanda.spiegazione]]
+            .concat(opzioni.map((opzione) => ["opzione", opzione]));
+
+        for (const [campo, valore] of testi)
+        {
+            // In YAML `- Non cambia: …` senza virgolette diventa un oggetto e `- 30` un numero: servono le virgolette.
+            if ((valore !== undefined) && (typeof valore !== "string"))
+            {
+                errori.push(`${id}: ${campo} non è testo (mancano le virgolette attorno a un ":"?)`);
+            }
+        }
         if (opzioni.some((opzione) => (/precedent/i).test(String(opzione))) && (domanda.fissa !== true))
         {
             errori.push(`${id}: le opzioni che citano "le precedenti" richiedono \`fissa: true\``);

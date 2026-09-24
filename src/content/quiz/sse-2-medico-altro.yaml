@@ -1,0 +1,542 @@
+titolo: "Emergenze mediche: metaboliche, respiratorie, tossicologiche e pediatriche"
+modulo: SSE
+ordine: 2.5
+
+domande:
+  # --- Diabete ---
+  - id: sse2b-001
+    livello: numeri
+    domanda: Secondo la lezione sulle emergenze mediche, sotto quale valore di glicemia si parla di ipoglicemia?
+    opzioni:
+      - Sotto 70 mg/dl
+      - Sotto 50 mg/dl
+      - Sotto 90 mg/dl
+      - Sotto 120 mg/dl
+    corretta: 0
+    spiegazione: "L'[[ipoglicemia]] è un calo anormale del glucosio **sotto 70 mg/dl**; 120 mg/dl è invece la soglia sopra la quale si parla di iperglicemia. [@2.2:5]"
+    ripasso: diabete#ipo-e-iperglicemia-a-confronto
+
+  - id: sse2b-002
+    livello: numeri
+    domanda: Secondo la lezione sulle emergenze mediche, sopra quale valore di glicemia si parla di iperglicemia?
+    opzioni:
+      - Sopra 120 mg/dl
+      - Sopra 70 mg/dl
+      - Sopra 200 mg/dl
+      - Sopra 300 mg/dl
+    corretta: 0
+    spiegazione: "L'[[iperglicemia]] è un aumento anormale del glucosio **oltre 120 mg/dl**; sotto 70 mg/dl si parla di ipoglicemia. [@2.2:5]"
+    ripasso: diabete#ipo-e-iperglicemia-a-confronto
+
+  - id: sse2b-003
+    livello: base
+    domanda: Quale gruppo di segni e sintomi è tipico dell'ipoglicemia?
+    opzioni:
+      - Sudorazione, pallore, cambiamento di personalità, alterazione della coscienza
+      - Urina frequente, sete intensa, bocca secca, vista offuscata
+      - Febbre, cefalea, vomito, rigidità della nuca
+      - Rossore di cute e mucose, nausea, saturazione apparentemente normale
+    corretta: 0
+    spiegazione: "Nell'ipoglicemia compaiono malessere, **sudorazione**, **pallore**, sonnolenza, **cambiamento di personalità** e alterazione della coscienza fino al coma. Sete intensa, urina frequente e vista offuscata sono invece segni di iperglicemia. [@2.2:5]"
+    ripasso: diabete#ipo-e-iperglicemia-a-confronto
+
+  - id: sse2b-004
+    livello: esame
+    domanda: Un uomo diabetico riferisce vertigini e debolezza; l'ABCDE non mostra alterazioni gravi. Nella valutazione secondaria (AMPIA), quali domande sono specifiche per il diabete secondo il corso?
+    opzioni:
+      - Da quanto tempo è diabetico, se fa terapia insulinica o orale, se ha febbre o infezioni
+      - Che attività lavorativa svolge e se si può recuperare la sostanza assunta per portarla in PS
+      - Se ha farmaci di auto-somministrazione, poi si attendono le indicazioni della SOREU
+      - Se ha disturbi urinari o perdite di sangue e se riconosce il disturbo come abituale
+    corretta: 0
+    spiegazione: "Nel diabetico l'AMPIA chiede **da quanto tempo è diabetico**, se fa **terapia insulinica o orale** e se ha **febbre o infezioni**, oltre alla documentazione sanitaria. Le altre sono le domande chiave di intossicazioni, anafilassi e dolore addominale. [@2.2:7]"
+    ripasso: diabete#ampia-le-domande-chiave
+
+  - id: sse2b-005
+    livello: esame
+    domanda: In casa di un paziente diabetico con coscienza alterata c'è un glucometro. Come si gestisce il test glicemico secondo il corso?
+    opzioni:
+      - Lo si fa eseguire ai parenti, se possibile, e si riferisce il valore alla SOREU
+      - Lo esegue il soccorritore con il glucometro del paziente, prima dell'ABCDE
+      - "Non si esegue: in ospedale lo ripetono comunque"
+      - Lo esegue il soccorritore e, se il valore è basso, somministra zucchero senza avvisare la SOREU
+    corretta: 0
+    spiegazione: "Il test glicemico **non lo esegue il soccorritore**: lo fa eseguire **ai parenti**, se possibile o se c'è un glucometro in casa, e **riferisce il valore alla SOREU**. [@2.2:6]"
+    ripasso: diabete#assistenza
+
+  # --- Allergia e anafilassi ---
+  - id: sse2b-006
+    livello: numeri
+    domanda: Entro quanto tempo dal contatto con la sostanza si sviluppa in genere una reazione anafilattica?
+    opzioni:
+      - Entro 5-15 minuti
+      - Entro 1 minuto
+      - Entro 30-60 minuti
+      - Dopo 2-6 ore
+    corretta: 0
+    spiegazione: "L'[[anafilassi]] è una reazione allergica grave, a **rapida comparsa**, che si sviluppa in genere **entro 5-15 minuti** dal contatto e richiede cure immediate. [@2.2:12]"
+    ripasso: reazioni-allergiche-e-anafilassi#reazione-anafilattica
+
+  - id: sse2b-007
+    livello: esame
+    domanda: Una donna punta da un'ape ha difficoltà respiratoria, sudorazione e pressione bassa. In quale posizione la mettete?
+    opzioni:
+      - Supina, perché è ipotesa
+      - Nella posizione che preferisce, come in ogni reazione allergica
+      - Seduta con le gambe verso il basso
+      - In posizione laterale di sicurezza
+    corretta: 0
+    spiegazione: "Nella reazione allergica si lascia la posizione **preferita dal paziente**, ma nell'anafilassi con **ipotensione** il paziente va messo **supino**. [@2.2:10,14]"
+    ripasso: reazioni-allergiche-e-anafilassi#reazione-anafilattica
+
+  - id: sse2b-008
+    livello: base
+    domanda: In un paziente con anafilassi, quali segni indicano che sono coinvolte le vie aeree superiori?
+    opzioni:
+      - Alterazione della voce ed edema di bocca e gola
+      - Nausea, vomito e dolore addominale
+      - Ipotensione, tachicardia e sudorazione fredda
+      - Orticaria diffusa, prurito e arrossamento della cute
+    corretta: 0
+    spiegazione: "L'**alterazione della voce** e l'**edema di bocca e gola** indicano il coinvolgimento delle **vie aeree superiori**: vanno controllate di continuo coscienza, pervietà delle vie aeree e parametri. [@2.2:13-14]"
+    ripasso: reazioni-allergiche-e-anafilassi#reazione-anafilattica
+
+  - id: sse2b-009
+    livello: esame
+    domanda: Un ragazzo con una nota allergia alimentare ha i primi segni di anafilassi. Cosa chiedete nell'AMPIA e come procedete?
+    opzioni:
+      - Chiedete se ha farmaci di auto-somministrazione, lo comunicate alla SOREU e attendete indicazioni
+      - Cercate il suo farmaco di auto-somministrazione e glielo somministrate subito voi, senza sentire la SOREU
+      - Rinviate l'AMPIA all'arrivo in ospedale, perché l'anafilassi non lascia tempo per le domande
+      - Chiedete che attività lavorativa svolge e recuperate l'alimento da portare in PS
+    corretta: 0
+    spiegazione: "Nell'AMPIA dell'allergia e dell'anafilassi si chiede se il paziente ha **farmaci specifici di auto-somministrazione**, poi si **comunica alla SOREU e si attendono indicazioni**. [@2.2:11,15]"
+    ripasso: reazioni-allergiche-e-anafilassi#ampia-allergia-e-anafilassi
+
+  - id: sse2b-010
+    livello: base
+    domanda: "Sono segni comuni di una reazione allergica tutti i seguenti TRANNE:"
+    opzioni:
+      - Rigidità e dolore muovendo la nuca
+      - Orticaria
+      - Asma
+      - Edema di labbra, bocca e occhi
+    corretta: 0
+    spiegazione: "I segni più comuni della reazione allergica sono riniti, **asma**, **orticaria**, dermatiti da contatto ed **edema** di labbra, bocca e occhi. La rigidità nucale è un segno della meningite. [@2.2:9] [@2.2:35]"
+    ripasso: reazioni-allergiche-e-anafilassi#reazione-allergica
+
+  # --- Intossicazioni ---
+  - id: sse2b-011
+    livello: esame
+    domanda: Due persone vengono trovate in casa con una stufa accesa, confuse e nauseate. Quale quadro vi fa pensare a un'intossicazione da monossido di carbonio?
+    opzioni:
+      - Rossore di cute e mucose, nausea e vomito, saturazione apparentemente normale
+      - Agitazione e allucinazioni, bocca secca, segni di venipuntura
+      - Schiuma e secrezioni dalla bocca, cianosi, pallore
+      - Manifestazioni cutanee (rash), agitazione o sopore, vomito
+    corretta: 0
+    spiegazione: "Il [[monossido di carbonio]] dà **rossore di cute e mucose**, nausea e vomito e una **SpO2 \"normale\"**. Gli altri quadri sono quelli di farmaci e droghe, caustici e alimenti. [@2.2:19-22]"
+    ripasso: intossicazioni#segni-e-sintomi-per-sostanza
+
+  - id: sse2b-012
+    livello: base
+    domanda: Perché, nel sospetto di intossicazione da monossido di carbonio, non ci si deve fidare del saturimetro?
+    opzioni:
+      - Perché la saturazione appare normale anche se il paziente è gravemente ipossico
+      - Perché la saturazione appare sempre molto bassa anche se il paziente sta bene
+      - Perché il gas danneggia il sensore dello strumento
+      - Perché il rossore della cute impedisce di applicare il sensore
+    corretta: 0
+    spiegazione: "Con il monossido di carbonio la **SpO2 appare \"normale\"** anche con una grave carenza di ossigeno nel sangue: non fidarti del valore letto. [@2.2:19] [@ped-approfondimenti:10]"
+    ripasso: intossicazioni#segni-e-sintomi-per-sostanza
+
+  - id: sse2b-013
+    livello: esame
+    domanda: Arrivate in un appartamento dove si sospetta una fuga di gas da una caldaia; dentro c'è una persona a terra. Qual è la prima cosa da garantire?
+    opzioni:
+      - L'autoprotezione, prima di aerare il locale e allontanare il paziente
+      - La misura della saturazione del paziente dove si trova
+      - L'ossigeno al paziente nel locale, prima di spostarlo
+      - La valutazione ABCDE completa sul posto, poi l'aerazione del locale
+    corretta: 0
+    spiegazione: "La sequenza è: **autoprotezione**, **aerare il locale**, **allontanare il paziente** dall'ambiente inquinato, togliere i vestiti contaminati, monitoraggio, ossigeno e contatto tempestivo con la SOREU. [@2.2:23]"
+    ripasso: intossicazioni#assistenza
+
+  - id: sse2b-014
+    livello: esame
+    domanda: Un operaio è stato esposto a una sostanza tossica e ha i vestiti sporchi. Cosa ne fate?
+    opzioni:
+      - Li togliete e li conservate in contenitori chiusi e idonei
+      - Li lasciate addosso per non perdere tempo prima del trasporto
+      - Li togliete e li lasciate sul posto
+      - Li bagnate con abbondante acqua e li lasciate addosso
+    corretta: 0
+    spiegazione: "Nell'assistenza all'intossicato si **tolgono i vestiti** sporchi o contaminati e si conservano in **contenitori chiusi e idonei**. Si portano inoltre in PS i contenitori e i farmaci trovati. [@2.2:17,23]"
+    ripasso: intossicazioni#assistenza
+
+  - id: sse2b-015
+    livello: numeri
+    domanda: Secondo il materiale pediatrico del corso, quale quota di tutte le intossicazioni riguarda i bambini, e quanti di loro hanno meno di 6 anni?
+    opzioni:
+      - Il 70%, di cui l'80% sotto i 6 anni
+      - Il 30%, di cui il 50% sotto i 6 anni
+      - Il 50%, di cui il 70% sotto i 6 anni
+      - L'80%, di cui il 30% sotto i 6 anni
+    corretta: 0
+    spiegazione: "I bambini sono il **70%** di tutte le intossicazioni e l'**80%** di questi ha **meno di 6 anni**; è un evento frequente ma raramente mortale. [@ped-approfondimenti:9]"
+    ripasso: intossicazioni#nel-bambino
+
+  - id: sse2b-016
+    livello: base
+    domanda: Quali sono le caratteristiche tipiche dell'intossicazione nell'adolescente?
+    opzioni:
+      - Spesso intenzionale, a volte con più sostanze, spesso in grande quantità
+      - Non intenzionale, di solito una sola sostanza in piccola quantità
+      - Quasi sempre per gioco o emulazione, con sostanze di uso domestico
+      - Quasi sempre accidentale, da monossido di carbonio
+    corretta: 0
+    spiegazione: "Nell'adolescente l'intossicazione è spesso **intenzionale** (anche a scopo suicida), a volte con **più sostanze** e in **grande quantità**. Una sola sostanza in piccola quantità, non intenzionale, è tipica dei più piccoli. [@2.3:59-61]"
+    ripasso: intossicazioni#differenze-per-eta
+
+  - id: sse2b-017
+    livello: base
+    domanda: Un bambino ha ingerito qualcosa trovato in casa. Quali informazioni chiedete per prime?
+    opzioni:
+      - Quale sostanza, quanta, da quanto tempo, quanto pesa il bambino
+      - Se è vaccinato, se va all'asilo, quando ha mangiato
+      - Se la madre ha avuto malattie in gravidanza e se ha fratelli
+      - Se ha la febbre e se ha dolore alle orecchie
+    corretta: 0
+    spiegazione: "Nell'intossicazione del bambino la **storia** è lo strumento migliore: nei primi minuti si chiede **quale sostanza**, **quanta**, **da quanto tempo** e **quanto pesa** il bambino. [@ped-approfondimenti:10] [@2.3:62]"
+    ripasso: intossicazioni#anamnesi
+
+  # --- Dolore addominale ---
+  - id: sse2b-018
+    livello: base
+    domanda: Come si delimita la zona del dolore addominale e rispetto a quale riferimento se ne descrive la sede?
+    opzioni:
+      - Dal torace all'inguine, con la sede descritta rispetto all'ombelico
+      - Dal diaframma al pube, con la sede descritta rispetto allo sterno
+      - Dall'ombelico all'inguine, con la sede descritta rispetto alle anche
+      - Dal torace al pube, con la sede descritta rispetto alle ultime coste
+    corretta: 0
+    spiegazione: "Il [[dolore addominale]] è percepito nella zona tra il **torace** in alto e l'**inguine** in basso; la sua localizzazione si descrive rispetto all'**ombelico**. [@2.2:25]"
+    ripasso: dolore-addominale#definizione-e-caratteristiche
+
+  - id: sse2b-020
+    livello: esame
+    domanda: Una paziente con forte dolore addominale sta raggomitolata su un fianco e dice che così le fa meno male. Come vi comportate?
+    opzioni:
+      - Le consentite la posizione antalgica e valutate l'intensità del dolore da 1 a 10
+      - La mettete supina con le gambe distese per poter esaminare meglio l'addome
+      - La fate sedere sulla sedia portantina per il trasporto, perché facilita il respiro
+      - La fate camminare fino all'ambulanza per valutare il dolore sotto sforzo
+    corretta: 0
+    spiegazione: "Nel dolore addominale si **consente la posizione antalgica** e si misura l'**intensità del dolore da 1 a 10**, oltre a ABCDE, monitoraggio e O2. [@2.2:28]"
+    ripasso: dolore-addominale#valutazione-e-assistenza
+
+  - id: sse2b-021
+    livello: base
+    domanda: Nell'AMPIA di una donna con dolore addominale, quali domande il corso indica di non dimenticare?
+    opzioni:
+      - Gravidanza e ciclo mestruale
+      - Da quanto tempo è diabetica e se fa terapia insulinica
+      - Se ha farmaci di auto-somministrazione
+      - Che attività lavorativa svolge
+    corretta: 0
+    spiegazione: "Nel dolore addominale l'AMPIA comprende **gravidanza** e **ciclo mestruale**, disturbi urinari, perdite di sangue e se è il primo episodio o un dolore abituale. [@2.2:29]"
+    ripasso: dolore-addominale#ampia-le-domande-chiave
+
+  # --- Meningite ---
+  - id: sse2b-022
+    livello: base
+    domanda: Che cos'è la meningite?
+    opzioni:
+      - L'infiammazione, di solito infettiva, delle membrane che avvolgono encefalo e midollo spinale
+      - La distruzione progressiva della guaina che riveste le fibre nervose del cervello e del midollo
+      - La degenerazione progressiva dei motoneuroni che comandano i muscoli volontari
+      - L'interruzione improvvisa del flusso di sangue in una zona del cervello
+    corretta: 0
+    spiegazione: "La [[meningite]] è una malattia del sistema nervoso centrale, di solito **infettiva**, in cui si infiammano le **meningi**, le membrane che proteggono encefalo e midollo spinale. La guaina delle fibre è quella colpita dalla sclerosi multipla, i motoneuroni dalla SLA. [@2.2:34] [@2.2:37-39]"
+    ripasso: meningite#definizione
+
+  - id: sse2b-023
+    livello: esame
+    domanda: Un ragazzo ha febbre, cefalea, vomito, sonnolenza e dolore quando muove la nuca. Oltre all'ABCDE e all'O2, cosa fate?
+    opzioni:
+      - Indossate la mascherina, la fate indossare anche al paziente e a fine missione sanificate il mezzo
+      - Indossate la mascherina solo voi, perché al paziente peggiorerebbe il respiro
+      - Nessuna protezione particolare, perché la meningite non si trasmette ai soccorritori
+      - Lo trasportate in posizione seduta con il capo flesso per ridurre il dolore alla nuca durante il viaggio
+    corretta: 0
+    spiegazione: "Il quadro fa sospettare una **meningite**: **autoprotezione** con i DPI (mascherina), **mascherina anche al paziente** e **sanificazione del mezzo** a fine missione. [@2.2:35-36]"
+    ripasso: meningite#rischio-infettivo-e-assistenza
+
+  - id: sse2b-024
+    livello: base
+    domanda: Nel bambino con febbre, come si riconosce la difficoltà a muovere la testa che il corso indica di cercare sempre?
+    opzioni:
+      - Non riesce a toccare il petto con il mento o a guardare in alto
+      - Tiene la testa sempre girata da un lato, anche mentre dorme
+      - Piange e si lamenta quando gli si tocca l'orecchio
+      - Non riesce a stare seduto da solo senza un appoggio dietro la schiena
+    corretta: 0
+    spiegazione: "Nel bambino febbrile si valuta sempre la **difficoltà a muovere la testa**: **non riesce a toccare il petto con il mento o a guardare in alto**. La rigidità della nuca è un segno tipico della meningite. [@2.3:39] [@ped-approfondimenti:6] [@2.2:35]"
+    ripasso: febbre-nel-bambino#valutazione
+
+  # --- Patologie neurodegenerative ---
+  - id: sse2b-025
+    livello: base
+    domanda: Quale malattia distrugge progressivamente la guaina che riveste le fibre nervose?
+    opzioni:
+      - La sclerosi multipla
+      - La SLA (sclerosi laterale amiotrofica)
+      - L'Alzheimer
+      - La meningite
+    corretta: 0
+    spiegazione: "La [[sclerosi multipla]] distrugge progressivamente la **guaina delle fibre nervose**. La SLA colpisce i **motoneuroni**; l'Alzheimer è una **demenza** progressiva e irreversibile. [@2.2:37-40]"
+    ripasso: patologie-neurodegenerative#le-malattie
+
+  - id: sse2b-026
+    livello: esame
+    domanda: "Nell'assistenza a un paziente con una patologia neurodegenerativa, il corso indica tutte le seguenti azioni TRANNE:"
+    opzioni:
+      - Trasportarlo sempre supino, per proteggere le vie aeree
+      - Fare attenzione alle vie aeree per i disturbi della deglutizione e il vomito
+      - Proteggere dagli urti gli arti paretici
+      - Somministrare O2, salvo diverse indicazioni della SOREU
+    corretta: 0
+    spiegazione: "L'assistenza prevede ABCDE, **O2** salvo diverse indicazioni della SOREU, trasporto **semiseduto** se possibile, **attenzione alle vie aeree** (deglutizione e vomito) e **protezione degli arti paretici**. [@2.2:41]"
+    ripasso: patologie-neurodegenerative#assistenza
+
+  - id: sse2b-027
+    livello: esame
+    domanda: Dovete trasportare un paziente con SLA in ventilazione domiciliare con cannula tracheostomica. Come vi comportate?
+    opzioni:
+      - Collaborate con i parenti che conoscono l'apparecchio, spostate con cautela i presidi e seguite la SOREU
+      - Staccate il ventilatore e ventilate con il pallone, perché i parenti di solito non sono addestrati a gestirlo
+      - Chiedete ai parenti di allontanarsi per lavorare senza interferenze sull'apparecchio
+      - Rimuovete la cannula prima dello spostamento per evitare che si sposti durante il trasporto
+    corretta: 0
+    spiegazione: "Con la ventilazione domiciliare i **parenti sono di solito addestrati**: si collabora con loro, si fa attenzione allo **spostamento dei presidi** (per esempio la cannula tracheostomica) e si seguono le indicazioni della **SOREU**. [@2.2:42] [@tss-d:7]"
+    ripasso: patologie-neurodegenerative#il-paziente-con-ventilazione-domiciliare
+
+  # --- Difficoltà respiratoria dell'adulto ---
+  - id: sse2b-029
+    livello: base
+    domanda: All'ascolto del respiro sentite rumori di russamento e gorgoglio. Cosa indicano?
+    opzioni:
+      - Vie aeree ostruite e/o liquido nei polmoni
+      - Un attacco d'asma o una reazione allergica
+      - Un respiro normale in un paziente anziano
+      - Un'intossicazione da monossido di carbonio
+    corretta: 0
+    spiegazione: "Russamento e gorgoglio sono **[[rantoli]]**: indicano **vie aeree ostruite e/o liquido nei polmoni**. I fischi (**[[sibili]]**) sono invece tipici di asma o reazione allergica. [@abcde-note:4]"
+    ripasso: difficolta-respiratoria-adulto#la-b-con-l-opacs
+
+  - id: sse2b-030
+    livello: esame
+    domanda: Un anziano molto dispnoico, cosciente e con parametri stabili, al terzo piano senza ascensore, vuole scendere a piedi fino all'ambulanza. Cosa fate?
+    opzioni:
+      - Non lo fate camminare e lo trasportate seduto o semiseduto, con ossigeno
+      - Lo lasciate scendere a piedi, sostenendolo, perché la posizione eretta facilita il respiro
+      - Lo fate scendere a piedi ma con la maschera dell'ossigeno
+      - Lo trasportate supino sulla barella per ridurre il consumo di ossigeno
+    corretta: 0
+    spiegazione: "Nel paziente dispnoico va evitato **ogni sforzo**: **non farlo camminare**. Se coscienza e parametri lo permettono si mette **seduto o semiseduto** e si dà ossigeno. [@tss-f:54,66]"
+    ripasso: difficolta-respiratoria-adulto#assistenza
+
+  - id: sse2b-031
+    livello: base
+    domanda: In un paziente con scompenso cardiaco, quali sono i segni di gravità indicati dal corso?
+    opzioni:
+      - Espettorato con schiuma, stato confusionale, cianosi diffusa
+      - Tosse con sangue, febbricola, calo di peso, sudorazione notturna
+      - Tosse, febbre e dispnea
+      - Respiro sibilante, tosse e dispnea di notte o al risveglio
+    corretta: 0
+    spiegazione: "Sono segni di gravità dello scompenso l'**espettorato con schiuma**, lo **[[stato confusionale]]** e la **cianosi diffusa**. Gli altri gruppi descrivono tubercolosi, polmonite e asma. [@tss-f:65] [@tss-f:50-52]"
+    ripasso: difficolta-respiratoria-adulto#scompenso-cardiaco-ed-edema-polmonare-acuto
+
+  - id: sse2b-032
+    livello: base
+    domanda: Quale descrizione corrisponde all'asma?
+    opzioni:
+      - Spasmo dei bronchi ed edema della mucosa, con aria intrappolata in espirazione, spesso di notte o al risveglio
+      - Distruzione progressiva del tessuto polmonare, che perde elasticità, tipica dei fumatori di lunga data
+      - Liquido in eccesso nel tessuto polmonare che ostacola gli scambi di gas, spesso per insufficienza cardiaca congestizia
+      - Infezione degli alveoli, che si riempiono di muco e pus, con tosse e febbre
+    corretta: 0
+    spiegazione: "Nell'asma lo **spasmo dei bronchi** e l'**edema della mucosa** intrappolano l'aria **in espirazione**; dà dispnea, respiro sibilante e tosse, spesso **di notte o al risveglio**. Le altre descrivono enfisema, edema polmonare acuto e polmonite. [@tss-f:48-51]"
+    ripasso: difficolta-respiratoria-adulto#asma
+
+  - id: sse2b-033
+    livello: esame
+    domanda: Un paziente riferisce tosse con sangue, febbricola, calo di peso e sudorazione notturna. Cosa sospettate e quale protezione usate?
+    opzioni:
+      - Tubercolosi; DPI compresa la mascherina FFP2, perché si trasmette per via aerea
+      - Polmonite; nessun DPI particolare oltre ai guanti, perché non è contagiosa
+      - Edema polmonare acuto; solo i guanti, perché non si trasmette per via aerea
+      - Enfisema polmonare; la sola mascherina chirurgica al paziente, perché tossisce molto
+    corretta: 0
+    spiegazione: "Emoftoe, febbricola, calo di peso e sudorazione notturna sono i sintomi della **tubercolosi**, che si trasmette **per via aerea**: si usano i dispositivi di protezione, compresa la mascherina **[[FFP2]]**. [@tss-f:52] [@7.2:33-34,37]"
+    ripasso: difficolta-respiratoria-adulto#polmonite-e-tubercolosi
+
+  # --- Il paziente pediatrico ---
+  - id: sse2b-034
+    livello: base
+    domanda: Dove si rileva il polso in un infante?
+    opzioni:
+      - All'arteria brachiale
+      - All'arteria radiale
+      - All'arteria carotidea
+      - All'arteria pedidia
+    corretta: 0
+    spiegazione: "Nell'[[infante]] il polso si cerca all'arteria **brachiale**; nel bambino più grande si può usare il polso **carotideo, radiale o brachiale**. [@2.3:16]"
+    ripasso: approccio-al-paziente-pediatrico#come-rilevarli
+
+  - id: sse2b-035
+    livello: numeri
+    domanda: Secondo la tabella dei parametri per età, in quale caso la frequenza respiratoria è nella norma?
+    opzioni:
+      - Infante di 6 mesi con 36 atti al minuto
+      - Bambino di 3 anni con 40 atti al minuto
+      - Bambino di 6 anni con 28 atti al minuto
+      - Ragazzo di 14 anni con 24 atti al minuto
+    corretta: 0
+    spiegazione: "La FR normale è **30-40** nell'infante, **20-30** a 2-4 anni, **14-20** a 5-8 anni e **12-16** sopra i 12 anni: la stessa frequenza significa cose diverse a età diverse. [@2.3:15] [@ped-approfondimenti:3,18]"
+    ripasso: approccio-al-paziente-pediatrico#parametri-vitali-per-eta
+
+  - id: sse2b-036
+    livello: numeri
+    domanda: Quali sono le caratteristiche del sistema di trasporto pediatrico in dotazione all'MSB?
+    opzioni:
+      - Per bambini da 4,5 a 18 kg, cintura a 5 punti, fissato alla barella con 3 cinghie
+      - Per bambini da 2 a 10 kg, cintura a 3 punti, fissato alla barella con 2 cinghie
+      - Per bambini da 10 a 36 kg, cintura a 5 punti, fissato alla barella con 4 cinghie
+      - Per bambini da 4,5 a 25 kg, cintura a 4 punti, fissato alla barella con 3 cinghie
+    corretta: 0
+    spiegazione: "Il presidio per il **bambino non traumatizzato** è per pazienti da **4,5 a 18 kg**, ha una **cintura a 5 punti** regolabile e si fissa alla barella con **3 cinghie**. [@tss-pedimate:2]"
+    ripasso: approccio-al-paziente-pediatrico#il-trasporto-il-sistema-pediatrico
+
+  - id: sse2b-037
+    livello: base
+    domanda: Qual è la domanda più importante da fare ai genitori nella valutazione del bambino?
+    opzioni:
+      - Se il bambino si comporta come al solito
+      - Se il bambino ha fatto tutte le vaccinazioni
+      - Quanto è alto il bambino
+      - Se il bambino ha già avuto un ricovero in ospedale
+    corretta: 0
+    spiegazione: "La domanda chiave è se il bambino **si comporta come al solito** (meno attento, meno interattivo, inconsolabile, indifferente): se i genitori dicono di no, **bisogna crederci**. [@2.3:18] [@ped-approfondimenti:8]"
+    ripasso: approccio-al-paziente-pediatrico#chiedi-ai-genitori
+
+  - id: sse2b-038
+    livello: esame
+    domanda: Nella valutazione della C in un bambino, quale segno il corso indica come precoce di shock?
+    opzioni:
+      - La tachicardia
+      - La bradicardia
+      - L'alitamento delle pinne nasali
+      - Le pupille dilatate
+    corretta: 0
+    spiegazione: "Nel bambino **la tachicardia è un segno precoce di shock**; nella C si valutano anche polso, temperatura delle estremità e [[marezzatura|marezzature]]. La bradicardia compare invece nelle fasi terminali dell'esaurimento respiratorio. [@ped-approfondimenti:13] [@2.3:28]"
+    ripasso: approccio-al-paziente-pediatrico#abcde-pediatrico
+
+  - id: sse2b-039
+    livello: numeri
+    domanda: Quale perdita di sangue, irrilevante in un adulto, può essere letale in un bambino?
+    opzioni:
+      - 100-200 ml
+      - 500-750 ml
+      - 1-1,5 litri
+      - 20-30 ml
+    corretta: 0
+    spiegazione: "Perdite di sangue di **100-200 ml**, irrilevanti nell'adulto, possono essere **letali** nel bambino: le emorragie visibili vanno tamponate subito. [@ped-approfondimenti:13]"
+    ripasso: approccio-al-paziente-pediatrico#abcde-pediatrico
+
+  # --- Insufficienza respiratoria pediatrica ---
+  - id: sse2b-041
+    livello: numeri
+    domanda: In un bambino con insufficienza respiratoria, quale frequenza cardiaca è un segnale di pericolo delle fasi terminali?
+    opzioni:
+      - Meno di 80 battiti al minuto
+      - Meno di 120 battiti al minuto
+      - Più di 150 battiti al minuto
+      - Meno di 40 battiti al minuto
+    corretta: 0
+    spiegazione: "Nell'[[esaurimento respiratorio]] le fasi terminali sono segnalate da **bradicardia (FC < 80/min)** e **bradipnea**: è una condizione di pre-arresto. [@2.3:28] [@ped-approfondimenti:4]"
+    ripasso: insufficienza-respiratoria-pediatrica#l-esaurimento-respiratorio-pre-arresto
+
+  - id: sse2b-042
+    livello: esame
+    domanda: Un bambino di 3 anni respira velocemente e rumorosamente ma è cosciente, tonico e sta in braccio alla mamma. Come vi comportate?
+    opzioni:
+      - Lo lasciate in braccio alla mamma, lo tenete tranquillo e lo monitorate "a vista"
+      - Lo separate dalla mamma per metterlo supino sulla barella e valutarlo meglio
+      - Gli applicate subito saturimetro e maschera dell'ossigeno anche se piange e si agita
+      - Preparate subito la RCP pediatrica e lo mettete su un piano rigido in ambulanza
+    corretta: 0
+    spiegazione: "Nel bambino **compensato** l'obiettivo è **non peggiorare la dispnea**: si rispetta la posizione scelta (spesso **in braccio al genitore**), non si allontanano i genitori, l'ossigeno si dà solo se lo accetta e il monitoraggio strumentale si può sostituire con quello **\"a vista\"**. [@2.3:29] [@ped-approfondimenti:4]"
+    ripasso: insufficienza-respiratoria-pediatrica#il-bambino-compensato-tonico-e-cosciente
+
+  - id: sse2b-043
+    livello: esame
+    domanda: Un bambino in esaurimento respiratorio diventa incosciente e ipotonico. Qual è la condotta corretta?
+    opzioni:
+      - Supino, O2 ad alti flussi (10-15 l/min), materiale per la RCP pediatrica pronto
+      - Semiseduto in braccio al genitore, O2 solo se lo accetta, monitoraggio "a vista"
+      - Posizione laterale di sicurezza, O2 a 2-4 l/min, rivalutazione a fine trasporto
+      - Supino, niente ossigeno finché non si misura la saturazione in aria
+    corretta: 0
+    spiegazione: "Nell'esaurimento respiratorio: rapido ABCDE, **O2 ad alti flussi (10-15 l/min)**, **semiseduto** su piano rigido se cosciente o **supino** se incosciente, SOREU tempestiva e materiale per il **PBLS** pronto. [@2.3:30] [@ped-approfondimenti:5]"
+    ripasso: insufficienza-respiratoria-pediatrica#l-esaurimento-respiratorio-pre-arresto
+
+  # --- Febbre nel bambino ---
+  - id: sse2b-044
+    livello: numeri
+    domanda: Secondo le lezioni sulle urgenze pediatriche, da quale temperatura si parla di febbre?
+    opzioni:
+      - Oltre 37 °C cutanea oppure oltre 37,5 °C interna
+      - Oltre 37,5 °C cutanea oppure oltre 38 °C interna
+      - Oltre 38 °C in qualunque sede di misura
+      - Oltre 36,5 °C cutanea oppure oltre 37 °C interna
+    corretta: 0
+    spiegazione: "La [[febbre]] è una temperatura **> 37 °C** cutanea (ascellare) o **> 37,5 °C** interna (rettale od orale); è **alta** a 39-40 °C e **molto alta** a 40-41 °C. [@2.3:35] [@ped-approfondimenti:5]"
+    ripasso: febbre-nel-bambino#definizione-e-gradi
+
+  - id: sse2b-045
+    livello: numeri
+    domanda: Nel bambino febbrile, quando sono indicate le spugnature e di quanto abbassano la temperatura?
+    opzioni:
+      - Sopra i 40 °C, con acqua tiepida; abbassano la temperatura di 1-2 °C
+      - Sopra i 38 °C, con acqua fredda; abbassano la temperatura di 3-4 °C
+      - Sopra i 39 °C, con acqua fredda; abbassano la temperatura di circa 0,5 °C
+      - Sopra i 37,5 °C, con acqua tiepida; abbassano la temperatura di 2-3 °C
+    corretta: 0
+    spiegazione: "Le **spugnature con acqua tiepida** sono indicate sopra i **40 °C**: per evaporazione abbassano la temperatura di **1-2 °C** in attesa dell'effetto dell'antipiretico. [@2.3:41] [@ped-approfondimenti:6]"
+    ripasso: febbre-nel-bambino#assistenza
+
+  - id: sse2b-046
+    livello: base
+    domanda: "Nel bambino con febbre, sono segni di disidratazione tutti i seguenti TRANNE:"
+    opzioni:
+      - Urine abbondanti e frequenti
+      - Mucose e cute secche
+      - Pianto lamentoso con poche lacrime
+      - Fontanella affossata nel neonato
+    corretta: 0
+    spiegazione: "Sono segni di disidratazione **mucose e cute secche**, **poca urina**, pianto **lamentoso** o gemito con poche lacrime e, nel neonato, la **fontanella affossata**. [@2.3:40] [@ped-approfondimenti:6]"
+    ripasso: febbre-nel-bambino#segni-di-disidratazione
+
+  - id: sse2b-047
+    livello: esame
+    domanda: Un bambino ha 40,5 °C di febbre e la mamma chiede se potete dargli voi un antipiretico. Come rispondete?
+    opzioni:
+      - Gli antipiretici richiedono una prescrizione medica, quindi seguite le indicazioni della SOREU
+      - Lo somministrate voi, perché sopra i 40 °C l'antipiretico è sempre indicato
+      - Lo sconsigliate, perché la febbre va lasciata salire senza interventi fino all'arrivo in ospedale
+      - Lo somministrate voi e coprite bene il bambino per farlo sudare e abbassare la febbre
+    corretta: 0
+    spiegazione: "Sopra i 40 °C l'antipiretico è indicato, ma richiede una **prescrizione medica**: ci si attiene alle indicazioni della **SOREU**. Intanto si **scopre** il bambino (coprirlo fa salire la temperatura). [@2.3:41-42]"
+    ripasso: febbre-nel-bambino#quando-gli-antipiretici

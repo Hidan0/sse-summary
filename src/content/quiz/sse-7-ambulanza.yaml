@@ -1,0 +1,136 @@
+titolo: Le operazioni in ambulanza
+modulo: SSE
+ordine: 7
+
+domande:
+  - id: sse7-001
+    livello: esame
+    domanda: "Quale tra questi NON fa parte della documentazione sanitaria del soccorso?"
+    opzioni:
+      - Il foglio con i turni dei volontari dell'associazione
+      - La relazione di soccorso MSB e quella dell'MSA o MSI
+      - Le registrazioni delle chiamate alla SOREU e dei contatti radio
+      - I tracciati ECG, le immagini ecografiche e le schede di maxiemergenza
+    corretta: 0
+    spiegazione: "La documentazione sanitaria comprende relazione MSB e MSA/MSI, schede di maxiemergenza, applicativo gestionale della SOREU, **registrazioni di chiamate e contatti radio**, tracciati ECG e immagini ecografiche. I turni dei volontari sono un documento organizzativo dell'associazione. [@7.1:7]"
+    ripasso: relazione-di-soccorso-msb#perche-documentare
+
+  - id: sse7-002
+    livello: esame
+    domanda: "Sul posto arriva anche l'MSA, che prende in carico il paziente. Come compila la relazione l'équipe del MSB?"
+    opzioni:
+      - La compila comunque, riportando solo i dati e le prestazioni dell'équipe MSB
+      - Non la compila, perché la documentazione del paziente passa interamente all'équipe MSA
+      - La compila con i dati anagrafici e scrive "vedi relazione MSA" per valutazioni e manovre
+      - La compila includendo anche le valutazioni e le manovre eseguite dall'équipe avanzata dell'MSA
+    corretta: 0
+    spiegazione: "La [[relazione di soccorso MSB]] si compila **per ogni persona soccorsa**, anche con MSA/MSI, riportando **solo** dati e prestazioni dell'**équipe MSB**: **non** si scrive \"vedi relazione MSA/MSI\" e non si inseriscono manovre dell'équipe avanzata. [@7.1:9]"
+    ripasso: relazione-di-soccorso-msb#chi-la-compila-e-quando
+
+  - id: sse7-003
+    livello: base
+    domanda: Mentre compilate la relazione di soccorso, prima della consegna in PS, scrivete un parametro sbagliato. Come lo correggete?
+    opzioni:
+      - Barrandolo con una riga, lasciandolo leggibile, e scrivendo accanto il valore corretto
+      - Coprendolo con il bianchetto e riscrivendo sopra il valore corretto, in modo leggibile
+      - Annerendo completamente la casella e scrivendo il valore corretto nello spazio delle note
+      - Compilando una nuova relazione con i dati corretti e buttando quella con l'errore
+    corretta: 0
+    spiegazione: "L'errore si annulla con **una riga**, lasciandolo **leggibile**, e si scrive accanto il testo corretto; il **bianchetto è vietato**. Dopo la consegna si corregge solo con una dichiarazione aggiuntiva inviata alla SOREU. [@7.1:12-13]"
+    ripasso: relazione-di-soccorso-msb#errori-e-correzioni
+
+  - id: sse7-004
+    livello: numeri
+    domanda: Per quanto tempo, al minimo, l'associazione deve conservare la seconda copia della relazione di soccorso MSB?
+    opzioni:
+      - 5 anni
+      - 1 anno
+      - 2 anni
+      - 10 anni
+    corretta: 0
+    spiegazione: "La **seconda copia** resta all'ente o associazione per **almeno 5 anni**; l'originale va all'ospedale, oppure al paziente se rifiuta il trasporto. [@7.1:16-17]"
+    ripasso: relazione-di-soccorso-msb#le-due-copie
+
+  - id: sse7-005
+    livello: esame
+    domanda: Un paziente cosciente rifiuta il trasporto in ospedale. Cosa fate prima di fargli firmare la relazione?
+    opzioni:
+      - Comunicate alla SOREU il rifiuto e le condizioni del paziente, con il tasto 3 del numero IVR
+      - Gli fate firmare subito la relazione e poi chiudete la missione con il tasto 5 del numero IVR
+      - Chiedete l'intervento delle forze dell'ordine per obbligarlo al trasporto in ospedale
+      - Gli fate firmare la relazione e consegnate l'originale alla SOREU, tenendo la seconda copia
+    corretta: 0
+    spiegazione: "In caso di rifiuto si **comunica alla SOREU prima di far firmare** il paziente ([[IVR]] **tasto 3**), riferendo anche le sue condizioni; poi si fa firmare la relazione e **l'originale va al paziente**. [@7.1:26-27]"
+    ripasso: relazione-di-soccorso-msb#rifiuto-del-trasporto-o-dei-presidi
+
+  - id: sse7-006
+    livello: numeri
+    domanda: Rientrando dall'ospedale dovete comunicare alla SOREU che il mezzo è di nuovo disponibile. Quale tasto del numero verde IVR usate?
+    opzioni:
+      - Il tasto 5
+      - Il tasto 4
+      - Il tasto 3
+      - Il tasto 1
+    corretta: 0
+    spiegazione: "Il **tasto 5** (flotta) serve per disponibilità e indisponibilità del mezzo; il **4** è la logistica, i tasti **1-2-3** si usano dal posto per paziente urgente, non urgente o che rifiuta il trasporto. [@7.2:12-13,16]"
+    ripasso: operazioni-in-ambulanza#numero-verde-ivr-i-tasti
+
+  - id: sse7-007
+    livello: base
+    domanda: Quale codice colore della relazione MSB deriva dalla valutazione primaria dell'équipe?
+    opzioni:
+      - Il codice di primo riscontro
+      - Il codice di invio
+      - Il codice di trasporto
+      - Il codice di rientro
+    corretta: 0
+    spiegazione: "Il **codice di invio** lo assegna la SOREU; il **codice di primo riscontro** deriva dalla **valutazione primaria** dell'équipe MSB; il **codice di trasporto** riguarda il viaggio verso l'ospedale. [@7.1:28]"
+    ripasso: relazione-di-soccorso-msb#destinazione-e-codici
+
+  - id: sse7-008
+    livello: base
+    domanda: Quale tra queste malattie si trasmette con il sangue?
+    opzioni:
+      - L'epatite
+      - La tubercolosi
+      - La scabbia
+      - La salmonellosi
+    corretta: 0
+    spiegazione: "Con il **sangue** si trasmettono **epatite e HIV**; per via **aerea** meningite e TBC, con il **materiale organico** la salmonella, per **contatto cutaneo** la scabbia. [@7.2:33]"
+    ripasso: rischio-biologico#vie-di-trasmissione
+
+  - id: sse7-009
+    livello: base
+    domanda: Quando vanno indossati i dispositivi di protezione individuale?
+    opzioni:
+      - Prima di incontrare il paziente
+      - Appena si nota sangue o altro materiale organico
+      - Solo se la SOREU segnala un paziente infetto
+      - Dopo la valutazione primaria, prima di toccare il paziente
+    corretta: 0
+    spiegazione: "Le barriere si indossano **prima di incontrare il paziente**; se il contatto è avvenuto fin dall'inizio con i [[DPI]], il rischio è bassissimo o nullo. [@7.2:39,43]"
+    ripasso: rischio-biologico#i-dispositivi-di-protezione-individuale
+
+  - id: sse7-010
+    livello: numeri
+    domanda: Dopo il trasporto di un paziente infetto, per quanto tempo va arieggiata l'ambulanza, con portellone e finestrini aperti e nessuno dentro?
+    opzioni:
+      - Almeno 10 minuti
+      - Almeno 2 minuti
+      - Almeno 30 minuti
+      - Almeno 1 ora
+    corretta: 0
+    spiegazione: "Il mezzo si arieggia per **almeno 10 minuti**, poi con DPI puliti si lavano e disinfettano le superfici (per esempio varechina diluita 1:50 o alcol a 70°). [@7.2:45]"
+    ripasso: rischio-biologico#sanificazione-dell-ambulanza
+
+  - id: sse7-011
+    livello: esame
+    domanda: "Nel soccorso congiunto con l'elisoccorso, tutte queste indicazioni sono corrette TRANNE:"
+    opzioni:
+      - Tenere aperti i portelloni dell'ambulanza per velocizzare il trasbordo del paziente
+      - Indicare il luogo con riferimenti visibili dall'alto, come capannoni o campi sportivi
+      - Rendere il MSB visibile dall'alto e garantire sempre le comunicazioni
+      - Individuare un'area di atterraggio controllando terreno, ostacoli e oggetti che possono sollevarsi
+    corretta: 0
+    spiegazione: "Con l'elicottero i **portelloni** dell'ambulanza vanno tenuti **sempre chiusi**. Le altre sono indicazioni del corso: riferimenti visibili dall'alto, MSB visibile, comunicazioni garantite e area di atterraggio sicura. [@7.2:23-27]"
+    ripasso: operazioni-in-ambulanza#il-soccorso-con-l-elisoccorso

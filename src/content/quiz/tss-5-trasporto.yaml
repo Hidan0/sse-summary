@@ -1,0 +1,136 @@
+titolo: Trasporto in ambulanza e sicurezza nella guida
+modulo: TSS
+ordine: 5
+
+domande:
+  - id: tss5-001
+    livello: base
+    domanda: Che differenza c'è tra l'ambulanza di tipo A e quella di tipo B?
+    opzioni:
+      - La tipo A è di soccorso, con attrezzature specifiche; la tipo B è di trasporto in situazioni non di emergenza
+      - La tipo A è di trasporto programmato non urgente; la tipo B è di soccorso in emergenza, con attrezzature specifiche
+      - La tipo A ha a bordo un medico o un infermiere; la tipo B solo soccorritori con attrezzature di base
+      - La tipo A è attrezzata per gli adulti; la tipo B per il trasporto pediatrico, con attrezzature dedicate
+    corretta: 0
+    spiegazione: "L'ambulanza di **tipo A/A1** è di **soccorso** (trasporto di infermi o infortunati e primo o pronto soccorso, con attrezzature specifiche); quella di **tipo B** è di **trasporto** in situazioni **non di emergenza**, con eventuali attrezzature di base. [@tss-i:4-5]"
+    ripasso: ambulanza-dotazioni-e-guida#tipi-di-ambulanza-e-segni-distintivi
+
+  - id: tss5-002
+    livello: numeri
+    domanda: Una bombola di ossigeno da 7 litri segna 150 atm e state erogando 10 l/min. Per quanto tempo potete ancora usarla, secondo il calcolo del corso?
+    opzioni:
+      - Circa 98 minuti
+      - Circa 105 minuti
+      - Circa 150 minuti
+      - Circa 70 minuti
+    corretta: 0
+    spiegazione: "Minuti = capacità × (pressione − **10 atm residue**) / flusso: 7 × 140 / 10 = **98 minuti** (1 h 38 min). Dimenticare le 10 atm residue dà 105 minuti. [@tss-i:18]"
+    ripasso: ambulanza-dotazioni-e-guida#quanto-dura-una-bombola
+
+  - id: tss5-003
+    livello: base
+    domanda: Perché nelle bombole di ossigeno va sempre lasciata una pressione residua di 10 atm?
+    opzioni:
+      - Per evitare il rischio che entrino batteri
+      - Per evitare che la bombola esploda al rifornimento
+      - Perché sotto le 10 atm il flussimetro non funziona più
+      - Per avere sempre una scorta di emergenza per la RCP
+    corretta: 0
+    spiegazione: "La pressione residua di **10 atm** si mantiene **per evitare l'ingresso di batteri** nella bombola. [@tss-i:17]"
+    ripasso: ambulanza-dotazioni-e-guida#quanto-dura-una-bombola
+
+  - id: tss5-004
+    livello: esame
+    domanda: "Sulla sedia cardiopatica tutte le affermazioni sono corrette TRANNE:"
+    opzioni:
+      - Si può usare anche sul paziente traumatizzato, se collabora
+      - Il paziente va assicurato con 2 cinture di sicurezza
+      - Non va usata sull'ambulanza in marcia
+      - È utile per superare scale e gradini dal luogo del malore al mezzo
+    corretta: 0
+    spiegazione: "La [[sedia cardiopatica]] si usa **solo su pazienti non traumatizzati**, con **2 cinture**, per portarli dal luogo del malore al mezzo anche su scale; **non** si usa sull'ambulanza in marcia. [@tss-i:47]"
+    ripasso: ambulanza-dotazioni-e-guida#presidi-di-mobilizzazione
+
+  - id: tss5-005
+    livello: base
+    domanda: Quale indicazione è corretta per il telo portaferiti?
+    opzioni:
+      - Si usa su pazienti non traumatizzati trasportati supini e servono tre soccorritori
+      - Si usa per il paziente traumatizzato al posto della tavola spinale
+      - Basta un solo soccorritore, grazie alle maniglie laterali
+      - Si usa solo per pazienti che devono restare seduti
+    corretta: 0
+    spiegazione: "Il [[telo portaferiti]] si usa su pazienti **non traumatizzati**, trasportati **supini**, con **tre soccorritori**; può dare claustrofobia o vertigini. [@tss-i:36]"
+    ripasso: ambulanza-dotazioni-e-guida#presidi-di-mobilizzazione
+
+  - id: tss5-006
+    livello: base
+    domanda: Qual è la regola corretta per sollevare e spostare un paziente riducendo il rischio di danni alla schiena?
+    opzioni:
+      - Schiena dritta, ginocchia flesse, base d'appoggio larga e il più vicino possibile al paziente
+      - Gambe tese e schiena flessa in avanti, per sfruttare la forza delle braccia e delle spalle
+      - Piedi uniti per un maggiore equilibrio e schiena dritta, stando a distanza dal paziente
+      - Ruotare il busto durante il sollevamento, tenendo le ginocchia bloccate e la base stretta
+    corretta: 0
+    spiegazione: "Nella movimentazione dei carichi si tiene la **schiena dritta** flettendo le **ginocchia**, si **allarga la base d'appoggio** e ci si **avvicina il più possibile** al paziente, con una presa sicura. Il rischio principale è il sovraccarico **dorso-lombare**. [@tss-i:41,44-45]"
+    ripasso: ambulanza-dotazioni-e-guida#movimentazione-dei-carichi
+
+  - id: tss5-007
+    livello: esame
+    domanda: "Durante un servizio urgente l'ambulanza viaggia con sirena e lampeggiante blu accesi insieme. Cosa prevede l'art. 177 del Codice della Strada?"
+    opzioni:
+      - Può non rispettare obblighi, divieti e segnaletica, tranne le segnalazioni degli agenti del traffico, con prudenza e diligenza
+      - Può non rispettare obblighi, divieti e segnaletica, e nemmeno le segnalazioni degli agenti del traffico, purché con prudenza
+      - Deve comunque rispettare semafori e limiti di velocità, ma ha la precedenza agli incroci e può usare le corsie preferenziali dei bus
+      - Può derogare alle norme anche con il solo lampeggiante blu acceso, senza sirena, se procede con prudenza e diligenza
+    corretta: 0
+    spiegazione: "Con **sirena e lampeggiante blu usati insieme**, in servizio urgente, il conducente non è tenuto a rispettare obblighi, divieti, segnaletica e norme di comportamento, **tranne le segnalazioni degli agenti del traffico**, e sempre con **prudenza e diligenza**. [@tss-j:46-47]"
+    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+
+  - id: tss5-008
+    livello: numeri
+    domanda: Quale tasso alcolemico è consentito agli operatori del trasporto sanitario e del trasporto sanitario semplice?
+    opzioni:
+      - 0 g/l
+      - Fino a 0,2 g/l
+      - Fino a 0,5 g/l
+      - Fino a 0,8 g/l
+    corretta: 0
+    spiegazione: "Per gli operatori del trasporto sanitario il tasso alcolemico deve essere **0 g/l**; per il conducente professionista la violazione comporta la **revoca della patente**. [@tss-j:23]"
+    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+
+  - id: tss5-009
+    livello: esame
+    domanda: "Quando conducente e addetti di un'ambulanza sono esentati dall'obbligo di allacciare le cinture di sicurezza (art. 172 CdS)?"
+    opzioni:
+      - Solo durante gli interventi di emergenza
+      - Sempre, perché i veicoli sanitari sono esentati
+      - Solo durante il rientro in sede
+      - Mai, l'obbligo vale in ogni situazione di marcia
+    corretta: 0
+    spiegazione: "L'art. 172 esenta i conducenti e gli addetti dei veicoli sanitari **solo durante gli interventi di emergenza**; negli altri casi le cinture sono obbligatorie. [@tss-j:19-20]"
+    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+
+  - id: tss5-010
+    livello: numeri
+    domanda: In caso di pioggia o neve, quali sono i limiti massimi di velocità su autostrade e strade extraurbane?
+    opzioni:
+      - 110 km/h in autostrada e 90 km/h sulle extraurbane
+      - 130 km/h in autostrada e 110 km/h sulle extraurbane
+      - 100 km/h in autostrada e 70 km/h sulle extraurbane
+      - 90 km/h in autostrada e 50 km/h sulle extraurbane
+    corretta: 0
+    spiegazione: "Con precipitazioni di qualsiasi natura il limite è **110 km/h** in autostrada e **90 km/h** sulle strade extraurbane (normalmente 130 e 110 o 90). [@tss-j:18]"
+    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+
+  - id: tss5-011
+    livello: base
+    domanda: Cosa si intende per velocità pericolosa?
+    opzioni:
+      - Una velocità che non permette di mantenere il controllo del veicolo e di fermarsi in tempo davanti a un ostacolo prevedibile
+      - Qualsiasi velocità superiore al limite indicato dalla segnaletica, anche di pochi km/h, pure con buona visibilità e traffico scarso
+      - Una velocità superiore a 90 km/h con il paziente a bordo, anche in servizio urgente con sirena e lampeggiante accesi
+      - La velocità massima consentita per quel tipo di strada in condizioni di traffico normale e con fondo stradale asciutto
+    corretta: 0
+    spiegazione: "Per gli art. 141 e 142 CdS è pericolosa ogni velocità che non consente di **conservare il controllo** del veicolo e di **arrestarlo tempestivamente** davanti a qualsiasi ostacolo prevedibile; va ridotta in curva, con scarsa visibilità, di notte, vicino a incroci, scuole e strisce pedonali. [@tss-j:16-17]"
+    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
