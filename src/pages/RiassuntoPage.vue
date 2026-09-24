@@ -145,7 +145,7 @@
 
         .breadcrumbs
         {
-            color: variables.$secondary;
+            color: var(--app-muted);
             display: flex;
             flex-wrap: wrap;
             font-size: 0.85em;
@@ -200,7 +200,7 @@
         }
         .toc-mobile
         {
-            background-color: #FFF;
+            background-color: var(--app-surface);
             border-radius: 0.375rem;
             margin-bottom: 1rem;
             padding: 0.5rem 1rem;
@@ -232,7 +232,7 @@
 
             .toc-title
             {
-                color: variables.$secondary;
+                color: var(--app-muted);
                 font-size: 0.8em;
                 font-weight: 700;
                 letter-spacing: 0.05em;
@@ -257,8 +257,8 @@
 
             .badge
             {
-                background-color: rgba(variables.$primary, 0.1);
-                color: variables.$primary;
+                background-color: var(--app-accent-soft);
+                color: var(--app-accent);
                 font-size: 0.85em;
                 font-weight: 500;
                 margin: 0 0.5rem 0.5rem 0;
@@ -276,14 +276,14 @@
 
             a
             {
-                background-color: #FFF;
+                background-color: var(--app-surface);
                 border-radius: 0.375rem;
-                box-shadow: 0px 0.125em 0.5em rgba(0, 0, 0, 0.08);
+                box-shadow: 0px 0.125em 0.5em var(--app-shadow);
                 padding: 0.75rem 1rem;
 
                 small
                 {
-                    color: variables.$secondary;
+                    color: var(--app-muted);
                     display: block;
                 }
             }

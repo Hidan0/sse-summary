@@ -70,7 +70,7 @@
 
     .info-sheet-backdrop
     {
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: var(--app-backdrop);
         inset: 0px;
         position: fixed;
         z-index: 10;
@@ -78,7 +78,7 @@
 
     .info-sheet
     {
-        background-color: #FFF;
+        background-color: var(--app-surface);
         border-radius: 1rem 1rem 0 0;
         bottom: 0px;
         box-shadow: 0px 0px 2em rgba(0, 0, 0, 0.25);
@@ -98,7 +98,7 @@
 
         .kind
         {
-            color: variables.$secondary;
+            color: var(--app-muted);
             font-size: 0.8em;
             font-weight: 700;
             letter-spacing: 0.05em;

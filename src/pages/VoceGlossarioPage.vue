@@ -84,7 +84,7 @@
 
         .sinonimi
         {
-            color: variables.$secondary;
+            color: var(--app-muted);
             font-style: italic;
         }
 

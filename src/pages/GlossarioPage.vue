@@ -76,14 +76,14 @@
 
         h2
         {
-            color: variables.$primary;
+            color: var(--app-accent);
             font-size: 1.2rem;
             margin-top: 1.5rem;
         }
 
         .voce
         {
-            background-color: #FFF;
+            background-color: var(--app-surface);
             border-radius: 0.375rem;
             color: inherit;
             display: block;
@@ -93,12 +93,12 @@
 
             &:hover
             {
-                box-shadow: 0px 0.125em 0.5em rgba(0, 0, 0, 0.08);
+                box-shadow: 0px 0.125em 0.5em var(--app-shadow);
             }
 
             dt
             {
-                color: variables.$primary;
+                color: var(--app-accent);
             }
 
             dd

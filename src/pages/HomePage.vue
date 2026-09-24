@@ -68,7 +68,7 @@
 
             .disclaimer
             {
-                color: variables.$secondary;
+                color: var(--app-muted);
                 font-size: 0.9em;
             }
         }
@@ -83,7 +83,8 @@
         .chapter
         {
             border: none;
-            box-shadow: 0px 0.125em 0.5em rgba(0, 0, 0, 0.08);
+            background-color: var(--app-surface);
+            box-shadow: 0px 0.125em 0.5em var(--app-shadow);
 
             h2
             {
@@ -95,7 +96,7 @@
 
                 small
                 {
-                    color: variables.$secondary;
+                    color: var(--app-muted);
                     display: block;
                     font-size: 0.7em;
                     text-transform: uppercase;
@@ -105,9 +106,9 @@
             .chapter-icon
             {
                 align-items: center;
-                background-color: rgba(variables.$primary, 0.1);
+                background-color: var(--app-accent-soft);
                 border-radius: 50%;
-                color: variables.$primary;
+                color: var(--app-accent);
                 display: flex;
                 flex-shrink: 0;
                 height: 2.5rem;

@@ -51,7 +51,7 @@
         }
         h2
         {
-            border-bottom: 2px solid rgba(variables.$primary, 0.2);
+            border-bottom: 2px solid var(--app-accent-soft);
             font-size: 1.5rem;
             margin-top: 2rem;
             padding-bottom: 0.25rem;
@@ -88,22 +88,22 @@
         {
             color: inherit;
             cursor: pointer;
-            text-decoration: underline dotted variables.$primary;
+            text-decoration: underline dotted var(--app-accent);
             text-decoration-thickness: 2px;
             text-underline-offset: 3px;
 
             &:hover
             {
-                color: variables.$primary;
+                color: var(--app-accent);
             }
         }
 
         .source-ref
         {
-            background-color: rgba(variables.$secondary, 0.12);
+            background-color: color-mix(in srgb, var(--app-muted) 15%, transparent);
             border: none;
             border-radius: 0.5em;
-            color: variables.$secondary;
+            color: var(--app-muted);
             font-size: 0.7em;
             padding: 0.1em 0.5em;
             vertical-align: 0.15em;
@@ -111,7 +111,7 @@
 
             &:hover
             {
-                background-color: rgba(variables.$secondary, 0.25);
+                background-color: color-mix(in srgb, var(--app-muted) 30%, transparent);
             }
         }
 
@@ -119,7 +119,7 @@
         {
             --callout-color: #{variables.$primary};
 
-            background-color: color-mix(in srgb, var(--callout-color) 8%, white);
+            background-color: color-mix(in srgb, var(--callout-color) var(--app-callout-mix), var(--app-surface));
             border-left: 4px solid var(--callout-color);
             border-radius: 0.375rem;
             margin: 1rem 0;
@@ -132,7 +132,7 @@
 
             .callout-title
             {
-                color: var(--callout-color);
+                color: color-mix(in srgb, var(--callout-color) var(--app-callout-text-mix), white);
                 font-size: 0.8em;
                 font-weight: 700;
                 letter-spacing: 0.05em;

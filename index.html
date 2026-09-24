@@ -4,7 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="color-scheme" content="light dark" />
         <title>Riassunti SSE</title>
+        <script>
+            (() =>
+            {
+                // Applica subito il tema del browser, prima del caricamento dell'app, per evitare flash.
+                const query = window.matchMedia("(prefers-color-scheme: dark)");
+                const apply = () => document.documentElement.setAttribute("data-bs-theme", query.matches ? "dark" : "light");
+
+                apply();
+                query.addEventListener("change", apply);
+            })();
+        </script>
     </head>
     <body>
         <noscript>

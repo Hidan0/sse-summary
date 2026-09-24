@@ -24,7 +24,7 @@
 
         .content
         {
-            background-color: variables.$slightly-off-white;
+            background-color: var(--app-page-bg);
             min-height: 100dvh;
             flex: 1;
         }

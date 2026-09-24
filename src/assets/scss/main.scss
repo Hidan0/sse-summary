@@ -6,13 +6,44 @@
 {
     --hidden-footer-height: 128px;
     --navigation-bar-height: 64px;
+
+    /*
+     * Colori dell'interfaccia, ridefiniti per il tema scuro.
+     * Il tema segue le impostazioni del browser (vedi `index.html`).
+     */
+    --app-page-bg: #{variables.$slightly-off-white};
+    --app-surface: #FFF;
+    --app-text: #{variables.$not-quite-black};
+    --app-muted: #{variables.$secondary};
+    --app-accent: #{variables.$primary};
+    --app-accent-soft: #{rgba(variables.$primary, 0.1)};
+    --app-navigation-bg: #{rgba(#FFF, 0.5)};
+    --app-shadow: rgba(0, 0, 0, 0.08);
+    --app-backdrop: rgba(0, 0, 0, 0.25);
+    --app-callout-mix: 8%;
+    --app-callout-text-mix: 100%;
+
+    &[data-bs-theme="dark"]
+    {
+        --app-page-bg: #1B1C1F;
+        --app-surface: #26282C;
+        --app-text: #E3E5E8;
+        --app-muted: #9AA1A9;
+        --app-accent: #6EA8FE;
+        --app-accent-soft: #{rgba(#6EA8FE, 0.15)};
+        --app-navigation-bg: #{rgba(#1B1C1F, 0.6)};
+        --app-shadow: rgba(0, 0, 0, 0.4);
+        --app-backdrop: rgba(0, 0, 0, 0.5);
+        --app-callout-mix: 14%;
+        --app-callout-text-mix: 60%;
+    }
 }
 
 body
 {
     background-color: variables.$chrome-incognito-color;
     box-shadow: 0px 0px 0.5em 0px rgba(0, 0, 0, 0.5);
-    color: variables.$not-quite-black;
+    color: var(--app-text);
     font-family: variables.$font-family;
     margin-bottom: var(--hidden-footer-height);
 }
