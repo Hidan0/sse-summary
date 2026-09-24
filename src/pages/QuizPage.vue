@@ -3,7 +3,8 @@
     import { useRouter } from "vue-router";
 
     import FontAwesome from "@/components/ui/FontAwesome.vue";
-    import { argomentiQuiz, LIVELLI, SIMULAZIONE } from "@/content/quiz";
+    import { argomentiQuiz, estraiSimulazione, LIVELLI, SIMULAZIONE } from "@/content/quiz";
+    import { codificaQuiz } from "@/content/quiz-link";
     import type { LivelloQuiz, ModuloQuiz } from "@/content/types";
     import { useQuiz } from "@/stores/quiz";
 
@@ -59,6 +60,30 @@
     });
 
     const avviaSimulazione = () => avvia(() => quiz.avviaSimulazione(argomentiSimulazione.value));
+
+    /*
+     * Crea una simulazione da inviare come sfida, senza farla prima. Lo stato `creatore` non finisce
+     * nel link: chi lo riceve vede il normale invito.
+     */
+    const creaSfida = async () =>
+    {
+        caricamento.value = true;
+        try
+        {
+            const domande = await estraiSimulazione(argomentiSimulazione.value);
+            const query = codificaQuiz({
+                modalita: "simulazione",
+                ids: domande.map(({ id }) => id),
+                ordini: domande.map(({ ordine }) => ordine)
+            });
+
+            await router.push({ name: "quiz-sfida", query: query, state: { creatore: true } });
+        }
+        finally
+        {
+            caricamento.value = false;
+        }
+    };
     const avviaAllenamento = () => avvia(() => quiz.avviaAllenamento({
         argomenti: argomentiQuiz.filter(({ slug }) => selezionati.value.has(slug)),
         livelli: [...livelli.value],
@@ -118,12 +143,20 @@
                         {{ modulo }}
                     </button>
                 </div>
-                <button type="button"
-                        class="btn btn-primary"
-                        :disabled="caricamento || !argomentiSimulazione.length"
-                        @click="avviaSimulazione">
-                    Inizia la simulazione
-                </button>
+                <div class="azioni">
+                    <button type="button"
+                            class="btn btn-primary"
+                            :disabled="caricamento || !argomentiSimulazione.length"
+                            @click="avviaSimulazione">
+                        Inizia la simulazione
+                    </button>
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            :disabled="caricamento || !argomentiSimulazione.length"
+                            @click="creaSfida">
+                        <FontAwesome icon="flag-checkered" /> Crea una sfida
+                    </button>
+                </div>
             </section>
 
             <section class="card">
@@ -305,6 +338,7 @@
             .azioni
             {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 0.5rem;
             }
         }

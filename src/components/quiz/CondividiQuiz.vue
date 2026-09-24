@@ -1,9 +1,9 @@
 <script lang="ts" setup>
     import { computed, ref } from "vue";
     import type { PropType } from "vue";
-    import { useRouter } from "vue-router";
 
     import FontAwesome from "@/components/ui/FontAwesome.vue";
+    import { useUrlQuiz } from "@/composables/url-quiz";
     import { codificaQuiz } from "@/content/quiz-link";
     import type { DomandaSessione, ModalitaQuiz } from "@/stores/quiz";
     import { condividi } from "@/utils/condividi";
@@ -27,7 +27,7 @@
         }
     });
 
-    const router = useRouter();
+    const urlQuiz = useUrlQuiz();
 
     const corrette = computed(() => props.domande
         .filter((domanda, index) =>
@@ -49,9 +49,7 @@
             durata: props.durata,
             corrette: corrette.value
         });
-        const { href } = router.resolve({ name: (tipo === "sfida") ? "quiz-sfida" : "quiz-risultato", query: query });
-
-        return new URL(href, window.location.href).href;
+        return urlQuiz((tipo === "sfida") ? "quiz-sfida" : "quiz-risultato", query);
     };
 
     const stato = ref<{ messaggio: string, link?: string } | null>(null);

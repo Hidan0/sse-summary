@@ -2,19 +2,13 @@ import { computed, ref } from "vue";
 import { defineStore } from "pinia";
 import { useLocalStorage } from "@vueuse/core";
 
-import { loadDomande, shuffle, SIMULAZIONE } from "@/content/quiz";
-import type { DomandaConArgomento } from "@/content/quiz";
+import { estraiSimulazione, loadDomande, preparaDomande, shuffle, SIMULAZIONE } from "@/content/quiz";
+import type { DomandaConArgomento, DomandaSessione } from "@/content/quiz";
+
+export type { DomandaSessione } from "@/content/quiz";
 import type { ArgomentoQuiz, LivelloQuiz } from "@/content/types";
 
 export type ModalitaQuiz = "allenamento" | "simulazione" | "errori";
-
-export interface DomandaSessione extends DomandaConArgomento
-{
-    /*
-     * Ordine casuale delle opzioni: `ordine[i]` è l'indice originale dell'opzione mostrata in posizione `i`.
-     */
-    ordine: number[];
-}
 
 export interface Sfida
 {
@@ -74,16 +68,7 @@ export const useQuiz = defineStore("quiz", () =>
         sfida.value = null;
     };
 
-    const avvia = (tipo: ModalitaQuiz, lista: DomandaConArgomento[]) =>
-    {
-        inizia(tipo, shuffle(lista).map((domanda) =>
-        {
-            const ordine = domanda.opzioni.map((_, index) => index);
-
-            // Con `fissa` l'ordine resta quello scritto (es. opzioni tipo "tutte le precedenti").
-            return { ...domanda, ordine: domanda.fissa ? ordine : shuffle(ordine) };
-        }));
-    };
+    const avvia = (tipo: ModalitaQuiz, lista: DomandaConArgomento[]) => inizia(tipo, preparaDomande(lista));
 
     /*
      * Avvia un quiz ricevuto con un link: stesse domande e stesso ordine delle opzioni, niente rimescolamento.
@@ -102,9 +87,7 @@ export const useQuiz = defineStore("quiz", () =>
     };
     const avviaSimulazione = async (argomenti: ArgomentoQuiz[]) =>
     {
-        const lista = await loadDomande(argomenti);
-
-        avvia("simulazione", shuffle(lista).slice(0, SIMULAZIONE.domande));
+        inizia("simulazione", await estraiSimulazione(argomenti));
     };
     const avviaErrori = async (argomenti: ArgomentoQuiz[]) =>
     {

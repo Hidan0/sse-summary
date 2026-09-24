@@ -39,6 +39,33 @@ export async function loadDomande(argomenti: ArgomentoQuiz[]): Promise<DomandaCo
 }
 
 /*
+ * Una domanda pronta per essere proposta: `ordine[i]` è l'indice originale dell'opzione mostrata in posizione `i`.
+ */
+export interface DomandaSessione extends DomandaConArgomento
+{
+    ordine: number[];
+}
+
+/*
+ * Mescola le domande e l'ordine delle opzioni. Con `fissa` l'ordine resta quello scritto
+ * (es. opzioni tipo "tutte le precedenti").
+ */
+export function preparaDomande(lista: DomandaConArgomento[]): DomandaSessione[]
+{
+    return shuffle(lista).map((domanda) =>
+    {
+        const ordine = domanda.opzioni.map((_, index) => index);
+
+        return { ...domanda, ordine: domanda.fissa ? ordine : shuffle(ordine) };
+    });
+}
+
+export async function estraiSimulazione(argomenti: ArgomentoQuiz[]): Promise<DomandaSessione[]>
+{
+    return preparaDomande(shuffle(await loadDomande(argomenti)).slice(0, SIMULAZIONE.domande));
+}
+
+/*
  * Carica le domande indicate, nell'ordine dato. Gli id non più presenti (domande rimosse) restano `undefined`.
  */
 export async function loadDomandePerId(ids: string[]): Promise<(DomandaConArgomento | undefined)[]>
