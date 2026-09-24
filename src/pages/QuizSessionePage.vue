@@ -71,6 +71,7 @@
     const sbagliate = computed(() => quiz.domande
         .map((value, index) => ({ domanda: value, index: index }))
         .filter(({ index }) => !quiz.isCorretta(index)));
+    const corrette = computed(() => quiz.domande.filter((_, index) => quiz.isCorretta(index)));
 
     /*
      * Conferma dentro la pagina invece di `window.confirm`: alcuni browser (per esempio quelli integrati
@@ -260,6 +261,36 @@
                 </article>
                 <!-- eslint-enable vue/no-v-html -->
             </section>
+
+            <details v-if="corrette.length" class="corrette">
+                <summary>
+                    <FontAwesome icon="circle-check" />
+                    Risposte corrette ({{ corrette.length }})
+                </summary>
+                <!-- eslint-disable vue/no-v-html -->
+                <article v-for="value in corrette"
+                         :key="value.id"
+                         class="card corretta">
+                    <p class="meta">
+                        {{ value.argomento.titolo }}
+                    </p>
+                    <p class="testo" v-html="value.domanda"></p>
+                    <p class="giusta">
+                        <FontAwesome icon="circle-check" />
+                        <span v-html="value.opzioni[value.corretta]"></span>
+                    </p>
+                    <details class="spiegazione">
+                        <summary>Spiegazione</summary>
+                        <MarkdownContent :html="value.spiegazione" />
+                        <RouterLink v-if="ripasso(value)"
+                                    class="ripasso"
+                                    :to="ripasso(value)!.to">
+                            <FontAwesome icon="book-open" /> Ripassa: {{ ripasso(value)!.titolo }}
+                        </RouterLink>
+                    </details>
+                </article>
+                <!-- eslint-enable vue/no-v-html -->
+            </details>
         </template>
     </div>
 </template>
@@ -462,7 +493,8 @@
             &.ko .verdetto { color: variables.$danger; }
         }
 
-        .errori
+        .errori,
+        .corrette
         {
             display: grid;
             gap: 1rem;
@@ -490,6 +522,29 @@
                 font-weight: 500;
 
                 .fa { color: variables.$success; margin-top: 0.25rem; }
+            }
+        }
+
+        .corrette
+        {
+            margin-top: 1.5rem;
+
+            & > summary
+            {
+                background-color: var(--app-surface);
+                border-radius: 0.375rem;
+                box-shadow: 0px 0.125em 0.5em var(--app-shadow);
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding: 0.75rem 1rem;
+
+                .fa { color: variables.$success; }
+            }
+
+            .spiegazione summary
+            {
+                color: var(--app-accent);
+                font-size: 0.9em;
             }
         }
     }
