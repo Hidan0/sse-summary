@@ -12,9 +12,21 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 - **Colpo d'occhio** prima di toccare il paziente: si muove? parla? postura? colorito? sangue? [@abcde-note:2] [@tss-c3:3]
 - Ostacoli al trasporto. [@tss-c:1]
 
+### Chiedi
+
+- **"Che succede?"**: chiedilo subito a chi ti accoglie, agli astanti o al paziente stesso, per **inquadrare la situazione**. Serve soprattutto a capire se c'è anche un **trauma**: il filtro può dire "malore", ma se trovi il paziente a terra chiedi **"È caduto? Ha sbattuto la testa?"**.
+
+::: nota
+Indicazione data dagli istruttori, non presente nelle slide.
+:::
+
 ### Fai
 
 - **Autoprotezione**: indossa i DPI. [@tss-c:1]
+
+### Attenzione
+
+- Se dalle risposte emerge un **possibile trauma** (caduta, colpo alla testa), fai **mantenere il rachide cervicale in asse** e passa allo [schema del trauma](/abcde/schema/trauma).
 
 ## A
 
