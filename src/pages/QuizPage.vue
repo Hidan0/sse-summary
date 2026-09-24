@@ -4,7 +4,7 @@
 
     import FontAwesome from "@/components/ui/FontAwesome.vue";
     import { argomentiQuiz, LIVELLI, SIMULAZIONE } from "@/content/quiz";
-    import type { LivelloQuiz } from "@/content/types";
+    import type { LivelloQuiz, ModuloQuiz } from "@/content/types";
     import { useQuiz } from "@/stores/quiz";
 
     const quiz = useQuiz();
@@ -46,7 +46,17 @@
         }
     };
 
-    const avviaSimulazione = () => avvia(() => quiz.avviaSimulazione(argomentiQuiz));
+    const moduliSimulazione = ref(new Set<ModuloQuiz>(["TSS", "SSE"]));
+    const argomentiSimulazione = computed(() => argomentiQuiz
+        .filter(({ modulo }) => moduliSimulazione.value.has(modulo)));
+    const descrizioneSimulazione = computed(() =>
+    {
+        const scelti = [...moduliSimulazione.value];
+
+        return (scelti.length === 2) ? "TSS e SSE" : (scelti[0] ?? "nessun modulo");
+    });
+
+    const avviaSimulazione = () => avvia(() => quiz.avviaSimulazione(argomentiSimulazione.value));
     const avviaAllenamento = () => avvia(() => quiz.avviaAllenamento({
         argomenti: argomentiQuiz.filter(({ slug }) => selezionati.value.has(slug)),
         livelli: [...livelli.value],
@@ -88,13 +98,24 @@
             <section class="card">
                 <h2><FontAwesome icon="stopwatch" /> Simulazione d'esame</h2>
                 <p>
-                    {{ SIMULAZIONE.domande }} domande a caso su tutti gli argomenti, TSS e SSE.
+                    {{ SIMULAZIONE.domande }} domande a caso su tutti gli argomenti di {{ descrizioneSimulazione }}.
                     Alla <strong>{{ SIMULAZIONE.erroriMassimi + 1 }}ª risposta sbagliata</strong> non si passa.
                     Le soluzioni si vedono alla fine.
                 </p>
+                <div class="chips">
+                    <button v-for="modulo in (['TSS', 'SSE'] as const)"
+                            :key="modulo"
+                            type="button"
+                            class="chip"
+                            :class="{ attivo: moduliSimulazione.has(modulo) }"
+                            :aria-pressed="moduliSimulazione.has(modulo)"
+                            @click="toggle(moduliSimulazione, modulo)">
+                        {{ modulo }}
+                    </button>
+                </div>
                 <button type="button"
                         class="btn btn-primary"
-                        :disabled="caricamento || !totale"
+                        :disabled="caricamento || !argomentiSimulazione.length"
                         @click="avviaSimulazione">
                     Inizia la simulazione
                 </button>
@@ -247,7 +268,13 @@
 
             .card
             {
+                gap: 0.75rem;
                 justify-content: space-between;
+
+                p
+                {
+                    margin: 0;
+                }
 
                 .btn
                 {

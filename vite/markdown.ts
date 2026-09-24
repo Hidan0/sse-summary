@@ -282,6 +282,7 @@ export interface DomandaQuiz
     corretta: number;
     spiegazione: string;
     ripasso?: string;
+    fissa: boolean;
 }
 export interface CompiledQuiz
 {
@@ -323,6 +324,10 @@ export function compileQuiz(source: string): CompiledQuiz
             errori.push(`${id}: indice della risposta corretta non valido`);
         }
         if (!domanda.spiegazione) { errori.push(`${id}: spiegazione mancante`); }
+        if (opzioni.some((opzione) => (/precedent/i).test(String(opzione))) && (domanda.fissa !== true))
+        {
+            errori.push(`${id}: le opzioni che citano "le precedenti" richiedono \`fissa: true\``);
+        }
         if (!String(domanda.spiegazione ?? "").includes("[@"))
         {
             errori.push(`${id}: la spiegazione non cita una fonte`);
@@ -335,7 +340,8 @@ export function compileQuiz(source: string): CompiledQuiz
             opzioni: opzioni.map(inline),
             corretta: corretta,
             spiegazione: block(domanda.spiegazione),
-            ripasso: domanda.ripasso ? String(domanda.ripasso) : undefined
+            ripasso: domanda.ripasso ? String(domanda.ripasso) : undefined,
+            fissa: domanda.fissa === true
         };
     });
 

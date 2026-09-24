@@ -54,10 +54,13 @@ export const useQuiz = defineStore("quiz", () =>
     const avvia = (tipo: ModalitaQuiz, lista: DomandaConArgomento[]) =>
     {
         modalita.value = tipo;
-        domande.value = shuffle(lista).map((domanda) => ({
-            ...domanda,
-            ordine: shuffle(domanda.opzioni.map((_, index) => index))
-        }));
+        domande.value = shuffle(lista).map((domanda) =>
+        {
+            const ordine = domanda.opzioni.map((_, index) => index);
+
+            // Con `fissa` l'ordine resta quello scritto (es. opzioni tipo "tutte le precedenti").
+            return { ...domanda, ordine: domanda.fissa ? ordine : shuffle(ordine) };
+        });
         risposte.value = domande.value.map(() => null);
         indice.value = 0;
         inizio.value = Date.now();

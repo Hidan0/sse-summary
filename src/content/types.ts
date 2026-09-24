@@ -102,6 +102,7 @@ export interface Domanda
     corretta: number;
     spiegazione: string;
     ripasso?: string;
+    fissa: boolean;
 }
 export interface QuizModule
 {

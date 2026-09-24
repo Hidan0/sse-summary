@@ -322,9 +322,13 @@
             text-align: left;
             width: 100%;
 
-            &:not(:disabled):hover
+            // Solo sui dispositivi con puntatore: sul touch l'hover resta "attaccato" dopo il tocco.
+            @media (hover: hover)
             {
-                border-color: var(--app-accent-soft);
+                &:not(:disabled):not(.selezionata):hover
+                {
+                    border-color: var(--app-accent-soft);
+                }
             }
 
             &:disabled
@@ -341,6 +345,7 @@
 
             &.selezionata
             {
+                background-color: var(--app-accent-soft);
                 border-color: var(--app-accent);
             }
             &.corretta
