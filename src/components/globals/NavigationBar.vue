@@ -4,13 +4,12 @@
 
 <template>
     <nav class="navigation-bar">
-        <div class="container row">
-            <div class="col">
-                <RouterLink :to="{ name: 'home' }" class="link bold">
-                    <FontAwesome icon="truck-medical" /> SSE
-                </RouterLink>
-            </div>
-            <div class="col right">
+        <div class="container">
+            <RouterLink :to="{ name: 'home' }" class="link bold">
+                <FontAwesome icon="truck-medical" />
+                <span class="brand-text">SSE</span>
+            </RouterLink>
+            <div class="links">
                 <RouterLink :to="{ name: 'home' }" class="link">
                     Argomenti
                 </RouterLink>
@@ -30,24 +29,31 @@
         background-color: var(--app-navigation-bg);
         box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(10px);
+        container-type: inline-size;
         position: fixed;
         top: 0px;
         width: 100%;
         z-index: 1;
 
-        .col.right
+        .links
         {
-            text-align: right;
+            display: flex;
+        }
+
+        .brand-text
+        {
+            margin-left: 0.35em;
         }
 
         .link
         {
             display: inline-block;
             padding: 0.75em 1.5em;
+            white-space: nowrap;
 
             @media (max-width: variables.$max-mobile-size)
             {
-                padding: 0.75em 0.75em;
+                padding: 0.75em 0.5em;
             }
 
             &.bold
@@ -56,12 +62,29 @@
             }
         }
 
-        & > .container.row
+        /*
+         * In `em`, così la soglia tiene conto anche del carattere ingrandito dalle impostazioni del telefono.
+         */
+        @container (max-width: 18em)
         {
+            .brand-text
+            {
+                display: none;
+            }
+        }
+
+        & > .container
+        {
+            @media (max-width: variables.$max-mobile-size)
+            {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
             align-items: center;
+            display: flex;
             height: var(--navigation-bar-height);
-            margin-left: auto;
-            margin-right: auto;
+            justify-content: space-between;
         }
     }
 </style>
