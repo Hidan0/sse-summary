@@ -1,27 +1,26 @@
 {
   "name": "sse-summary",
-  "version": "1.4.1",
-  "description": "A Vue.js 3 template app based on Vite with TypeScript, Pinia, Vue Router and more.",
+  "version": "0.1.0",
+  "description": "Riassunti, glossario e strumenti di ripasso per il corso di Soccorso Sanitario Extraospedaliero (SSE) di AREU Lombardia.",
   "keywords": [
-    "Vue.js",
-    "Template",
-    "Vite.js",
-    "TypeScript",
-    "Pinia",
-    "Vue Router"
+    "SSE",
+    "AREU",
+    "soccorso",
+    "primo soccorso",
+    "ripasso",
+    "Vue.js"
   ],
-  "homepage": "https://github.com/Byloth/tuemplate#readme",
+  "homepage": "https://hidan0.github.io/sse-summary/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Byloth/tuemplate.git"
+    "url": "git+https://github.com/Hidan0/sse-summary.git"
   },
   "bugs": {
-    "url": "https://github.com/Byloth/tuemplate/issues"
+    "url": "https://github.com/Hidan0/sse-summary/issues"
   },
   "author": {
-    "name": "Matteo Bilotta",
-    "email": "me@byloth.dev",
-    "url": "https://www.byloth.dev/"
+    "name": "Hidan0",
+    "url": "https://github.com/Hidan0"
   },
   "license": "Apache-2.0",
   "type": "module",

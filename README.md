@@ -1,37 +1,36 @@
-# Byloth's Tuemplate
+# Riassunti SSE
 
-A Vue.js 3 template app based on Vite with TypeScript, Pinia, Vue Router and more.
+Riassunti e glossario per ripassare il corso di **Soccorso Sanitario Extraospedaliero (SSE)** di AREU Lombardia.
 
-## Customize configuration
+👉 **https://hidan0.github.io/sse-summary/**
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+> [!IMPORTANT]
+> Sono riassunti **non ufficiali**, basati sul materiale del corso: non sostituiscono le lezioni né i protocolli operativi.
+> Ogni affermazione cita la lezione e la pagina da cui è tratta, così puoi verificarla sulle slide.
 
-## Project Setup
+## Contenuti
+
+- **Riassunti** di tutti i capitoli del SSE, dal ruolo del soccorritore alla maxiemergenza, con i dati da ricordare per l'esame e i collegamenti agli scenari d'esame.
+- **Glossario** con definizioni rapide, soglie per adulto, bambino e infante e le differenze tra le fonti.
+
+I contenuti sono file Markdown in `src/content/`, convertiti in HTML al build.
+
+## Sviluppo
 
 ```sh
 bun install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-bun run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+bun run dev        # server di sviluppo
+bun run build      # build di produzione
 bun run lint
+bun run typecheck
+bun run test       # verifica anche la coerenza dei contenuti (glossario, fonti, collegamenti)
 ```
 
-### Run Unit Tests & Watch for Changes
+Ogni push su `master` pubblica il sito su GitHub Pages.
 
-```sh
-bun run test
-```
+## Licenza
+
+- **Codice**: [Apache 2.0](LICENSE).
+- **Contenuti** (`src/content/riassunti/` e `src/content/glossario/`): [CC BY-NC-SA 4.0](LICENSE-CONTENT).
+
+Costruito a partire da [Tuemplate](https://github.com/Byloth/tuemplate) di [Byloth](https://www.byloth.dev/).

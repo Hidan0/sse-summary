@@ -1,7 +1,5 @@
 <script lang="ts" setup>
     import FontAwesome from "@/components/ui/FontAwesome.vue";
-
-    const currentYear = new Date().getFullYear();
 </script>
 
 <template>
@@ -17,7 +15,11 @@
         </p>
         <p>
             <small>
-                Riassunti non ufficiali, non sostituiscono il corso · {{ currentYear }} ·
+                Riassunti non ufficiali, non sostituiscono il corso ·
+                contenuti <a class="link"
+                             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
+                             target="_blank"
+                             title="Licenza dei contenuti">CC BY-NC-SA 4.0</a> ·
                 template di <a class="link"
                                href="https://www.byloth.dev/"
                                target="_blank"

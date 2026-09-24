@@ -1,0 +1,28 @@
+Riassunti SSE - Contenuti
+Copyright (c) 2026 Hidan0
+
+I contenuti testuali di questo repository, cioè tutti i file nelle cartelle
+`src/content/riassunti/` e `src/content/glossario/`, sono distribuiti con licenza
+Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0
+Internazionale (CC BY-NC-SA 4.0).
+
+Sei libero di condividere e modificare questi contenuti alle seguenti condizioni:
+
+- Attribuzione: devi citare l'autore e il repository
+  (https://github.com/Hidan0/sse-summary), fornire un link alla licenza e
+  indicare se hai apportato modifiche.
+- Non commerciale: non puoi usare i contenuti per scopi commerciali.
+- Condividi allo stesso modo: se modifichi i contenuti, devi distribuirli con
+  la stessa licenza.
+
+Testo completo della licenza:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.it
+
+I contenuti sono riassunti non ufficiali, scritti con parole proprie, del
+materiale del corso di Soccorso Sanitario Extraospedaliero di AREU Lombardia.
+Il materiale originale del corso non è incluso in questo repository e resta
+dei rispettivi autori. I riassunti non sostituiscono il corso né i protocolli
+operativi.
+
+Il codice sorgente dell'applicazione è distribuito con licenza Apache 2.0:
+vedi il file LICENSE.
