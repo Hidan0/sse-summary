@@ -72,15 +72,23 @@
         .map((value, index) => ({ domanda: value, index: index }))
         .filter(({ index }) => !quiz.isCorretta(index)));
 
+    /*
+     * Conferma dentro la pagina invece di `window.confirm`: alcuni browser (per esempio quelli integrati
+     * nelle app di messaggistica) non mostrano le finestre native e le considerano rifiutate.
+     */
+    const mancanti = computed(() => quiz.domande.length - risposteDate.value);
+    const confermaTermina = ref(false);
+
     const termina = () =>
     {
-        const mancanti = quiz.domande.length - risposteDate.value;
-
-        if (mancanti && !window.confirm(`Mancano ${mancanti} risposte, che conteranno come sbagliate. Terminare?`))
+        if (mancanti.value && !confermaTermina.value)
         {
+            confermaTermina.value = true;
+
             return;
         }
 
+        confermaTermina.value = false;
         quiz.termina();
     };
 
@@ -170,7 +178,28 @@
                     <FontAwesome icon="arrow-right" />
                 </button>
             </nav>
-            <p v-if="simulazione" class="text-center">
+            <div v-if="simulazione && confermaTermina && mancanti"
+                 class="conferma"
+                 role="alertdialog">
+                <p>
+                    <FontAwesome icon="triangle-exclamation" />
+                    Mancano <strong>{{ mancanti }}</strong> {{ mancanti === 1 ? "risposta" : "risposte" }}:
+                    conteranno come sbagliate.
+                </p>
+                <div class="azioni">
+                    <button type="button"
+                            class="btn btn-danger btn-sm"
+                            @click="termina">
+                        Termina comunque
+                    </button>
+                    <button type="button"
+                            class="btn btn-outline-secondary btn-sm"
+                            @click="confermaTermina = false">
+                        Continua il quiz
+                    </button>
+                </div>
+            </div>
+            <p v-else-if="simulazione" class="text-center">
                 <button type="button"
                         class="btn btn-link btn-sm"
                         @click="termina">
@@ -380,6 +409,32 @@
             display: inline-block;
             font-size: 0.9em;
             margin-top: 0.25rem;
+        }
+
+        .conferma
+        {
+            background-color: color-mix(in srgb, #{variables.$danger} 10%, var(--app-surface));
+            border-left: 4px solid variables.$danger;
+            border-radius: 0.375rem;
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+
+            p
+            {
+                margin-bottom: 0.5rem;
+
+                .fa
+                {
+                    color: variables.$danger;
+                }
+            }
+
+            .azioni
+            {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
         }
 
         .navigazione
