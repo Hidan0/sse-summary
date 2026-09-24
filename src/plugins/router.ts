@@ -55,6 +55,11 @@ const router = createRouter({
             component: () => import("@/pages/QuizSfidaPage.vue")
         },
         {
+            path: "/quiz/risultato",
+            name: "quiz-risultato",
+            component: () => import("@/pages/QuizRisultatoPage.vue")
+        },
+        {
             path: "/avvertenze",
             name: "avvertenze",
             component: () => import("@/pages/AvvertenzePage.vue")

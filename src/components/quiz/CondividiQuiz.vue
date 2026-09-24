@@ -79,6 +79,11 @@
                 @click="condividiLink('sfida')">
             <FontAwesome icon="flag-checkered" /> Sfida un amico
         </button>
+        <button type="button"
+                class="btn btn-outline-primary"
+                @click="condividiLink('risultato')">
+            <FontAwesome icon="share-nodes" /> Condividi il risultato
+        </button>
 
         <p v-if="stato" class="stato">
             {{ stato.messaggio }}
