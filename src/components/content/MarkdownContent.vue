@@ -1,7 +1,11 @@
 <script lang="ts" setup>
+    import { computed, nextTick, onMounted, ref, watch } from "vue";
+    import { useRoute } from "vue-router";
+
+    import { evidenzia, paroleQuery } from "@/content/evidenzia";
     import { useInfoSheet } from "@/stores/info-sheet";
 
-    defineProps({
+    const props = defineProps({
         html: {
             type: String,
             required: true
@@ -9,6 +13,52 @@
     });
 
     const infoSheet = useInfoSheet();
+    const route = useRoute();
+
+    /*
+     * Arrivando da una ricerca (`?q=…`) si evidenziano nel testo le parole cercate.
+     */
+    const root = ref<HTMLElement>();
+    const parole = computed(() => paroleQuery(String(route.query.q ?? "")));
+
+    const evidenziaParole = () =>
+    {
+        if (!root.value || !parole.value.length) { return; }
+
+        const walker = document.createTreeWalker(root.value, NodeFilter.SHOW_TEXT, {
+            acceptNode: (node) => (node.parentElement?.closest(".source-ref, mark") ?
+                NodeFilter.FILTER_REJECT :
+                NodeFilter.FILTER_ACCEPT)
+        });
+
+        const nodi: Text[] = [];
+        while (walker.nextNode()) { nodi.push(walker.currentNode as Text); }
+
+        for (const nodo of nodi)
+        {
+            const pezzi = evidenzia(nodo.data, parole.value);
+            if (!pezzi.some(({ evidenziato }) => evidenziato)) { continue; }
+
+            const fragment = document.createDocumentFragment();
+            for (const { testo, evidenziato } of pezzi)
+            {
+                if (!evidenziato)
+                {
+                    fragment.append(testo);
+                    continue;
+                }
+
+                const mark = document.createElement("mark");
+                mark.className = "ricerca";
+                mark.textContent = testo;
+                fragment.append(mark);
+            }
+            nodo.replaceWith(fragment);
+        }
+    };
+
+    onMounted(evidenziaParole);
+    watch(() => props.html, () => nextTick(evidenziaParole));
 
     const onClick = (evt: MouseEvent) =>
     {
@@ -31,7 +81,8 @@
 <template>
     <!-- L'HTML viene generato al build dai file Markdown del repository. -->
     <!-- eslint-disable vue/no-v-html -->
-    <div class="markdown-content"
+    <div ref="root"
+         class="markdown-content"
          @click="onClick"
          v-html="html"></div>
     <!-- eslint-enable vue/no-v-html -->
@@ -82,6 +133,14 @@
                 margin-bottom: 0;
                 min-width: 480px;
             }
+        }
+
+        mark.ricerca
+        {
+            background-color: var(--app-mark);
+            border-radius: 0.2em;
+            color: inherit;
+            padding: 0 0.1em;
         }
 
         .glossary-term

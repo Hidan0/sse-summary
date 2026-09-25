@@ -22,6 +22,12 @@
                 <RouterLink :to="{ name: 'glossario' }" class="link">
                     Glossario
                 </RouterLink>
+                <RouterLink :to="{ name: 'cerca' }"
+                            class="link link-cerca"
+                            aria-label="Cerca"
+                            title="Cerca">
+                    <FontAwesome icon="magnifying-glass" />
+                </RouterLink>
             </div>
         </div>
     </nav>
@@ -71,7 +77,7 @@
         /*
          * In `em`, così la soglia tiene conto anche del carattere ingrandito dalle impostazioni del telefono.
          */
-        @container (max-width: 24em)
+        @container (max-width: 26em)
         {
             .brand-text
             {
@@ -82,14 +88,14 @@
         /*
          * Su schermi molto stretti "Argomenti" è ridondante: il logo porta alla stessa pagina.
          */
-        @container (max-width: 21.5em)
+        @container (max-width: 23.5em)
         {
             .link-home
             {
                 display: none;
             }
         }
-        @container (max-width: 16em)
+        @container (max-width: 18em)
         {
             .link
             {

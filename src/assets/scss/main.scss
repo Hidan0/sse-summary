@@ -22,6 +22,7 @@
     --app-backdrop: rgba(0, 0, 0, 0.25);
     --app-callout-mix: 8%;
     --app-callout-text-mix: 100%;
+    --app-mark: #{rgba(#FFC107, 0.45)};
 
     &[data-bs-theme="dark"]
     {
@@ -36,6 +37,7 @@
         --app-backdrop: rgba(0, 0, 0, 0.5);
         --app-callout-mix: 14%;
         --app-callout-text-mix: 60%;
+        --app-mark: #{rgba(#FFC107, 0.3)};
     }
 }
 
