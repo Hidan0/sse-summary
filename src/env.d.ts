@@ -10,3 +10,12 @@ declare module "*.md"
 
     export default content;
 }
+
+declare module "virtual:indice-ricerca"
+{
+    import type { DocumentoRicerca } from "@/content/ricerca";
+
+    const documenti: DocumentoRicerca[];
+
+    export default documenti;
+}

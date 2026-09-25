@@ -5,5 +5,8 @@
     "tsBuildInfoFile": "../node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "types": ["node"]
   },
-  "include": ["../vite.config.ts", "../vite/**/*.ts", "../src/content/fonti.ts", "../src/content/slug.ts"]
+  "include": ["../vite.config.ts", "../vite/**/*.ts", "../src/content/fonti.ts", "../src/content/slug.ts",
+    "../src/content/abcde-sezioni.ts", "../src/content/capitoli.ts", "../src/content/ordine.ts",
+    "../src/content/ricerca.ts", "../src/content/evidenzia.ts", "../src/content/types.ts"
+  ]
 }
