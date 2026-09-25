@@ -23,7 +23,7 @@ export type LetteraAbcde = "A" | "B" | "C" | "D" | "E";
 export interface RiassuntoFrontmatter
 {
     titolo: string;
-    capitolo: number;
+    capitolo: number | string;
     abcde?: LetteraAbcde[];
     correlati?: string[];
 }

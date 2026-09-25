@@ -1,5 +1,5 @@
 import { capitoli } from "./capitoli";
-import type { Capitolo } from "./capitoli";
+import type { Capitolo, Modulo } from "./capitoli";
 import { compareOrdine, parseOrdineSlug } from "./ordine";
 import { slugify } from "./slug";
 import type {
@@ -11,7 +11,8 @@ import type {
     VoceGlossarioFrontmatter
 } from "./types";
 
-export { capitoli } from "./capitoli";
+export { capitoli, moduli } from "./capitoli";
+export type { Capitolo, Modulo } from "./capitoli";
 export { fonti } from "./fonti";
 export type * from "./types";
 
@@ -38,6 +39,11 @@ function basename(path: string): string
     return path.slice(path.lastIndexOf("/") + 1, -".md".length);
 }
 
+function indiceCapitolo(codice: number | string): number
+{
+    return capitoli.findIndex((capitolo) => capitolo.codice === codice);
+}
+
 export const riassunti: Riassunto[] = Object.entries(riassuntiMeta)
     .map(([path, { frontmatter, toc, glossario: terms }]) => ({
         ...frontmatter,
@@ -46,17 +52,21 @@ export const riassunti: Riassunto[] = Object.entries(riassuntiMeta)
         glossario: terms,
         load: riassuntiFull[path]
     }))
-    .sort((a, b) => (a.capitolo - b.capitolo) || compareOrdine(a.ordine, b.ordine));
+    .sort((a, b) => (indiceCapitolo(a.capitolo) - indiceCapitolo(b.capitolo)) || compareOrdine(a.ordine, b.ordine));
 
 export const riassuntiBySlug = new Map(riassunti.map((riassunto) => [riassunto.slug, riassunto]));
 
 export function getRiassuntiByCapitolo(capitolo: Capitolo): Riassunto[]
 {
-    return riassunti.filter((riassunto) => riassunto.capitolo === capitolo.numero);
+    return riassunti.filter((riassunto) => riassunto.capitolo === capitolo.codice);
 }
-export function getCapitolo(numero: number): Capitolo | undefined
+export function getCapitolo(codice: number | string): Capitolo | undefined
 {
-    return capitoli.find((capitolo) => capitolo.numero === numero);
+    return capitoli.find((capitolo) => capitolo.codice === codice);
+}
+export function getCapitoliByModulo(modulo: Modulo): Capitolo[]
+{
+    return capitoli.filter((capitolo) => capitolo.modulo === modulo);
 }
 
 export const glossario: VoceGlossario[] = Object.entries(glossarioMeta)

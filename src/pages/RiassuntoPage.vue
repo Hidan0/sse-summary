@@ -57,11 +57,11 @@
     <div id="riassunto-page" class="container page">
         <template v-if="riassunto">
             <nav class="breadcrumbs">
-                <RouterLink :to="{ name: 'home' }">
+                <RouterLink :to="{ name: 'home', query: (capitolo?.modulo === 'TSS') ? { modulo: 'tss' } : {} }">
                     Argomenti
                 </RouterLink>
                 <FontAwesome icon="chevron-right" />
-                <span v-if="capitolo">Cap. {{ capitolo.numero }} · {{ capitolo.titolo }}</span>
+                <span v-if="capitolo">{{ capitolo.modulo }} · Cap. {{ capitolo.codice }} · {{ capitolo.titolo }}</span>
             </nav>
 
             <div class="layout">

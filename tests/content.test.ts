@@ -21,6 +21,7 @@ function listMarkdown(dir: string): string[]
 const riassunti = listMarkdown(join(CONTENT_DIR, "riassunti")).map((path) => ({
     path: path,
     cartella: basename(dirname(path)),
+    modulo: basename(dirname(dirname(path))).toUpperCase(),
     slug: basename(path, ".md").replace(/^[\d.]+-/, ""),
     ...compileMarkdown(readFileSync(path, "utf-8"))
 }));
@@ -75,11 +76,13 @@ describe("Riassunti", () =>
     });
     it("hanno titolo e capitolo coerente con la cartella", () =>
     {
-        const invalid = riassunti.filter(({ cartella, frontmatter }) =>
+        const invalid = riassunti.filter(({ cartella, modulo, frontmatter }) =>
         {
-            const capitolo = capitoli.find(({ numero }) => numero === frontmatter.capitolo);
+            const capitolo = capitoli.find(({ codice }) => codice === frontmatter.capitolo);
 
-            return (typeof frontmatter.titolo !== "string") || (capitolo?.cartella !== cartella);
+            return (typeof frontmatter.titolo !== "string") ||
+                (capitolo?.cartella !== cartella) ||
+                (capitolo.modulo !== modulo);
         });
 
         expect(invalid.map(({ path }) => path)).toEqual([]);
@@ -107,6 +110,22 @@ describe("Riassunti", () =>
 
             return [...links]
                 .filter(([, tipo, slug]) => !exists(tipo, slug))
+                .map(([link]) => `${basename(path)} → ${link}`);
+        });
+
+        expect(broken).toEqual([]);
+    });
+    it("hanno link interni con ancore esistenti", () =>
+    {
+        const ids = new Map(riassunti.map(({ slug, html }) =>
+            [slug, new Set([...html.matchAll(/ id="([^"]+)"/g)].map(([, id]) => id))]));
+
+        const broken = [...riassunti, ...glossario, ...abcde].flatMap(({ path }) =>
+        {
+            const links = readFileSync(path, "utf-8").matchAll(/\]\(\/riassunti\/([a-z0-9-]+)#([^)\s]+)\)/g);
+
+            return [...links]
+                .filter(([, slug, ancora]) => ids.has(slug) && !ids.get(slug)!.has(ancora))
                 .map(([link]) => `${basename(path)} → ${link}`);
         });
 

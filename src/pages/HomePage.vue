@@ -1,8 +1,24 @@
 <script lang="ts" setup>
-    import FontAwesome from "@/components/ui/FontAwesome.vue";
-    import { capitoli, getRiassuntiByCapitolo } from "@/content";
+    import { computed } from "vue";
+    import { useRoute } from "vue-router";
 
-    const sezioni = capitoli.map((capitolo) => ({ capitolo: capitolo, riassunti: getRiassuntiByCapitolo(capitolo) }));
+    import FontAwesome from "@/components/ui/FontAwesome.vue";
+    import { getCapitoliByModulo, getRiassuntiByCapitolo, moduli } from "@/content";
+    import type { Modulo } from "@/content";
+
+    const NOMI: Record<Modulo, string> = {
+        SSE: "Soccorso Sanitario Extraospedaliero",
+        TSS: "Trasporto Sanitario"
+    };
+
+    /*
+     * Il modulo scelto sta nella query, così il link "Argomenti" di un riassunto TSS torna qui.
+     */
+    const route = useRoute();
+    const modulo = computed<Modulo>(() => ((route.query.modulo === "tss") ? "TSS" : "SSE"));
+
+    const sezioni = computed(() => getCapitoliByModulo(modulo.value)
+        .map((capitolo) => ({ capitolo: capitolo, riassunti: getRiassuntiByCapitolo(capitolo) })));
 </script>
 
 <template>
@@ -10,7 +26,8 @@
         <header class="hero">
             <h1>Riassunti SSE</h1>
             <p class="lead">
-                Ripasso del corso di Soccorso Sanitario Extraospedaliero, argomento per argomento.
+                Ripasso dei corsi di Trasporto Sanitario (TSS) e Soccorso Sanitario Extraospedaliero (SSE),
+                argomento per argomento.
             </p>
             <p class="disclaimer">
                 <FontAwesome icon="circle-info" />
@@ -23,9 +40,22 @@
             </p>
         </header>
 
+        <nav class="moduli" aria-label="Modulo">
+            <RouterLink v-for="value in moduli"
+                        :key="value"
+                        :to="{ name: 'home', query: (value === 'TSS') ? { modulo: 'tss' } : {} }"
+                        class="modulo"
+                        :class="{ attivo: value === modulo }"
+                        :aria-current="(value === modulo) ? 'page' : undefined"
+                        replace>
+                <strong>{{ value }}</strong>
+                <small>{{ NOMI[value] }}</small>
+            </RouterLink>
+        </nav>
+
         <div class="chapters">
             <section v-for="{ capitolo, riassunti } in sezioni"
-                     :key="capitolo.numero"
+                     :key="capitolo.codice"
                      class="chapter card">
                 <div class="card-body">
                     <h2>
@@ -33,7 +63,7 @@
                             <FontAwesome :icon="capitolo.icona" />
                         </span>
                         <span>
-                            <small>Capitolo {{ capitolo.numero }}</small>
+                            <small>Capitolo {{ capitolo.codice }}</small>
                             {{ capitolo.titolo }}
                         </span>
                     </h2>
@@ -74,6 +104,44 @@
             {
                 color: var(--app-muted);
                 font-size: 0.9em;
+            }
+        }
+
+        .moduli
+        {
+            display: grid;
+            gap: 0.5rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-bottom: 1.5rem;
+            max-width: 40rem;
+        }
+
+        .modulo
+        {
+            border: 1px solid var(--app-accent-soft);
+            border-radius: 0.75rem;
+            color: var(--app-text);
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 0.9rem;
+            text-decoration: none;
+
+            small
+            {
+                color: var(--app-muted);
+                font-size: 0.8em;
+                line-height: 1.2;
+            }
+
+            &.attivo
+            {
+                background-color: var(--app-accent-soft);
+                border-color: var(--app-accent);
+
+                strong
+                {
+                    color: var(--app-accent);
+                }
             }
         }
 
