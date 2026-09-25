@@ -10,7 +10,7 @@ breve: Bambino sotto l'anno di età (dalla nascita a 1 anno).
 |---|---|---|
 | Dalla nascita a 1 anno | età pediatriche | [@2.3:4] |
 | Sotto 1 anno | algoritmo PBLSD, disostruzione | [@5.2:39] [@5.4:6] |
-| 1 anno o fino a circa 10 kg | apertura vie aeree, CTE (TSS) | [@tss-g1:54] [@tss-manuale-blsd:25] |
+| 1 anno o fino a circa 10 kg | apertura vie aeree, CTE ([PBLSD TSS](/riassunti/pblsd-trasporto-sanitario#chi-e-infante-e-chi-e-bambino)) | [@tss-g1:54] [@tss-manuale-blsd:25] |
 | Da 1 a 12 mesi | soglie di pressione | [@pblsd-manuale:6] |
 
 ## Parametri

@@ -22,4 +22,6 @@ Si collega con due placche adesive che leggono il ritmo ed erogano la scarica; s
 - **Legge 120/2001**: fuori dall'ospedale può usarlo anche personale non sanitario con formazione specifica in RCP; il personale non medico può usare solo i semiautomatici. [@0.1:30] [@tss-b:37] [@blsd-manuale:26]
 - **DGR 4717/2013**: i soccorritori esecutori e il personale delle ambulanze di trasporto devono essere abilitati all'uso del DAE. [@0.1:33] [@tss-b:39]
 - Chi eroga lo shock risponde della **sicurezza** della manovra, non dell'indicazione (decisa dall'apparecchio). [@0.1:34] [@tss-b:41]
-- La qualifica BLSD dura **24 mesi**. [@tss-b:40] [@tss-sigle:2]
+- Secondo le slide la qualifica BLSD dura **24 mesi**. [@tss-b:40] [@tss-sigle:2]
+- Per il manuale BLSD (DM 18 marzo 2011) l'**autorizzazione** all'uso del DAE fuori dall'ospedale è **nominativa e dura 12 mesi**, con retraining **ogni 24 mesi**, che la Lombardia rende flessibile tra **12 e 24 mesi**. [@tss-manuale-blsd:31] [@blsd-manuale:31]
+- La data dell'Accordo Stato-Regioni sulla responsabilità di chi eroga lo shock è **27 febbraio 2003** nelle slide e **27 marzo 2003** nei manuali BLSD. [@tss-b:41] [@0.1:34] [@tss-manuale-blsd:30] [@blsd-manuale:30]
