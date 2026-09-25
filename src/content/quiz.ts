@@ -12,7 +12,7 @@ export const LIVELLI: { id: LivelloQuiz, nome: string, descrizione: string }[] =
 /*
  * Regole della simulazione, come all'esame: 30 domande, alla quinta risposta sbagliata non si passa.
  */
-export const SIMULAZIONE = { domande: 30, erroriMassimi: 4 };
+export const SIMULAZIONE = { domande: 30, erroriMassimi: 5 };
 
 const quizMeta = import.meta.glob<QuizMeta>("./quiz/*.yaml", { query: "?meta", import: "default", eager: true });
 const quizFull = import.meta.glob<QuizModule>("./quiz/*.yaml", { import: "default" });
