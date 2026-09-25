@@ -13,7 +13,7 @@ domande:
       - Arriva alla centrale dei Vigili del Fuoco, che valuta l'evento e smista quelli sanitari alla centrale 118
     corretta: 0
     spiegazione: "Con il [[NUE 112]] tutte le chiamate di emergenza (112, 113, 115, 118) confluiscono nella Centrale Unica di Risposta, che localizza, individua la natura dell'esigenza e inoltra la richiesta alla centrale di secondo livello competente. [@tss-manuale-blsd:6]"
-    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+    ripasso: blsd-trasporto-sanitario#chiamare-il-112-118
 
   - id: tss4-003
     livello: esame
@@ -25,6 +25,7 @@ domande:
       - La metti in posizione laterale di sicurezza e vai a telefonare senza valutare il respiro
     corretta: 0
     spiegazione: "Se si è soli e non si riesce a contattare il 112/118, ci si allontana per telefonare **solo dopo aver valutato coscienza e respiro**; se possibile si usa il cellulare, per non lasciare sola la vittima. [@tss-manuale-blsd:13]"
+    ripasso: blsd-trasporto-sanitario#chiamare-il-112-118
 
   - id: tss4-007
     livello: base
@@ -36,7 +37,7 @@ domande:
       - Piegato dietro la schiena, con il dorso della mano sul bacino
     corretta: 0
     spiegazione: Il braccio dal lato del soccorritore si distende verso l'alto; l'**altro braccio** va sul torace, con il **dorso della mano sulla guancia**; poi si flette la gamba più lontana e si fa ruotare la vittima verso di sé. [@tss-manuale-blsd:13]
-    ripasso: blsd#incosciente-ma-con-respiro-normale-la-pls
+    ripasso: blsd-trasporto-sanitario#incosciente-che-respira-normalmente-la-pls
 
   - id: tss4-008
     livello: base
@@ -48,7 +49,7 @@ domande:
       - Soccorritore in piedi a cavallo della vittima, fulcro nelle ginocchia, forza data dalle gambe
     corretta: 0
     spiegazione: "Braccia **perpendicolari** al torace, **gomiti non piegati**, il **bacino** fa da fulcro e la forza viene dal **peso del corpo**. Una spinta non verticale rende le compressioni meno efficaci. [@tss-g1:22] [@tss-manuale-blsd:14]"
-    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+    ripasso: blsd-trasporto-sanitario#le-compressioni-toraciche-esterne-cte
 
   - id: tss4-009
     livello: esame
@@ -60,7 +61,7 @@ domande:
       - Di lato, sulle coste → rigurgito del contenuto dello stomaco e inalazione
     corretta: 0
     spiegazione: "Troppo profonde o in basso: lesioni di **fegato o milza** e rigurgito; di lato sulle coste: fratture costali che possono perforare i polmoni; troppo in alto: **frattura dello sterno**; troppo superficiali: **inefficaci**. [@tss-manuale-blsd:15]"
-    ripasso: blsd#le-compressioni-toraciche-esterne-cte
+    ripasso: blsd-trasporto-sanitario#le-compressioni-toraciche-esterne-cte
 
   - id: tss4-010
     livello: base
@@ -72,7 +73,7 @@ domande:
       - Si tiene il capo flesso in avanti, mento verso il petto, per evitare che l'aria vada nello stomaco
     corretta: 0
     spiegazione: "Capo esteso, naso chiuso con pollice e indice, insufflazione lenta di **circa 1 secondo** finché il torace inizia a salire, poi si lascia espirare. Meglio usare una protezione: il **fazzoletto di carta non protegge**. [@tss-manuale-blsd:18] [@tss-g1:31]"
-    ripasso: blsd#senza-pallone-bocca-maschera-e-bocca-bocca
+    ripasso: blsd-trasporto-sanitario#bocca-bocca
 
   - id: tss4-011
     livello: base
@@ -84,7 +85,7 @@ domande:
       - Apice sulla radice del naso, base appoggiata sopra il labbro superiore
     corretta: 0
     spiegazione: La maschera va con l'**apice sulla radice del naso** e la **base tra labbro inferiore e mento**, premendo abbastanza da non far uscire aria dai lati; poi si insuffla lentamente nel boccaglio guardando il torace. [@tss-manuale-blsd:19,23]
-    ripasso: blsd#senza-pallone-bocca-maschera-e-bocca-bocca
+    ripasso: blsd-trasporto-sanitario#bocca-maschera-pocket-mask
 
   - id: tss4-012
     livello: base
@@ -96,7 +97,7 @@ domande:
       - Solo dopo l'arrivo del mezzo avanzato, che porta pallone e reservoir
     corretta: 0
     spiegazione: Per usare il [[pallone autoespandibile]] la RCP va fatta **in due**, uno alla testa che ventila e uno al fianco che comprime. [@tss-g1:33] [@tss-manuale-blsd:19]
-    ripasso: blsd#vie-aeree-e-ventilazioni
+    ripasso: blsd-trasporto-sanitario#pallone-autoespandibile
 
   - id: tss4-013
     livello: esame
@@ -108,7 +109,7 @@ domande:
       - Il soccorritore è esausto e non riesce a proseguire
     corretta: 0
     spiegazione: "Il materiale TSS indica di continuare la RCP finché arriva un **mezzo di soccorso**, arriva un **medico** che prende in carico la vittima, oppure il soccorritore è **esausto**. Non indica un limite di tempo. [@tss-manuale-blsd:20] [@tss-g1:48]"
-    ripasso: blsd#evoluzione
+    ripasso: blsd-trasporto-sanitario#evoluzione-e-fine-della-rcp
 
   - id: tss4-014
     livello: base
@@ -120,7 +121,7 @@ domande:
       - Si depila tutto il torace e lo si asciuga con cura, sospendendo le compressioni
     corretta: 0
     spiegazione: "Si depila **solo** dove vanno le placche e si asciuga **tutto** il torace se bagnato o sudato, riducendo al minimo le interruzioni delle CTE. [@tss-g1:39-40] [@tss-manuale-blsd:15]"
-    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+    ripasso: blsd-trasporto-sanitario#il-dae-in-breve
 
   - id: tss4-015
     livello: base
@@ -132,7 +133,7 @@ domande:
       - Il collega alla testa, per sapere quando sta per ventilare
     corretta: 0
     spiegazione: "Durante l'uso del DAE si **guarda sempre il paziente e non il DAE**: mentre si dice \"io sono via, voi siete via, tutti sono via\" si verifica con gli occhi che nessuno sia a contatto con la vittima. [@tss-g1:42] [@tss-manuale-blsd:16]"
-    ripasso: defibrillatore-dae#uso-del-dae-passo-passo
+    ripasso: blsd-trasporto-sanitario#il-dae-in-breve
 
   - id: tss4-016
     livello: numeri
@@ -144,7 +145,7 @@ domande:
       - "Non cambia: conta solo la defibrillazione"
     corretta: 0
     spiegazione: Con la RCP prima dell'arrivo del defibrillatore la probabilità di ripresa è **2-3 volte maggiore**, perché la sopravvivenza cala solo del 3-4% al minuto invece del 7-10%. [@tss-manuale-blsd:5]
-    ripasso: blsd#ritmi-di-presentazione
+    ripasso: blsd-trasporto-sanitario#l-arresto-cardiocircolatorio
 
   - id: tss4-017
     livello: numeri
@@ -156,7 +157,7 @@ domande:
       - Solo il neonato nel primo mese di vita
     corretta: 0
     spiegazione: "Il materiale TSS definisce **infante** la vittima fino a **1 anno** o di **circa 10 kg**, e **bambino** quella **da 1 a 8 anni** o fino a **25 kg**. [@tss-g1:54] [@tss-manuale-blsd:25]"
-    ripasso: pblsd#confronto-adulto-bambino-infante
+    ripasso: pblsd-trasporto-sanitario#chi-e-infante-e-chi-e-bambino
 
   - id: tss4-018
     livello: base
@@ -168,7 +169,7 @@ domande:
       - Far rilassare i muscoli della gola per permettere il passaggio del corpo estraneo
     corretta: 0
     spiegazione: Colpi interscapolari e compressioni servono tutti ad **aumentare di colpo la pressione intratoracica** e creare una **tosse artificiale** che spinga fuori il corpo estraneo. [@tss-g2:5]
-    ripasso: ostruzione-vie-aeree#classificazione
+    ripasso: ostruzione-vie-aeree-trasporto-sanitario#riconoscere-e-classificare
 
   - id: tss4-019
     livello: esame
@@ -180,7 +181,7 @@ domande:
       - Lo fai sdraiare a terra e inizi le compressioni toraciche
     corretta: 0
     spiegazione: "Tosse, sibili, subcianosi e capacità di parlare indicano un'ostruzione **moderata**: **se parla, non fare nulla**, incoraggialo a tossire e tienilo in osservazione. Le manovre servono solo nell'ostruzione grave. [@tss-g2:4] [@tss-manuale-blsd:33]"
-    ripasso: ostruzione-vie-aeree#classificazione
+    ripasso: ostruzione-vie-aeree-trasporto-sanitario#riconoscere-e-classificare
 
   - id: tss4-020
     livello: base
@@ -192,7 +193,7 @@ domande:
       - Prono su un piano rigido come un tavolo, con la testa più in alto del tronco
     corretta: 0
     spiegazione: "L'infante va **prono sull'avambraccio**, che fa da piano rigido ed è appoggiato alla **coscia**, con la **testa più in basso del tronco**; si danno 5 colpi vigorosi tra le scapole con via di fuga laterale, senza colpire la nuca. [@tss-g2:14] [@tss-manuale-blsd:36]"
-    ripasso: ostruzione-vie-aeree#infante-sotto-l-anno-cosciente-con-ostruzione-grave
+    ripasso: ostruzione-vie-aeree-trasporto-sanitario#infante-cosciente-con-ostruzione-grave
 
   - id: tss4-021
     livello: esame
@@ -204,7 +205,7 @@ domande:
       - Quando la vittima smette di tossire
     corretta: 0
     spiegazione: "Si alternano 5 colpi e 5 compressioni fino alla risoluzione o alla **perdita di coscienza**, e ci si **ferma appena la vittima inizia a tossire vigorosamente** (nell'infante: quando piange con forza). [@tss-skill-ostr-adulto:1] [@tss-skill-ostr-infante:1]"
-    ripasso: ostruzione-vie-aeree#adulto-cosciente-con-ostruzione-grave
+    ripasso: ostruzione-vie-aeree-trasporto-sanitario#adulto-cosciente-con-ostruzione-grave
 
   - id: tss4-022
     livello: esame
@@ -216,4 +217,16 @@ domande:
       - "Piano rigido, 2 insufflazioni, 15 compressioni, ispezione della bocca e, se non entrano, RCP 15:2"
     corretta: 0
     spiegazione: "Vittima che diventa incosciente: sequenza BLSD, **supina su piano rigido**, **30 CTE**, **ispezione visiva** del cavo orale, **2 insufflazioni** e, se inefficaci, **RCP 30:2**. [@tss-g2:11] [@tss-manuale-blsd:35]"
-    ripasso: ostruzione-vie-aeree#adulto
+    ripasso: ostruzione-vie-aeree-trasporto-sanitario#adulto-che-perde-coscienza
+
+  - id: sse5-029
+    livello: base
+    domanda: Nel BLSD del corso TSS, in quale situazione non si mette in posizione laterale di sicurezza una vittima incosciente che respira normalmente?
+    opzioni:
+      - Se ha subito un trauma
+      - Se ha vomitato
+      - Se è un anziano
+      - Se è una donna in gravidanza
+    corretta: 0
+    spiegazione: "La [[PLS]] serve alla vittima incosciente con respiro normale, ma **non si usa in caso di trauma**. [@tss-manuale-blsd:13] [@tss-g1:46]"
+    ripasso: blsd-trasporto-sanitario#incosciente-che-respira-normalmente-la-pls

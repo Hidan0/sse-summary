@@ -14,7 +14,7 @@ domande:
       - Una sonda inserita in vescica attraverso l'uretra, che drena l'urina in un sacchetto
     corretta: 0
     spiegazione: La **PEG** (gastrostomia endoscopica percutanea) collega la cavità gastrica all'esterno con un tubicino, per l'assunzione di cibi e liquidi in chi non riesce a deglutire. Le altre descrizioni sono il sondino naso-gastrico, la cannula tracheostomica e il catetere vescicale. [@tss-d:9-10]
-    ripasso: patologie-neurodegenerative#il-paziente-con-ventilazione-domiciliare
+    ripasso: pazienti-nel-trasporto-sanitario#supporto-ventilatorio-e-presidi-medico-chirurgici
 
   - id: tss3-002
     livello: esame
@@ -26,7 +26,7 @@ domande:
       - Muoverlo come di consueto, perché i presidi sono ben fissati e non possono spostarsi
     corretta: 0
     spiegazione: Prima di mobilizzare e trasportare il paziente ci si **informa dei presidi medico-chirurgici** presenti e si presta la **massima attenzione** perché non si spostino dalla loro sede anatomica. [@tss-d:11]
-    ripasso: patologie-neurodegenerative#il-paziente-con-ventilazione-domiciliare
+    ripasso: pazienti-nel-trasporto-sanitario#supporto-ventilatorio-e-presidi-medico-chirurgici
 
   - id: tss3-003
     livello: esame
@@ -38,6 +38,7 @@ domande:
       - Comprimete la fistola per tutto il trasporto anche se non sanguina, e misurate la pressione sul braccio sinistro
     corretta: 0
     spiegazione: In caso di malore il dializzato si valuta con l'**ABCDE**, **senza misurare la pressione sull'arto con la fistola**, e si controlla la fistola nel caso sanguini. [@tss-d:22-23]
+    ripasso: pazienti-nel-trasporto-sanitario#il-paziente-dializzato
 
   - id: tss3-004
     livello: numeri
@@ -49,6 +50,7 @@ domande:
       - Entro tre anni
     corretta: 0
     spiegazione: Il paziente terminale è nella fase irreversibile di una malattia mortale, senza trattamenti specifici possibili, con sintomi invalidanti e una rapida evoluzione che porta a morte **in genere entro tre mesi**. Nel soccorso si considera la **sua volontà e quella dei parenti**. [@tss-d:14-15]
+    ripasso: pazienti-nel-trasporto-sanitario#il-paziente-in-fase-terminale
 
   - id: tss3-005
     livello: esame
@@ -60,7 +62,7 @@ domande:
       - Ansia
     corretta: 0
     spiegazione: Le problematiche dell'ustionato sono **termoregolazione, dolore, infezioni e ansia**; durante il trasporto va anzi assicurata una **buona protezione termica**, con posizione antalgica e vano sanitario accuratamente deterso. [@tss-d:17-18]
-    ripasso: ustioni#trasporto
+    ripasso: pazienti-nel-trasporto-sanitario#l-ustionato
 
   - id: tss3-007
     livello: base
@@ -72,7 +74,7 @@ domande:
       - Ascoltare il battito del feto a ogni rivalutazione della madre
     corretta: 0
     spiegazione: "Il materiale lo dice in modo esplicito: **il miglior trattamento per il feto è portare la madre in ospedale nelle migliori condizioni**. Si monitora costantemente la donna e, se ci sono problemi e la gravidanza è avanzata, la si trasporta se possibile in decubito laterale sinistro; la posizione supina va evitata. [@tss-d:31-32] [@ost-manuale:11]"
-    ripasso: gravidanza-e-travaglio#trasporto-della-gravida
+    ripasso: pazienti-nel-trasporto-sanitario#la-donna-gravida-e-il-neonato
 
   - id: tss3-008
     livello: base
@@ -84,7 +86,7 @@ domande:
       - Toglierle occhiali e apparecchio acustico, che durante il viaggio non le servono
     corretta: 0
     spiegazione: L'anziano non autosufficiente va aiutato negli spostamenti, soprattutto in salita e discesa dal mezzo; se possibile si trasporta con lui un **parente o un conoscente**, che lo aiuta a controllare paure e disagio. Gli ausili come occhiali e apparecchio acustico vanno lasciati. [@tss-d:26] [@tss-e:8]
-    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+    ripasso: pazienti-nel-trasporto-sanitario#l-anziano-non-autosufficiente
 
   - id: tss3-009
     livello: base
@@ -96,7 +98,7 @@ domande:
       - Si può usare da sola, senza collare, quando si sospetta una lesione della colonna
     corretta: 0
     spiegazione: "La [[barella a cucchiaio]] serve a **trasferire** il paziente da un piano all'altro e **non immobilizza la colonna**. Immobilizzare tutto il rachide è compito della [[tavola spinale]]; conformarsi al corpo è la caratteristica del [[materasso a depressione]]. [@tss-d:45-47]"
-    ripasso: immobilizzazione-atraumatica#barella-a-cucchiaio
+    ripasso: tecniche-di-immobilizzazione-di-base#i-presidi
 
   - id: tss3-010
     livello: esame
@@ -108,7 +110,7 @@ domande:
       - È rapido da posizionare
     corretta: 0
     spiegazione: Il [[manicotti a depressione|manicotto a depressione]] dà una buona immobilizzazione, anche di arti in posizioni anomale, è rapido da posizionare, **non comprime** e non tende a raddrizzare l'arto. [@tss-d:49] [@1.3.2:33-34]
-    ripasso: immobilizzazione-atraumatica#immobilizzazione-degli-arti
+    ripasso: tecniche-di-immobilizzazione-di-base#i-presidi
 
   # Approccio psicologico e relazionale (tss-e)
   - id: tss3-011
@@ -121,7 +123,7 @@ domande:
       - Presentarsi, ascoltare, promettere, rassicurare
     corretta: 0
     spiegazione: La base di una comunicazione efficace è **presentarsi, ascoltare, spiegare, rassicurare**. Promettere esiti che non si possono garantire crea **aspettative irreali**, da evitare. [@tss-e:3,6]
-    ripasso: comunicazione-con-il-paziente#cosa-fare
+    ripasso: approccio-psicologico-e-relazionale#comunicare-con-il-paziente
 
   - id: tss3-012
     livello: esame
@@ -145,7 +147,7 @@ domande:
       - Parlare al bambino restando in piedi e con tono deciso, per mantenere un ruolo autorevole
     corretta: 0
     spiegazione: Con il bambino si assistono **due pazienti**, il bambino e il genitore o tutore. Si favorisce il loro contatto, si parla al bambino **alla sua altezza**, mai dall'alto in basso, con voce calma, rispettando i suoi tempi. [@tss-e:7] [@tss-d:35-36]
-    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+    ripasso: pazienti-nel-trasporto-sanitario#il-bambino
 
   - id: tss3-014
     livello: esame
@@ -157,7 +159,7 @@ domande:
       - Chiamare le forze di polizia prima di avvicinarlo, anche se è tranquillo e collaborante
     corretta: 0
     spiegazione: Con il paziente dipendente da alcol o droghe si cerca **sempre di aprire un canale comunicativo**, con voce calma e rassicurante, e **non si sottovalutano i segni clinici**. Solo in caso di eccessiva aggressività o rifiuto del trasporto ci si mette in sicurezza e si contatta il sistema di emergenza. [@tss-e:10]
-    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+    ripasso: approccio-psicologico-e-relazionale#pazienti-particolari
 
   - id: tss3-015
     livello: base
@@ -169,7 +171,7 @@ domande:
       - Nessuno, se il trasporto è programmato
     corretta: 0
     spiegazione: I pazienti agli arresti domiciliari sono tenuti ad avvisare **personalmente** le forze di polizia. In urgenza (per esempio un paziente incosciente) si attiva il sistema di emergenza e si **riferisce** la condizione di custodia cautelare. [@tss-e:13]
-    ripasso: comunicazione-con-il-paziente#pazienti-particolari
+    ripasso: approccio-psicologico-e-relazionale#pazienti-particolari
 
   - id: tss3-016
     livello: base
@@ -217,7 +219,7 @@ domande:
       - Rinviando la valutazione all'arrivo delle forze di polizia, per ragioni di sicurezza
     corretta: 0
     spiegazione: Segni e sintomi si valutano **ipotizzando sempre prima un'urgenza medica** (per esempio un malore), poi una patologia psichiatrica o un abuso. La gestione va a **chi è in grado e se la sente**, non necessariamente il capo equipaggio. [@tss-e:34]
-    ripasso: disturbi-del-comportamento#gestire-il-comportamento-non-prevedibile
+    ripasso: approccio-psicologico-e-relazionale#gestione-e-autoprotezione
 
   # Tecniche assistenziali (tss-f)
   - id: tss3-020
@@ -230,7 +232,7 @@ domande:
       - Saturazione generalmente sotto il 90%
     corretta: 0
     spiegazione: "Segni di [[dispnea]]: impossibilità a dire frasi lunghe, respiro rumoroso, tachipnea (> 20/min) o bradipnea (< 10/min), cianosi, saturazione generalmente < 90%, posizione seduta obbligata. Una FR di **16** è nella norma (12-20). [@tss-f:14] [@tss-c2:4]"
-    ripasso: difficolta-respiratoria-adulto#la-dispnea
+    ripasso: urgenze-respiratorie#la-dispnea
 
   - id: tss3-021
     livello: numeri
@@ -242,7 +244,7 @@ domande:
       - 15 minuti
     corretta: 0
     spiegazione: La [[sincope]] è una perdita di coscienza a insorgenza rapida, di durata variabile (**massimo 5 minuti**), con perdita del tono muscolare. Nella [[lipotimia]] invece la coscienza non si perde del tutto. [@tss-f:31-32]
-    ripasso: valutazione-abcde-medico#lipotimia-e-sincope
+    ripasso: alterazioni-della-coscienza#sincope
 
   - id: tss3-023
     livello: base
@@ -254,7 +256,7 @@ domande:
       - La parziale non ha contrazioni, solo rigidità
     corretta: 0
     spiegazione: "Nella fase clonica **generalizzata** ci sono contrazioni violente e ritmiche agli arti, bava alla bocca, cianosi, perdita di feci e urine; quella **parziale** interessa **solo una parte del corpo**. Il corpo rigido è tipico della fase tonica. [@tss-f:38]"
-    ripasso: convulsioni#le-fasi-della-crisi
+    ripasso: alterazioni-della-coscienza#le-fasi-della-crisi
 
   - id: tss3-025
     livello: esame
@@ -266,7 +268,7 @@ domande:
       - Angina e infarto sono sinonimi, e il termine cambia solo in base all'età del paziente e alla durata del dolore
     corretta: 0
     spiegazione: L'**angina** è un dolore al petto che dura **pochi minuti**, per un aumento del fabbisogno di ossigeno non compensato, e può scomparire con il riposo. L'**infarto** è la **necrosi** del muscolo cardiaco dovuta a **ischemia prolungata**. [@tss-f:59-60]
-    ripasso: infarto-miocardico-acuto#definizione
+    ripasso: urgenze-cardiovascolari#angina-e-infarto
 
   - id: tss3-026
     livello: base
@@ -278,7 +280,7 @@ domande:
       - Donne in gravidanza, soprattutto nel terzo trimestre
     corretta: 0
     spiegazione: Nello scompenso il cuore non pompa abbastanza sangue e i liquidi si accumulano negli arti inferiori, nei polmoni e in altri tessuti. Colpisce più spesso **anziani** e **cardiopatici noti**, **prevalentemente di notte**. [@tss-f:64]
-    ripasso: difficolta-respiratoria-adulto#scompenso-cardiaco-ed-edema-polmonare-acuto
+    ripasso: urgenze-cardiovascolari#scompenso-cardiaco-ed-edema-polmonare
 
   - id: tss3-027
     livello: base
@@ -290,4 +292,4 @@ domande:
       - Sensibilità e motilità di tutti e quattro gli arti
     corretta: 0
     spiegazione: "Nei pazienti con coscienza alterata la A richiede attenzione alle vie aeree: **protesi dentarie mobili, cibo non deglutito, vomito** (aspiratore); se la [[cannula orofaringea]] non è tollerata va tolta. Cute, respiro e arti si valutano in C, B e D. [@tss-f:12-13,15] [@tss-c:1]"
-    ripasso: valutazione-abcde-medico#a-coscienza-e-vie-aeree
+    ripasso: valutazione-abcde-trasporto#a-coscienza-e-vie-aeree

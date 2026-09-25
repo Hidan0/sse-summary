@@ -13,6 +13,7 @@ domande:
       - 60 ore
     corretta: 0
     spiegazione: "Il corso TS dura **42 ore**, più un tirocinio pratico di **25 ore**. Le 78 ore sono quelle del modulo teorico-pratico del corso SSE, le 60 ore il tirocinio SSE. [@tss-a:4] [@0.0:4-7]"
+    ripasso: corso-addetto-trasporto-sanitario#struttura-del-corso
 
   - id: tss1-004
     livello: esame
@@ -24,6 +25,7 @@ domande:
       - Pulire e disinfettare il mezzo e smaltire correttamente i rifiuti
     corretta: 0
     spiegazione: "Gli obiettivi TS comprendono trasporto in sicurezza, mobilizzazione e immobilizzazione di base, RCP e DAE, **emostasi** delle emorragie evidenti, **prima valutazione ABCDE**, attivazione del sistema, parametri vitali, **pulizia del mezzo e smaltimento dei rifiuti**. L'assistenza al parto è tra le competenze del corso SSE. [@tss-a:3] [@0.0:3]"
+    ripasso: corso-addetto-trasporto-sanitario#obiettivo-e-obiettivi-formativi
 
   - id: tss1-006
     livello: base
@@ -35,7 +37,7 @@ domande:
       - Il trasporto di sangue, emocomponenti e organi tra ospedali, su richiesta delle strutture sanitarie riceventi
     corretta: 0
     spiegazione: "Il trasporto sanitario è il trasporto di pazienti **tra strutture sanitarie** o al loro interno (inter e intraospedaliero) e **da e verso gli ospedali dal domicilio**. Il soccorso \"disposto e coordinato dalle SOREU\" è invece la definizione del soccorso extraospedaliero (SSE). [@tss-b:21-22] [@0.1:19]"
-    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+    ripasso: ruolo-addetto-trasporto-sanitario#che-cos-e-il-trasporto-sanitario
 
   - id: tss1-007
     livello: numeri
@@ -47,7 +49,7 @@ domande:
       - Maggiore età, senza limite massimo
     corretta: 0
     spiegazione: "Per l'**assistente** TS il limite è il **76° anno**; per l'**autista** TS, come per il soccorritore esecutore SSE, è il **71° anno**. [@tss-b:23-24] [@0.1:20]"
-    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+    ripasso: ruolo-addetto-trasporto-sanitario#requisiti-di-autista-e-assistente
 
   - id: tss1-008
     livello: esame
@@ -59,7 +61,7 @@ domande:
       - Saper usare i navigatori satellitari e la radio
     corretta: 0
     spiegazione: "All'autista TS si chiede la **maggiore età** (e di non aver compiuto il 71° anno), i requisiti di legge per la guida, la certificazione (42 ore + 4 del modulo J), **vista e udito** adeguati alla patente, la **conoscenza della viabilità** e l'uso di **navigatore e radio**. Non c'è un'età minima di 25 anni. [@tss-b:23]"
-    ripasso: sistema-di-emergenza-e-formazione#chi-e-l-addetto-al-soccorso-extraospedaliero
+    ripasso: ruolo-addetto-trasporto-sanitario#requisiti-di-autista-e-assistente
 
   - id: tss1-009
     livello: base
@@ -71,7 +73,7 @@ domande:
       - Deve risarcire i danni solo se è stato sanzionato dagli agenti del traffico per una violazione del Codice della Strada
     corretta: 0
     spiegazione: "Per l'art. 2054 c.c. il conducente **risarcisce il danno** causato a persone o cose dalla circolazione, **salvo che provi di aver fatto tutto il possibile** per evitarlo. La responsabilità del conducente di un mezzo di soccorso è anche **penale**, anche per colpa od omissione. [@tss-b:25]"
-    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+    ripasso: ruolo-addetto-trasporto-sanitario#responsabilita-del-conducente
 
   - id: tss1-010
     livello: esame
@@ -83,7 +85,7 @@ domande:
       - Che nessuno dei due conducenti debba risarcire il danno
     corretta: 0
     spiegazione: "In caso di scontro tra più veicoli si presume, **fino a prova contraria**, che **ciascun conducente abbia concorso ugualmente** a produrre il danno. [@tss-b:25]"
-    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+    ripasso: ruolo-addetto-trasporto-sanitario#responsabilita-del-conducente
 
   - id: tss1-011
     livello: base
@@ -95,7 +97,7 @@ domande:
       - Affidare le manovre difficili al soccorritore più esperto dell'equipaggio
     corretta: 0
     spiegazione: "Il **principio di cautela** chiede di seguire le comuni regole di **prudenza e diligenza** e di evitare le manovre **pericolose**, **fuori dalle proprie competenze** o che rendono **incapaci di gestire l'evento** in modo controllato. [@tss-b:28]"
-    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+    ripasso: ruolo-addetto-trasporto-sanitario#il-principio-di-cautela
 
   - id: tss1-012
     livello: esame
@@ -107,7 +109,7 @@ domande:
       - La responsabilità è sempre del caposquadra dell'equipaggio
     corretta: 0
     spiegazione: "Tutto l'equipaggio deve rispettare le norme di sicurezza e **usare i dispositivi di protezione** forniti; il datore di lavoro deve fornirli **anche ai volontari** e informarli. **Chi non rispetta le norme** (lavoratore o datore di lavoro) è **direttamente responsabile** in caso di infortunio. [@tss-b:29]"
-    ripasso: normativa-e-responsabilita#responsabilita-alla-guida-e-nella-sicurezza
+    ripasso: ruolo-addetto-trasporto-sanitario#responsabilita-nella-sicurezza-sul-lavoro
 
   - id: tss1-013
     livello: esame
@@ -119,6 +121,7 @@ domande:
       - Le condizioni del mezzo
     corretta: 0
     spiegazione: "Le condizioni **soggettive** sono quelle **sanitarie del trasportato** e **psicologiche dell'autista**; meteo, traffico e viabilità e stato del mezzo sono condizioni **oggettive**. [@tss-b:30]"
+    ripasso: ruolo-addetto-trasporto-sanitario#condizioni-soggettive-e-oggettive
 
   - id: tss1-014
     livello: esame
@@ -130,6 +133,7 @@ domande:
       - Dell'esperienza di servizio
     corretta: 0
     spiegazione: "La **perizia** comprende abilità tecnica, **conoscenza** (territorio e toponomastica, proprio mezzo, procedure, situazioni particolari) e affidabilità. L'**attitudine** riguarda condizioni fisiche e psichiche, calma e concentrazione; l'**esperienza** la dimestichezza nella guida e nella gestione del servizio. [@tss-b:31-33]"
+    ripasso: ruolo-addetto-trasporto-sanitario#esperienza-attitudine-e-perizia-del-conducente
 
   - id: tss1-015
     livello: base
@@ -141,7 +145,7 @@ domande:
       - La disciplina unica di trasporto sanitario semplice, trasporto sanitario e soccorso extraospedaliero
     corretta: 0
     spiegazione: "La **Legge 120/2001** consente l'uso del [[DAE]] fuori dall'ospedale anche al **personale sanitario non medico** e al **personale non sanitario** con **formazione specifica in RCP**. AREU è istituita dalla DGR VIII/6994 del 2008, la disciplina unica è la DGR X/5165 del 2016. [@tss-b:37] [@0.1:30]"
-    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+    ripasso: ruolo-addetto-trasporto-sanitario#defibrillazione-precoce
 
   - id: tss1-016
     livello: base
@@ -153,7 +157,7 @@ domande:
       - Non ha obblighi di formazione BLSD, perché non opera in emergenza
     corretta: 0
     spiegazione: "La **DGR 4717/2013** prevede che **tutto il personale** delle ambulanze di trasporto sanitario e trasporto sanitario semplice sia **addestrato alla RCP di base e abilitato all'uso del DAE**. [@tss-b:39] [@0.1:33]"
-    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+    ripasso: ruolo-addetto-trasporto-sanitario#defibrillazione-precoce
 
   - id: tss1-017
     livello: numeri
@@ -164,8 +168,8 @@ domande:
       - 36 mesi
       - 5 anni
     corretta: 0
-    spiegazione: "La qualifica di operatore BLSD vale **24 mesi**: entro questo termine va fatto il retraining con ricertificazione (CeFRA o altri enti autorizzati). I 5 anni sono la scadenza della riqualificazione del soccorritore SSE. [@tss-b:40] [@0.1:24]"
-    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+    spiegazione: "La qualifica di operatore BLSD vale **24 mesi**: entro questo termine va fatto il retraining con ricertificazione (CeFRA o altri enti autorizzati). I 5 anni sono la scadenza della riqualificazione del soccorritore SSE. [@tss-b:40] [@0.1:24] Attenzione: i manuali BLSD dicono invece che l'**autorizzazione** all'uso del DAE è nominativa e dura **12 mesi**, con retraining ogni 24 (in Lombardia tra 12 e 24). [@tss-manuale-blsd:31] [@blsd-manuale:31]"
+    ripasso: ruolo-addetto-trasporto-sanitario#defibrillazione-precoce
 
   - id: tss1-018
     livello: esame
@@ -177,7 +181,7 @@ domande:
       - Di nulla, perché la decisione e l'erogazione sono dell'apparecchio
     corretta: 0
     spiegazione: "L'operatore **non risponde dell'indicazione** allo shock, che decide l'apparecchio, ma di **eseguirlo in condizioni di sicurezza** per sé e per tutti i presenti. [@tss-b:41] [@0.1:34]"
-    ripasso: normativa-e-responsabilita#defibrillazione-chi-puo-usare-il-dae
+    ripasso: ruolo-addetto-trasporto-sanitario#defibrillazione-precoce
 
   - id: tss1-019
     livello: base
@@ -189,7 +193,7 @@ domande:
       - Solo il medico di famiglia del paziente, vincolato al segreto professionale
     corretta: 0
     spiegazione: "Il cittadino ha diritto alla **riservatezza** sui dati della sua malattia e su ogni circostanza che lo riguarda; i dati sono trattati **solo da personale autorizzato**, vincolato al **segreto professionale e d'ufficio** (art. 326 c.p.). [@tss-b:42]"
-    ripasso: normativa-e-responsabilita#segreto-e-privacy
+    ripasso: ruolo-addetto-trasporto-sanitario#privacy-e-segreto
 
   - id: tss1-020
     livello: base
@@ -201,7 +205,7 @@ domande:
       - Traduce in tempo reale la chiamata di uno straniero all'operatore della SOREU o della centrale NUE 112
     corretta: 0
     spiegazione: "**Where ARE U** consente di effettuare la chiamata di emergenza e di **inviare la posizione esatta** del chiamante alle centrali del [[NUE 112]]. [@tss-b:14-15]"
-    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+    ripasso: ruolo-addetto-trasporto-sanitario#il-nue-112
 
   - id: tss1-021
     livello: numeri
@@ -213,7 +217,7 @@ domande:
       - "2010"
     corretta: 0
     spiegazione: "Nel **1991** la Commissione Europea sceglie il 112; nel **2002** una direttiva obbliga gli Stati a realizzarlo; nel **2010** l'Italia viene sanzionata per circa **40 milioni di euro** per i ritardi sulla localizzazione delle chiamate. [@tss-b:8]"
-    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+    ripasso: ruolo-addetto-trasporto-sanitario#il-nue-112
 
   - id: tss1-022
     livello: base
@@ -225,4 +229,4 @@ domande:
       - Varese, Bergamo e Mantova
     corretta: 0
     spiegazione: "Le CUR lombarde indicate nel corso sono **Brescia, Varese e Milano**. [@tss-b:13]"
-    ripasso: sistema-di-emergenza-e-formazione#il-nue-112
+    ripasso: ruolo-addetto-trasporto-sanitario#il-nue-112

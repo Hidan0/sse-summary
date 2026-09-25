@@ -13,7 +13,7 @@ domande:
       - La tipo A è attrezzata per gli adulti; la tipo B per il trasporto pediatrico, con attrezzature dedicate
     corretta: 0
     spiegazione: "L'ambulanza di **tipo A/A1** è di **soccorso** (trasporto di infermi o infortunati e primo o pronto soccorso, con attrezzature specifiche); quella di **tipo B** è di **trasporto** in situazioni **non di emergenza**, con eventuali attrezzature di base. [@tss-i:4-5]"
-    ripasso: ambulanza-dotazioni-e-guida#tipi-di-ambulanza-e-segni-distintivi
+    ripasso: trasporto-in-ambulanza#tipi-di-ambulanza-e-segni-distintivi
 
   - id: tss5-002
     livello: numeri
@@ -25,7 +25,7 @@ domande:
       - Circa 70 minuti
     corretta: 0
     spiegazione: "Minuti = capacità × (pressione − **10 atm residue**) / flusso: 7 × 140 / 10 = **98 minuti** (1 h 38 min). Dimenticare le 10 atm residue dà 105 minuti. [@tss-i:18]"
-    ripasso: ambulanza-dotazioni-e-guida#quanto-dura-una-bombola
+    ripasso: trasporto-in-ambulanza#quanto-dura-una-bombola
 
   - id: tss5-003
     livello: base
@@ -37,7 +37,7 @@ domande:
       - Per avere sempre una scorta di emergenza per la RCP
     corretta: 0
     spiegazione: "La pressione residua di **10 atm** si mantiene **per evitare l'ingresso di batteri** nella bombola. [@tss-i:17]"
-    ripasso: ambulanza-dotazioni-e-guida#quanto-dura-una-bombola
+    ripasso: trasporto-in-ambulanza#quanto-dura-una-bombola
 
   - id: tss5-004
     livello: esame
@@ -49,7 +49,7 @@ domande:
       - È utile per superare scale e gradini dal luogo del malore al mezzo
     corretta: 0
     spiegazione: "La [[sedia cardiopatica]] si usa **solo su pazienti non traumatizzati**, con **2 cinture**, per portarli dal luogo del malore al mezzo anche su scale; **non** si usa sull'ambulanza in marcia. [@tss-i:47]"
-    ripasso: ambulanza-dotazioni-e-guida#presidi-di-mobilizzazione
+    ripasso: trasporto-in-ambulanza#la-sedia-cardiopatica
 
   - id: tss5-005
     livello: base
@@ -61,7 +61,7 @@ domande:
       - Si usa solo per pazienti che devono restare seduti
     corretta: 0
     spiegazione: "Il [[telo portaferiti]] si usa su pazienti **non traumatizzati**, trasportati **supini**, con **tre soccorritori**; può dare claustrofobia o vertigini. [@tss-i:36]"
-    ripasso: ambulanza-dotazioni-e-guida#presidi-di-mobilizzazione
+    ripasso: trasporto-in-ambulanza#il-telo-portaferiti
 
   - id: tss5-006
     livello: base
@@ -73,7 +73,7 @@ domande:
       - Ruotare il busto durante il sollevamento, tenendo le ginocchia bloccate e la base stretta
     corretta: 0
     spiegazione: "Nella movimentazione dei carichi si tiene la **schiena dritta** flettendo le **ginocchia**, si **allarga la base d'appoggio** e ci si **avvicina il più possibile** al paziente, con una presa sicura. Il rischio principale è il sovraccarico **dorso-lombare**. [@tss-i:41,44-45]"
-    ripasso: ambulanza-dotazioni-e-guida#movimentazione-dei-carichi
+    ripasso: trasporto-in-ambulanza#movimentazione-dei-carichi
 
   - id: tss5-007
     livello: esame
@@ -85,7 +85,7 @@ domande:
       - Può derogare alle norme anche con il solo lampeggiante blu acceso, senza sirena, se procede con prudenza e diligenza
     corretta: 0
     spiegazione: "Con **sirena e lampeggiante blu usati insieme**, in servizio urgente, il conducente non è tenuto a rispettare obblighi, divieti, segnaletica e norme di comportamento, **tranne le segnalazioni degli agenti del traffico**, e sempre con **prudenza e diligenza**. [@tss-j:46-47]"
-    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+    ripasso: sicurezza-nella-guida#la-guida-in-emergenza-art-177
 
   - id: tss5-008
     livello: numeri
@@ -97,7 +97,7 @@ domande:
       - Fino a 0,8 g/l
     corretta: 0
     spiegazione: "Per gli operatori del trasporto sanitario il tasso alcolemico deve essere **0 g/l**; per il conducente professionista la violazione comporta la **revoca della patente**. [@tss-j:23]"
-    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+    ripasso: sicurezza-nella-guida#guida-in-stato-di-ebbrezza
 
   - id: tss5-009
     livello: esame
@@ -109,7 +109,7 @@ domande:
       - Mai, l'obbligo vale in ogni situazione di marcia
     corretta: 0
     spiegazione: "L'art. 172 esenta i conducenti e gli addetti dei veicoli sanitari **solo durante gli interventi di emergenza**; negli altri casi le cinture sono obbligatorie. [@tss-j:19-20]"
-    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+    ripasso: sicurezza-nella-guida#cinture-di-sicurezza
 
   - id: tss5-010
     livello: numeri
@@ -121,7 +121,7 @@ domande:
       - 90 km/h in autostrada e 50 km/h sulle extraurbane
     corretta: 0
     spiegazione: "Con precipitazioni di qualsiasi natura il limite è **110 km/h** in autostrada e **90 km/h** sulle strade extraurbane (normalmente 130 e 110 o 90). [@tss-j:18]"
-    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+    ripasso: sicurezza-nella-guida#limiti-di-velocita
 
   - id: tss5-011
     livello: base
@@ -133,4 +133,4 @@ domande:
       - La velocità massima consentita per quel tipo di strada in condizioni di traffico normale e con fondo stradale asciutto
     corretta: 0
     spiegazione: "Per gli art. 141 e 142 CdS è pericolosa ogni velocità che non consente di **conservare il controllo** del veicolo e di **arrestarlo tempestivamente** davanti a qualsiasi ostacolo prevedibile; va ridotta in curva, con scarsa visibilità, di notte, vicino a incroci, scuole e strisce pedonali. [@tss-j:16-17]"
-    ripasso: ambulanza-dotazioni-e-guida#la-guida-sicura
+    ripasso: sicurezza-nella-guida#velocita-pericolosa

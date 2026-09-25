@@ -327,18 +327,6 @@ domande:
     spiegazione: "Nel paziente **incosciente e supino** la manovra di Heimlich **non è raccomandata**: le **compressioni toraciche** sono altrettanto efficaci e meno dannose. [@blsd-manuale:35-36]"
     ripasso: ostruzione-vie-aeree#se-la-vittima-perde-coscienza
 
-  - id: sse5-029
-    livello: base
-    domanda: In quale situazione il materiale del corso vieta di mettere una vittima incosciente che respira normalmente in posizione laterale di sicurezza?
-    opzioni:
-      - Se ha subito un trauma
-      - Se ha vomitato
-      - Se è un anziano
-      - Se è una donna in gravidanza
-    corretta: 0
-    spiegazione: "La [[PLS]] serve alla vittima incosciente con respiro normale, ma **non si usa in caso di trauma**. [@tss-manuale-blsd:13] [@tss-g1:46]"
-    ripasso: blsd#incosciente-ma-con-respiro-normale-la-pls
-
   - id: sse5-030
     livello: base
     domanda: Nella catena della sopravvivenza del manuale pediatrico, qual è il primo anello?
