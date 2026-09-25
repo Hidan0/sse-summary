@@ -67,7 +67,9 @@ export const fonti: Record<string, Fonte> = {
     "blsd-manuale": { modulo: "SSE", titolo: "Manuale BLSD" },
     "pblsd-manuale": { modulo: "SSE", titolo: "Manuale PBLSD" },
     "blsd-skill": { modulo: "SSE", titolo: "Scheda skill BLSD adulto" },
+    "blsd-skill-cte": { modulo: "SSE", titolo: "Scheda skill BLSD adulto con CTE già in corso" },
     "pblsd-skill": { modulo: "SSE", titolo: "Scheda skill BLSD pediatrico" },
+    "bls-infante-skill": { modulo: "SSE", titolo: "Scheda skill BLS infante" },
 
     /*
      * SSE - Capitolo 6: Aspetti psicologici
