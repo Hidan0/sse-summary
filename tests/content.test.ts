@@ -7,7 +7,7 @@ import { capitoli } from "@/content/capitoli";
 import { fonti } from "@/content/fonti";
 import { slugify } from "@/content/slug";
 
-import { compileAbcde, compileMarkdown, compileQuiz } from "../vite/markdown";
+import { compileAbcde, compileMarkdown, compileQuiz, compileSkill } from "../vite/markdown";
 
 const CONTENT_DIR = join(__dirname, "..", "src", "content");
 
@@ -101,12 +101,21 @@ describe("Riassunti", () =>
     });
     it("hanno link interni validi", () =>
     {
-        const broken = riassunti.flatMap(({ path }) =>
+        const skillSlugs = new Set(readdirSync(join(CONTENT_DIR, "skill"))
+            .map((file) => file.replace(/^[\d.]+-/, "").replace(/\.yaml$/, "")));
+        const file = [...riassunti.map(({ path }) => path), ...readdirSync(join(CONTENT_DIR, "skill"))
+            .map((nome) => join(CONTENT_DIR, "skill", nome))];
+
+        const broken = file.flatMap((path) =>
         {
-            const links = readFileSync(path, "utf-8").matchAll(/\]\(\/(riassunti|glossario)\/([a-z0-9-]+)/g);
+            const links = readFileSync(path, "utf-8").matchAll(/\]\(\/(riassunti|glossario|skill)\/([a-z0-9-]+)/g);
 
             const exists = (tipo: string, slug: string) =>
-                ((tipo === "riassunti") ? riassuntiSlugs.has(slug) : glossarioKeys.has(slug));
+            {
+                if (tipo === "skill") { return skillSlugs.has(slug); }
+
+                return (tipo === "riassunti") ? riassuntiSlugs.has(slug) : glossarioKeys.has(slug);
+            };
 
             return [...links]
                 .filter(([, tipo, slug]) => !exists(tipo, slug))
@@ -120,7 +129,10 @@ describe("Riassunti", () =>
         const ids = new Map(riassunti.map(({ slug, html }) =>
             [slug, new Set([...html.matchAll(/ id="([^"]+)"/g)].map(([, id]) => id))]));
 
-        const broken = [...riassunti, ...glossario, ...abcde].flatMap(({ path }) =>
+        const file = [...riassunti, ...glossario, ...abcde].map(({ path }) => path)
+            .concat(readdirSync(join(CONTENT_DIR, "skill")).map((nome) => join(CONTENT_DIR, "skill", nome)));
+
+        const broken = file.flatMap((path) =>
         {
             const links = readFileSync(path, "utf-8").matchAll(/\]\(\/riassunti\/([a-z0-9-]+)#([^)\s]+)\)/g);
 
@@ -130,6 +142,39 @@ describe("Riassunti", () =>
         });
 
         expect(broken).toEqual([]);
+    });
+});
+
+const skill = readdirSync(join(CONTENT_DIR, "skill"))
+    .filter((file) => file.endsWith(".yaml"))
+    .map((file) => ({ file: file, ...compileSkill(readFileSync(join(CONTENT_DIR, "skill", file), "utf-8")) }));
+
+describe("Skill", () =>
+{
+    it("hanno nomi file nel formato `<ordine>-<slug>.yaml` e slug unici", () =>
+    {
+        const slugs = skill.map(({ file }) => file.replace(/^[\d.]+-/, "").replace(/\.yaml$/, ""));
+
+        const invalid = skill.filter(({ file }) => !(/^[\d.]+-[a-z0-9-]+\.yaml$/).test(file));
+
+        expect(invalid.map(({ file }) => file)).toEqual([]);
+        expect(new Set(slugs).size).toBe(slugs.length);
+    });
+    it("hanno una struttura valida", () =>
+    {
+        const errori = skill.flatMap(({ file, errori: lista }) => lista.map((errore) => `${file}: ${errore}`));
+
+        expect(errori).toEqual([]);
+    });
+    it("citano fonti e riassunti esistenti", () =>
+    {
+        const invalid = skill.flatMap(({ file, fonti: ids, meta }) => [
+            ...ids.filter((id) => !(id in fonti)).map((id) => `${file} → fonte ${id}`),
+            ...(meta.riassunti as string[]).filter((slug) => !riassuntiSlugs.has(slug))
+                .map((slug) => `${file} → ${slug}`)
+        ]);
+
+        expect(invalid).toEqual([]);
     });
 });
 

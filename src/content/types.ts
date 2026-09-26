@@ -124,3 +124,36 @@ export interface ArgomentoQuiz extends QuizMeta
     slug: string;
     load: () => Promise<QuizModule>;
 }
+
+export type GruppoSkill = "blsd" | "trauma" | "tss";
+
+export interface SkillMeta
+{
+    titolo: string;
+    intestazione: string;
+    sottotitolo?: string;
+    gruppo: GruppoSkill;
+    fonte: string;
+    revisione: string;
+    riassunti: string[];
+    passi: number;
+    errori: number;
+    consigli: number;
+}
+export interface SkillModule extends Omit<SkillMeta, "passi" | "errori" | "consigli">
+{
+    colonne: string[];
+    avvertenza?: string;
+    passi: string[][];
+    nota?: string;
+    commento?: string;
+    errori: string[];
+    consigli: string[];
+    citazione: string;
+}
+export interface Skill extends SkillMeta
+{
+    slug: string;
+    ordine: number[];
+    load: () => Promise<SkillModule>;
+}

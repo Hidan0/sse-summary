@@ -10,6 +10,7 @@
     const GRUPPI: { tipo: TipoDocumento, nome: string, icona: string, limite: number }[] = [
         { tipo: "glossario", nome: "Glossario", icona: "book", limite: 5 },
         { tipo: "riassunto", nome: "Riassunti", icona: "book-open", limite: 15 },
+        { tipo: "skill", nome: "Skill", icona: "kit-medical", limite: 5 },
         { tipo: "abcde", nome: "Schede ABCDE", icona: "list-check", limite: 5 }
     ];
     const MODULI = ["SSE", "TSS"] as const;
@@ -94,7 +95,7 @@
                type="search"
                class="form-control form-control-lg"
                placeholder="Parole, sigle, numeri…"
-               aria-label="Cerca nei riassunti, nel glossario e nelle schede ABCDE"
+               aria-label="Cerca nei riassunti, nel glossario, nelle skill e nelle schede ABCDE"
                enterkeyhint="search" />
 
         <div class="chips"
@@ -115,9 +116,9 @@
             <div class="spinner-border text-primary" role="status"></div>
         </div>
         <p v-else-if="!parole.length" class="text-secondary">
-            Cerca nei riassunti SSE e TSS, nel glossario e nelle schede ABCDE. I risultati contengono tutte le parole
-            cercate, anche solo come inizio di parola ("tachic" trova "tachicardia"). Il filtro per modulo vale per
-            riassunti e schede ABCDE; il glossario è comune ai due corsi.
+            Cerca nei riassunti SSE e TSS, nel glossario, nelle skill e nelle schede ABCDE. I risultati contengono
+            tutte le parole cercate, anche solo come inizio di parola ("tachic" trova "tachicardia"). Il filtro per
+            modulo vale per riassunti, skill e schede ABCDE; il glossario è comune ai due corsi.
         </p>
         <p v-else-if="!risultati.length" class="text-secondary">
             Nessun risultato per <strong>{{ query }}</strong>.

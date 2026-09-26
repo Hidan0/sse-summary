@@ -1,0 +1,34 @@
+# Scheda skill del corso TSS, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: Disostruzione delle vie aeree nell'infante (TSS)
+intestazione: "CAPITOLO G-SKILL TECNICA\nMANOVRA DI DISOSTRUZIONE VIE AEREE"
+sottotitolo: Paziente Pediatrico (INFANTE-<1anno) (cosciente, OSTRUZIONE GRAVE)
+gruppo: tss
+fonte: tss-skill-ostr-infante
+revisione: Rev.1 del 6/4/2017
+riassunti: [ostruzione-vie-aeree-trasporto-sanitario, ostruzione-vie-aeree]
+
+colonne: ["Linee guida per l'esecuzione"]
+avvertenza: (in neretto le indicazioni per l’allievo)
+passi:
+  - "Valuta la scena (***scena sicura***)."
+  - "Chiama il paziente e valuta presenza e qualità del respiro (***paziente cosciente – non riesce a parlare, non piange***)."
+  - "Tranquillizza la vittima e gli spiega le manovre che dovrà effettuare ai genitori"
+  - "Avvisa o fa avvisare il sistema d’Emergenza Sanitaria (112/118)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Esegue 5 colpi interscapolari (***non efficaci***)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Esegue 5 CTE (***non efficace***)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Alterna 5 colpi interscapolari a 5 CTE fino a risoluzione dell’ostruzione o all’incoscienza della vittima"
+  - "Interrompe ogni manovra quando la vittima inizia a piangere vigorosamente"
+  - "Allerta il Sistema d’emergenza sanitaria e continua con la valutazione ABCDE"
+
+commento: |
+  Come si tiene l'infante sull'avambraccio per i colpi e le compressioni, e cosa fare se perde coscienza: vedi il [riassunto sull'ostruzione delle vie aeree TSS](/riassunti/ostruzione-vie-aeree-trasporto-sanitario#infante-cosciente-con-ostruzione-grave).
+
+  Rispetto alla [skill dell'adulto](/skill/tss-disostruzione-adulto) cambiano tre cose: le manovre si spiegano **ai genitori**, al posto della manovra di Heimlich si fanno **compressioni toraciche** con due dita, e il segnale per fermarsi è il **pianto vigoroso** invece della tosse. [@tss-skill-ostr-infante:1] [@tss-skill-ostr-adulto:1] [@tss-manuale-blsd:36]
+
+  **Nel corso SSE** non c'è una scheda skill sulla disostruzione: questa sequenza vale anche per il soccorritore SSE, perché è compatibile con le slide SSE sull'infante (colpi dorsali prono sull'avambraccio, compressioni toraciche con due dita). L'unica differenza è che il soccorritore SSE contatta la **[[SOREU]]** invece del 112/118. [@5.4:6-8,12] Vedi il [riassunto SSE](/riassunti/ostruzione-vie-aeree#infante-sotto-l-anno-cosciente-con-ostruzione-grave).
+
+errori: []
+consigli: []

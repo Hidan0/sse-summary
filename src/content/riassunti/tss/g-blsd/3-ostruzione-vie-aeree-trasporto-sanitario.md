@@ -2,7 +2,7 @@
 titolo: Ostruzione delle vie aeree per l'addetto al trasporto sanitario
 capitolo: "G"
 abcde: [A, B]
-correlati: [blsd-trasporto-sanitario, pblsd-trasporto-sanitario, skill-disostruzione-adulto, skill-disostruzione-infante, ostruzione-vie-aeree]
+correlati: [blsd-trasporto-sanitario, pblsd-trasporto-sanitario, ostruzione-vie-aeree]
 ---
 
 # Ostruzione delle vie aeree per l'addetto al trasporto sanitario
@@ -55,7 +55,7 @@ Per questo nell'ostruzione grave si inizia subito: **tutte le manovre di disostr
 4. **Alterna 5 colpi e 5 compressioni** fino alla liberazione delle vie aeree o finché la vittima **perde coscienza**. [@tss-g2:10]
 5. Chiama il **112/118**. [@tss-g2:20]
 
-La scheda skill aggiunge di **tranquillizzare** la vittima, di **guardare in bocca** prima di ogni serie e di **fermarsi appena tossisce con forza**: vedi la [skill di disostruzione nell'adulto](/riassunti/skill-disostruzione-adulto). [@tss-skill-ostr-adulto:1]
+La scheda skill aggiunge di **tranquillizzare** la vittima, di **guardare in bocca** prima di ogni serie e di **fermarsi appena tossisce con forza**: vedi la [skill di disostruzione nell'adulto](/skill/tss-disostruzione-adulto). [@tss-skill-ostr-adulto:1]
 
 **Colpi interscapolari**: mettiti **a fianco** della vittima, un passo indietro; con una mano **sostieni il torace** e falla **sporgere in avanti** appoggiata al tuo braccio, poi con l'altra mano dai **fino a 5 colpi vigorosi tra le scapole**. [@tss-g2:8] [@tss-manuale-blsd:34]
 
@@ -110,7 +110,7 @@ Si eseguono in successione **5 colpi interscapolari** e **5 compressioni addomin
 2. Appoggia l'avambraccio sulla coscia.
 3. Fai **5 compressioni con due dita** sulla **metà inferiore dello sterno**, con la stessa tecnica delle CTE.
 
-Si ripete finché il corpo estraneo esce o l'infante perde coscienza. [@tss-manuale-blsd:37] La scheda skill aggiunge di **spiegare le manovre ai genitori**, di **guardare in bocca** prima di ogni serie e di **fermarsi quando piange con forza**: vedi la [skill di disostruzione nell'infante](/riassunti/skill-disostruzione-infante). [@tss-skill-ostr-infante:1]
+Si ripete finché il corpo estraneo esce o l'infante perde coscienza. [@tss-manuale-blsd:37] La scheda skill aggiunge di **spiegare le manovre ai genitori**, di **guardare in bocca** prima di ogni serie e di **fermarsi quando piange con forza**: vedi la [skill di disostruzione nell'infante](/skill/tss-disostruzione-infante). [@tss-skill-ostr-infante:1]
 
 ::: pericolo
 Nell'**infante** le **compressioni addominali** non sono consigliate: possono danneggiare gli organi interni. [@tss-manuale-blsd:37]

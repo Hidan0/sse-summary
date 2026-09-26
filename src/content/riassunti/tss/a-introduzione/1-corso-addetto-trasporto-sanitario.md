@@ -2,7 +2,7 @@
 titolo: Il corso per addetto al trasporto sanitario
 capitolo: "A"
 abcde: []
-correlati: [ruolo-addetto-trasporto-sanitario, sistema-di-emergenza-e-formazione, sicurezza-nella-guida, blsd-trasporto-sanitario, skill-blsd-adulto]
+correlati: [ruolo-addetto-trasporto-sanitario, sistema-di-emergenza-e-formazione, sicurezza-nella-guida, blsd-trasporto-sanitario]
 ---
 
 # Il corso per addetto al trasporto sanitario
@@ -99,4 +99,4 @@ Oltre all'esame va completato il **tirocinio di almeno 25 ore** in ambulanza, in
 Per il quiz SSE la slide indica "75% (25 su 30)", ma il 75% di 30 domande sarebbe 22,5. Vale il numero di risposte: **25 su 30**, cioè al massimo **5 errori**. Nel TS invece 15 su 20 è esattamente il 75%. [@0.0:6] [@tss-a:7]
 :::
 
-Lo scenario BLSD dell'esame è descritto passo per passo nella [scheda skill BLSD adulto](/riassunti/skill-blsd-adulto).
+Lo scenario BLSD dell'esame è descritto passo per passo nella [scheda skill BLSD adulto](/skill/tss-blsd-adulto).

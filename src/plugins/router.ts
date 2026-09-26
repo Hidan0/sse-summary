@@ -10,6 +10,12 @@ const router = createRouter({
             name: "home",
             component: HomePage
         },
+        /*
+         * Le skill TSS erano riassunti: i vecchi link portano alle schede.
+         */
+        { path: "/riassunti/skill-blsd-adulto", redirect: "/skill/tss-blsd-adulto" },
+        { path: "/riassunti/skill-disostruzione-adulto", redirect: "/skill/tss-disostruzione-adulto" },
+        { path: "/riassunti/skill-disostruzione-infante", redirect: "/skill/tss-disostruzione-infante" },
         {
             path: "/riassunti/:slug",
             name: "riassunto",
@@ -37,6 +43,17 @@ const router = createRouter({
             path: "/abcde/:slug",
             name: "scheda-abcde",
             component: () => import("@/pages/SchedaAbcdePage.vue"),
+            props: true
+        },
+        {
+            path: "/skill",
+            name: "skill",
+            component: () => import("@/pages/SkillPage.vue")
+        },
+        {
+            path: "/skill/:slug",
+            name: "skill-dettaglio",
+            component: () => import("@/pages/SkillDettaglioPage.vue"),
             props: true
         },
         {

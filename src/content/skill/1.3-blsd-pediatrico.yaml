@@ -1,0 +1,26 @@
+# Scheda skill del corso SSE, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: BLSD pediatrico
+intestazione: SKILL 03_BLSD PEDIATRICO (> 1 anno di vita)
+gruppo: blsd
+fonte: pblsd-skill
+revisione: Rev.1 del 6/4/2017
+riassunti: [pblsd]
+
+colonne: ["Linee guida per l'esecuzione", "Indicazioni per l'allievo"]
+passi:
+  - ["Valuta la scena", "Scena sicura"]
+  - ["Chiama il paziente;Valuta presenza e qualità del respiro", "NON risponde, NON respira (o respiro anormale compatibile con ACC)"]
+  - ["Posiziona la persona supina;\\\nInizia o fa iniziare le CTE", "Individua il punto corretto di compressione ed esegue CTE fino a DAE pronto (conta ad alta voce)"]
+  - ["Chiede DAE\\\nAllerta o fa allertare la SOREU", "Comunica ACC all’èquipe e alla SOREU"]
+  - ["Prepara il DAE e il torace", "Scopre il torace quanto basta, rade e asciuga se necessario"]
+  - ["Accende il DAE e Applica gli elettrodi (non interrompendo CTE)", "Accende il DAE applica gli elettrodi e consente l’analisi"]
+  - ["Allontana i presenti, garantisce sicurezza per tutti durante l’analisi del DAE e l’erogazione dello shock", "Allontana i presenti e l’O₂, pronuncia la filastrocca durante l’analisi"]
+  - ["Eroga shock se consigliato", "Eroga la scarica"]
+  - ["Riprende (o fa riprendere) immediatamente CTE", "Esegue CTE (valutare tecnica ed efficacia)"]
+  - ["Apre le vie aeree, ispeziona la cavità orale e posiziona la cannula orofaringea (*opzionale*)", "Estende il capo, solleva il mento, rimuove eventuali corpi estranei evidenti"]
+  - ["Effettua 2 lente ventilazioni con pallone autoespansibile + reservoir collegati ad O₂ ad alti flussi", "Valutare correttezza della manovra (1 secondo per ognuna) ed efficacia (espansione del torace)"]
+  - ["Prosegue con RCP 15:2 efficace con O₂, fino alla successiva analisi del DAE", "Ad ogni analisi interrompe RCP esegue il cambio per le CTE"]
+  - ["Riconosce e risolve i messaggi di allarme/malfunzione del DAE", "Allerta la SOREU, continua con RCP e rimuove la causa se possibile"]
+
+errori: []
+consigli: []

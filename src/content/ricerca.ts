@@ -6,7 +6,7 @@ import { normalizza, processTerm } from "./evidenzia";
 export { evidenzia, normalizza, paroleQuery } from "./evidenzia";
 export type { PezzoTesto } from "./evidenzia";
 
-export type TipoDocumento = "glossario" | "riassunto" | "abcde";
+export type TipoDocumento = "glossario" | "riassunto" | "abcde" | "skill";
 
 /*
  * Un documento è una sezione di un riassunto o di una scheda ABCDE, oppure una voce del glossario.

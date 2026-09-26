@@ -10,7 +10,7 @@ import { parseOrdineSlug } from "../src/content/ordine";
 import type { DocumentoRicerca } from "../src/content/ricerca";
 import type { IdSezioneAbcde, TipoSchema } from "../src/content/types";
 
-import { compileAbcde, compileMarkdown } from "./markdown";
+import { compileAbcde, compileMarkdown, compileSkill } from "./markdown";
 
 const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": "\"", "&#39;": "'" };
 
@@ -138,18 +138,51 @@ function documentiAbcde(path: string): DocumentoRicerca[]
     ].filter(({ testo, sezione }) => testo || sezione);
 }
 
+/*
+ * Una scheda skill è un solo documento: i passi, le note e le indicazioni degli istruttori.
+ */
+function documentoSkill(path: string): DocumentoRicerca
+{
+    const { skill } = compileSkill(readFileSync(path, "utf-8"));
+    const { slug } = parseOrdineSlug(path.replace(/\.yaml$/, ".md"));
+    const passi = (skill.passi as string[][]).flat();
+    const altro = [skill.commento, ...(skill.errori as string[]), ...(skill.consigli as string[])];
+
+    return {
+        id: `skill:${slug}`,
+        tipo: "skill",
+        titolo: String(skill.titolo),
+        sezione: "",
+        termini: String(skill.intestazione),
+        testo: testoDaHtml([...passi, ...altro].filter(Boolean).join(" · ")),
+        modulo: (skill.gruppo === "tss") ? "TSS" : "SSE",
+        capitolo: "Skill",
+        link: `/skill/${slug}`
+    };
+}
+
+function listYaml(dir: string): string[]
+{
+    return readdirSync(dir).filter((file) => file.endsWith(".yaml"))
+        .map((file) => join(dir, file));
+}
+
 export function creaDocumenti(contentDir: string): DocumentoRicerca[]
 {
     return [
         ...listMarkdown(join(contentDir, "glossario")).map(documentoGlossario),
         ...listMarkdown(join(contentDir, "riassunti")).flatMap(documentiRiassunto),
-        ...listMarkdown(join(contentDir, "abcde")).flatMap(documentiAbcde)
+        ...listMarkdown(join(contentDir, "abcde")).flatMap(documentiAbcde),
+        ...listYaml(join(contentDir, "skill")).map(documentoSkill)
     ];
 }
 
 export function fileContenuti(contentDir: string): string[]
 {
-    return ["glossario", "riassunti", "abcde"].flatMap((dir) => listMarkdown(join(contentDir, dir)));
+    return [
+        ...["glossario", "riassunti", "abcde"].flatMap((dir) => listMarkdown(join(contentDir, dir))),
+        ...listYaml(join(contentDir, "skill"))
+    ];
 }
 
 const VIRTUAL_ID = "virtual:indice-ricerca";

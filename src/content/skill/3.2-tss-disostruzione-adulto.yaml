@@ -1,0 +1,32 @@
+# Scheda skill del corso TSS, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: Disostruzione delle vie aeree nell'adulto (TSS)
+intestazione: "CAPITOLO G- SKILL TECNICA\nMANOVRE DI DISOSTRUZIONE VIE AEREE"
+sottotitolo: Paziente adulto (cosciente-ostruzione GRAVE)
+gruppo: tss
+fonte: tss-skill-ostr-adulto
+revisione: Rev.1 del 6/4/2017
+riassunti: [ostruzione-vie-aeree-trasporto-sanitario, ostruzione-vie-aeree]
+
+colonne: ["Linee guida per l'esecuzione"]
+avvertenza: (in neretto le indicazioni per l’allievo)
+passi:
+  - "Valuta la scena (***scena sicura***)."
+  - "Chiama il paziente e valuta presenza e qualità del respiro (***paziente responsivo con respiro ANORMALE NON COMPATIBILE con ACC – non riesce a parlare***)."
+  - "Tranquillizza la vittima e gli spiega le manovre che dovrà effettuare"
+  - "Avvisa o fa avvisare il sistema d’Emergenza Sanitaria (112/118)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Esegue 5 colpi interscapolari (***non efficaci***)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Esegue 5 volte la manovra di Heimlich (***non efficace***)"
+  - "Guarda in bocca per verificare la presenza di corpi estranei visibili (***non rilevabili***)"
+  - "Alterna 5 colpi interscapolari e 5 compressioni di Heimlich fino a risoluzione dell’ostruzione o all’incoscienza della vittima"
+  - "Interrompe ogni manovra quando la vittima inizia a tossire vigorosamente"
+  - "Allerta il Sistema d’emergenza sanitaria e continua con la valutazione ABCDE"
+
+commento: |
+  Come si fanno colpi interscapolari e manovra di Heimlich, e cosa fare se la vittima perde coscienza: vedi il [riassunto sull'ostruzione delle vie aeree TSS](/riassunti/ostruzione-vie-aeree-trasporto-sanitario#adulto-cosciente-con-ostruzione-grave).
+
+  **Nel corso SSE** non c'è una scheda skill sulla disostruzione: questa sequenza vale anche per il soccorritore SSE, perché è compatibile con le slide SSE (guardare in bocca, 5 colpi interscapolari, 5 compressioni addominali, alternanza fino alla risoluzione o alla perdita di coscienza). L'unica differenza è che il soccorritore SSE contatta la **[[SOREU]]** invece del 112/118. [@5.3:5,7,10,12] Vedi il [riassunto SSE](/riassunti/ostruzione-vie-aeree#adulto-cosciente-con-ostruzione-grave).
+
+errori: []
+consigli: []

@@ -27,6 +27,7 @@ describe("Indice di ricerca", () =>
 
         expect(slugs.filter((slug) => !links.has(`/riassunti/${slug}`))).toEqual([]);
         expect(voci.filter((voce) => !links.has(`/glossario/${basename(voce, ".md")}`))).toEqual([]);
+        expect(links.has("/skill/collare-cervicale")).toBe(true);
     });
     it("ha id unici", () =>
     {

@@ -1,0 +1,27 @@
+# Scheda skill del corso SSE, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: Immobilizzazione di un arto fratturato
+intestazione: SKILL 06_IMMOBILIZZAZIONE FRATTURA
+sottotitolo: (Manovra a DUE Soccorritori)
+gruppo: trauma
+fonte: skill-arto
+revisione: Rev.1 del 6/4/2017
+riassunti: [immobilizzazione-atraumatica, parti-molli-e-ossee]
+
+colonne: ["Linee guida per l'esecuzione"]
+passi:
+  - Si presenta al paziente e gli spiega la manovra
+  - Individua il punto dolente sull’arto, taglia gli indumenti ed espone l’arto
+  - "*Se indicato rimuove la scarpa, taglia o allenta le stringhe evitando movimenti bruschi"
+  - Valuta il colorito cutaneo e la sensibilità, se possibile valuta polso periferico
+  - Afferra l’arto con le due mani (fulcro sulle articolazioni prossimali e distali) e lo riallinea, se possibile e se non frattura esposta
+  - "*Il secondo soccorritore* prepara la stecca di misura adeguata distendendo il contenuto della stessa"
+  - Solleva l’arto di pochi centimetri mantenendolo in lieve trazione e fa infilare la stecca al di sotto dell’arto
+  - Adagia l’arto sulla stecca e continua a mantenerlo immobilizzato con le mani
+  - Fa mettere in depressione la stecca / Fissa i lacci con il velcro/gancio
+  - Si assicura del corretto posizionamento dell’arto all’interno del presidio
+  - Rivaluta la presenza di dolore, il colorito cutaneo e la sensibilità
+  - Controlla la tenuta del presidio e fa predisporre il materiale necessario al caricamento ed al trasporto del paziente
+nota: "*(se la skill è utilizzata per arto superiore assegnare questo punteggio per rimozione di monili o guanti)"
+
+errori: []
+consigli: []

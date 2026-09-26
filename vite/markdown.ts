@@ -370,6 +370,91 @@ export function compileQuiz(source: string): CompiledQuiz
     };
 }
 
+export const GRUPPI_SKILL = ["blsd", "trauma", "tss"];
+
+export interface CompiledSkill
+{
+    meta: Record<string, unknown>;
+    skill: Record<string, unknown>;
+    errori: string[];
+    glossario: string[];
+    fonti: string[];
+}
+
+/*
+ * Le schede skill (`src/content/skill/<ordine>-<slug>.yaml`) riportano parola per parola la griglia
+ * del corso: `passi` è una lista di righe, ognuna con una cella per colonna (una stringa se la colonna è una).
+ * `commento` (Markdown, con fonti) è testo nostro; `errori` e `consigli` vengono dagli istruttori.
+ */
+export function compileSkill(source: string): CompiledSkill
+{
+    const data = parseYaml(source) as Record<string, unknown>;
+
+    const errori: string[] = [];
+    const glossario = new Set<string>();
+    const sources = new Set<string>();
+
+    const prepare = (text: unknown) => replaceCustomSyntax(String(text ?? ""), glossario, sources);
+    const inline = (text: unknown) => renderer.renderInline(prepare(text));
+    const block = (text: unknown) => renderer.render(prepare(text));
+
+    for (const campo of ["titolo", "intestazione", "gruppo", "fonte", "revisione"])
+    {
+        if (typeof data[campo] !== "string" || !data[campo]) { errori.push(`campo \`${campo}\` mancante`); }
+    }
+    if (!GRUPPI_SKILL.includes(String(data.gruppo))) { errori.push("gruppo non valido"); }
+
+    const colonne = ((data.colonne ?? []) as unknown[]).map(String);
+    if (!colonne.length || colonne.length > 2) { errori.push("servono 1 o 2 colonne"); }
+
+    const righe = ((data.passi ?? []) as unknown[]).map((riga) => (Array.isArray(riga) ? riga : [riga]));
+    if (!righe.length) { errori.push("nessun passo"); }
+    righe.forEach((riga, index) =>
+    {
+        const passo = `passo ${index + 1}`;
+        if (riga.length !== colonne.length)
+        {
+            errori.push(`${passo}: ${riga.length} celle invece di ${colonne.length}`);
+        }
+        if (riga.some((cella) => typeof cella !== "string")) { errori.push(`${passo}: una cella non è testo`); }
+    });
+
+    const lista = (campo: string) => ((data[campo] ?? []) as unknown[]).map(block);
+    const skill = {
+        titolo: String(data.titolo ?? ""),
+        intestazione: String(data.intestazione ?? ""),
+        sottotitolo: data.sottotitolo ? String(data.sottotitolo) : undefined,
+        gruppo: String(data.gruppo ?? ""),
+        fonte: String(data.fonte ?? ""),
+        revisione: String(data.revisione ?? ""),
+        riassunti: ((data.riassunti ?? []) as unknown[]).map(String),
+        colonne: colonne,
+        avvertenza: data.avvertenza ? String(data.avvertenza) : undefined,
+        passi: righe.map((riga) => riga.map(inline)),
+        nota: data.nota ? inline(data.nota) : undefined,
+        commento: data.commento ? block(data.commento) : undefined,
+        errori: lista("errori"),
+        consigli: lista("consigli"),
+        citazione: inline(`[@${String(data.fonte ?? "")}:1]`)
+    };
+    sources.add(skill.fonte);
+
+    const meta = {
+        titolo: skill.titolo,
+        intestazione: skill.intestazione,
+        sottotitolo: skill.sottotitolo,
+        gruppo: skill.gruppo,
+        fonte: skill.fonte,
+        revisione: skill.revisione,
+        riassunti: skill.riassunti,
+        passi: righe.length,
+        errori: skill.errori.length,
+        consigli: skill.consigli.length
+    };
+
+    return { meta: meta, skill: skill, errori: errori, glossario: [...glossario], fonti: [...sources] };
+}
+
 /*
  * Importare un file `.md` restituisce `{ frontmatter, html, toc }`; per le schede ABCDE
  * (`src/content/abcde/`) restituisce invece `{ frontmatter, intro, sezioni }` e per i quiz
@@ -387,13 +472,20 @@ export default function markdown(): Plugin
         {
             const [path, query] = id.split("?");
             const isQuiz = path.includes("/content/quiz/") && path.endsWith(".yaml");
-            if (!path.endsWith(".md") && !isQuiz) { return null; }
+            const isSkill = path.includes("/content/skill/") && path.endsWith(".yaml");
+            if (!path.endsWith(".md") && !isQuiz && !isSkill) { return null; }
 
             this.addWatchFile(path);
 
             const source = readFileSync(path, "utf-8");
             const isMeta = new URLSearchParams(query).has("meta");
 
+            if (isSkill)
+            {
+                const { meta, skill } = compileSkill(source);
+
+                return `export default ${JSON.stringify(isMeta ? meta : skill)};`;
+            }
             if (isQuiz)
             {
                 const { meta, domande } = compileQuiz(source);

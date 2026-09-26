@@ -2,7 +2,7 @@
 titolo: BLSD per l'addetto al trasporto sanitario
 capitolo: "G"
 abcde: [A, B, C]
-correlati: [pblsd-trasporto-sanitario, ostruzione-vie-aeree-trasporto-sanitario, skill-blsd-adulto, blsd, defibrillatore-dae, sistema-di-emergenza-e-formazione]
+correlati: [pblsd-trasporto-sanitario, ostruzione-vie-aeree-trasporto-sanitario, blsd, defibrillatore-dae, sistema-di-emergenza-e-formazione]
 ---
 
 # BLSD per l'addetto al trasporto sanitario

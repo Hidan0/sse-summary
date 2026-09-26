@@ -30,6 +30,13 @@ export const SEZIONI_APP: SezioneApp[] = [
         attiva: (route) => inizia(route, "/abcde")
     },
     {
+        nome: "Skill",
+        breve: "Skill",
+        icona: "kit-medical",
+        to: { name: "skill" },
+        attiva: (route) => inizia(route, "/skill")
+    },
+    {
         nome: "Quiz",
         breve: "Quiz",
         icona: "circle-question",

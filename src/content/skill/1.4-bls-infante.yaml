@@ -1,0 +1,24 @@
+# Scheda skill del corso SSE, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: BLS nell'infante
+intestazione: SKILL 04_BLS INFANTE (< 1 anno di vita)
+gruppo: blsd
+fonte: bls-infante-skill
+revisione: Rev.1 del 6/4/2017
+riassunti: [pblsd]
+
+colonne: ["Linee guida per l'esecuzione", "Indicazioni per l'allievo"]
+passi:
+  - ["Valuta la scena", "Scena sicura"]
+  - ["Chiama e stimola il paziente;\\\nValuta presenza e qualità del respiro", "NON risponde, NON respira (o respiro anormale compatibile con ACC)"]
+  - ["Posiziona l’infante supina su un piano rigido", "Individua un piano di appoggio rigido e “alto” (tavolo)"]
+  - ["Inizia (o fa iniziare) tempestivamente le CTE", "Individua il punto corretto di compressione ed inizia le CTE"]
+  - ["Allerta o fa allertare la SOREU", "Comunica ACC all’èquipe e alla SOREU"]
+  - ["Esegue 15 CTE", "Valutare tecnica CTE (profondità e frequenza). Conta ad alta voce"]
+  - ["Spoglia l’infante (torace e addome); posiziona correttamente la testa (posizione neutra)", "Scopre il tronco e porta la testa in posizione neutra posizionando uno spessore sotto le spalle della vittima"]
+  - ["Apre le vie aeree, ispeziona la cavità orale e rimuove eventuali corpi estranei visibili", "Estende il capo, solleva il mento, rimuove eventuali corpi estranei evidenti"]
+  - ["Effettua 2 lente ventilazioni con pallone autoespansibile + reservoir collegati ad O₂ ad alti flussi", "Valutare correttezza della manovra (1 secondo per ognuna) ed efficacia (espansione del torace)"]
+  - ["Riprende (o fa riprendere) immediatamente CTE", "Esegue CTE (valutare tecnica ed efficacia)"]
+  - ["Alterna 15 CTE a 2 ventilazioni per due minuti (12/14 cicli)", "Efficacia delle manovre; limitazione delle interruzioni della RCP"]
+
+errori: []
+consigli: []
