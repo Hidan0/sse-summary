@@ -1,5 +1,11 @@
 <script lang="ts" setup>
+    import { useRoute } from "vue-router";
+
     import FontAwesome from "@/components/ui/FontAwesome.vue";
+
+    import { SEZIONI_APP } from "./sezioni";
+
+    const route = useRoute();
 </script>
 
 <template>
@@ -10,26 +16,35 @@
                 <span class="brand-text">SSE</span>
             </RouterLink>
             <div class="links">
-                <RouterLink :to="{ name: 'home' }" class="link link-home">
-                    Argomenti
-                </RouterLink>
-                <RouterLink :to="{ name: 'abcde' }" class="link">
-                    ABCDE
-                </RouterLink>
-                <RouterLink :to="{ name: 'quiz' }" class="link">
-                    Quiz
-                </RouterLink>
-                <RouterLink :to="{ name: 'glossario' }" class="link">
-                    Glossario
+                <RouterLink v-for="sezione in SEZIONI_APP"
+                            :key="sezione.nome"
+                            :to="sezione.to"
+                            class="link link-sezione"
+                            :class="{ attiva: sezione.attiva(route) }">
+                    {{ sezione.nome }}
                 </RouterLink>
                 <RouterLink :to="{ name: 'cerca' }"
-                            class="link link-cerca"
+                            class="link"
+                            :class="{ attiva: route.name === 'cerca' }"
                             aria-label="Cerca"
                             title="Cerca">
                     <FontAwesome icon="magnifying-glass" />
                 </RouterLink>
             </div>
         </div>
+    </nav>
+
+    <!-- Su telefono le sezioni stanno in basso, a portata di pollice. -->
+    <nav class="tab-bar" aria-label="Sezioni">
+        <RouterLink v-for="sezione in SEZIONI_APP"
+                    :key="sezione.nome"
+                    :to="sezione.to"
+                    class="tab"
+                    :class="{ attiva: sezione.attiva(route) }"
+                    :aria-current="sezione.attiva(route) ? 'page' : undefined">
+            <FontAwesome :icon="sezione.icona" />
+            <span>{{ sezione.breve }}</span>
+        </RouterLink>
     </nav>
 </template>
 
@@ -41,11 +56,10 @@
         background-color: var(--app-navigation-bg);
         box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(10px);
-        container-type: inline-size;
         position: fixed;
         top: 0px;
         width: 100%;
-        z-index: 1;
+        z-index: 2;
 
         .links
         {
@@ -60,47 +74,18 @@
         .link
         {
             display: inline-block;
-            padding: 0.75em 1.5em;
+            padding: 0.75em 1.25em;
             white-space: nowrap;
-
-            @media (max-width: variables.$max-mobile-size)
-            {
-                padding: 0.75em 0.5em;
-            }
 
             &.bold
             {
                 font-weight: bold;
             }
-        }
-
-        /*
-         * In `em`, così la soglia tiene conto anche del carattere ingrandito dalle impostazioni del telefono.
-         */
-        @container (max-width: 26em)
-        {
-            .brand-text
+            &.attiva
             {
-                display: none;
-            }
-        }
-
-        /*
-         * Su schermi molto stretti "Argomenti" è ridondante: il logo porta alla stessa pagina.
-         */
-        @container (max-width: 23.5em)
-        {
-            .link-home
-            {
-                display: none;
-            }
-        }
-        @container (max-width: 18em)
-        {
-            .link
-            {
-                padding-left: 0.35em;
-                padding-right: 0.35em;
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 0.4em;
             }
         }
 
@@ -116,6 +101,67 @@
             display: flex;
             height: var(--navigation-bar-height);
             justify-content: space-between;
+        }
+
+        @media (max-width: variables.$max-tab-bar-size)
+        {
+            .link-sezione
+            {
+                display: none;
+            }
+        }
+    }
+
+    .tab-bar
+    {
+        background-color: var(--app-navigation-bg);
+        backdrop-filter: blur(10px);
+        bottom: 0px;
+        box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.25);
+        display: none;
+        height: var(--tab-bar-height);
+        left: 0px;
+        padding-bottom: env(safe-area-inset-bottom);
+        position: fixed;
+        right: 0px;
+        z-index: 2;
+
+        @media (max-width: variables.$max-tab-bar-size)
+        {
+            display: flex;
+        }
+
+        .tab
+        {
+            align-items: center;
+            color: var(--app-muted);
+            display: flex;
+            flex: 1 1 0;
+            flex-direction: column;
+            font-size: 0.7rem;
+            gap: 0.2rem;
+            justify-content: center;
+            min-width: 0;
+            text-decoration: none;
+
+            .fa
+            {
+                font-size: 1.25rem;
+            }
+
+            span
+            {
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            &.attiva
+            {
+                color: var(--app-accent);
+                font-weight: 600;
+            }
         }
     }
 </style>

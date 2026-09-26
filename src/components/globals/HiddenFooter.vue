@@ -47,7 +47,7 @@
     .hidden-footer
     {
         align-items: center;
-        bottom: 0px;
+        bottom: var(--tab-bar-height);
         color: #FFF;
         display: flex;
         flex-direction: column;

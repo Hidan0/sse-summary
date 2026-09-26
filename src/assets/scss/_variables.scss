@@ -40,6 +40,9 @@ $min-tablet-size: $sm-size;
 $max-tablet-size: $lg-size - 1px;
 $min-desktop-size: $lg-size;
 
+// Sotto questa larghezza le sezioni passano nella barra in basso.
+$max-tab-bar-size: $md-size - 1px;
+
 $container-sm-size: $sm-size - 36px;
 $container-md-size: $md-size - 48px;
 $container-lg-size: $lg-size - 32px;

@@ -6,6 +6,12 @@
 {
     --hidden-footer-height: 128px;
     --navigation-bar-height: 64px;
+    --tab-bar-height: 0px;
+
+    @media (max-width: variables.$max-tab-bar-size)
+    {
+        --tab-bar-height: calc(3.5rem + env(safe-area-inset-bottom));
+    }
 
     /*
      * Colori dell'interfaccia, ridefiniti per il tema scuro.
@@ -47,7 +53,7 @@ body
     box-shadow: 0px 0px 0.5em 0px rgba(0, 0, 0, 0.5);
     color: var(--app-text);
     font-family: variables.$font-family;
-    margin-bottom: var(--hidden-footer-height);
+    margin-bottom: calc(var(--hidden-footer-height) + var(--tab-bar-height));
 }
 
 .container.page
