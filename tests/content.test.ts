@@ -133,6 +133,18 @@ describe("Riassunti", () =>
     });
 });
 
+describe("Riquadri", () =>
+{
+    it("le indicazioni degli istruttori non citano fonti del materiale", () =>
+    {
+        const invalid = [...riassunti, ...glossario, ...abcde].filter(({ path }) =>
+            [...readFileSync(path, "utf-8").matchAll(/^::: istruttori\n([\s\S]*?)^:::$/gm)]
+                .some(([, testo]) => testo.includes("[@")));
+
+        expect(invalid.map(({ path }) => basename(path))).toEqual([]);
+    });
+});
+
 describe("Schede ABCDE", () =>
 {
     const schede = abcde.filter(({ scheda }) => scheda);

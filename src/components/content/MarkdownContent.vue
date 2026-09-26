@@ -202,6 +202,18 @@
             &.callout-esame { --callout-color: #{variables.$accent}; }
             &.callout-pericolo { --callout-color: #{variables.$danger}; }
             &.callout-nota { --callout-color: #{variables.$secondary}; }
+            &.callout-istruttori
+            {
+                --callout-color: #{variables.$success};
+
+                .callout-title::before
+                {
+                    content: "\f51c";
+                    font-family: "Font Awesome 7 Free";
+                    font-weight: 900;
+                    margin-right: 0.4em;
+                }
+            }
             &.callout-dubbio
             {
                 --callout-color: #8540F5;

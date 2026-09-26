@@ -14,10 +14,8 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 
 ### Chiedi
 
-- **"Che succede?"**: chiedilo subito a chi ti accoglie, agli astanti o al paziente stesso, per **inquadrare la situazione**. Serve soprattutto a capire se c'è anche un **trauma**: il filtro può dire "malore", ma se trovi il paziente a terra chiedi **"È caduto? Ha sbattuto la testa?"**.
-
-::: nota
-Indicazione data dagli istruttori, non presente nelle slide.
+::: istruttori
+**"Che succede?"**: chiedilo subito a chi ti accoglie, agli astanti o al paziente stesso, per **inquadrare la situazione**. Serve soprattutto a capire se c'è anche un **trauma**: il filtro può dire "malore", ma se trovi il paziente a terra chiedi **"È caduto? Ha sbattuto la testa?"**.
 :::
 
 ### Fai

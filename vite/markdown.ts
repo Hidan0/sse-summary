@@ -14,7 +14,8 @@ export const CALLOUTS: Record<string, string> = {
     esame: "Da ricordare per l'esame",
     pericolo: "Attenzione",
     nota: "Nota",
-    dubbio: "Da verificare"
+    dubbio: "Da verificare",
+    istruttori: "Dagli istruttori"
 };
 
 export interface TocEntry
