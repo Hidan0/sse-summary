@@ -125,7 +125,7 @@ export interface ArgomentoQuiz extends QuizMeta
     load: () => Promise<QuizModule>;
 }
 
-export type GruppoSkill = "blsd" | "trauma" | "tss";
+export type GruppoSkill = "blsd" | "trauma" | "neonato" | "tss";
 
 export interface SkillMeta
 {
@@ -137,11 +137,25 @@ export interface SkillMeta
     revisione: string;
     riassunti: string[];
     passi: number;
+    algoritmo: boolean;
     errori: number;
     consigli: number;
 }
-export interface SkillModule extends Omit<SkillMeta, "passi" | "errori" | "consigli">
+export interface NodoAlgoritmo
 {
+    id: string;
+    titolo?: string;
+    testo: string[];
+    domanda?: string;
+    poi?: string;
+    etichetta?: string;
+    tempo?: string;
+    si?: string;
+    no?: string;
+}
+export interface SkillModule extends Omit<SkillMeta, "passi" | "algoritmo" | "errori" | "consigli">
+{
+    algoritmo: NodoAlgoritmo[];
     colonne: string[];
     avvertenza?: string;
     passi: string[][];

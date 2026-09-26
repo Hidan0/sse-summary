@@ -1,0 +1,29 @@
+# Scheda skill del corso SSE, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: Rianimazione alla nascita con ventilazioni e CTE
+intestazione: SKILL 02_RIANIMAZIONE ALLA NASCITA (Ventilazioni e CTE)
+fonte: rian-nascita-cte
+gruppo: neonato
+revisione: Rev.1 del 6/4/2017
+riassunti: [rianimazione-alla-nascita]
+
+colonne: ["Indicazioni per l’esecuzione", ""]
+passi:
+  - ["Valuta il neonato", "• Annota l’ora della nascita\\\n• Allerta o fa allertare la SOREU\\\n• Mantiene il neonato sul piano perineale\\\n• Lo asciuga con un panno caldo"]
+  - ["Verifica la presenza di respiro e tono muscolare", "• Respiro assente\\\n• Tono muscolare assente"]
+  - ["Esegue 5 insufflazioni", "• Apre le vie aeree e aspira se necessario\\\n• Esegue 5 insufflazioni lente e profonde (3” ognuna) con pallone autoespandibile in aria ambiente"]
+  - ["Fa posizionare il saturimetro", "• Fa posizionare il saturimetro palmo mano dx e lo fa accendere"]
+  - ["Verifica l’espansione del torace", "• Il torace NON si espande"]
+  - ["Migliora la pervietà delle vie aeree", "• Riposiziona il capo\\\n• Posiziona spessore di 2/3 cm sotto le spalle\\\n• Controlla l’aderenza della maschera al volto\\\n• Ripete 5 insufflazioni lente e profonde a 4 mani in aria ambiente"]
+  - ["Verifica l’espansione del torace", "• Il torace SI espande"]
+  - ["Verifica la Frequenza Cardiaca", "• Guarda il saturimetro, la FC è 52 BPM"]
+  - ["Fa eseguire le CTE", "• 2 dita perpendicolari sul terzo inferiore dello sterno\\\n• Riduce di 1/3 il diametro antero-posteriore del torace\\\n• Rapporto C/V 3:1 – frequenza CTE 90/min. – Ventilazioni 30/min."]
+  - ["Alterna C/V 3 :1 per 15 cicli", "• Ventila con pallone auto espandibile con O₂ 3 L/min. senza reservoir\\\n• Controlla efficacia delle manovre di RCP"]
+  - ["Rivaluta la FC", "• Guarda il saturimetro, la FC è 105 BPM"]
+  - ["Verifica respiro/pianto", "• Respiro assente"]
+  - ["Esegue 15 ventilazioni", "• Ventila con pallone auto espandibile con O₂ 3 L/min. senza reservoir – (una ventilazione al secondo)"]
+  - ["Rivaluta la FC", "• Guarda il saturimetro, la FC è 148 BPM"]
+  - ["Verifica respiro/pianto", "• Respiro presente"]
+  - ["Assiste il neonato", "• Mantiene il neonato al caldo e attende MSA/MSI"]
+
+errori: []
+consigli: []

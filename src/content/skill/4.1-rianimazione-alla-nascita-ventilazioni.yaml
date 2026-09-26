@@ -1,0 +1,25 @@
+# Scheda skill del corso SSE, riportata parola per parola (vedi CLAUDE.md, regola 2).
+titolo: Rianimazione alla nascita con ventilazioni
+intestazione: SKILL 01_RIANIMAZIONE ALLA NASCITA (ventilazioni)
+fonte: rian-nascita-vent
+gruppo: neonato
+revisione: Rev.1 del 6/4/2017
+riassunti: [rianimazione-alla-nascita]
+
+colonne: ["Indicazioni per l’esecuzione", ""]
+passi:
+  - ["Valuta il neonato", "• Annota l’ora della nascita\\\n• Allerta o fa allertare la SOREU\\\n• Mantiene il neonato sul piano perineale\\\n• Lo asciuga con un panno caldo"]
+  - ["Verifica la presenza di respiro e tono muscolare", "• Respiro assente\\\n• Tono muscolare assente"]
+  - ["Esegue 5 insufflazioni", "• Apre le vie aeree e aspira se necessario\\\n• Esegue 5 insufflazioni lente e profonde (3” ognuna) con pallone autoespandibile in aria ambiente"]
+  - ["Fa posizionare il saturimetro", "• Fa posizionare il saturimetro sulla mano dx e lo fa accendere"]
+  - ["Verifica l’espansione del torace", "• Il torace NON si espande"]
+  - ["Migliora la pervietà delle vie aeree", "• Riposiziona il capo\\\n• Posiziona spessore di 2/3 cm sotto le spalle\\\n• Controlla l’aderenza della maschera al volto\\\n• Ripete 5 insufflazioni lente e profonde a 4 mani"]
+  - ["Verifica l’espansione del torace", "• Il torace SI espande"]
+  - ["Verifica la Frequenza Cardiaca", "• Guarda il saturimetro, la FC è 120 BPM"]
+  - ["Verifica respiro/pianto", "• Respiro assente\\\n• Effettua 15 ventilazioni in aria ambiente (una al secondo)"]
+  - ["Verifica la Frequenza Cardiaca", "• Guarda il saturimetro, la FC è 145 BPM"]
+  - ["Verifica respiro/pianto", "• Respiro presente"]
+  - ["Assiste il neonato", "• Mantiene il neonato al caldo e attende MSA/MSI"]
+
+errori: []
+consigli: []

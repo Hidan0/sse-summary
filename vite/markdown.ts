@@ -370,7 +370,7 @@ export function compileQuiz(source: string): CompiledQuiz
     };
 }
 
-export const GRUPPI_SKILL = ["blsd", "trauma", "tss"];
+export const GRUPPI_SKILL = ["blsd", "trauma", "neonato", "tss"];
 
 export interface CompiledSkill
 {
@@ -404,11 +404,29 @@ export function compileSkill(source: string): CompiledSkill
     }
     if (!GRUPPI_SKILL.includes(String(data.gruppo))) { errori.push("gruppo non valido"); }
 
+    /*
+     * Un algoritmo (diagramma di flusso) è fatto di nodi: azioni con `testo` e `poi`,
+     * oppure decisioni con `domanda`, `si` e `no`. I rimandi sono id di altri nodi.
+     */
+    const nodi = (data.algoritmo ?? []) as Record<string, unknown>[];
+    const ids = new Set(nodi.map((nodo) => String(nodo.id)));
+    for (const nodo of nodi)
+    {
+        for (const campo of ["poi", "si", "no"])
+        {
+            if (nodo[campo] && !ids.has(String(nodo[campo])))
+            {
+                errori.push(`nodo ${String(nodo.id)}: \`${campo}\` sconosciuto`);
+            }
+        }
+        if (!nodo.testo && !nodo.domanda) { errori.push(`nodo ${String(nodo.id)}: manca testo o domanda`); }
+    }
+
     const colonne = ((data.colonne ?? []) as unknown[]).map(String);
-    if (!colonne.length || colonne.length > 2) { errori.push("servono 1 o 2 colonne"); }
+    if (!nodi.length && (!colonne.length || colonne.length > 2)) { errori.push("servono 1 o 2 colonne"); }
 
     const righe = ((data.passi ?? []) as unknown[]).map((riga) => (Array.isArray(riga) ? riga : [riga]));
-    if (!righe.length) { errori.push("nessun passo"); }
+    if (!righe.length && !nodi.length) { errori.push("nessun passo"); }
     righe.forEach((riga, index) =>
     {
         const passo = `passo ${index + 1}`;
@@ -431,6 +449,17 @@ export function compileSkill(source: string): CompiledSkill
         colonne: colonne,
         avvertenza: data.avvertenza ? String(data.avvertenza) : undefined,
         passi: righe.map((riga) => riga.map(inline)),
+        algoritmo: nodi.map((nodo) => ({
+            id: String(nodo.id),
+            titolo: nodo.titolo ? String(nodo.titolo) : undefined,
+            testo: ((nodo.testo ?? []) as unknown[]).map(inline),
+            domanda: nodo.domanda ? inline(nodo.domanda) : undefined,
+            poi: nodo.poi ? String(nodo.poi) : undefined,
+            etichetta: nodo.etichetta ? String(nodo.etichetta) : undefined,
+            tempo: nodo.tempo ? String(nodo.tempo) : undefined,
+            si: nodo.si ? String(nodo.si) : undefined,
+            no: nodo.no ? String(nodo.no) : undefined
+        })),
         nota: data.nota ? inline(data.nota) : undefined,
         commento: data.commento ? block(data.commento) : undefined,
         errori: lista("errori"),
@@ -448,6 +477,7 @@ export function compileSkill(source: string): CompiledSkill
         revisione: skill.revisione,
         riassunti: skill.riassunti,
         passi: righe.length,
+        algoritmo: nodi.length > 0,
         errori: skill.errori.length,
         consigli: skill.consigli.length
     };

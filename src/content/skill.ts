@@ -4,6 +4,7 @@ import type { GruppoSkill, Skill, SkillMeta, SkillModule } from "./types";
 export const GRUPPI_SKILL: { id: GruppoSkill, nome: string, modulo: string, icona: string }[] = [
     { id: "blsd", nome: "BLSD", modulo: "SSE", icona: "heart-pulse" },
     { id: "trauma", nome: "Trauma", modulo: "SSE", icona: "car-burst" },
+    { id: "neonato", nome: "Rianimazione alla nascita", modulo: "SSE", icona: "baby" },
     { id: "tss", nome: "BLSD e disostruzione", modulo: "TSS", icona: "heart-circle-bolt" }
 ];
 
