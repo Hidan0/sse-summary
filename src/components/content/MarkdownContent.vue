@@ -163,7 +163,7 @@
             border: none;
             border-radius: 0.5em;
             color: var(--app-muted);
-            font-size: 0.7em;
+            font-size: 0.75em;
             padding: 0.1em 0.5em;
             vertical-align: 0.15em;
             white-space: nowrap;

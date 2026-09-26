@@ -20,8 +20,15 @@
     --app-page-bg: #{variables.$slightly-off-white};
     --app-surface: #FFF;
     --app-text: #{variables.$not-quite-black};
-    --app-muted: #{variables.$secondary};
-    --app-accent: #{variables.$primary};
+    /*
+     * Nel tema chiaro grigio e blu del testo sono un po' più scuri dei colori di Bootstrap,
+     * per un contrasto di almeno 5.5:1 anche sul testo piccolo (fonti, didascalie).
+     */
+    --app-muted: #5C636A;
+    --app-accent: #0A58CA;
+    --bs-link-color-rgb: 10, 88, 202;
+    --bs-link-hover-color-rgb: 8, 66, 152;
+    --bs-secondary-rgb: 92, 99, 106;
     --app-accent-soft: #{rgba(variables.$primary, 0.1)};
     --app-navigation-bg: #{rgba(#FFF, 0.5)};
     --app-shadow: rgba(0, 0, 0, 0.08);
@@ -37,6 +44,9 @@
         --app-text: #E3E5E8;
         --app-muted: #9AA1A9;
         --app-accent: #6EA8FE;
+        --bs-link-color-rgb: 110, 168, 254;
+        --bs-link-hover-color-rgb: 139, 185, 254;
+        --bs-secondary-rgb: 154, 161, 169;
         --app-accent-soft: #{rgba(#6EA8FE, 0.15)};
         --app-navigation-bg: #{rgba(#1B1C1F, 0.6)};
         --app-shadow: rgba(0, 0, 0, 0.4);
