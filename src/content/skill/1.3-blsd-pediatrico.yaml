@@ -22,5 +22,13 @@ passi:
   - ["Prosegue con RCP 15:2 efficace con O₂, fino alla successiva analisi del DAE", "Ad ogni analisi interrompe RCP esegue il cambio per le CTE"]
   - ["Riconosce e risolve i messaggi di allarme/malfunzione del DAE", "Allerta la SOREU, continua con RCP e rimuove la causa se possibile"]
 
-errori: []
+errori:
+  - "Insufflazioni poco efficaci o non efficaci"
+  - "Posizione delle piastre errata"
+  - "Non usa le piastre pediatriche né attiva la modalità pediatrica"
+  - "Muove il DAE o il paziente durante l'analisi"
+  - "Massaggio errato (profondità, posizione)"
+  - "Numero di compressioni errato (rapporto 15:2)"
+  - "Più di 10 secondi senza CTE"
+  - "Non mantiene la sicurezza"
 consigli: []

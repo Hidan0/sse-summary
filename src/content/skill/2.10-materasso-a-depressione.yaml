@@ -22,5 +22,8 @@ passi:
   - Posiziona il paziente nel materasso a depressione sopra la tavola “a cucchiaio” per il trasporto fino alla barella.
   - Fissa il paziente e il materassino alla barella portantina
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Non sincronizza gli spostamenti"
+  - "Non controlla l'aderenza del materasso durante la depressione"
 consigli: []

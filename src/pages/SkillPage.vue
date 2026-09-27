@@ -9,10 +9,6 @@
 <template>
     <div id="skill-page" class="container page">
         <h1>Skill</h1>
-        <p class="lead">
-            Le schede con cui gli istruttori valutano le manovre, riportate parola per parola, con gli errori gravi e i
-            consigli degli istruttori.
-        </p>
 
         <section v-for="gruppo in gruppi"
                  :key="gruppo.id"
@@ -54,11 +50,6 @@
         h1
         {
             font-weight: 700;
-        }
-
-        .lead
-        {
-            margin-bottom: 1.5rem;
         }
 
         .gruppo

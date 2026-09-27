@@ -22,5 +22,8 @@ passi:
   - Se necessario i soccorritori si posizionano di lato (o a cavalcioni) del paziente, lo afferrano all’altezza delle spalle e del bacino
   - Al via del soccorritore alla testa, si centra il paziente sulla tavola spinale, con piccoli movimenti sincronizzati vero il lato e verso l’alto
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Posizione delle mani errata"
+  - "Movimento non sincronizzato durante la manovra"
 consigli: []

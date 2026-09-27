@@ -22,5 +22,8 @@ passi:
   - Controlla il mantenimento dell’immobilizzazione manuale del capo durante le tutte le manovre
   - Trasporta sulla tavola spinale o materasso a depressione
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Non prende la misura"
+  - "Aggancia le due emivalve in modo brusco, provocando movimenti della colonna"
 consigli: []

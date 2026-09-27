@@ -18,5 +18,9 @@ passi:
   - Il secondo soccorritore controlla l’estricazione degli arti inferiori e collabora all’effettuazione della manovra dopo
   - Insieme al secondo soccorritore esegue la manovra di posizionamento su tavola spinale e gli fa immobilizzare il rachide cervicale
 
-errori: []
+errori:
+  - "Posizione delle mani errata"
+  - "Prolungamento del tempo di estricazione"
+  - "Eccessivi movimenti della colonna durante il posizionamento su tavola spinale"
+  - "Non coordina il secondo soccorritore"
 consigli: []

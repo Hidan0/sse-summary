@@ -19,5 +19,8 @@ passi:
   - Il 3° soccorritore cambia orientamento delle mani; sposta la mano dal torace al centro del tratto lombo-sacrale posteriormente e la mano sul femore lungo il bacino anteriormente
   - Al via del 1° soccorritore si porta il paziente in posizione supina mantenendo la colonna vertebrale allineata
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Movimento di rotazione della colonna non sincronizzato"
+  - "Posizione delle mani errata"
 consigli: []

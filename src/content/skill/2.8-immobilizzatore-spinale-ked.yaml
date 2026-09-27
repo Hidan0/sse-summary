@@ -22,5 +22,8 @@ passi:
   - Controlla la tenuta di tutte le cinghie posizionate
   - Estrae il paziente con il terzo soccorritore ruotandolo sulla spinale con l’ausilio delle maniglie, il primo soccorritore sostiene gli arti inferiori
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Eccessivi movimenti della colonna durante il posizionamento del presidio"
+  - "Errata sequenza delle cinghie"
 consigli: []

@@ -22,5 +22,8 @@ passi:
   - Se necessario i soccorritori si posizionano a lato (o a cavalcioni) del paziente, lo afferrano all’altezza delle spalle e del bacino
   - Al via del soccorritore alla testa, si centra il paziente sulla tavola spinale
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Movimento di rotazione della colonna non sincronizzato"
+  - "Posizione delle mani errata"
 consigli: []

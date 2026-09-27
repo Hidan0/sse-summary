@@ -22,5 +22,8 @@ passi:
   - Il 2° soccorritore afferra il capo e lo immobilizza in posizione neutra
   - Da indicazione di posizionare il collare cervicale (previa ulteriore valutazione del collo)
 
-errori: []
+errori:
+  - "Non controlla l'integrità del casco e gli oggetti interni che possono impedirne la rimozione"
+  - "Eccessivo movimento del rachide cervicale"
+  - "Non sostiene la testa dopo la rimozione del casco"
 consigli: []

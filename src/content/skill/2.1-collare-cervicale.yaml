@@ -22,5 +22,7 @@ passi:
   - Posiziona uno spessore adeguato sotto la nuca (se necessario)
   - Fa continuare il mantenimento dell’immobilizzazione manuale al secondo soccorritore.
 
-errori: []
+errori:
+  - "Misura scorretta del collare"
+  - "Non immobilizza la testa"
 consigli: []

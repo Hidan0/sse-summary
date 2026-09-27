@@ -22,5 +22,8 @@ passi:
   - Sospende/fa sospendere l’immobilizzazione manuale del capo
   - Solleva, con l’ausilio del 3° soccorritore, la tavola spinale ai lati, utilizzando le apposite impugnature
 
-errori: []
+errori:
+  - "Non immobilizza la testa"
+  - "Posizione delle mani o dei piedi errata"
+  - "Movimento di abbattimento non sincronizzato"
 consigli: []

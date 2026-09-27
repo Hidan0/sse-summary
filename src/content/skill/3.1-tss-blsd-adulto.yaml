@@ -44,5 +44,11 @@ commento: |
   - Nel corso SSE c'è anche la [skill **con CTE già in corso**](/skill/blsd-adulto-cte-in-corso), quando gli astanti stanno già comprimendo: il primo soccorritore **sostituisce l'astante**, poi chiede il DAE, fa allertare la SOREU e le **comunica l'ACC**; in caso di allarmi del DAE **allerta la SOREU**. Vedi il [riassunto SSE sul BLSD](/riassunti/blsd#se-gli-astanti-stanno-gia-facendo-le-cte). [@blsd-skill-cte:1]
   - Nel corso SSE la sequenza parte dal **[[colpo d'occhio]]** sulla vittima, prima ancora di toccarla. [@blsd-manuale:10]
 
-errori: []
+errori:
+  - "Insufflazioni poco efficaci o non efficaci"
+  - "Posizione delle piastre errata"
+  - "Muove il DAE o il paziente durante l'analisi"
+  - "Massaggio errato (profondità, posizione)"
+  - "Più di 10 secondi senza CTE"
+  - "Non mantiene la sicurezza"
 consigli: []
