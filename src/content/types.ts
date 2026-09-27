@@ -137,25 +137,14 @@ export interface SkillMeta
     revisione: string;
     riassunti: string[];
     passi: number;
-    algoritmo: boolean;
+    diagramma: boolean;
     errori: number;
     consigli: number;
 }
-export interface NodoAlgoritmo
+export interface SkillModule extends Omit<SkillMeta, "passi" | "diagramma" | "errori" | "consigli">
 {
-    id: string;
-    titolo?: string;
-    testo: string[];
-    domanda?: string;
-    poi?: string;
-    etichetta?: string;
-    tempo?: string;
-    si?: string;
-    no?: string;
-}
-export interface SkillModule extends Omit<SkillMeta, "passi" | "algoritmo" | "errori" | "consigli">
-{
-    algoritmo: NodoAlgoritmo[];
+    diagramma?: string;
+    disegno?: { svg: string, testo: string };
     colonne: string[];
     avvertenza?: string;
     passi: string[][];

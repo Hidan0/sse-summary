@@ -1,0 +1,61 @@
+# Algoritmo della rianimazione alla nascita (diagramma del corso, settembre 2017).
+# Testo dell'originale; notazione sistemata: decisioni come domande, inizio e fine espliciti.
+titolo: Rianimazione alla nascita
+fonte: "rian-neonatale:1"
+
+nodi:
+  - { id: nascita, tipo: inizio, testo: Nascita }
+  - id: iniziali
+    testo:
+      - Prendere nota dell’ora di nascita
+      - Allertare/fare allertare la SOREU
+      - Mantenere il neonato a livello del piano perineale della madre
+      - Asciugare il neonato e avvolgerlo in un panno caldo e asciutto
+  - id: valutare
+    testo: "VALUTARE\nRespiro/Pianto\nTono muscolare in flessione"
+  - { id: apnea, tipo: decisione, testo: Apnea o gasping? }
+  - id: insufflazioni
+    testo:
+      - Aprire le vie aeree e aspirare se occorre
+      - Eseguire 5 insufflazioni in aria ambiente lente e profonde (3" ognuna)
+      - Posizionare saturimetro palmo mano dx e POI accenderlo
+  - id: pelle
+    tipo: fine
+    testo:
+      - Mantenere il neonato al caldo e asciutto
+      - Posizionarlo sul torace della mamma pelle a pelle
+      - Coprire entrambi
+  - { id: torace, tipo: decisione, testo: Il torace si espande? }
+  - id: migliorare
+    testo:
+      - Ricontrollare la posizione del capo
+      - Migliorare l’apertura delle vie aeree
+      - Ripetere 5 insufflazioni in aria ambiente lente e profonde (3" ogni insufflazione)
+  - { id: ritorno-fc, tipo: giunzione }
+  - { id: frequenza, tipo: decisione, testo: La frequenza cardiaca è > 60? }
+  - { id: respira, tipo: decisione, testo: Inizia a respirare/piangere? }
+  - id: monitoraggio
+    tipo: fine
+    testo: [Monitoraggio continuo, Mantenere al caldo, Attendere arrivo MSA/MSI]
+  - { id: ventilare, testo: "Ventilare 15 volte\n(1\" ogni ventilazione)" }
+  - { id: rcp, testo: ["RCP 3:1 per 15 cicli", "Ventilare con O2 senza reservoir"] }
+  - { id: rivalutare, testo: Rivalutare la FC }
+
+archi:
+  - [nascita, iniziali]
+  - [iniziali, valutare, Entro 60 secondi dalla nascita]
+  - [valutare, apnea]
+  - [apnea, insufflazioni, "Sì"]
+  - [apnea, pelle, "No"]
+  - [insufflazioni, torace]
+  - [torace, ritorno-fc, "Sì"]
+  - [ritorno-fc, frequenza]
+  - [torace, migliorare, "No"]
+  - { da: migliorare, a: torace, entrata: sopra }
+  - [frequenza, respira, "Sì"]
+  - { da: frequenza, a: rcp, etichetta: "No", uscita: destra }
+  - [respira, monitoraggio, "Sì"]
+  - { da: respira, a: ventilare, etichetta: "No", uscita: sinistra }
+  - { da: ventilare, a: ritorno-fc, uscita: sinistra, entrata: sinistra }
+  - [rcp, rivalutare, Dopo 15 cicli]
+  - { da: rivalutare, a: ritorno-fc, uscita: destra, entrata: destra }

@@ -44,27 +44,17 @@
         .map((slug) => riassuntiBySlug.get(slug))
         .filter((value): value is Riassunto => value !== undefined));
 
-    /*
-     * Nei diagrammi di flusso i rami portano a un altro blocco: lo si raggiunge e lo si evidenzia.
-     */
-    const evidenziato = ref("");
-    const nomeNodo = (id: string) =>
+    const figura = computed(() =>
     {
-        const nodo = contenuto.value?.algoritmo.find((value) => value.id === id);
-        const testo = nodo?.domanda ?? nodo?.titolo ?? nodo?.testo[0] ?? "";
+        const disegno = contenuto.value?.disegno;
+        if (!disegno) { return ""; }
 
-        const html = new DOMParser().parseFromString(testo, "text/html");
-
-        return (html.body.textContent ?? "").replace(/^- /, "");
-    };
-    const vaiA = (id: string) =>
-    {
-        evidenziato.value = id;
-        document.getElementById(`nodo-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
-    };
+        return `<figure class="diagramma"><div class="diagramma-scroll">${disegno.svg}</div>` +
+            `<details class="diagramma-testo"><summary>Versione testuale</summary>${disegno.testo}</details></figure>`;
+    });
 
     const fonte = computed(() => (contenuto.value ?
-        `${contenuto.value.algoritmo.length ? "Diagramma" : "Scheda skill"} del corso, ${skill.value?.revisione}. ` +
+        `${contenuto.value.diagramma ? "Diagramma" : "Scheda skill"} del corso, ${skill.value?.revisione}. ` +
         contenuto.value.citazione :
         ""));
 
@@ -111,59 +101,7 @@
                     <p v-if="contenuto.avvertenza" class="avvertenza">
                         {{ contenuto.avvertenza }}
                     </p>
-                    <ol v-if="contenuto.algoritmo.length" class="algoritmo">
-                        <li v-for="(nodo, index) in contenuto.algoritmo"
-                            :id="`nodo-${nodo.id}`"
-                            :key="nodo.id"
-                            class="nodo"
-                            :class="{
-                                decisione: nodo.domanda,
-                                fine: !nodo.poi && !nodo.si,
-                                evidenziato: evidenziato === nodo.id
-                            }">
-                            <span v-if="nodo.tempo" class="tempo">
-                                <FontAwesome icon="stopwatch" /> {{ nodo.tempo }}
-                            </span>
-                            <div class="riquadro">
-                                <p v-if="nodo.titolo" class="titolo">
-                                    {{ nodo.titolo }}
-                                </p>
-                                <p v-for="(riga, numero) in nodo.testo"
-                                   :key="numero"
-                                   class="riga"
-                                   v-html="riga"></p>
-                                <p v-if="nodo.domanda"
-                                   class="domanda"
-                                   v-html="nodo.domanda"></p>
-                            </div>
-                            <div v-if="nodo.si || nodo.no" class="rami">
-                                <button v-for="ramo in (['si', 'no'] as const)"
-                                        :key="ramo"
-                                        type="button"
-                                        class="ramo"
-                                        :class="ramo"
-                                        @click="vaiA(nodo[ramo]!)">
-                                    <strong>{{ ramo.toUpperCase() }}</strong>
-                                    <FontAwesome icon="arrow-right" />
-                                    {{ nomeNodo(nodo[ramo]!) }}
-                                </button>
-                            </div>
-                            <p v-else-if="nodo.poi" class="poi">
-                                <template v-if="nodo.poi === contenuto.algoritmo[index + 1]?.id">
-                                    <FontAwesome icon="arrow-down" />
-                                    <span v-if="nodo.etichetta">{{ nodo.etichetta }}</span>
-                                </template>
-                                <button v-else
-                                        type="button"
-                                        class="ramo"
-                                        @click="vaiA(nodo.poi)">
-                                    <FontAwesome icon="arrow-turn-up" />
-                                    <span v-if="nodo.etichetta">{{ nodo.etichetta }} ·</span>
-                                    {{ nomeNodo(nodo.poi) }}
-                                </button>
-                            </p>
-                        </li>
-                    </ol>
+                    <MarkdownContent v-if="contenuto.disegno" :html="figura" />
                     <table v-else
                            class="passi"
                            :class="[`colonne-${contenuto.colonne.length}`, `gruppo-${skill.gruppo}`]">
@@ -421,97 +359,6 @@
             color: var(--app-text);
             font-style: normal;
             font-weight: 600;
-        }
-
-        .algoritmo
-        {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            .nodo
-            {
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                scroll-margin-top: calc(var(--navigation-bar-height) + 1rem);
-
-                .tempo
-                {
-                    color: #DC3545;
-                    font-size: 0.85em;
-                    font-weight: 700;
-                    margin-bottom: 0.25rem;
-                }
-
-                .riquadro
-                {
-                    background-color: var(--app-accent-soft);
-                    border: 2px solid transparent;
-                    border-radius: 0.5rem;
-                    padding: 0.6rem 0.9rem;
-                    transition: border-color 0.3s;
-                    width: 100%;
-
-                    p
-                    {
-                        margin-bottom: 0;
-                    }
-
-                    .titolo, .domanda
-                    {
-                        font-weight: 700;
-                    }
-                }
-
-                &.decisione .riquadro
-                {
-                    background-color: color-mix(in srgb, #{variables.$success} 18%, var(--app-surface));
-                    text-align: center;
-                }
-
-                &.fine
-                {
-                    margin-bottom: 1.5rem;
-                }
-
-                &.evidenziato .riquadro
-                {
-                    border-color: var(--app-accent);
-                }
-
-                .poi
-                {
-                    align-items: center;
-                    color: var(--app-muted);
-                    display: flex;
-                    flex-direction: column;
-                    font-size: 0.8em;
-                    margin: 0.35rem 0;
-                }
-
-                .rami
-                {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 0.5rem;
-                    justify-content: center;
-                    margin: 0.5rem 0 1rem;
-                }
-
-                .ramo
-                {
-                    background-color: transparent;
-                    border: 1px solid var(--app-accent-soft);
-                    border-radius: 1rem;
-                    color: var(--app-text);
-                    font-size: 0.85em;
-                    padding: 0.25rem 0.75rem;
-
-                    &.si strong { color: #{variables.$success}; }
-                    &.no strong { color: #DC3545; }
-                }
-            }
         }
 
         h2

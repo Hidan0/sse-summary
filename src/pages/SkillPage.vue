@@ -31,9 +31,9 @@
                             class="skill">
                     <strong>{{ value.titolo }}</strong>
                     <span class="dettagli">
-                        <template v-if="value.algoritmo">Diagramma di flusso</template>
+                        <template v-if="value.diagramma">Diagramma di flusso</template>
                         <template v-else>{{ value.passi }} passi</template>
-                        <template v-if="value.sottotitolo && !value.algoritmo"> · {{ value.sottotitolo }}</template>
+                        <template v-if="value.sottotitolo && !value.diagramma"> · {{ value.sottotitolo }}</template>
                     </span>
                     <span v-if="value.errori || value.consigli" class="extra">
                         <span v-if="value.errori"><FontAwesome icon="triangle-exclamation" /> errori gravi</span>

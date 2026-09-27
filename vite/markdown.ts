@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { fileURLToPath, URL } from "node:url";
 
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
@@ -8,6 +9,8 @@ import { parse as parseYaml } from "yaml";
 
 import { fonti } from "../src/content/fonti";
 import { slugify } from "../src/content/slug";
+
+import { caricaDiagrammi, listDiagrammi, versioneTestuale } from "./diagrammi";
 
 export const CALLOUTS: Record<string, string> = {
     essenziale: "In breve",
@@ -31,6 +34,19 @@ export interface CompiledMarkdown
     toc: TocEntry[];
     glossario: string[];
     fonti: string[];
+    diagrammi: string[];
+}
+
+/*
+ * I diagrammi già disegnati (vedi `vite/diagrammi.ts`), passati al parser nell'`env` di markdown-it.
+ */
+export type DiagrammiDisegnati = Map<string, { svg: string, testo: string }>;
+interface EnvMarkdown
+{
+    [key: string]: unknown;
+    diagrammi?: DiagrammiDisegnati;
+    usati?: string[];
+    aperti?: string[];
 }
 
 const GLOSSARY_RE = /\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g;
@@ -63,6 +79,35 @@ function createRenderer(): InstanceType<typeof MarkdownIt>
             }
         });
     }
+
+    /*
+     * `::: diagramma <slug>` inserisce il diagramma di flusso; il contenuto del blocco è la didascalia.
+     */
+    md.use(container, "diagramma", {
+        validate: (params: string) => (/^diagramma\s+[a-z0-9-]+\s*$/).test(params.trim()),
+        render: (tokens: { nesting: number, info: string }[], index: number, options: unknown, env: EnvMarkdown) =>
+        {
+            env.aperti ??= [];
+            if (tokens[index].nesting === 1)
+            {
+                const slug = tokens[index].info.trim().split(/\s+/)[1];
+                env.aperti.push(slug);
+                (env.usati ??= []).push(slug);
+
+                const disegno = env.diagrammi?.get(slug);
+
+                return `<figure class="diagramma" data-diagramma="${slug}">` +
+                    `<div class="diagramma-scroll">${disegno?.svg ?? ""}</div><figcaption>\n`;
+            }
+
+            const disegno = env.diagrammi?.get(env.aperti.pop() ?? "");
+            const testo = disegno ?
+                `<details class="diagramma-testo"><summary>Versione testuale</summary>${disegno.testo}</details>` :
+                "";
+
+            return `</figcaption>${testo}</figure>\n`;
+        }
+    });
 
     /*
      * I link interni (`/riassunti/<slug>`, `/glossario/<slug>`) diventano link
@@ -124,14 +169,16 @@ function replaceCustomSyntax(source: string, glossario: Set<string>, sources: Se
         });
 }
 
-export function compileMarkdown(source: string): CompiledMarkdown
+export function compileMarkdown(source: string, diagrammi?: DiagrammiDisegnati): CompiledMarkdown
 {
     const { data, content } = matter(source);
 
     const glossario = new Set<string>();
     const sources = new Set<string>();
+    const env: EnvMarkdown = { diagrammi: diagrammi, usati: [] };
 
-    const tokens = renderer.parse(replaceCustomSyntax(content, glossario, sources), { });
+    const envParser = env as unknown as Parameters<typeof renderer.parse>[1];
+    const tokens = renderer.parse(replaceCustomSyntax(content, glossario, sources), envParser);
 
     const toc: TocEntry[] = [];
     const usedIds = new Set<string>();
@@ -158,10 +205,11 @@ export function compileMarkdown(source: string): CompiledMarkdown
 
     return {
         frontmatter: data,
-        html: renderer.renderer.render(tokens, renderer.options, { }),
+        html: renderer.renderer.render(tokens, renderer.options, envParser),
         toc: toc,
         glossario: [...glossario],
-        fonti: [...sources]
+        fonti: [...sources],
+        diagrammi: env.usati ?? []
     };
 }
 
@@ -379,6 +427,7 @@ export interface CompiledSkill
     errori: string[];
     glossario: string[];
     fonti: string[];
+    diagrammi: string[];
 }
 
 /*
@@ -386,7 +435,7 @@ export interface CompiledSkill
  * del corso: `passi` è una lista di righe, ognuna con una cella per colonna (una stringa se la colonna è una).
  * `commento` (Markdown, con fonti) è testo nostro; `errori` e `consigli` vengono dagli istruttori.
  */
-export function compileSkill(source: string): CompiledSkill
+export function compileSkill(source: string, disegni?: DiagrammiDisegnati): CompiledSkill
 {
     const data = parseYaml(source) as Record<string, unknown>;
 
@@ -404,29 +453,12 @@ export function compileSkill(source: string): CompiledSkill
     }
     if (!GRUPPI_SKILL.includes(String(data.gruppo))) { errori.push("gruppo non valido"); }
 
-    /*
-     * Un algoritmo (diagramma di flusso) è fatto di nodi: azioni con `testo` e `poi`,
-     * oppure decisioni con `domanda`, `si` e `no`. I rimandi sono id di altri nodi.
-     */
-    const nodi = (data.algoritmo ?? []) as Record<string, unknown>[];
-    const ids = new Set(nodi.map((nodo) => String(nodo.id)));
-    for (const nodo of nodi)
-    {
-        for (const campo of ["poi", "si", "no"])
-        {
-            if (nodo[campo] && !ids.has(String(nodo[campo])))
-            {
-                errori.push(`nodo ${String(nodo.id)}: \`${campo}\` sconosciuto`);
-            }
-        }
-        if (!nodo.testo && !nodo.domanda) { errori.push(`nodo ${String(nodo.id)}: manca testo o domanda`); }
-    }
-
     const colonne = ((data.colonne ?? []) as unknown[]).map(String);
-    if (!nodi.length && (!colonne.length || colonne.length > 2)) { errori.push("servono 1 o 2 colonne"); }
+    const diagramma = data.diagramma ? String(data.diagramma) : undefined;
+    if (!diagramma && (!colonne.length || colonne.length > 2)) { errori.push("servono 1 o 2 colonne"); }
 
     const righe = ((data.passi ?? []) as unknown[]).map((riga) => (Array.isArray(riga) ? riga : [riga]));
-    if (!righe.length && !nodi.length) { errori.push("nessun passo"); }
+    if (!righe.length && !diagramma) { errori.push("nessun passo"); }
     righe.forEach((riga, index) =>
     {
         const passo = `passo ${index + 1}`;
@@ -449,17 +481,8 @@ export function compileSkill(source: string): CompiledSkill
         colonne: colonne,
         avvertenza: data.avvertenza ? String(data.avvertenza) : undefined,
         passi: righe.map((riga) => riga.map(inline)),
-        algoritmo: nodi.map((nodo) => ({
-            id: String(nodo.id),
-            titolo: nodo.titolo ? String(nodo.titolo) : undefined,
-            testo: ((nodo.testo ?? []) as unknown[]).map(inline),
-            domanda: nodo.domanda ? inline(nodo.domanda) : undefined,
-            poi: nodo.poi ? String(nodo.poi) : undefined,
-            etichetta: nodo.etichetta ? String(nodo.etichetta) : undefined,
-            tempo: nodo.tempo ? String(nodo.tempo) : undefined,
-            si: nodo.si ? String(nodo.si) : undefined,
-            no: nodo.no ? String(nodo.no) : undefined
-        })),
+        diagramma: diagramma,
+        disegno: diagramma ? disegni?.get(diagramma) : undefined,
         nota: data.nota ? inline(data.nota) : undefined,
         commento: data.commento ? block(data.commento) : undefined,
         errori: lista("errori"),
@@ -477,12 +500,19 @@ export function compileSkill(source: string): CompiledSkill
         revisione: skill.revisione,
         riassunti: skill.riassunti,
         passi: righe.length,
-        algoritmo: nodi.length > 0,
+        diagramma: !!diagramma,
         errori: skill.errori.length,
         consigli: skill.consigli.length
     };
 
-    return { meta: meta, skill: skill, errori: errori, glossario: [...glossario], fonti: [...sources] };
+    return {
+        meta: meta,
+        skill: skill,
+        errori: errori,
+        glossario: [...glossario],
+        fonti: [...sources],
+        diagrammi: diagramma ? [diagramma] : []
+    };
 }
 
 /*
@@ -498,7 +528,7 @@ export default function markdown(): Plugin
         name: "sse-markdown",
         enforce: "pre",
 
-        load: function(id: string)
+        load: async function(id: string)
         {
             const [path, query] = id.split("?");
             const isQuiz = path.includes("/content/quiz/") && path.endsWith(".yaml");
@@ -510,9 +540,24 @@ export default function markdown(): Plugin
             const source = readFileSync(path, "utf-8");
             const isMeta = new URLSearchParams(query).has("meta");
 
+            /*
+             * I diagrammi servono ai riassunti e alle skill: si disegnano una volta e si ridisegnano
+             * quando cambia uno dei file YAML (che diventano dipendenze del modulo).
+             */
+            const contentDir = fileURLToPath(new URL("../src/content", import.meta.url));
+            const disegnati = async (): Promise<DiagrammiDisegnati> =>
+            {
+                for (const file of listDiagrammi(contentDir)) { this.addWatchFile(file); }
+
+                const diagrammi = await caricaDiagrammi(contentDir, this.meta.watchMode);
+
+                return new Map([...diagrammi].map(([slug, { diagramma, svg }]) =>
+                    [slug, { svg: svg, testo: versioneTestuale(diagramma) }]));
+            };
+
             if (isSkill)
             {
-                const { meta, skill } = compileSkill(source);
+                const { meta, skill } = compileSkill(source, isMeta ? undefined : await disegnati());
 
                 return `export default ${JSON.stringify(isMeta ? meta : skill)};`;
             }
@@ -543,7 +588,8 @@ export default function markdown(): Plugin
                 return `export default ${JSON.stringify({ frontmatter, intro, sezioni })};`;
             }
 
-            const { frontmatter, html, toc, glossario } = compileMarkdown(source);
+            const disegni = isMeta ? undefined : await disegnati();
+            const { frontmatter, html, toc, glossario } = compileMarkdown(source, disegni);
             if (isMeta)
             {
                 return `export default ${JSON.stringify({ frontmatter, toc, glossario })};`;

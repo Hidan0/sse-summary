@@ -57,8 +57,24 @@
         }
     };
 
-    onMounted(evidenziaParole);
-    watch(() => props.html, () => nextTick(evidenziaParole));
+    /*
+     * I diagrammi più larghi dello schermo scorrono di lato: lo si segnala, altrimenti non si nota.
+     */
+    const segnalaScorrimento = () =>
+    {
+        for (const scroll of root.value?.querySelectorAll<HTMLElement>(".diagramma-scroll") ?? [])
+        {
+            scroll.classList.toggle("scorre", scroll.scrollWidth > scroll.clientWidth + 4);
+        }
+    };
+
+    const aggiorna = () =>
+    {
+        evidenziaParole();
+        segnalaScorrimento();
+    };
+    onMounted(aggiorna);
+    watch(() => props.html, () => nextTick(aggiorna));
 
     const onClick = (evt: MouseEvent) =>
     {

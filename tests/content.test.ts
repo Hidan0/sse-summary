@@ -7,6 +7,7 @@ import { capitoli } from "@/content/capitoli";
 import { fonti } from "@/content/fonti";
 import { slugify } from "@/content/slug";
 
+import { disegnaDiagramma, leggiDiagramma, listDiagrammi } from "../vite/diagrammi";
 import { compileAbcde, compileMarkdown, compileQuiz, compileSkill } from "../vite/markdown";
 
 const CONTENT_DIR = join(__dirname, "..", "src", "content");
@@ -175,6 +176,38 @@ describe("Skill", () =>
         ]);
 
         expect(invalid).toEqual([]);
+    });
+});
+
+const diagrammi = listDiagrammi(CONTENT_DIR).map(leggiDiagramma);
+
+describe("Diagrammi", () =>
+{
+    it("hanno una struttura valida e fonti esistenti", () =>
+    {
+        const errori = diagrammi.flatMap(({ slug, errori: lista, fonte }) => [
+            ...lista.map((errore) => `${slug}: ${errore}`),
+            ...((fonte.split(":")[0] in fonti) ? [] : [`${slug}: fonte ${fonte} sconosciuta`])
+        ]);
+
+        expect(errori).toEqual([]);
+    });
+    it("sono usati solo se esistono", () =>
+    {
+        const slugs = new Set(diagrammi.map(({ slug }) => slug));
+        const usati = [...riassunti.map(({ path, diagrammi: lista }) => ({ path: path, lista: lista })),
+            ...skill.map(({ file, diagrammi: lista }) => ({ path: file, lista: lista }))];
+
+        const mancanti = usati.flatMap(({ path, lista }) => lista.filter((slug) => !slugs.has(slug))
+            .map((slug) => `${basename(path)} → ${slug}`));
+
+        expect(mancanti).toEqual([]);
+    });
+    it("si possono disporre con ELK", async () =>
+    {
+        const svg = await Promise.all(diagrammi.map(disegnaDiagramma));
+
+        expect(svg.every((value) => value.startsWith("<svg"))).toBe(true);
     });
 });
 

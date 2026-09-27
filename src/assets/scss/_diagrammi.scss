@@ -1,0 +1,187 @@
+@use "./variables";
+
+/*
+ * Diagrammi di flusso disegnati durante la build (vedi `vite/diagrammi.ts`):
+ * l'SVG usa solo classi, i colori vengono dal tema.
+ */
+.diagramma
+{
+    margin: 1.25rem 0;
+
+    .diagramma-scroll
+    {
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+
+        &.scorre
+        {
+            &::before
+            {
+                color: var(--app-muted);
+                content: "Scorri di lato per vedere tutto il diagramma →";
+                display: block;
+                font-size: 0.8em;
+                left: 0;
+                margin-bottom: 0.5rem;
+                position: sticky;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        /*
+         * Su desktop il diagramma si adatta alla colonna; su telefono resta a grandezza naturale
+         * e scorre in orizzontale, perché rimpicciolito non si leggerebbe.
+         */
+        svg
+        {
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            max-width: 100%;
+
+            @media (max-width: variables.$max-tab-bar-size)
+            {
+                max-width: none;
+            }
+        }
+    }
+
+    figcaption
+    {
+        color: var(--app-muted);
+        font-size: 0.85em;
+        margin-top: 0.5rem;
+        text-align: center;
+
+        & > :last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    .diagramma-testo
+    {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+
+        summary
+        {
+            color: var(--app-accent);
+            cursor: pointer;
+        }
+
+        ol
+        {
+            margin-top: 0.5rem;
+        }
+
+        small
+        {
+            color: var(--app-muted);
+        }
+    }
+}
+
+.diagramma-svg
+{
+    font-family: variables.$font-family;
+    font-size: 12.5px;
+
+    .d-arco
+    {
+        fill: none;
+        stroke: var(--app-muted);
+        stroke-width: 1.4;
+    }
+
+    .d-punta, .d-giunzione
+    {
+        fill: var(--app-muted);
+    }
+
+    .d-etichetta
+    {
+        fill: var(--app-muted);
+        font-size: 11px;
+        font-weight: 700;
+
+        &.si { fill: #{variables.$success}; }
+        &.no { fill: #DC3545; }
+    }
+
+    .d-nodo
+    {
+        rect, path
+        {
+            fill: var(--app-accent-soft);
+            stroke: var(--app-accent);
+            stroke-width: 1.4;
+        }
+
+        text
+        {
+            fill: var(--app-text);
+            text-anchor: middle;
+
+            &.sinistra
+            {
+                text-anchor: start;
+                white-space: pre;
+            }
+        }
+    }
+
+    .d-decisione
+    {
+        path
+        {
+            fill: color-mix(in srgb, #{variables.$success} 16%, var(--app-surface));
+            stroke: #{variables.$success};
+        }
+
+        text
+        {
+            font-weight: 700;
+        }
+    }
+
+    .d-inizio, .d-fine
+    {
+        rect
+        {
+            fill: var(--app-accent);
+            stroke: var(--app-accent);
+        }
+
+        text
+        {
+            fill: var(--app-surface);
+            font-weight: 500;
+        }
+    }
+
+    .d-nota rect
+    {
+        fill: transparent;
+        stroke: var(--app-muted);
+        stroke-dasharray: 4 3;
+    }
+
+    .d-esito
+    {
+        text { font-weight: 700; }
+
+        &.d-verde rect { fill: #198754; stroke: #198754; }
+        &.d-giallo rect { fill: #FFC107; stroke: #D39E00; }
+        &.d-rosso rect { fill: #DC3545; stroke: #DC3545; }
+        &.d-nero rect { fill: #212529; stroke: #6C757D; }
+
+        &.d-verde, &.d-rosso, &.d-nero
+        {
+            text { fill: #FFF; }
+        }
+
+        &.d-giallo text { fill: #212529; }
+    }
+}

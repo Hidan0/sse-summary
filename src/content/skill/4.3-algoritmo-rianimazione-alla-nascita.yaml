@@ -1,4 +1,4 @@
-# Diagramma di flusso del corso SSE, riportato parola per parola come elenco di blocchi (vedi CLAUDE.md, regola 2).
+# Diagramma di flusso del corso SSE: i nodi stanno in src/content/diagrammi/rianimazione-alla-nascita.yaml.
 titolo: Algoritmo della rianimazione alla nascita
 intestazione: RIANIMAZIONE ALLA NASCITA
 sottotitolo: Diagramma di flusso
@@ -7,74 +7,7 @@ fonte: rian-neonatale
 revisione: Settembre 2017
 riassunti: [rianimazione-alla-nascita, assistenza-al-neonato]
 
-algoritmo:
-  - id: nascita
-    testo:
-      - "- Prendere nota dell’ora di nascita"
-      - "- Allertare/fare allertare la SOREU"
-      - "- Mantenere il neonato a livello del piano perineale della madre"
-      - "- Asciugare il neonato e avvolgerlo in un panno caldo e asciutto"
-    poi: valutare
-  - id: valutare
-    titolo: VALUTARE
-    testo:
-      - "- Respiro/Pianto"
-      - "- Tono muscolare in flessione"
-    poi: apnea
-  - id: apnea
-    domanda: Apnea o Gasping
-    si: insufflazioni
-    no: pelle-a-pelle
-  - id: pelle-a-pelle
-    testo:
-      - "- Mantenere il neonato al caldo e asciutto"
-      - "- Posizionarlo sul torace della mamma pelle a pelle"
-      - "- Coprire entrambi"
-  - id: insufflazioni
-    tempo: 60 secondi
-    testo:
-      - "- Aprire le vie aeree e aspirare se occorre"
-      - "- Eseguire 5 insufflazioni in aria ambiente lente e profonde (3\" ognuna)"
-      - "- Posizionare saturimetro palmo mano dx e POI accenderlo"
-    poi: torace
-  - id: torace
-    domanda: Il torace si espande
-    si: frequenza
-    no: migliorare
-  - id: migliorare
-    testo:
-      - "- Ricontrollare la posizione del capo"
-      - "- Migliorare l’apertura delle vie aeree"
-      - "- Ripetere 5 insufflazioni in aria ambiente lente e profonde (3\"ogni insufflazione)"
-    poi: torace
-  - id: frequenza
-    domanda: La frequenza cardiaca è > 60
-    si: respira
-    no: rcp
-  - id: rcp
-    testo:
-      - RCP 3:1 per 15 cicli
-      - Ventilare con O2 senza reservoir
-    poi: rivalutare
-    etichetta: DOPO 15 CICLI
-  - id: rivalutare
-    testo:
-      - Rivalutare la FC
-    poi: frequenza
-  - id: respira
-    domanda: Controllare se inizia a respirare/piangere
-    si: monitoraggio
-    no: ventilare
-  - id: ventilare
-    testo:
-      - Ventilare 15 volte
-      - (1" ogni ventilazione)
-    poi: frequenza
-  - id: monitoraggio
-    testo:
-      - "- Monitoraggio continuo"
-      - "- Mantenere al caldo"
-      - "- Attendere arrivo MSA/MSI"
+diagramma: rianimazione-alla-nascita
 
 errori: []
 consigli: []
