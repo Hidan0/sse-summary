@@ -39,6 +39,10 @@ Il **corpo estraneo** va sospettato in chiunque **smetta all'improvviso di respi
 - Se l'ostruzione moderata **persiste**, attiva il **112/118**: la vittima va in ospedale **con ossigeno**. [@tss-manuale-blsd:33,35]
 - Valuta **continuamente ABCDE e parametri vitali**. [@tss-g2:20]
 
+::: diagramma ostruzione-vie-aeree-tss
+La sequenza generale di disostruzione del manuale TSS, ridisegnata come diagramma di flusso: nell'originale è uno schema senza frecce. [@tss-manuale-blsd:37] La domanda che separa moderata e grave viene dalla classificazione. [@tss-g2:4-5] Nell'originale il riquadro "Chiama il sistema di emergenza sanitaria 112/118" sta tra i due rami, senza collegamenti: qui la chiamata è sul ramo dell'ostruzione moderata quando persiste [@tss-manuale-blsd:33] e su quello dell'ostruzione grave, dove la slide la mette dopo le manovre sulla vittima cosciente. [@tss-g2:20]
+:::
+
 ::: pericolo
 Un'ostruzione moderata con **scambi insufficienti** (tosse debole e inefficace, [[stridore]] inspiratorio, respiro sempre più difficile, eventualmente cianosi) va **trattata come un'ostruzione grave**. [@tss-manuale-blsd:34]
 :::

@@ -114,6 +114,10 @@ Se la coscienza è alterata, fai attenzione alle **vie aeree**: **protesi dentar
 
 [@tss-c3:6]
 
+::: diagramma algoritmo-universale-tss
+Algoritmo universale della lezione. La slide ha solo i due rami del paziente incosciente, e mette valutazione ABCDE e PLS nello stesso blocco; l'applicazione del DAE è raggiunta da una freccia tratteggiata dalle CTE e non prosegue. [@tss-c3:6]
+:::
+
 ### La posizione laterale di sicurezza
 
 Il modulo la mostra in **quattro passaggi** illustrati, fino alla vittima distesa sul fianco. [@tss-c3:7] La PLS **non si usa in caso di trauma**. [@tss-manuale-blsd:13] I passaggi e il BLSD per l'addetto al trasporto sono in [BLSD per l'addetto al trasporto sanitario](/riassunti/blsd-trasporto-sanitario).

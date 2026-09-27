@@ -1,0 +1,23 @@
+# Algoritmo PBLSD nell'infante sotto l'anno (slide 5.2 p. 39, identico nel manuale PBLSD p. 22).
+# Notazione sistemata: il blocco-condizione diventa una domanda, inizio e fine espliciti.
+# Il percorso finisce in RCP 15:2 senza rivalutazione, come nell'originale.
+titolo: Algoritmo PBLSD, infante sotto l'anno
+fonte: "5.2:39"
+
+nodi:
+  - { id: scena, tipo: inizio, testo: Sicurezza della scena }
+  - { id: valuta, testo: Coscienza e respiro }
+  - { id: acc, tipo: decisione, testo: "Respiro assente\no anormale,\ncompatibile con ACC?" }
+  - { id: abcde, tipo: fine, testo: "Valuta ABCDE, parametri vitali\ne contatta la SOREU" }
+  - { id: cte, testo: "Inizia immediatamente 15 CTE,\ncontatta la SOREU *" }
+  - { id: nota, tipo: nota, vicino: cte, testo: "* Contatta la SOREU per:\n1. conferma ACC\n2. H destinazione" }
+  - { id: ventila, testo: "Apri le vie aeree\ne ventila 2 volte" }
+  - { id: rcp, tipo: fine, testo: "RCP 15:2" }
+
+archi:
+  - [scena, valuta]
+  - [valuta, acc]
+  - [acc, cte, "Sì"]
+  - [acc, abcde, "No"]
+  - [cte, ventila]
+  - [ventila, rcp]

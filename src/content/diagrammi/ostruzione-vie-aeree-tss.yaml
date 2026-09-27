@@ -1,0 +1,39 @@
+# Sequenza generale di disostruzione delle vie aeree (manuale BLSD e ostruzione TSS, p. 37).
+# Stesso organigramma senza frecce della versione SSE, con il sistema di emergenza 112/118 al posto
+# della SOREU e "BLS-D in base all'età". Il riquadro "Chiama il sistema di emergenza sanitaria 112/118"
+# sta tra i due rami, senza collegamenti: qui è sul ramo moderato se l'ostruzione persiste (manuale p. 33)
+# e sempre su quello grave (indicazione dell'utente).
+# Buchi dell'originale lasciati com'erano: nessun passaggio da moderata a grave, nessun esito
+# "ostruzione risolta".
+titolo: Sequenza generale di disostruzione delle vie aeree (TSS)
+fonte: "tss-manuale-blsd:37"
+
+nodi:
+  - { id: riconoscimento, tipo: inizio, testo: Riconoscimento }
+  - { id: parla, tipo: decisione, testo: "Tossisce e riesce\na parlare?" }
+  - { id: moderata, testo: Ostruzione moderata }
+  - { id: tossire, testo: Incoraggia a tossire }
+  - { id: valuta, tipo: fine, testo: "Valuta continuamente\nABCDE e\nparametri vitali" }
+  - { id: grave, testo: Ostruzione grave }
+  - id: cosciente
+    testo: "Vittima cosciente:\nesegui 5 colpi interscapolari\nalternati a 5 compressioni\naddominali"
+  - { id: chiama, testo: "Chiama il sistema\ndi emergenza\nsanitaria 112/118" }
+  - id: incosciente
+    tipo: fine
+    testo:
+      - Piano rigido
+      - Inizia CTE
+      - Controlla il cavo orale (ispezione visiva)
+      - Tenta 2 insufflazioni e, se inefficaci, BLS-D in base all’età
+      - Contatta il sistema di emergenza sanitaria 112/118
+
+archi:
+  - [riconoscimento, parla]
+  - [parla, moderata, "Sì"]
+  - [parla, grave, "No"]
+  - [moderata, tossire]
+  - [tossire, valuta]
+  - [tossire, chiama, Se persiste]
+  - [grave, cosciente]
+  - [cosciente, chiama]
+  - [cosciente, incosciente, "Se diventa incosciente"]

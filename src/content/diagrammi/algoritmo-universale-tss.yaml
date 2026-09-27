@@ -1,0 +1,24 @@
+# Algoritmo universale della valutazione primaria (TSS C.3 p. 6).
+# Notazione sistemata: la divisione dei due rami diventa una domanda, inizio e fine espliciti.
+# Entrambi i rami partono da "No coscienza": la domanda lo dà per scontato e il ramo "No" ripete
+# "No coscienza, respiro normale", così la vittima cosciente (non prevista dalla slide) non finisce in PLS.
+# "Applicazione DAE (appena possibile)" è raggiunta da una freccia tratteggiata dalle CTE e non prosegue.
+titolo: Algoritmo universale
+fonte: "tss-c3:6"
+
+nodi:
+  - { id: inizio, tipo: inizio, testo: Coscienza e respiro }
+  - { id: respiro, tipo: decisione, testo: "No coscienza:\nno respiro\n(o non normale)?" }
+  - { id: abcde, tipo: fine, testo: "No coscienza, respiro normale:\nvalutazione ABCDE,\nposizione laterale di sicurezza" }
+  - { id: cte, testo: CTE }
+  - { id: dae, testo: "Applicazione DAE\n(appena possibile)" }
+  - { id: ventila, testo: "Apertura vie aeree\n2 ventilazioni" }
+  - { id: rcp, tipo: fine, testo: "RCP (30:2)" }
+
+archi:
+  - [inizio, respiro]
+  - [respiro, cte, "Sì"]
+  - [respiro, abcde, "No"]
+  - [cte, ventila]
+  - [cte, dae]
+  - [ventila, rcp]

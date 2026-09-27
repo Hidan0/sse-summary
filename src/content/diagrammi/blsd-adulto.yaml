@@ -1,0 +1,37 @@
+# Algoritmo BLSD nell'adulto (slide 5.1 p. 47, identico nel manuale BLSD p. 20).
+# Testo dell'originale; notazione sistemata: i blocchi-condizione diventano domande, inizio e fine espliciti.
+# Il ramo "DAE non immediatamente disponibile" finisce in RCP 30:2 senza ricongiungersi, come nell'originale.
+titolo: Algoritmo BLSD
+fonte: "5.1:47"
+
+nodi:
+  - { id: scena, tipo: inizio, testo: Sicurezza della scena }
+  - { id: valuta, testo: Coscienza e respiro }
+  - { id: acc, tipo: decisione, testo: "Respiro assente\no anormale,\ncompatibile con ACC?" }
+  - { id: abcde, tipo: fine, testo: "Valuta ABCDE, parametri vitali\ne contatta la COEU/SOREU" }
+  - { id: cte, testo: "Inizia immediatamente le CTE,\nchiedi DAE e contatta la SOREU *" }
+  - { id: nota, tipo: nota, vicino: cte, testo: "* Contatta la SOREU:\n1. conferma ACC\n2. esito analisi\n3. H destinazione" }
+  - { id: dae, tipo: decisione, testo: DAE immediatamente disponibile? }
+  - { id: torace, testo: "Prepara il torace\ne applica il DAE" }
+  - { id: ventila, testo: "Apri le vie aeree\ne ventila 2 volte" }
+  - { id: analisi, testo: Consenti analisi del DAE }
+  - { id: rcpsenza, testo: "RCP 30:2" }
+  - { id: shock, tipo: decisione, testo: Shock consigliato? }
+  - { id: eroga, testo: Eroga lo shock }
+  - { id: rcp, testo: "Apertura vie aeree\nRCP 30:2" }
+
+archi:
+  - [scena, valuta]
+  - [valuta, acc]
+  - [acc, cte, "Sì"]
+  - [acc, abcde, "No"]
+  - [cte, dae]
+  - [dae, torace, "Sì"]
+  - [dae, ventila, "No"]
+  - [torace, analisi]
+  - [ventila, rcpsenza]
+  - [analisi, shock]
+  - [shock, eroga, "Sì"]
+  - [shock, rcp, "No"]
+  - [eroga, rcp]
+  - [rcp, analisi, Dopo 2 minuti]

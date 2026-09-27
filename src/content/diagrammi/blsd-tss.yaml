@@ -1,0 +1,39 @@
+# Sequenza BLSD per l'addetto al trasporto sanitario (TSS G.1 p. 46, identica nel manuale TSS p. 21).
+# Notazione sistemata: il blocco-condizione diventa una domanda, inizio e fine espliciti.
+# Nell'originale "Appena DAE disponibile" è un riquadro tratteggiato raggiunto da una freccia che parte
+# da una parentesi attorno a "Apri le vie aeree e ventila 2 volte" e "RCP 30:2": qui è l'etichetta dell'arco.
+# Entrambi i rami dell'originale partono da "No coscienza": la domanda lo dà per scontato e il ramo "No"
+# ripete "No coscienza, respiro normale", così la vittima cosciente (non prevista) non finisce sul fianco.
+# Il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza" non è collegato a nulla: resta una nota.
+titolo: Sequenza BLSD (trasporto sanitario)
+fonte: "tss-g1:46"
+
+nodi:
+  - { id: scena, tipo: inizio, testo: Sicurezza della scena }
+  - { id: valuta, testo: Coscienza e respiro }
+  - { id: acc, tipo: decisione, testo: "No coscienza:\nrespiro assente\no anormale?" }
+  - { id: pls, tipo: fine, testo: "No coscienza, respiro normale:\nmetti la vittima su un fianco\nse non trauma, e chiama il\nSistema di Emergenza 112/118" }
+  - { id: cte, testo: "Inizia immediatamente le CTE,\nchiedi DAE e chiama il Sistema\ndi Emergenza 112/118" }
+  - { id: ventila, testo: "Apri le vie aeree\ne ventila 2 volte" }
+  - { id: rcpsenza, testo: "RCP 30:2" }
+  - { id: nota, tipo: nota, vicino: rcp, testo: "Fino all’arrivo del soccorso\nsanitario d’emergenza\n(MSA-MSI-MSB)" }
+  - { id: torace, testo: "Prepara il torace\ne applica il DAE" }
+  - { id: analisi, testo: Consenti analisi del DAE }
+  - { id: shock, tipo: decisione, testo: Shock consigliato? }
+  - { id: eroga, testo: Eroga lo shock }
+  - { id: rcp, testo: "RCP 30:2" }
+
+archi:
+  - [scena, valuta]
+  - [valuta, acc]
+  - [acc, cte, "Sì"]
+  - [acc, pls, "No"]
+  - [cte, ventila]
+  - [ventila, rcpsenza]
+  - [rcpsenza, torace, Appena DAE disponibile]
+  - [torace, analisi]
+  - [analisi, shock]
+  - [shock, eroga, "Sì"]
+  - [shock, rcp, "No"]
+  - [eroga, rcp]
+  - [rcp, analisi]

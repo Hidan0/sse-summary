@@ -1,0 +1,38 @@
+# Ostruzione delle vie aeree nell'adulto, "Riassumendo…" (slide 5.3, p. 12; uguale nel manuale BLSD, p. 36).
+# L'originale è un organigramma senza frecce: qui diventa un diagramma di flusso.
+# La domanda che separa moderata e grave viene dalle slide 5.3 pp. 4 e 6 (tosse, "se parla").
+# "Vittima che diventa incosciente" non è un bivio nell'originale: resta un'etichetta sulla freccia.
+# Buchi dell'originale lasciati com'erano: nessun passaggio da moderata a grave, nessun esito
+# "ostruzione risolta" (ramo grave senza uscita se la vittima resta cosciente).
+titolo: Ostruzione delle vie aeree nell'adulto
+fonte: "5.3:12"
+
+nodi:
+  - { id: riconoscimento, tipo: inizio, testo: Riconoscimento }
+  - { id: parla, tipo: decisione, testo: "Tossisce e riesce\na parlare?" }
+  - { id: moderata, testo: Ostruzione moderata }
+  - { id: tossire, testo: Incoraggia a tossire }
+  - { id: valuta, tipo: fine, testo: "Valuta continuamente\nABCDE e\nparametri vitali" }
+  - { id: grave, testo: Ostruzione grave }
+  - id: cosciente
+    testo: "Vittima cosciente:\nesegui 5 colpi interscapolari\nalternati a 5 compressioni\naddominali"
+  - { id: soreu, testo: Contatta la SOREU }
+  - id: incosciente
+    tipo: fine
+    testo:
+      - Piano rigido
+      - Inizia CTE (30)
+      - Controlla il cavo orale (ispezione visiva)
+      - Tenta 2 insufflazioni e, se inefficaci, prosegui con BLS-D
+      - Contatta la SOREU
+
+archi:
+  - [riconoscimento, parla]
+  - [parla, moderata, "Sì"]
+  - [parla, grave, "No"]
+  - [moderata, tossire]
+  - [tossire, valuta]
+  - [tossire, soreu, Se persiste]
+  - [grave, cosciente]
+  - [cosciente, soreu]
+  - [cosciente, incosciente, "Se diventa incosciente"]

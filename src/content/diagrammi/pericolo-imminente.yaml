@@ -1,0 +1,14 @@
+# Colpo d'occhio: pericolo imminente per la vittima? (slide 1.1.2, p. 10). Schema semplice, ridisegnato fedelmente.
+titolo: Colpo d'occhio
+fonte: "1.1.2:10"
+
+nodi:
+  - { id: colpo, tipo: inizio, testo: Colpo d’occhio }
+  - { id: pericolo, tipo: decisione, testo: "Pericolo imminente\nper la vittima?" }
+  - { id: valutazione, tipo: fine, testo: "Iniziare la valutazione\ndella scena" }
+  - { id: rimuovere, tipo: fine, testo: [Rimuovere il pericolo, Rimuovere la vittima] }
+
+archi:
+  - [colpo, pericolo]
+  - [pericolo, valutazione, "No"]
+  - [pericolo, rimuovere, "Sì"]

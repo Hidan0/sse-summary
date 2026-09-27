@@ -241,6 +241,10 @@ Lo schema riassuntivo della lezione: [@tss-g1:46] [@tss-manuale-blsd:21]
 6. **Appena il DAE è disponibile**: prepara il torace, applica il DAE e **consenti l'analisi**.
 7. **Shock consigliato** → eroga lo shock, poi **RCP 30:2**. **Shock non consigliato** → **RCP 30:2**.
 
+::: diagramma blsd-tss
+Sequenza BLSD della lezione, identica nel manuale. Nell'originale "Appena DAE disponibile" è un riquadro tratteggiato raggiunto da una parentesi che racchiude le 2 ventilazioni e la RCP 30:2; il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza (MSA-MSI-MSB)" non è collegato a nessun blocco. Entrambi i rami partono da "No coscienza": la sequenza non dice cosa fare con una vittima cosciente. [@tss-g1:46] [@tss-manuale-blsd:21]
+:::
+
 ## Evoluzione e fine della RCP
 
 Durante la RCP non si fanno rivalutazioni finché la vittima non riprende a respirare o dà **segni di vita** (si lamenta, si muove, tossisce). [@tss-manuale-blsd:20]

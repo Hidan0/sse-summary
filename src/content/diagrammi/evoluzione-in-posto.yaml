@@ -1,0 +1,19 @@
+# MSB in posto: cosa fare secondo l'arrivo di MSA/MSI (manuale BLSD p. 21; stesso contenuto, come elenco, nella slide 5.1 p. 48).
+# Schema semplice ridisegnato fedelmente; l'unica divisione diventa una domanda.
+titolo: In posto, MSA/MSI in arrivo o no
+fonte: "blsd-manuale:21"
+
+nodi:
+  - { id: posto, tipo: inizio, testo: In posto }
+  - { id: arrivo, tipo: decisione, testo: MSA/MSI in arrivo? }
+  - { id: continua, tipo: fine, testo: "Continua ad applicare l’algoritmo\nfino all’arrivo dell’équipe\nseguendo le indicazioni del DAE" }
+  - { id: analisi, testo: Completa 3 analisi }
+  - { id: soreu, testo: Comunica con la SOREU }
+  - { id: indicazioni, tipo: fine, testo: "Segui le indicazioni\nper l’utilizzo del DAE" }
+
+archi:
+  - [posto, arrivo]
+  - [arrivo, analisi, "No"]
+  - [arrivo, continua, "Sì"]
+  - [analisi, soreu]
+  - [soreu, indicazioni]

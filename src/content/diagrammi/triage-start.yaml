@@ -1,0 +1,46 @@
+# Protocollo S.T.A.R.T. per i soccorritori (slide del capitolo 8, p. 55).
+# Testo dell'originale; notazione sistemata: domande come rombi, inizio esplicito,
+# "< 30 / > 30 atti/min" come domanda sulla frequenza ("quanti atti al minuto?", maxi-manuale p. 22).
+# Il riquadro delle emorragie, scollegato nella slide, è una nota tratteggiata messa sul ramo
+# "polso presente", dove il manuale (p. 22) lo mette in linea.
+# Buchi dell'originale lasciati com'erano: il bivio dopo "Pervietà-cannula" non ha una domanda
+# scritta (qui "Respira?", dal manuale p. 23) e porta al rosso in entrambi i casi;
+# il caso "30 atti/min esatti" va con "≤ 30" (decisione dell'utente).
+titolo: Protocollo START per i soccorritori
+fonte: "8:55"
+
+nodi:
+  - { id: vittima, tipo: inizio, testo: Vittima }
+  - { id: cammina, tipo: decisione, testo: "Il paziente\ncammina?" }
+  - { id: verde, tipo: esito, colore: verde, testo: VERDE }
+  - { id: respira, tipo: decisione, testo: "Il paziente\nrespira?" }
+  - { id: cannula, testo: "Pervietà –\ncannula" }
+  - { id: respira-dopo, tipo: decisione, testo: Respira? }
+  - { id: rosso-cannula, tipo: esito, colore: rosso, testo: ROSSO }
+  - { id: atti, tipo: decisione, testo: "Quanti atti\nal minuto?" }
+  - { id: rosso-fr, tipo: esito, colore: rosso, testo: ROSSO }
+  - { id: polso, tipo: decisione, testo: Polso radiale presente? }
+  - { id: rosso-polso, tipo: esito, colore: rosso, testo: ROSSO }
+  - id: emorragie
+    tipo: nota
+    testo: "Controllare evidenti\nemorragie: bendaggio\ne far tamponare"
+  - { id: ordini, tipo: decisione, testo: Esegue ordini semplici? }
+  - { id: rosso-ordini, tipo: esito, colore: rosso, testo: ROSSO }
+  - { id: giallo, tipo: esito, colore: giallo, testo: GIALLO }
+
+archi:
+  - [vittima, cammina]
+  - [cammina, respira, "No"]
+  - { da: cammina, a: verde, etichetta: "Sì", entrata: sinistra }
+  - [respira, atti, "Sì"]
+  - { da: respira, a: cannula, etichetta: "No", uscita: sinistra }
+  - [cannula, respira-dopo]
+  - [respira-dopo, rosso-cannula, "No"]
+  - { da: respira-dopo, a: rosso-cannula, etichetta: "Sì", entrata: destra }
+  - [atti, polso, "≤ 30"]
+  - { da: atti, a: rosso-fr, etichetta: "> 30", entrata: sinistra }
+  - [polso, emorragie, "Sì"]
+  - [emorragie, ordini]
+  - { da: polso, a: rosso-polso, etichetta: "No", entrata: sinistra }
+  - [ordini, giallo, "Sì"]
+  - { da: ordini, a: rosso-ordini, etichetta: "No", entrata: sinistra }
