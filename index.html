@@ -11,12 +11,14 @@
         <script>
             (() =>
             {
-                // Applica subito il tema del browser, prima del caricamento dell'app, per evitare flash.
-                const query = window.matchMedia("(prefers-color-scheme: dark)");
-                const apply = () => document.documentElement.setAttribute("data-bs-theme", query.matches ? "dark" : "light");
+                // Applica subito il tema, prima del caricamento dell'app, per evitare flash: quello scelto
+                // a mano (vedi `src/composables/tema.ts`) oppure quello del sistema.
+                let scelta = null;
+                try { scelta = localStorage.getItem("sse-tema"); }
+                catch { /* localStorage non disponibile: si segue il sistema. */ }
 
-                apply();
-                query.addEventListener("change", apply);
+                const scuro = (scelta === "dark") || ((scelta !== "light") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+                document.documentElement.setAttribute("data-bs-theme", scuro ? "dark" : "light");
             })();
         </script>
     </head>

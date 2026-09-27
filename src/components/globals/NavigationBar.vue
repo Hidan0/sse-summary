@@ -1,11 +1,22 @@
 <script lang="ts" setup>
+    import { computed } from "vue";
     import { useRoute } from "vue-router";
 
     import FontAwesome from "@/components/ui/FontAwesome.vue";
+    import { useTema } from "@/composables/tema";
 
     import { SEZIONI_APP } from "./sezioni";
 
     const route = useRoute();
+    const { tema, automatico, cambia } = useTema();
+
+    const etichettaTema = computed(() =>
+    {
+        const attuale = (tema.value === "dark") ? "scuro" : "chiaro";
+        const altro = (tema.value === "dark") ? "chiaro" : "scuro";
+
+        return `Tema ${attuale}${automatico.value ? " (automatico, come il sistema)" : ""}: passa al tema ${altro}`;
+    });
 </script>
 
 <template>
@@ -30,6 +41,13 @@
                             title="Cerca">
                     <FontAwesome icon="magnifying-glass" />
                 </RouterLink>
+                <button type="button"
+                        class="link tema"
+                        :aria-label="etichettaTema"
+                        :title="etichettaTema"
+                        @click="cambia">
+                    <FontAwesome :icon="(tema === 'dark') ? 'sun' : 'moon'" />
+                </button>
             </div>
         </div>
     </nav>
@@ -80,6 +98,13 @@
             &.bold
             {
                 font-weight: bold;
+            }
+            &.tema
+            {
+                background: none;
+                border: none;
+                color: var(--bs-link-color);
+                font: inherit;
             }
             &.attiva
             {

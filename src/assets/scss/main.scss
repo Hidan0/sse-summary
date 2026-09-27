@@ -15,7 +15,7 @@
 
     /*
      * Colori dell'interfaccia, ridefiniti per il tema scuro.
-     * Il tema segue le impostazioni del browser (vedi `index.html`).
+     * Il tema segue le impostazioni del browser, salvo scelta manuale (vedi `src/composables/tema.ts`).
      */
     --app-page-bg: #{variables.$slightly-off-white};
     --app-surface: #FFF;
