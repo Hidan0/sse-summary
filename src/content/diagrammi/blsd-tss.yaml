@@ -4,7 +4,8 @@
 # da una parentesi attorno a "Apri le vie aeree e ventila 2 volte" e "RCP 30:2": qui è l'etichetta dell'arco.
 # Entrambi i rami dell'originale partono da "No coscienza": la domanda lo dà per scontato e il ramo "No"
 # ripete "No coscienza, respiro normale", così la vittima cosciente (non prevista) non finisce sul fianco.
-# Il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza" non è collegato a nulla: resta una nota.
+# Il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza" non è collegato a nulla: resta una nota,
+# accanto al ciclo di analisi e RCP, che prosegue fino all'arrivo dei soccorsi.
 titolo: Sequenza BLSD (trasporto sanitario)
 fonte: "tss-g1:46"
 

@@ -270,13 +270,19 @@ export async function disegnaDiagramma(diagramma: Diagramma): Promise<string>
             }))
         })),
         /*
-         * Una nota con `vicino` è legata al suo nodo da un arco invisibile, che serve solo al layout.
+         * Una nota con `vicino` sta nello stesso livello del suo nodo, accanto a lui: la lega
+         * al livello precedente un arco invisibile, che parte dall'ultimo nodo (in ordine di lettura)
+         * con una freccia verso quello vicino, o dal nodo stesso se non ce ne sono.
          */
-        edges: [...diagramma.nodi.filter(({ vicino }) => vicino).map((nodo): ElkExtendedEdge => ({
-            id: `vicino-${nodo.id}`,
-            sources: [nodo.vicino!],
-            targets: [nodo.id]
-        })), ...diagramma.archi.map((arco, index): ElkExtendedEdge => ({
+        edges: [...diagramma.nodi.filter(({ vicino }) => vicino).map((nota): ElkExtendedEdge =>
+        {
+            const indice = (id: string) => diagramma.nodi.findIndex((nodo) => nodo.id === id);
+            const precedenti = diagramma.archi.filter(({ da, a }) => (a === nota.vicino) && (indice(da) < indice(a)))
+                .map(({ da }) => da)
+                .sort((a, b) => indice(b) - indice(a));
+
+            return { id: `vicino-${nota.id}`, sources: [precedenti[0] ?? nota.vicino!], targets: [nota.id] };
+        }), ...diagramma.archi.map((arco, index): ElkExtendedEdge => ({
             id: `arco-${index}`,
             sources: [`${arco.da}:${direzioni[index].uscita}`],
             targets: [`${arco.a}:${direzioni[index].entrata}`],

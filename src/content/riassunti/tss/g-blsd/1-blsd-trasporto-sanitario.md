@@ -235,14 +235,14 @@ Lo schema riassuntivo della lezione: [@tss-g1:46] [@tss-manuale-blsd:21]
 
 1. **Sicurezza della scena**.
 2. **Coscienza e respiro**.
-3. **Incosciente, respiro normale** → se non c'è trauma mettila su un fianco (PLS) e chiama il 112/118, **fino all'arrivo del soccorso sanitario** (MSA, MSI, MSB).
+3. **Incosciente, respiro normale** → se non c'è trauma mettila su un fianco (PLS) e chiama il 112/118.
 4. **Incosciente, respiro assente o anormale** → **inizia subito le CTE**, chiedi il DAE e chiama il 112/118.
 5. In attesa del DAE: **apri le vie aeree e fai 2 ventilazioni**, poi **RCP 30:2**.
 6. **Appena il DAE è disponibile**: prepara il torace, applica il DAE e **consenti l'analisi**.
-7. **Shock consigliato** → eroga lo shock, poi **RCP 30:2**. **Shock non consigliato** → **RCP 30:2**.
+7. **Shock consigliato** → eroga lo shock, poi **RCP 30:2**. **Shock non consigliato** → **RCP 30:2**. Si continua con analisi e RCP **fino all'arrivo del soccorso sanitario** (MSA, MSI, MSB).
 
 ::: diagramma blsd-tss
-Sequenza BLSD della lezione, identica nel manuale. Nell'originale "Appena DAE disponibile" è un riquadro tratteggiato raggiunto da una parentesi che racchiude le 2 ventilazioni e la RCP 30:2; il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza (MSA-MSI-MSB)" non è collegato a nessun blocco. Entrambi i rami partono da "No coscienza": la sequenza non dice cosa fare con una vittima cosciente. [@tss-g1:46] [@tss-manuale-blsd:21]
+Sequenza BLSD della lezione, identica nel manuale. Nell'originale "Appena DAE disponibile" è un riquadro tratteggiato raggiunto da una parentesi che racchiude le 2 ventilazioni e la RCP 30:2; il riquadro "Fino all'arrivo del soccorso sanitario d'emergenza (MSA-MSI-MSB)" non è collegato a nessun blocco: qui sta accanto al ciclo di analisi e RCP. Entrambi i rami partono da "No coscienza": la sequenza non dice cosa fare con una vittima cosciente. [@tss-g1:46] [@tss-manuale-blsd:21]
 :::
 
 ## Evoluzione e fine della RCP
