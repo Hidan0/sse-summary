@@ -10,6 +10,24 @@
             Leggi queste avvertenze prima di usarlo.
         </p>
 
+        <section class="evidenza pericolo">
+            <h2><FontAwesome icon="truck-medical" /> Non è uno strumento per le emergenze</h2>
+            <ul>
+                <li>
+                    <strong>Non consultare il sito durante un intervento</strong> e non usarlo per decidere cosa fare
+                    su un paziente: non è un manuale operativo né un supporto alle decisioni cliniche.
+                </li>
+                <li>
+                    In un'emergenza reale <strong>chiama il 112</strong> e segui le indicazioni della SOREU,
+                    i protocolli in vigore e la tua formazione.
+                </li>
+                <li>
+                    Non è un sito di informazione medica per il pubblico: i contenuti servono solo a ripassare per
+                    l'esame del corso.
+                </li>
+            </ul>
+        </section>
+
         <section>
             <h2><FontAwesome icon="book" /> Da dove vengono i contenuti</h2>
             <ul>
@@ -25,6 +43,10 @@
                 <li>
                     Il materiale originale <strong>non è pubblicato</strong> su questo sito e resta dei rispettivi
                     autori. Ogni affermazione indica la lezione e la pagina da cui è tratta, così puoi verificarla.
+                </li>
+                <li>
+                    Fanno eccezione le <strong>schede di valutazione delle skill</strong>: sono riportate parola per
+                    parola, perché servono così come sono, sempre con la fonte e la revisione.
                 </li>
                 <li>
                     Il sito <strong>non è affiliato ad AREU</strong> né a nessun ente di soccorso.
@@ -56,9 +78,13 @@
                     <strong>Possono contenere errori o imprecisioni.</strong> Nel dubbio fa fede il materiale del corso.
                 </li>
                 <li>
+                    Le schede delle skill sono <strong>trascritte</strong> dagli originali e confrontate con essi parola
+                    per parola, refusi compresi.
+                </li>
+                <li>
                     I riquadri viola <strong>"Da verificare"</strong> segnalano punti in cui il materiale è ambiguo o
-                    contraddittorio. Alcune integrazioni vengono dalle indicazioni degli istruttori: quando è così,
-                    il testo lo dice.
+                    contraddittorio. I riquadri verdi <strong>"Dagli istruttori"</strong> contengono indicazioni date a
+                    lezione che non sono nelle slide.
                 </li>
             </ul>
         </section>
@@ -80,8 +106,8 @@
         <section>
             <h2><FontAwesome icon="circle-info" /> In sintesi</h2>
             <p>
-                Usa il sito per <strong>ripassare</strong>, non per imparare procedure da applicare:
-                non sostituisce il corso, gli istruttori né i protocolli.
+                Usa il sito per <strong>ripassare</strong>, non per imparare procedure da applicare e mai durante un
+                intervento: non sostituisce il corso, gli istruttori né i protocolli.
                 Se trovi un errore, <a href="https://github.com/Hidan0/sse-summary/issues"
                                        target="_blank"
                                        title="Segnala un problema su GitHub">segnalalo</a>.
@@ -147,6 +173,15 @@
                 h2 .fa
                 {
                     color: variables.$warning;
+                }
+            }
+            &.pericolo
+            {
+                border-left-color: variables.$danger;
+
+                h2 .fa
+                {
+                    color: variables.$danger;
                 }
             }
         }

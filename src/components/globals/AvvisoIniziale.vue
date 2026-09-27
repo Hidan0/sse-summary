@@ -8,7 +8,7 @@
     /*
      * Cambiando la versione l'avviso viene mostrato di nuovo a tutti.
      */
-    const VERSIONE = 1;
+    const VERSIONE = 2;
 
     const accettato = useLocalStorage("sse-avvertenze-accettate", 0);
     const route = useRoute();
@@ -28,6 +28,10 @@
                     <FontAwesome icon="triangle-exclamation" /> Prima di iniziare
                 </h2>
                 <ul>
+                    <li>
+                        <strong>Non è uno strumento per le emergenze</strong>: non usarlo durante un intervento.
+                        In un'emergenza reale chiama il 112 e segui la SOREU.
+                    </li>
                     <li>
                         Riassunti <strong>non ufficiali</strong> del corso SSE e TSS di AREU Lombardia,
                         basati sul materiale del corso (revisione <strong>2017</strong>).
