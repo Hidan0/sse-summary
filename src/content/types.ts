@@ -161,3 +161,43 @@ export interface Skill extends SkillMeta
     ordine: number[];
     load: () => Promise<SkillModule>;
 }
+
+export type TipoScenario = "trauma" | "medico";
+
+export interface ScenarioMeta
+{
+    numero: number;
+    titolo: string;
+    tipo: TipoScenario;
+    categoria: string;
+    grave: boolean;
+}
+export interface RigaScenario
+{
+    azione: string;
+    reperto?: string;
+}
+export interface FaseScenario
+{
+    id: string;
+    titolo: string;
+    lettera?: string;
+    grave?: boolean;
+    righe: RigaScenario[];
+}
+export interface ScenarioModule extends Omit<ScenarioMeta, "grave">
+{
+    revisione: string;
+    msa: boolean;
+    forzeOrdine: boolean;
+    filtro: { fittizio: boolean, voci: [string, string][] };
+    sintesi: string;
+    fasi: FaseScenario[];
+    citazione: string;
+}
+export interface Scenario extends ScenarioMeta
+{
+    slug: string;
+    ordine: number[];
+    load: () => Promise<ScenarioModule>;
+}

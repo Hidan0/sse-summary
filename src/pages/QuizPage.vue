@@ -94,7 +94,23 @@
 
 <template>
     <div id="quiz-page" class="container page">
-        <h1>Quiz</h1>
+        <h1>Esercitati</h1>
+
+        <h2 class="gruppo">
+            Scenari d'esame
+        </h2>
+        <RouterLink class="card scenari" :to="{ name: 'scenari' }">
+            <FontAwesome icon="user-group" />
+            <span>
+                <strong>Scegli uno scenario</strong> <span class="anteprima">anteprima</span><br />
+                <small>Le griglie degli scenari: da soli o con un compagno che fa da esaminatore.</small>
+            </span>
+            <FontAwesome icon="chevron-right" />
+        </RouterLink>
+
+        <h2 class="gruppo">
+            Quiz
+        </h2>
 
         <aside class="disclaimer" role="note">
             <FontAwesome icon="triangle-exclamation" />
@@ -299,6 +315,51 @@
             h2
             {
                 font-size: 1.2rem;
+            }
+        }
+
+        h2.gruppo
+        {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+
+        .scenari
+        {
+            align-items: center;
+            color: inherit;
+            flex-direction: row;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+
+            & > .fa:first-child
+            {
+                color: var(--app-accent);
+                font-size: 1.4rem;
+            }
+            & > span
+            {
+                flex: 1 1 auto;
+            }
+            strong
+            {
+                color: var(--app-accent);
+            }
+            small
+            {
+                color: var(--app-muted);
+            }
+            .anteprima
+            {
+                background-color: var(--app-accent-soft);
+                border-radius: 0.375rem;
+                color: var(--app-accent);
+                font-size: 0.7em;
+                font-weight: 700;
+                padding: 0.1em 0.45em;
+                text-transform: uppercase;
             }
         }
 

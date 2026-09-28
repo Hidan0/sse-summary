@@ -1,0 +1,107 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 14
+titolo: Bambino con difficoltà respiratoria
+tipo: medico
+categoria: "Medico acuto: respiratoria"
+fonte: "scenari:27-28"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: false
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Difficoltà respiratoria"]
+    - ["Paziente", "Bambino, 5 anni"]
+    - ["Luogo", "Abitazione"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì, con fatica"]
+
+sintesi: |
+  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
+  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
+  cute marezzata e labbra cianotiche, PA non rilevabile.
+
+  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+
+fasi:
+  - fase: prearrivo
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+      - azione: Colpo d'occhio
+      - azione: Verifica se ci sono ostacoli al trasporto
+        reperto: Nessun ostacolo
+  - fase: autoprotezione
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+  - fase: a
+    righe:
+      - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
+        reperto: Soporoso, a tratti irrequieto, affaticato
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+  - fase: b
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+      - azione: Palpa delicatamente il torace
+      - azione: Ascolta i rumori respiratori
+        reperto: Fischi e sibili
+      - azione: Conta gli atti respiratori
+        reperto: FR 45 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 89% in aria; non tiene il saturimetro
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+  - fase: c
+    righe:
+      - azione: Rileva il polso radiale
+        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+      - azione: Valuta la cute
+        reperto: Cute marezzata, labbra cianotiche
+      - azione: Misura la PA
+        reperto: PA non rilevabile
+  - fase: sopravvivenza
+    righe:
+      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
+        reperto: Se non la allerta, lo scenario è invalidato
+  - fase: d
+    righe:
+      - azione: Valuta secondo l'AVPU
+        reperto: Apre gli occhi alla chiamata (A)
+      - azione: Parla con il paziente
+        reperto: Non collabora, agitato
+      - azione: Valuta sensibilità e motilità
+        reperto: Conservate ai 4 arti
+  - fase: e
+    righe:
+      - azione: Osserva l'aspetto generale
+        reperto: Agitato
+      - azione: Chiede cos'è successo
+        reperto: La zia riferisce tosse e catarro da qualche giorno
+      - azione: Valuta il dolore
+      - azione: Protezione termica
+      - azione: Storia clinica
+        reperto: Recente crisi asmatica con ricovero in ospedale
+  - fase: soreu
+    righe:
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Problemi riscontrati
+        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU comunica l'arrivo dell'MSA
+  - fase: rivalutazione
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

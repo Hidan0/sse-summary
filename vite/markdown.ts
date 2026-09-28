@@ -634,6 +634,126 @@ export function compileSkill(source: string, disegni?: DiagrammiDisegnati): Comp
     };
 }
 
+export const TIPI_SCENARIO = ["trauma", "medico"];
+/*
+ * Fasi della griglia degli scenari, nell'ordine in cui compaiono. `grave`: se il candidato
+ * non fa quello che c'è in questa fase, lo scenario è invalidato.
+ */
+export const FASI_SCENARIO: { id: string, titolo: string, lettera?: string, grave?: boolean }[] = [
+    { id: "prearrivo", titolo: "Prearrivo" },
+    { id: "scena", titolo: "Valutazione della scena" },
+    { id: "autoprotezione", titolo: "Autoprotezione" },
+    { id: "a", titolo: "Vie aeree", lettera: "A" },
+    { id: "b", titolo: "Respiro", lettera: "B" },
+    { id: "c", titolo: "Circolo", lettera: "C" },
+    { id: "sopravvivenza", titolo: "Segni che compromettono la sopravvivenza", grave: true },
+    { id: "d", titolo: "Stato neurologico", lettera: "D" },
+    { id: "e", titolo: "Valutazione testa-piedi e AMPIA", lettera: "E" },
+    { id: "soreu", titolo: "Comunicazione alla SOREU" },
+    { id: "rivalutazione", titolo: "Rivalutazione" },
+    { id: "consegna", titolo: "Consegna del paziente" }
+];
+
+export interface CompiledScenario
+{
+    meta: Record<string, unknown>;
+    scenario: Record<string, unknown>;
+    errori: string[];
+    glossario: string[];
+    fonti: string[];
+}
+
+/*
+ * Gli scenari d'esame (`src/content/scenari/<numero>-<slug>.yaml`) riscrivono in forma strutturata
+ * le griglie del corso: per ogni fase le azioni attese e, accanto, i reperti. `filtro` e `sintesi` sono nostri.
+ */
+export function compileScenario(source: string): CompiledScenario
+{
+    const data = parseYaml(source) as Record<string, unknown>;
+
+    const errori: string[] = [];
+    const glossario = new Set<string>();
+    const sources = new Set<string>();
+
+    const prepare = (text: unknown) => replaceCustomSyntax(String(text ?? ""), glossario, sources);
+    const inline = (text: unknown) => renderer.renderInline(prepare(text));
+    const block = (text: unknown) => renderer.render(prepare(text));
+
+    for (const campo of ["titolo", "tipo", "categoria", "fonte", "revisione", "sintesi"])
+    {
+        if (typeof data[campo] !== "string" || !data[campo]) { errori.push(`campo \`${campo}\` mancante`); }
+    }
+    if (!Number.isInteger(data.numero)) { errori.push("campo `numero` mancante"); }
+    if (!TIPI_SCENARIO.includes(String(data.tipo))) { errori.push("tipo non valido"); }
+    if (!(/^scenari:\d+(-\d+)?$/).test(String(data.fonte))) { errori.push("fonte non valida (`scenari:<pagine>`)"); }
+
+    const filtro = (data.filtro ?? {}) as Record<string, unknown>;
+    const voci = ((filtro.voci ?? []) as unknown[]).map((voce) => (Array.isArray(voce) ? voce.map(String) : []));
+    if (!voci.length || voci.some((voce) => voce.length !== 2))
+    {
+        errori.push("filtro: servono voci `[etichetta, valore]`");
+    }
+
+    const ids = FASI_SCENARIO.map(({ id }) => id);
+    const fasi = ((data.fasi ?? []) as Record<string, unknown>[]).map((fase, index) =>
+    {
+        const id = String(fase.fase);
+        const definizione = FASI_SCENARIO.find((value) => value.id === id);
+        if (!definizione) { errori.push(`fase ${index + 1}: \`${id}\` non valida`); }
+
+        const righe = ((fase.righe ?? []) as Record<string, unknown>[]).map((riga, numero) =>
+        {
+            for (const campo of ["azione", "reperto"])
+            {
+                if ((riga[campo] !== undefined) && (typeof riga[campo] !== "string"))
+                {
+                    errori.push(`fase ${id}, riga ${numero + 1}: ${campo} non è testo (mancano le virgolette?)`);
+                }
+            }
+            if (!riga.azione) { errori.push(`fase ${id}, riga ${numero + 1}: azione mancante`); }
+
+            return { azione: inline(riga.azione), reperto: riga.reperto ? inline(riga.reperto) : undefined };
+        });
+        if (!righe.length) { errori.push(`fase ${id}: nessuna riga`); }
+
+        return { ...definizione, id: id, righe: righe };
+    });
+
+    const ordine = fasi.map(({ id }) => ids.indexOf(id));
+    if (ordine.some((value, index) => index && (value <= ordine[index - 1])))
+    {
+        errori.push("fasi fuori ordine o ripetute");
+    }
+    for (const id of ["prearrivo", "scena", "a", "b", "c", "d", "e", "soreu", "rivalutazione", "consegna"])
+    {
+        if (!fasi.some((fase) => fase.id === id)) { errori.push(`fase \`${id}\` mancante`); }
+    }
+
+    const scenario = {
+        numero: Number(data.numero),
+        titolo: String(data.titolo ?? ""),
+        tipo: String(data.tipo ?? ""),
+        categoria: String(data.categoria ?? ""),
+        revisione: String(data.revisione ?? ""),
+        msa: data.msa === true,
+        forzeOrdine: data["forze-ordine"] === true,
+        filtro: { fittizio: filtro.fittizio === true, voci: voci },
+        sintesi: block(data.sintesi),
+        fasi: fasi,
+        citazione: inline(`[@${String(data.fonte ?? "")}]`)
+    };
+
+    const meta = {
+        numero: scenario.numero,
+        titolo: scenario.titolo,
+        tipo: scenario.tipo,
+        categoria: scenario.categoria,
+        grave: fasi.some((fase) => fase.grave)
+    };
+
+    return { meta: meta, scenario: scenario, errori: errori, glossario: [...glossario], fonti: [...sources] };
+}
+
 /*
  * Importare un file `.md` restituisce `{ frontmatter, html, toc }`; per le schede ABCDE
  * (`src/content/abcde/`) restituisce invece `{ frontmatter, intro, sezioni }` e per i quiz
@@ -652,7 +772,8 @@ export default function markdown(): Plugin
             const [path, query] = id.split("?");
             const isQuiz = path.includes("/content/quiz/") && path.endsWith(".yaml");
             const isSkill = path.includes("/content/skill/") && path.endsWith(".yaml");
-            if (!path.endsWith(".md") && !isQuiz && !isSkill) { return null; }
+            const isScenario = path.includes("/content/scenari/") && path.endsWith(".yaml");
+            if (!path.endsWith(".md") && !isQuiz && !isSkill && !isScenario) { return null; }
 
             this.addWatchFile(path);
 
@@ -674,6 +795,12 @@ export default function markdown(): Plugin
                     [slug, { svg: svg, testo: versioneTestuale(diagramma) }]));
             };
 
+            if (isScenario)
+            {
+                const { meta, scenario } = compileScenario(source);
+
+                return `export default ${JSON.stringify(isMeta ? meta : scenario)};`;
+            }
             if (isSkill)
             {
                 const { meta, skill } = compileSkill(source, isMeta ? undefined : await disegnati());

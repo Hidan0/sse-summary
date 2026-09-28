@@ -8,7 +8,7 @@ import { fonti } from "@/content/fonti";
 import { slugify } from "@/content/slug";
 
 import { disegnaDiagramma, leggiDiagramma, listDiagrammi } from "../vite/diagrammi";
-import { compileAbcde, compileMarkdown, compileQuiz, compileSkill } from "../vite/markdown";
+import { compileAbcde, compileMarkdown, compileQuiz, compileScenario, compileSkill } from "../vite/markdown";
 
 const CONTENT_DIR = join(__dirname, "..", "src", "content");
 
@@ -180,6 +180,41 @@ describe("Skill", () =>
 });
 
 const diagrammi = listDiagrammi(CONTENT_DIR).map(leggiDiagramma);
+
+const scenari = readdirSync(join(CONTENT_DIR, "scenari"))
+    .filter((file) => file.endsWith(".yaml"))
+    .map((file) => ({ file: file, ...compileScenario(readFileSync(join(CONTENT_DIR, "scenari", file), "utf-8")) }));
+
+describe("Scenari", () =>
+{
+    it("hanno nomi file `<numero>-<slug>.yaml` coerenti con il numero", () =>
+    {
+        const invalid = scenari.filter(({ file, meta }) =>
+            !(/^\d+-[a-z0-9-]+\.yaml$/).test(file) || (Number.parseInt(file, 10) !== meta.numero));
+
+        expect(invalid.map(({ file }) => file)).toEqual([]);
+    });
+    it("hanno una struttura valida", () =>
+    {
+        const errori = scenari.flatMap(({ file, errori: lista }) => lista.map((errore) => `${file}: ${errore}`));
+
+        expect(errori).toEqual([]);
+    });
+    it("citano le pagine dello scenario nel PDF (2n-1 e 2n)", () =>
+    {
+        const invalid = scenari.filter(({ file, meta, fonti: ids }) =>
+        {
+            const pagine = readFileSync(join(CONTENT_DIR, "scenari", file), "utf-8")
+                .match(/fonte: "scenari:(\d+)-(\d+)"/);
+            const numero = Number(meta.numero);
+
+            return !ids.includes("scenari") || !pagine ||
+                (Number(pagine[1]) !== (2 * numero) - 1) || (Number(pagine[2]) !== 2 * numero);
+        });
+
+        expect(invalid.map(({ file }) => file)).toEqual([]);
+    });
+});
 
 describe("Diagrammi", () =>
 {
