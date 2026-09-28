@@ -40,6 +40,9 @@
 
     @if $scuro
     {
+        // Controlli nativi del browser (caselle, campi, barre di scorrimento) nel colore del tema.
+        color-scheme: dark;
+
         /*
          * Nel tema scuro il testo chiaro su fondo scuro sembra già più spesso: il testo dei riassunti
          * è attenuato e il grassetto usa il colore pieno del testo, altrimenti non si distingue.
@@ -63,6 +66,8 @@
     }
     @else
     {
+        color-scheme: light;
+
         --app-text-body: var(--app-text);
         --app-text-strong: currentColor;
         --app-muted: #{map.get($p, "subtext1")};
