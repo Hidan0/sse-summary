@@ -127,14 +127,13 @@
             </article>
 
             <nav class="navigazione">
-                <button v-if="simulazione"
-                        type="button"
+                <!-- In allenamento si torna indietro per rivedere risposta e soluzione, che restano bloccate. -->
+                <button type="button"
                         class="btn btn-outline-secondary"
                         :disabled="quiz.indice === 0"
                         @click="quiz.indietro">
                     <FontAwesome icon="arrow-left" /> Indietro
                 </button>
-                <span v-else></span>
 
                 <button v-if="simulazione && (quiz.indice === quiz.domande.length - 1)"
                         type="button"
