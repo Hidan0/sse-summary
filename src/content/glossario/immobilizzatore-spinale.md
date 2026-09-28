@@ -1,10 +1,10 @@
 ---
 termine: Immobilizzatore spinale
-sinonimi: [KED, Kendrik Extrication Device, estricatore spinale]
+sinonimi: [KED, Kendrick Extrication Device, estricatore spinale]
 breve: Presidio (KED) che irrigidisce la colonna del paziente seduto per estrarlo, se non ha condizioni a rischio di vita.
 ---
 
-Immobilizza un traumatizzato **prima di spostarlo dalla posizione seduta**, **senza condizioni cliniche a rischio di vita**; dà **rigidità verticale** alla colonna. **Non è un presidio di sollevamento**. [@1.3.2:27,28] [@1.8.1:7] KED = *Kendrik Extrication Device* [@tss-sigle:4]; nelle schede d'esame è chiamato **KED**. [@scenari:10]
+Immobilizza un traumatizzato **prima di spostarlo dalla posizione seduta**, **senza condizioni cliniche a rischio di vita**; dà **rigidità verticale** alla colonna. **Non è un presidio di sollevamento**. [@1.3.2:27,28] [@1.8.1:7] KED = *Kendrick Extrication Device* [@tss-sigle:4]; nelle schede d'esame è chiamato **KED**. [@scenari:10]
 
 | | | Fonte |
 |---|---|---|

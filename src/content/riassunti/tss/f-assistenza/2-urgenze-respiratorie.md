@@ -24,7 +24,7 @@ Approfondimento: [La dispnea](/riassunti/difficolta-respiratoria-adulto#la-dispn
 
 | Patologia | In breve |
 |---|---|
-| BPCO | Infiammazione cronica delle vie aeree inferiori che ostacola il flusso d'aria; dispnea nelle fasi avanzate, a volte tosse e enfisema |
+| BPCO | Infiammazione cronica delle vie aeree inferiori che ostacola il flusso d'aria; dispnea nelle fasi avanzate, a volte tosse ed enfisema |
 | Enfisema polmonare | Distruzione progressiva del tessuto polmonare, più aria e meno elasticità; tipico dei fumatori di lunga data |
 | Edema polmonare acuto | Liquido in eccesso nel polmone che ostacola gli scambi di gas; cause frequenti: insufficienza cardiaca, inalazione di sostanze tossiche |
 | Asma | Spasmo dei bronchi ed edema della mucosa, aria intrappolata in espirazione; dispnea, respiro sibilante, tosse, spesso di notte o al risveglio |

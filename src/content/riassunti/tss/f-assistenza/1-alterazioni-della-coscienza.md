@@ -73,7 +73,7 @@ Le note ABCDE distinguono tre meccanismi della sincope: [@tss-abcde-note:4]
 :::
 
 ::: nota
-Nel corso SSE l'ossigeno si dà sempre ad alti flussi (è la voce delle griglie d'esame dopo la saturimetria in aria) [@scenari:33,53] e l'allarme passa dalla SOREU, che si contatta al termine della C comunicando i segni e sintomi a rischio per la vita. [@2.1:44] Vedi [Lipotimia e sincope](/riassunti/valutazione-abcde-medico) nella valutazione del paziente medico.
+Nel corso SSE l'ossigeno si dà sempre ad alti flussi (è la voce delle griglie d'esame dopo la saturimetria in aria) [@scenari:33,53] e l'allarme passa dalla SOREU, che si contatta al termine della C comunicando i segni e sintomi a rischio per la vita. [@2.1:44] Vedi [Lipotimia e sincope](/riassunti/valutazione-abcde-medico#lipotimia-e-sincope) nella valutazione del paziente medico.
 :::
 
 ## Convulsioni
