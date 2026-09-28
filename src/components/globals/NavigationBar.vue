@@ -103,7 +103,7 @@
             {
                 background: none;
                 border: none;
-                color: var(--bs-link-color);
+                color: var(--app-primary);
                 font: inherit;
             }
             &.attiva

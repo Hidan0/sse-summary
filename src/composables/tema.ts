@@ -15,7 +15,7 @@ const sistema = computed<Tema>(() => (scuroDiSistema.value ? "dark" : "light"));
 const automatico = computed(() => (scelta.value !== "dark") && (scelta.value !== "light"));
 const tema = computed<Tema>(() => (automatico.value ? sistema.value : scelta.value as Tema));
 
-watchEffect(() => document.documentElement.setAttribute("data-bs-theme", tema.value));
+watchEffect(() => document.documentElement.setAttribute("data-tema", tema.value));
 
 export function useTema()
 {

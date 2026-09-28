@@ -35,20 +35,8 @@
     --app-accent: var(--app-primary);
     --app-backdrop: rgba(0, 0, 0, 0.25);
 
-    // Bootstrap: fondo, testo, bordi, link e colori delle utility.
-    --bs-body-bg: var(--app-page-bg);
-    --bs-body-color: var(--app-text);
-    --bs-emphasis-color: var(--app-text);
-    --bs-secondary-color: var(--app-muted);
-    --bs-border-color: var(--app-border);
-    --bs-secondary-bg: #{map.get($p, "surface0")};
-    --bs-tertiary-bg: #{map.get($p, "crust")};
-    --bs-link-color-rgb: #{rgb-triplet(map.get($p, "blue"))};
-    --bs-link-hover-color-rgb: #{rgb-triplet(map.get($p, "sapphire"))};
-    --bs-primary-rgb: #{rgb-triplet(map.get($p, "blue"))};
-    --bs-success-rgb: #{rgb-triplet(map.get($p, "green"))};
-    --bs-danger-rgb: #{rgb-triplet(map.get($p, "red"))};
-    --bs-warning-rgb: #{rgb-triplet(map.get($p, "yellow"))};
+    // Bordo leggero delle schede.
+    --app-border-soft: #{rgba(map.get($p, "text"), 0.175)};
 
     @if $scuro
     {
@@ -60,7 +48,6 @@
         --app-text-strong: #{map.get($p, "text")};
         // Testo secondario (fonti, didascalie): almeno 5:1 sul fondo.
         --app-muted: #{map.get($p, "overlay2")};
-        --bs-secondary-rgb: #{rgb-triplet(map.get($p, "overlay2"))};
         // Testo sopra un colore pieno (pulsanti, esiti dei diagrammi).
         --app-on-color: #{map.get($p, "crust")};
         --app-dark-fill: #{map.get($p, "crust")};
@@ -79,7 +66,6 @@
         --app-text-body: var(--app-text);
         --app-text-strong: currentColor;
         --app-muted: #{map.get($p, "subtext1")};
-        --bs-secondary-rgb: #{rgb-triplet(map.get($p, "subtext1"))};
         --app-on-color: #{map.get($p, "base")};
         --app-dark-fill: #{map.get($p, "text")};
 
@@ -107,46 +93,11 @@
 
     @include tema(variables.$latte, $scuro: false);
 
-    &[data-bs-theme="dark"]
+    &[data-tema="dark"]
     {
         @include tema(variables.$mocha, $scuro: true);
     }
 }
-
-.btn-primary, .btn-danger
-{
-    --btn-colore: var(--app-primary);
-
-    --bs-btn-color: var(--app-on-color);
-    --bs-btn-bg: var(--btn-colore);
-    --bs-btn-border-color: var(--btn-colore);
-    --bs-btn-hover-color: var(--app-on-color);
-    --bs-btn-hover-bg: color-mix(in srgb, var(--btn-colore) 85%, var(--app-text));
-    --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
-    --bs-btn-active-color: var(--app-on-color);
-    --bs-btn-active-bg: color-mix(in srgb, var(--btn-colore) 75%, var(--app-text));
-    --bs-btn-active-border-color: var(--bs-btn-active-bg);
-    --bs-btn-disabled-color: var(--app-on-color);
-    --bs-btn-disabled-bg: var(--btn-colore);
-    --bs-btn-disabled-border-color: var(--btn-colore);
-}
-.btn-danger { --btn-colore: var(--app-danger); }
-.btn-outline-primary, .btn-outline-secondary
-{
-    --btn-colore: var(--app-primary);
-
-    --bs-btn-color: var(--btn-colore);
-    --bs-btn-border-color: var(--btn-colore);
-    --bs-btn-hover-color: var(--app-on-color);
-    --bs-btn-hover-bg: var(--btn-colore);
-    --bs-btn-hover-border-color: var(--btn-colore);
-    --bs-btn-active-color: var(--app-on-color);
-    --bs-btn-active-bg: var(--btn-colore);
-    --bs-btn-active-border-color: var(--btn-colore);
-    --bs-btn-disabled-color: var(--btn-colore);
-    --bs-btn-disabled-border-color: var(--btn-colore);
-}
-.btn-outline-secondary { --btn-colore: var(--app-muted); }
 
 b, strong
 {

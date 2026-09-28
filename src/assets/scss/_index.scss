@@ -1,5 +1,6 @@
 @forward "./variables" as app-*;
 @forward "./vendors";
 
+@forward "./base";
 @forward "./main";
 @forward "./diagrammi";

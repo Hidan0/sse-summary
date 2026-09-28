@@ -46,9 +46,8 @@
         <button v-if="dismissible"
                 class="btn btn-close"
                 type="button"
-                @click="$emit('dismiss', $event)">
-            <span class="fa-solid fa-times"></span>
-        </button>
+                aria-label="Chiudi"
+                @click="$emit('dismiss', $event)"></button>
     </ThemedElement>
 </template>
 
@@ -60,16 +59,6 @@
         & > .alert-heading > .fa-solid
         {
             margin-right: 0.25em;
-        }
-        & > .btn-close
-        {
-            align-items: center;
-            background-image: unset;
-            display: flex;
-            filter: none;
-            font-size: 1.5rem;
-            justify-content: center;
-            padding: 0.75em;
         }
         & > .fa-solid
         {

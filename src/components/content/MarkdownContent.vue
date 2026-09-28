@@ -160,8 +160,7 @@
 
             .table
             {
-                --bs-table-color: var(--app-text-body);
-
+                color: var(--app-text-body);
                 font-size: 0.95em;
                 margin-bottom: 0;
                 min-width: 480px;
