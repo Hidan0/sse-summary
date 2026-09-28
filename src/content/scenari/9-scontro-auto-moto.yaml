@@ -1,0 +1,125 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 9
+titolo: Scontro tra auto e moto
+tipo: trauma
+categoria: "Incidente stradale: auto-moto"
+fonte: "scenari:17-18"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Scontro tra un'auto e una moto"]
+    - ["Paziente", "Motociclista, uomo, circa 35 anni"]
+    - ["Luogo", "Strada, in una rotonda"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Motociclista di 35 anni, senza patologie, a terra sul fianco in una rotonda dopo uno scontro con un'auto; indossa un casco jet, sanguina dal volto e si lamenta.
+  Sveglio (A), agitato, ricorda l'accaduto; vie aeree pervie con modesto sanguinamento dal cavo orale, che si risolve aspirando.
+  Eupnoico, **FR 25**, **SpO2 96%** in aria (97% con l'O2); epistassi, **FC 120**, cute rosea, fredda e asciutta, **PA 125/80**.
+  Deformità del polso destro, avulsione degli incisivi, dolore allo zigomo e al fianco sinistro, ferita al mento.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Motociclista a terra nella rotonda, sul fianco, indossa un casco jet
+      - azione: Colpo d'occhio
+        reperto: Sanguina dal volto, si lamenta
+      - azione: Chiede la dinamica dell'evento
+        reperto: Scontro nella rotonda con un'auto, deformata sul fianco; lo scooter è vicino
+      - azione: Verifica se ci sono altri feriti
+        reperto: L'autista è fuori dall'auto, senza traumi apparenti
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Fa posizionare l'MSB a protezione della scena
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Cosciente, si lamenta
+      - azione: Fa rimuovere il casco
+      - azione: Verifica la pervietà delle vie aeree
+        reperto: Pervie, modesto sanguinamento dal cavo orale; aspira e risolve il problema
+      - azione: Fa posizionare il collare cervicale
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Eupnoico, espansione bilaterale
+      - azione: Palpa delicatamente il torace
+        reperto: Nulla di evidente
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 25 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 96% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 97%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Osserva se ci sono emorragie esterne
+        reperto: Epistassi
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Presente, FC 120 battiti/min
+      - azione: Valuta la cute
+        reperto: Rosea, fredda, asciutta
+      - azione: Misura la PA
+        reperto: PA 125/80 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglio (A), agitato, ricorda l'accaduto
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità e sensibilità presenti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti dolenti
+        reperto: Abrasioni alle mani, deformità del polso destro
+      - azione: Cerca altri segni esterni
+        reperto: Avulsione degli incisivi, dolore allo zigomo sinistro, ferita lacero-contusa al mento, dolore al fianco sinistro
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: 35 anni, nulla in anamnesi
+      - azione: Protezione termica
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Manovre eseguite
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

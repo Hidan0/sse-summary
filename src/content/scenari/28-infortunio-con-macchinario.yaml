@@ -1,0 +1,122 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 28
+titolo: Infortunio con un macchinario
+tipo: trauma
+categoria: "Infortunio: amputazione"
+fonte: "scenari:55-56"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Infortunio sul lavoro con un macchinario"]
+    - ["Paziente", "Uomo adulto"]
+    - ["Luogo", "Ditta di mangimi"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Uomo di 48 anni, iperteso in trattamento: stava lavorando a un'impastatrice quando l'ingranaggio si è inceppato con un lembo del vestiario.
+  È sveglio (A), agitato, pallido e sudato; si tiene l'avambraccio coperto da un telo sporco di sangue.
+  **Amputazione dell'avambraccio** da strappamento, con maciullamento dei tessuti, **sanguinamento controllabile** con la compressione;
+  la parte amputata non è sulla scena (è rimasta nell'impastatrice). FR 22, SpO2 96% in aria, **FC 125**, **PA 100/65**.
+  Alla SOREU va comunicata l'ipotensione con sudorazione e agitazione.
+
+  La griglia **non** ha la riga dei segni che compromettono la sopravvivenza, ma prevede l'MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Interno di una ditta di mangimi, macchinari in funzione, sono presenti i colleghi
+      - azione: Colpo d'occhio
+        reperto: Persona a terra, pallida e agitata, si tiene l'avambraccio coperto da un telo molto sporco di sangue
+      - azione: Chiede la dinamica dell'evento
+        reperto: Stava lavorando a un'impastatrice quando l'ingranaggio si è inceppato con un lembo del vestiario
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Non ci sono pericoli ambientali, le attrezzature in funzione sono lontane dall'evento
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Parla con il paziente, si presenta e si qualifica
+        reperto: Cosciente, agitato
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Tachipnoico
+      - azione: Palpa delicatamente il torace
+        reperto: Nulla di evidente
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 22 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 96% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 98%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Cerca emorragie esterne
+        reperto: Sanguinamento dall'avambraccio, controllabile con la compressione
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Presente; FC 125 battiti/min
+      - azione: Valuta la cute
+        reperto: Pallido, sudato
+      - azione: Misura la PA
+        reperto: PA 100/65 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglio (A), orientato, ricorda l'accaduto
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità e sensibilità presenti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Arto amputato all'altezza dell'avambraccio, sanguinamento in atto ma controllabile, tessuti maciullati
+      - azione: Cerca altri segni esterni
+        reperto: La parte amputata non è sulla scena
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Uomo di 48 anni, iperteso in trattamento
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+        reperto: Deve comunicare ipotensione, sudorazione e agitazione
+      - azione: Lesioni rilevate
+        reperto: Deve comunicare l'amputazione dell'avambraccio da strappamento, con la parte amputata non presente (rimasta nell'impastatrice)
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

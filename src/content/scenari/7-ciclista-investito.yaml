@@ -1,0 +1,131 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 7
+titolo: Ciclista investito
+tipo: trauma
+categoria: "Incidente stradale: investimento ciclista"
+fonte: "scenari:13-14"
+revisione: Rev. 2 del 27-11-2018
+msa: false
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Ciclista investito da un'auto"]
+    - ["Paziente", "Uomo, circa 60-70 anni"]
+    - ["Luogo", "Strada"]
+    - ["Cosciente", "No, non risponde"]
+    - ["Respira", "Sì, con difficoltà"]
+
+sintesi: |
+  Uomo di apparente età 60-70 anni, ciclista investito **ad alta velocità**: prono a terra, non si muove, non risponde (**P**) e respira con difficoltà.
+  Sangue nel cavo orale con avulsioni dentali e **sanguinamento continuo**; dispnoico, con **espansione ridotta dell'emitorace sinistro** ed ematoma, **FR 30**, **SpO2 89%** in aria (93% con l'O2).
+  **FC 130**, cute calda e sudata, **PA 90/65**; deformità della tibia sinistra, contusione toracica, ferite alle labbra.
+
+  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Uomo sdraiato a terra, bicicletta a circa 5 metri
+      - azione: Colpo d'occhio
+        reperto: Prono, non si muove
+      - azione: Chiede la dinamica dell'evento
+        reperto: Investimento ad alta velocità
+      - azione: Verifica se ci sono altri feriti
+        reperto: Autista illeso
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Traffico bloccato dalle FFO, da poco sul posto
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Occhi chiusi, non risponde, respiro difficoltoso
+      - azione: Esegue la pronosupinazione
+        reperto: Se disponibile, mette la tavola spinale (opzionale)
+      - azione: Verifica le vie aeree
+        reperto: Sangue nel cavo orale e avulsioni dentali; aspira il cavo orale, mette la cannula
+      - azione: Fa posizionare il collare cervicale (opzionale)
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Dispnoico, espansione ridotta dell'emitorace sinistro
+      - azione: Palpa delicatamente il torace
+        reperto: Ematoma all'emitorace sinistro
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 30 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 89% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 93%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Osserva se ci sono emorragie esterne importanti
+        reperto: Sanguinamento continuo dal cavo orale
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Presente, FC 130 battiti/min
+      - azione: Valuta la cute
+        reperto: Calda, sudata
+      - azione: Misura la PA
+        reperto: PA 90/65 mmHg
+  - fase: sopravvivenza
+    righe:
+      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
+        reperto: Se non la allerta, lo scenario è invalidato
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Incosciente, allo stimolo doloroso si lamenta (P)
+      - azione: Valuta sensibilità e motilità
+        reperto: Allo stimolo doloroso accenna a muovere i 4 arti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Deformità della tibia sinistra
+      - azione: Cerca altri segni esterni
+        reperto: Contusione toracica, ferita lacero-contusa del labbro superiore e inferiore
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Apparente età 60-70 anni, anamnesi non nota
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+        reperto: Deve comunicare il problema che compromette la sopravvivenza del paziente
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU invia l'MSA2
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

@@ -1,0 +1,122 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 3
+titolo: Bambino caduto dal primo piano
+tipo: trauma
+categoria: "Infortunio: precipitato"
+fonte: "scenari:5-6"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Caduta dall'alto"]
+    - ["Paziente", "Bambino, 3 anni"]
+    - ["Luogo", "Cortile"]
+    - ["Cosciente", "Sì, piange"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Bambino di 3 anni, sano, caduto dal primo piano (circa **3 metri**): è a terra in cortile sul fianco destro e non si muove; la nonna è molto agitata e riferisce un episodio di vomito.
+  È cosciente, sveglio, con un pianto persistente che non si consola; respiro superficiale con dolore e contusione alla palpazione del torace, **FR 30**, **SpO2 94%** in aria (98% con O2).
+  Polso flebile, **FC 140**, cute pallida e asciutta, **PA 90/40**. Ha una contusione con ferita lacero-contusa temporale destra e abrasioni all'avambraccio e al ginocchio destro.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza; la SOREU conferma l'arrivo dell'MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Bambino sdraiato a terra in cortile, sul fianco destro
+      - azione: Colpo d'occhio
+        reperto: Non si muove; presente la nonna, molto agitata
+      - azione: Chiede la dinamica dell'evento
+        reperto: Caduto dal 1° piano, circa 3 metri
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Nessun pericolo
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Paziente cosciente, si lamenta e piange
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+      - azione: Fa posizionare il collare cervicale
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Respiro superficiale
+      - azione: Palpa delicatamente il torace
+        reperto: Dolore alla palpazione, contusione
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 30 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 94% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 98%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Cerca emorragie esterne
+        reperto: Ferita lacero-contusa temporale destra
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Flebile, FC 140 battiti/min
+      - azione: Valuta la cute
+        reperto: Pallida, asciutta
+      - azione: Misura la PA
+        reperto: PA 90/40 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglio (A), pianto persistente che non si consola
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità conservata ai 4 arti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Abrasione all'avambraccio destro e al ginocchio destro
+      - azione: Cerca altri segni esterni
+        reperto: Contusione e ferita lacero-contusa temporale destra
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Bambino di 3 anni, sano; la nonna riferisce un episodio di vomito
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU conferma l'arrivo dell'MSA
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

@@ -176,20 +176,29 @@ export interface RigaScenario
 {
     azione: string;
     reperto?: string;
+    // Se manca: errore grave (penalità fissa, vedi `punteggio-scenario.ts`).
+    grave?: boolean;
+    // Riga aggiunta da noi su indicazione degli istruttori: non conta nei punti della fase.
+    istruttori?: boolean;
 }
 export interface FaseScenario
 {
     id: string;
     titolo: string;
     lettera?: string;
+    // Se manca un'azione di questa fase lo scenario è invalidato (allerta della SOREU).
     grave?: boolean;
+    // Se non è completa: penalità in più (autoprotezione), senza invalidare.
+    sicurezza?: boolean;
+    punti?: number;
+    penalita?: number;
     righe: RigaScenario[];
 }
 export interface ScenarioModule extends Omit<ScenarioMeta, "grave">
 {
     revisione: string;
-    msa: boolean;
-    forzeOrdine: boolean;
+    msa: boolean | null;
+    forzeOrdine: boolean | null;
     filtro: { fittizio: boolean, voci: [string, string][] };
     sintesi: string;
     fasi: FaseScenario[];

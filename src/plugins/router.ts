@@ -62,6 +62,11 @@ const router = createRouter({
             component: () => import("@/pages/ScenariPage.vue")
         },
         {
+            path: "/scenari/punteggio",
+            name: "scenari-punteggio",
+            component: () => import("@/pages/ScenariPunteggioPage.vue")
+        },
+        {
             path: "/scenari/:slug",
             name: "scenario",
             component: () => import("@/pages/ScenarioPage.vue"),

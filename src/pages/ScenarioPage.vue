@@ -4,6 +4,7 @@
 
     import MarkdownContent from "@/components/content/MarkdownContent.vue";
     import FontAwesome from "@/components/ui/FontAwesome.vue";
+    import { calcolaPunteggio, PENALITA_AUTOPROTEZIONE, PENALITA_ERRORE_GRAVE } from "@/content/punteggio-scenario";
     import { scenarioBySlug, TIPI_SCENARIO } from "@/content/scenari";
     import type { FaseScenario, ScenarioModule } from "@/content/types";
 
@@ -92,20 +93,28 @@
 
     const resoconto = computed(() =>
     {
-        const fasi = (contenuto.value?.fasi ?? []).map((fase) =>
-        {
-            const mancate = fase.righe.filter((_, indice) => !spuntate.has(chiave(fase, indice)));
-
-            return { fase: fase, mancate: mancate, totale: fase.righe.length };
-        });
+        const fasi = contenuto.value?.fasi ?? [];
+        const fatta = (fase: FaseScenario, indice: number) => spuntate.has(chiave(fase, indice));
 
         return {
-            fasi: fasi.filter(({ mancate }) => mancate.length),
-            fatte: fasi.reduce((somma, { mancate, totale }) => somma + totale - mancate.length, 0),
-            totale: fasi.reduce((somma, { totale }) => somma + totale, 0),
-            gravi: fasi.filter(({ fase, mancate }) => fase.grave && mancate.length)
+            ...calcolaPunteggio(fasi, fatta),
+            mancate: fasi.map((fase) => ({ fase: fase, righe: fase.righe.filter((_, indice) => !fatta(fase, indice)) }))
+                .filter(({ righe }) => righe.length)
         };
     });
+    const percentuale = computed(() =>
+        Math.max(0, Math.round((resoconto.value.totale / (resoconto.value.massimo || 1)) * 100)));
+
+    // Il filtro comprende anche chi è già allertato (caselle in cima alla griglia).
+    const siNo = (valore: boolean | null) => ((valore === null) ? "Non indicato" : (valore ? "Sì" : "No"));
+    const voci = computed((): [string, string][] => (contenuto.value ?
+        [
+            ...contenuto.value.filtro.voci,
+            ["MSA allertata", siNo(contenuto.value.msa)],
+            ["Forze dell'ordine allertate", siNo(contenuto.value.forzeOrdine)]
+
+        ] :
+        []));
 
     const fonte = computed(() => (contenuto.value ?
         `<p>Griglia del corso, ${contenuto.value.revisione}. ${contenuto.value.citazione}</p>` :
@@ -163,7 +172,7 @@
                         <span v-if="contenuto.filtro.fittizio" class="esempio">esempio</span>
                     </h2>
                     <dl>
-                        <template v-for="[etichetta, valore] in contenuto.filtro.voci" :key="etichetta">
+                        <template v-for="[etichetta, valore] in voci" :key="etichetta">
                             <dt>{{ etichetta }}</dt>
                             <dd>{{ valore }}</dd>
                         </template>
@@ -173,10 +182,6 @@
                 <section v-if="esaminatore" class="sintesi">
                     <h2><FontAwesome icon="user-doctor" /> Il caso, per l'esaminatore</h2>
                     <MarkdownContent :html="contenuto.sintesi" />
-                    <p class="mezzi">
-                        MSA: <strong>{{ contenuto.msa ? "sì" : "no" }}</strong> ·
-                        Forze dell'ordine: <strong>{{ contenuto.forzeOrdine ? "sì" : "no" }}</strong>
-                    </p>
                 </section>
 
                 <template v-for="(fase, indiceFase) in contenuto.fasi" :key="fase.id">
@@ -206,7 +211,13 @@
                                                :checked="spuntate.has(chiave(fase, indice))"
                                                :disabled="terminato"
                                                @change="alterna(chiave(fase, indice))" />
-                                        <span class="azione" v-html="riga.azione"></span>
+                                        <span class="azione">
+                                            <span v-html="riga.azione"></span>
+                                            <span v-if="riga.istruttori" class="etichetta istruttori">
+                                                dagli istruttori
+                                            </span>
+                                            <span v-if="riga.grave" class="etichetta grave">errore grave</span>
+                                        </span>
                                     </label>
                                     <p v-if="riga.reperto"
                                        class="reperto"
@@ -250,34 +261,67 @@
                 <section v-if="terminato"
                          id="resoconto"
                          class="resoconto"
-                         :class="resoconto.gravi.length ? 'ko' : 'ok'">
+                         :class="resoconto.superato ? 'ok' : 'ko'">
                     <h2>
-                        <FontAwesome :icon="resoconto.gravi.length ? 'circle-xmark' : 'circle-check'" />
-                        {{ resoconto.gravi.length ? "Scenario non superato" : "Scenario superato" }}
+                        <FontAwesome :icon="resoconto.superato ? 'circle-check' : 'circle-xmark'" />
+                        {{ resoconto.superato ? "Scenario superato" : "Scenario non superato" }}
                     </h2>
-                    <div v-if="resoconto.gravi.length" class="motivo">
-                        <p>Manca un'azione obbligatoria, senza la quale lo scenario è invalidato:</p>
+                    <p class="punteggio">
+                        <strong>{{ resoconto.totale }}</strong> su {{ resoconto.massimo }} ({{ percentuale }}%) ·
+                        per superarlo ne servono {{ resoconto.soglia }}
+                    </p>
+
+                    <div v-if="resoconto.invalidato" class="motivo">
+                        Manca l'allerta della SOREU davanti a segni che compromettono la sopravvivenza:
+                        <strong>lo scenario è invalidato</strong>, qualunque sia il punteggio.
+                    </div>
+                    <div v-if="resoconto.errori.length" class="motivo">
+                        Errori gravi (−{{ PENALITA_ERRORE_GRAVE }} punti ciascuno):
                         <ul>
-                            <li v-for="riga in resoconto.gravi.flatMap(({ mancate }) => mancate)"
+                            <li v-for="riga in resoconto.errori"
                                 :key="riga.azione"
                                 v-html="riga.azione"></li>
                         </ul>
                     </div>
-                    <p>
-                        {{ esaminatore ? "Azioni fatte" : "Azioni pensate" }}:
-                        <strong>{{ resoconto.fatte }} su {{ resoconto.totale }}</strong>.
-                    </p>
 
-                    <template v-if="resoconto.fasi.length">
+                    <div v-if="resoconto.avvertimenti.length" class="motivo lieve">
+                        <strong>Autoprotezione incompleta</strong> (−{{ PENALITA_AUTOPROTEZIONE }} punti oltre a
+                        quelli della fase): la sicurezza viene prima di tutto.
+                    </div>
+
+                    <table class="dettaglio">
+                        <tbody>
+                            <tr v-for="{ fase, fatte, totali, punti, massimo } in resoconto.fasi" :key="fase.id">
+                                <th>{{ intestazione(fase) }}</th>
+                                <td class="fatte">
+                                    {{ fatte }}/{{ totali }}
+                                </td>
+                                <td class="punti" :class="{ persi: massimo ? punti < massimo : punti < 0 }">
+                                    <template v-if="massimo">
+                                        {{ punti }}/{{ massimo }}
+                                    </template>
+                                    <template v-else>
+                                        {{ punti || "—" }}
+                                    </template>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <RouterLink class="come" :to="{ name: 'scenari-punteggio' }">
+                        <FontAwesome icon="circle-info" /> Come si calcola il punteggio (non è quello dell'esame)
+                    </RouterLink>
+
+                    <template v-if="resoconto.mancate.length">
                         <h3>{{ esaminatore ? "Non fatte" : "Non pensate" }}</h3>
-                        <div v-for="{ fase, mancate } in resoconto.fasi"
+                        <div v-for="{ fase, righe } in resoconto.mancate"
                              :key="fase.id"
                              class="mancate">
                             <p class="nome-fase">
                                 {{ intestazione(fase) }}
                             </p>
                             <ul>
-                                <li v-for="(riga, indice) in mancate"
+                                <li v-for="(riga, indice) in righe"
                                     :key="indice"
                                     v-html="riga.azione"></li>
                             </ul>
@@ -426,12 +470,6 @@
             background-color: color-mix(in srgb, var(--app-mauve) var(--app-callout-mix), var(--app-surface));
             border-left: 4px solid var(--app-mauve);
 
-            .mezzi
-            {
-                color: var(--app-muted);
-                font-size: 0.9em;
-                margin-bottom: 0;
-            }
             :deep(.markdown-content) > :last-child
             {
                 margin-bottom: 0.5rem;
@@ -541,6 +579,18 @@
             }
         }
 
+        .etichetta
+        {
+            font-size: 0.7em;
+            font-weight: 700;
+            margin-left: 0.4rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            &.grave { color: var(--app-danger); }
+            &.istruttori { color: var(--app-success); }
+        }
+
         .azioni-finali
         {
             margin: 1.25rem 0;
@@ -564,6 +614,64 @@
             {
                 font-size: 1.05rem;
                 margin-top: 1rem;
+            }
+            .punteggio
+            {
+                font-size: 1.05rem;
+            }
+            .motivo
+            {
+                background-color: color-mix(in srgb, var(--app-danger) var(--app-callout-mix), var(--app-surface));
+                border-radius: 0.375rem;
+                margin-bottom: 0.75rem;
+                padding: 0.5rem 0.75rem;
+
+                ul
+                {
+                    margin: 0.25rem 0 0;
+                    padding-left: 1.25rem;
+                }
+            }
+            .motivo.lieve
+            {
+                background-color: color-mix(in srgb, var(--app-warning) var(--app-callout-mix), var(--app-surface));
+            }
+            .dettaglio
+            {
+                font-size: 0.9em;
+                margin-bottom: 0.5rem;
+                width: 100%;
+
+                th, td
+                {
+                    border-bottom: 1px solid var(--app-border-soft);
+                    padding: 0.3rem 0.25rem;
+                }
+                th
+                {
+                    font-weight: 500;
+                }
+                .fatte, .punti
+                {
+                    text-align: right;
+                    white-space: nowrap;
+                }
+                .fatte
+                {
+                    color: var(--app-muted);
+                }
+                .punti
+                {
+                    font-weight: 700;
+
+                    &.persi { color: var(--app-danger); }
+                }
+            }
+            .come
+            {
+                display: inline-block;
+                font-size: 0.9em;
+                margin-bottom: 0.5rem;
             }
             .nome-fase
             {

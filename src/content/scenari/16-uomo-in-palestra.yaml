@@ -2,11 +2,11 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
+numero: 16
+titolo: Uomo sofferente in palestra
 tipo: medico
-categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+categoria: "Medico acuto: cardiocircolatoria"
+fonte: "scenari:31-32"
 revisione: Rev. 2 del 27-11-2018
 msa: true
 forze-ordine: false
@@ -14,18 +14,19 @@ forze-ordine: false
 filtro:
   fittizio: true
   voci:
-    - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
-    - ["Luogo", "Abitazione"]
+    - ["Motivo della chiamata", "Malore, si tiene la mano al petto"]
+    - ["Paziente", "Uomo, circa 50 anni"]
+    - ["Luogo", "Palestra, negli spogliatoi"]
     - ["Cosciente", "Sì"]
-    - ["Respira", "Sì, con fatica"]
+    - ["Respira", "Sì"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Uomo di circa 50 anni negli spogliatoi di una palestra: dopo l'esercizio fisico ha un **dolore toracico costrittivo** irradiato al braccio sinistro e alla mandibola,
+  di intensità **9**, iniziato da circa 20 minuti (primo episodio). È molto agitato, respira con difficoltà a **28 atti/min**, saturazione **non rilevabile**,
+  polso radiale **molto flebile e aritmico** (FC 65), **PAS 70**, cute pallida, fredda e sudata. Non tollera la maschera e si accascia sulla panca.
+  Fumatore, ipercolesterolemia, nessuna terapia.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che conferma l'arrivo dell'MSA.
 
 fasi:
   - fase: prearrivo
@@ -36,10 +37,10 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: In palestra, uomo di circa 50 anni seduto negli spogliatoi, occhi aperti, mano al petto, sofferente
       - azione: Colpo d'occhio
       - azione: Verifica se ci sono ostacoli al trasporto
-        reperto: Nessun ostacolo
+        reperto: Nessun impedimento
   - fase: autoprotezione
     punti: 5
     righe:
@@ -48,31 +49,33 @@ fasi:
     punti: 10
     righe:
       - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+        reperto: Cosciente, molto agitato
       - azione: Verifica le vie aeree
         reperto: Vie aeree pervie
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Respiro difficoltoso
       - azione: Palpa delicatamente il torace
+        reperto: Nessun dolore alla digitopressione
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Nessun rumore patologico
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 28 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
+        reperto: Saturazione non rilevabile
       - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: Non tollera la maschera, si accascia sulla panca dello spogliatoio
   - fase: c
     punti: 15
     righe:
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Molto flebile, aritmico; FC 65 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Pallida, fredda, sudata
       - azione: Misura la PA
-        reperto: PA non rilevabile
+        reperto: PAS 70; indaga il dolore toracico
   - fase: sopravvivenza
     righe:
       - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
@@ -81,22 +84,23 @@ fasi:
     punti: 10
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
+        reperto: Cosciente (A)
       - azione: Parla con il paziente
-        reperto: Non collabora, agitato
+        reperto: Si lamenta del dolore
       - azione: Valuta sensibilità e motilità
-        reperto: Conservate ai 4 arti
+        reperto: Motilità e sensibilità conservate
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Sofferente, pallore diffuso
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: Dopo l'esercizio fisico è comparso un dolore toracico costrittivo irradiato al braccio sinistro e alla mandibola; è il primo episodio
       - azione: Valuta il dolore
+        reperto: Intensità del dolore 9; sintomi iniziati da circa 20 minuti
       - azione: Protezione termica
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Nessuna patologia, nessuna terapia; fumatore, ipercolesterolemia
   - fase: soreu
     punti: 5
     righe:
@@ -106,7 +110,7 @@ fasi:
         reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
+        reperto: La SOREU conferma l'arrivo dell'MSA
   - fase: rivalutazione
     penalita: 3
     righe:

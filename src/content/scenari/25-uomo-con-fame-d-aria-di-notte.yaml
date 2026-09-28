@@ -2,11 +2,11 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
+numero: 25
+titolo: Uomo con fame d'aria di notte
 tipo: medico
-categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+categoria: "Medico acuto: respiratoria 2"
+fonte: "scenari:49-50"
 revisione: Rev. 2 del 27-11-2018
 msa: true
 forze-ordine: false
@@ -15,17 +15,18 @@ filtro:
   fittizio: true
   voci:
     - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
+    - ["Paziente", "Uomo, 75 anni"]
     - ["Luogo", "Abitazione"]
     - ["Cosciente", "Sì"]
     - ["Respira", "Sì, con fatica"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Uomo di 75 anni, cardiopatico, iperteso in terapia, con FA e un **recente ricovero per scompenso cardiaco**.
+  Alle 5 del mattino è seduto a letto con due cuscini dietro la schiena, con **fame d'aria** iniziata la sera prima e peggiorata nella notte.
+  È agitato, parla a frasi interrotte (**V**), ha secrezioni schiumose dalla bocca, rantoli e gorgoglii, **FR 36**, **SpO2 67%** in aria
+  (**82%** con l'O2), FC **130** irregolare, cute fredda, sudata e pallida, **PA 220/110**, caviglie gonfie.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che conferma l'arrivo dell'MSA.
 
 fasi:
   - fase: prearrivo
@@ -36,10 +37,11 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: Uomo seduto a letto con due cuscini dietro la schiena, alle 5 del mattino
       - azione: Colpo d'occhio
+        reperto: Difficoltà respiratoria con «fame d'aria», agitato
       - azione: Verifica se ci sono ostacoli al trasporto
-        reperto: Nessun ostacolo
+        reperto: Nessun pericolo, scala interna stretta
   - fase: autoprotezione
     punti: 5
     righe:
@@ -48,31 +50,33 @@ fasi:
     punti: 10
     righe:
       - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+        reperto: Agitato, apre gli occhi alla chiamata, parla ma non riesce a finire le frasi
       - azione: Verifica le vie aeree
-        reperto: Vie aeree pervie
+        reperto: Vie aeree pervie, secrezioni schiumose dalla bocca
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Bilaterale, usa la muscolatura accessoria
       - azione: Palpa delicatamente il torace
+        reperto: Nessun dolore alla palpazione
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Rantoli, gorgoglii
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 36 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
+        reperto: SpO2 in lenta rilevazione (67%)
       - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 in aumento (82%)
   - fase: c
     punti: 15
     righe:
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Presente, tachicardico, irregolare; FC 130 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Fredda, sudata, pallida
       - azione: Misura la PA
-        reperto: PA non rilevabile
+        reperto: PA 220/110
   - fase: sopravvivenza
     righe:
       - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
@@ -81,32 +85,33 @@ fasi:
     punti: 10
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
+        reperto: Paziente (V)
       - azione: Parla con il paziente
-        reperto: Non collabora, agitato
+        reperto: Parla a frasi interrotte
       - azione: Valuta sensibilità e motilità
         reperto: Conservate ai 4 arti
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Uomo di 75 anni, molto sofferente e affaticato, caviglie gonfie
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: Affanno respiratorio da ieri sera, peggiorato durante la notte
       - azione: Valuta il dolore
-      - azione: Protezione termica
+        reperto: Nega dolore
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Difficoltà nella deambulazione; cardiopatico, iperteso in terapia, FA; la moglie riferisce un recente ricovero per scompenso cardiaco
+      - azione: Protezione termica
   - fase: soreu
     punti: 5
     righe:
       - azione: Stato di coscienza
       - azione: Parametri rilevati
+        reperto: Riferisce i parametri e l'AMPIA
       - azione: Problemi riscontrati
-        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
+        reperto: La SOREU conferma l'arrivo dell'MSA
   - fase: rivalutazione
     penalita: 3
     righe:

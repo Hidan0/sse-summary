@@ -1,0 +1,125 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 8
+titolo: Pedone investito
+tipo: trauma
+categoria: "Incidente stradale: investimento pedone"
+fonte: "scenari:15-16"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Pedone investito da un'auto"]
+    - ["Paziente", "Donna, circa 65 anni"]
+    - ["Luogo", "Strada"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Donna di 65 anni, ipertesa, investita mentre attraversava la strada (cofano dell'auto deformato): è a terra a 3-4 metri dall'auto, sveglia e molto sofferente, in mezzo al traffico.
+  Tachipnoica con respiro superficiale, **FR 20**, **SpO2 95%** in aria (97% con l'O2).
+  **Sanguinamento dalla coscia destra**, polso **flebile** con **FC 120**, cute pallida e sudata con **estremità fredde**, **PA 95/50**; risposta rallentata e confusa.
+  Ematoma all'anca destra, ferita lacera alla coscia destra, dolore addominale.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza; alla comunicazione la SOREU conferma l'arrivo dell'MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Donna sdraiata a terra a 3-4 metri dall'auto
+      - azione: Colpo d'occhio
+        reperto: Sveglia, si lamenta
+      - azione: Chiede la dinamica dell'evento
+        reperto: Pedone investito mentre attraversava la strada, cofano dell'auto deformato
+      - azione: Verifica se ci sono altri feriti
+        reperto: Conducente dell'auto illeso
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Traffico in movimento, auto e pedone in mezzo alla carreggiata; fa posizionare l'MSB a protezione della scena
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama la paziente senza scuoterla, si presenta e si qualifica
+        reperto: Risponde, molto sofferente
+      - azione: Verifica la pervietà delle vie aeree
+        reperto: Vie aeree pervie
+      - azione: Fa posizionare il collare cervicale
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Tachipnoica, respiro superficiale
+      - azione: Palpa delicatamente il torace
+        reperto: Nulla di evidente
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 20 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 95% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 97%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Osserva se ci sono emorragie esterne
+        reperto: Sanguinamento dalla coscia destra
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Flebile, FC 120 battiti/min
+      - azione: Valuta la cute
+        reperto: Pallida e sudata, estremità fredde
+      - azione: Misura la PA
+        reperto: PA 95/50 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglia (A), risposta rallentata, confusa
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità e sensibilità presenti ai 4 arti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Ematoma all'anca destra, ferita lacera alla coscia destra
+      - azione: Cerca altri segni esterni
+        reperto: Dolore addominale
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: 65 anni, ipertesa
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: Emostasi; la SOREU conferma l'arrivo dell'MSA
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

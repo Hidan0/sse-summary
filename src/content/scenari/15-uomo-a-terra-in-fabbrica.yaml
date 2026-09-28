@@ -2,11 +2,11 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
+numero: 15
+titolo: Uomo a terra in fabbrica
 tipo: medico
-categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+categoria: "Medico acuto: metabolica"
+fonte: "scenari:29-30"
 revisione: Rev. 2 del 27-11-2018
 msa: true
 forze-ordine: false
@@ -14,18 +14,20 @@ forze-ordine: false
 filtro:
   fittizio: true
   voci:
-    - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
-    - ["Luogo", "Abitazione"]
-    - ["Cosciente", "Sì"]
-    - ["Respira", "Sì, con fatica"]
+    - ["Motivo della chiamata", "Malore con perdita di coscienza"]
+    - ["Paziente", "Uomo, adulto"]
+    - ["Luogo", "Capannone di una fabbrica"]
+    - ["Cosciente", "No"]
+    - ["Respira", "Sì"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Uomo di 38 anni a terra in un capannone; i colleghi riferiscono un malore, poi la perdita di coscienza.
+  **Non risponde** e si muove solo allo **stimolo doloroso (P)**; espansione toracica bilaterale, FR 16, SpO2 98% in aria, FC 105,
+  cute pallida, calda e con **sudorazione profusa**, PA 130/80. Prima di perdere coscienza aveva una **glicemia di 50 mg/dl**
+  e i colleghi non sono riusciti a dargli dello zucchero: è **diabetico** dall'adolescenza, in terapia con insulina 3 volte al giorno.
+  Spazi ristretti: la barella non passa. La SOREU manda l'MSA.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  La griglia **non** ha la riga dei segni che compromettono la sopravvivenza.
 
 fasi:
   - fase: prearrivo
@@ -36,10 +38,11 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: Capannone di una fabbrica, uomo a terra che non si muove
       - azione: Colpo d'occhio
+        reperto: I colleghi riferiscono un malore e poi la perdita di coscienza
       - azione: Verifica se ci sono ostacoli al trasporto
-        reperto: Nessun ostacolo
+        reperto: Spazi ristretti (il percorso con la barella non è accessibile)
   - fase: autoprotezione
     punti: 5
     righe:
@@ -48,69 +51,66 @@ fasi:
     punti: 10
     righe:
       - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+        reperto: Il paziente non risponde, respira
       - azione: Verifica le vie aeree
         reperto: Vie aeree pervie
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Espansione bilaterale
       - azione: Palpa delicatamente il torace
+        reperto: Nulla di evidente
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Nessun rumore particolare
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 16 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
+        reperto: SpO2 98% in aria
       - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 100%
   - fase: c
     punti: 15
     righe:
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Presente, pieno, ritmico; FC 105 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Pallida, calda, sudorazione profusa
       - azione: Misura la PA
-        reperto: PA non rilevabile
-  - fase: sopravvivenza
-    righe:
-      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
-        reperto: Se non la allerta, lo scenario è invalidato
+        reperto: PA 130/80
   - fase: d
     punti: 10
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
+        reperto: Incosciente, si muove allo stimolo doloroso (P)
       - azione: Parla con il paziente
-        reperto: Non collabora, agitato
       - azione: Valuta sensibilità e motilità
-        reperto: Conservate ai 4 arti
+        reperto: Motilità conservata ai 4 arti
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Uomo di 38 anni
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: I colleghi riferiscono un malessere e una glicemia di 50 mg/dl prima della perdita di coscienza; non sono riusciti a dargli dello zucchero
       - azione: Valuta il dolore
+        reperto: Non valutabile
       - azione: Protezione termica
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Diabetico dall'adolescenza, in terapia con insulina 3 volte al giorno
   - fase: soreu
     punti: 5
     righe:
       - azione: Stato di coscienza
       - azione: Parametri rilevati
       - azione: Problemi riscontrati
-        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
+        reperto: La SOREU comunica che l'MSA è in arrivo
   - fase: rivalutazione
     penalita: 3
     righe:
-      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Rivaluta l'ABCDE e i parametri vitali
       - azione: Relazione adeguata con il paziente
       - azione: Usa presidi adeguati per il trasporto
   - fase: consegna

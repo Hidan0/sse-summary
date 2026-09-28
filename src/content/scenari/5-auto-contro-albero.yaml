@@ -1,0 +1,127 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 5
+titolo: Auto contro un albero
+tipo: trauma
+categoria: "Incidente stradale: contro ostacolo"
+fonte: "scenari:9-10"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Auto contro un albero"]
+    - ["Paziente", "Uomo, adulto"]
+    - ["Luogo", "Strada, auto fuori dalla carreggiata"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Uomo di 55 anni, **diabetico**, alla guida di un'auto uscita di strada dopo una curva e finita contro un albero: cintura allacciata, airbag esplosi, parte anteriore molto deformata.
+  Parla, è agitato, disorientato, non ricorda l'accaduto e ha dolore. Respiro superficiale e tachipnoico, **FR 26**, **SpO2 92%** in aria, **dolore sternale**; non vuole l'ossigeno e si toglie la mascherina.
+  **FC 120**, cute fredda, umida e pallida, **PA 115/95**. Ha una **deformità del femore destro** con dolore, escoriazioni al braccio e al mento. Si prepara il KED.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza; la SOREU comunica l'arrivo di VVF e MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+        reperto: Ogni componente trasporta il materiale assegnato
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Auto contro un albero, fuori dalla carreggiata
+      - azione: Colpo d'occhio
+        reperto: Persona in auto con la cintura di sicurezza allacciata, airbag esplosi
+      - azione: Chiede la dinamica dell'evento
+        reperto: Uscita di strada dopo una curva; auto molto deformata nella parte anteriore
+      - azione: Verifica se ci sono altri feriti
+        reperto: Apparentemente unico ferito
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+        reperto: Occhiali protettivi e caschetto
+      - azione: Controlla la presenza di pericoli
+        reperto: Nessun pericolo
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Parla, agitato, ha dolore
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+      - azione: Fa posizionare il collare cervicale
+        reperto: Fa preparare il KED
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Respiro superficiale, tachipnoico
+      - azione: Palpa delicatamente il torace
+        reperto: Dolore sternale
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 26 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 92% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: Non vuole l'ossigeno, si toglie la mascherina
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Cerca emorragie esterne
+        reperto: Nessuna emorragia
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Presente, FC 120 battiti/min
+      - azione: Valuta la cute (temperatura, colore, umidità)
+        reperto: Fredda, umida, pallida
+      - azione: Misura la PA
+        reperto: PA 115/95 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglio (A), disorientato, non ricorda l'accaduto
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità e sensibilità presenti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Escoriazioni al braccio; deformità del femore destro, dolore
+      - azione: Cerca altri segni esterni
+        reperto: Dolore allo sterno; escoriazione al mento
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Uomo di 55 anni, diabetico
+      - azione: Protezione termica
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU comunica l'arrivo di VVF e MSA
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

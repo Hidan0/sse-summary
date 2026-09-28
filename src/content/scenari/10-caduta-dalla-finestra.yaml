@@ -1,0 +1,123 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 10
+titolo: Caduta dalla finestra
+tipo: trauma
+categoria: "Infortunio: precipitato"
+fonte: "scenari:19-20"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Caduta dalla finestra del 2° piano"]
+    - ["Paziente", "Donna"]
+    - ["Luogo", "Cortile"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Donna caduta accidentalmente dalla finestra del **2° piano** durante le pulizie: è a terra sul fianco in cortile, non si muove, pallida.
+  Cosciente (A) ma disorientata, non ricorda l'accaduto; respiro superficiale e addominale, **FR 30**, **SpO2 91%** in aria (97% con l'O2).
+  Polso flebile con **FC 58**, cute calda e sudata, **PA 90/65**.
+  **Assenza di motilità e sensibilità agli arti inferiori**, con anestesia fino alla **linea ombelicale**; ematoma ed escoriazioni al gluteo destro e al bacino.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza; alla comunicazione la SOREU organizza un rendez-vous con l'elisoccorso.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Donna sdraiata sul fianco, a terra in cortile
+      - azione: Colpo d'occhio
+        reperto: Non si muove, respira, pallida
+      - azione: Chiede la dinamica dell'evento
+        reperto: Caduta accidentale dalla finestra del 2° piano durante le pulizie
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Nessun pericolo
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Cosciente, si lamenta
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+      - azione: Fa posizionare il collare cervicale
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Respiro superficiale, addominale
+      - azione: Palpa delicatamente il torace
+        reperto: Nulla di evidente
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 30 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 91% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 97% in ossigeno
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Osserva se ci sono emorragie esterne
+        reperto: Nessuna emorragia
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Flebile, FC 58 battiti/min
+      - azione: Valuta la cute
+        reperto: Calda, sudata
+      - azione: Misura la PA
+        reperto: PA 90/65 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglia (A); disorientata, non ricorda l'accaduto
+      - azione: Valuta sensibilità e motilità
+        reperto: Assenza di motilità e sensibilità agli arti inferiori, anestesia fino alla linea ombelicale
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone gli arti con sospette fratture
+        reperto: Ematoma ed escoriazioni al gluteo destro e al bacino
+      - azione: Cerca altri segni esterni
+        reperto: Escoriazioni alla mano e all'avambraccio destro
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Riferisce dolore al gomito destro
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU organizza un rendez-vous con l'elisoccorso per il trasporto verso un centro idoneo
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

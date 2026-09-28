@@ -1,0 +1,125 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 27
+titolo: Giovane a terra sul campo da tennis
+tipo: medico
+categoria: "Medico acuto: cardiocircolatoria"
+fonte: "scenari:53-54"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Uomo crollato a terra durante una partita a tennis"]
+    - ["Paziente", "Uomo giovane"]
+    - ["Luogo", "Campo da tennis"]
+    - ["Cosciente", "No"]
+    - ["Respira", "No"]
+
+sintesi: |
+  Uomo giovane, muscoloso, senza patologie né terapie, che ha **perso coscienza all'improvviso** durante una partita a tennis, senza sintomi prima.
+  All'arrivo è a terra, **immobile**, e un astante sta facendo le **compressioni toraciche**: il candidato si affianca, al cambio verifica i segni di vita,
+  allerta la SOREU, chiede il DAE e lo fa applicare. Prima analisi: **shock indicato**; dopo 2 minuti di RCP: **shock non indicato**, il paziente dà segni di vita
+  (respiro normale, movimenti degli arti superiori) e si interrompe la RCP.
+  Dopo il ROSC è incosciente (**U**), non tollera la cannula, **FR 10**, SpO2 non rilevabile, polso radiale **assente** e carotideo presente (FC 100), **PA 70/40**, cute fredda e pallida.
+
+  Il candidato deve allertare la SOREU per il ROSC e i parametri; è in arrivo l'MSA.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Uomo giovane steso a terra sul campo da tennis, accanto una persona che sta facendo le compressioni toraciche
+      - azione: Colpo d'occhio
+        reperto: Nessun movimento della vittima
+      - azione: Verifica se ci sono ostacoli al trasporto
+        reperto: Nessun ostacolo
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+  - fase: dae
+    punti: 20
+    righe:
+      - azione: Verifica coscienza e respiro
+        reperto: Si affianca all'astante e, rapidamente, durante il cambio osserva i segni di vita; continua le compressioni toraciche
+      - azione: Allerta la SOREU
+      - azione: Chiede il DAE
+        reperto: "Fa applicare il DAE. 1ª analisi: «shock indicato»; cambio dell'operatore alle compressioni. Dopo 2 minuti di RCP, analisi: «shock non indicato»; il paziente dà segni di vita (respiro presente e normale, movimenti degli arti superiori) e si interrompe la RCP"
+  - fase: a
+    punti: 5
+    righe:
+      - azione: Valuta la coscienza
+        reperto: Incosciente
+      - azione: Verifica la pervietà delle vie aeree
+        reperto: Pervie (fa posizionare la cannula orofaringea, non tollerata)
+  - fase: b
+    punti: 10
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Respiro presente, meccanica bilaterale
+      - azione: Palpa delicatamente il torace
+        reperto: Nulla di particolare
+      - azione: Ascolta i rumori respiratori
+        reperto: Nessun rumore
+      - azione: Conta gli atti respiratori
+        reperto: FR 10 atti/min
+      - azione: Misura la saturazione
+        reperto: Non rilevabile
+      - azione: Fa mettere la maschera con O2
+        reperto: Posiziona l'O2 ad alti flussi
+  - fase: c
+    punti: 10
+    righe:
+      - azione: Rileva il polso
+        reperto: Radiale assente, carotideo presente; FC 100/min
+      - azione: Misura la PA
+        reperto: PA 70/40
+      - azione: Valuta la cute
+        reperto: Fredda, pallida. Allerta la SOREU per il ROSC e i parametri
+  - fase: d
+    punti: 10
+    righe:
+      - azione: Valuta secondo l'AVPU
+        reperto: Incosciente (U)
+      - azione: Valuta sensibilità e motilità
+        reperto: Non valutabili
+  - fase: e
+    punti: 5
+    righe:
+      - azione: Osserva l'aspetto generale
+        reperto: Fisico muscoloso
+      - azione: Chiede cos'è successo
+        reperto: Improvvisa perdita di coscienza durante la partita a tennis, nessun sintomo prima
+      - azione: Valuta il dolore
+      - azione: Protezione termica
+      - azione: Storia clinica
+        reperto: Nessuna patologia, nessuna terapia
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Problemi riscontrati
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: In arrivo l'MSA
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

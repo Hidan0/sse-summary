@@ -200,6 +200,22 @@ describe("Scenari", () =>
 
         expect(errori).toEqual([]);
     });
+    it("hanno 80 punti in tutto, come le griglie", () =>
+    {
+        const invalid = scenari.filter(({ scenario }) =>
+            (scenario.fasi as { punti?: number }[]).reduce((somma, { punti }) => somma + (punti ?? 0), 0) !== 80);
+
+        expect(invalid.map(({ file }) => file)).toEqual([]);
+    });
+    it("segnano come grave l'immobilizzazione del rachide, dove la griglia la chiede", () =>
+    {
+        const invalid = scenari.filter(({ scenario }) =>
+            (scenario.fasi as { righe: { azione: string, grave?: boolean }[] }[])
+                .some(({ righe }) => righe.some(({ azione, grave }) =>
+                    (/immobilizzare.*rachide/i).test(azione) && !grave)));
+
+        expect(invalid.map(({ file }) => file)).toEqual([]);
+    });
     it("citano le pagine dello scenario nel PDF (2n-1 e 2n)", () =>
     {
         const invalid = scenari.filter(({ file, meta, fonti: ids }) =>

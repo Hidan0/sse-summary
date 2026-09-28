@@ -2,30 +2,30 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
-tipo: medico
-categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+numero: 6
+titolo: Tuffo in piscina
+tipo: trauma
+categoria: "Infortunio: precipitato"
+fonte: "scenari:11-12"
 revisione: Rev. 2 del 27-11-2018
-msa: true
+msa: false
 forze-ordine: false
 
 filtro:
   fittizio: true
   voci:
-    - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
-    - ["Luogo", "Abitazione"]
+    - ["Motivo della chiamata", "Tuffo in piscina, dolore alla schiena"]
+    - ["Paziente", "Donna, 35 anni"]
+    - ["Luogo", "Piscina, a bordo vasca"]
     - ["Cosciente", "Sì"]
-    - ["Respira", "Sì, con fatica"]
+    - ["Respira", "Sì"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Donna di 35 anni che, tuffandosi in una vasca profonda **1,5 metri**, ha sentito un forte dolore alla schiena; recuperata dagli astanti, è supina a bordo vasca e non si muove.
+  Cosciente (A) e agitata, respiro superficiale con **FR 28** e **SpO2 92%** in aria (in aumento con l'O2), **FC 65**, cute pallida e bagnata, **PA 100/75**.
+  Ha un **deficit di motilità agli arti inferiori** e la **sensibilità assente fino alla linea dei capezzoli**; contusione e tumefazione alla fronte.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  La griglia **non** segnala segni che compromettono la sopravvivenza e non prevede l'MSA.
 
 fasi:
   - fase: prearrivo
@@ -36,77 +36,83 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: Donna sveglia, supina a bordo vasca, recuperata dagli astanti
       - azione: Colpo d'occhio
+        reperto: Sdraiata supina, non si muove
       - azione: Verifica se ci sono ostacoli al trasporto
-        reperto: Nessun ostacolo
+        reperto: Terreno erboso
+      - azione: Chiede la dinamica dell'evento
+        reperto: Tuffo nella vasca profonda 1,5 metri
   - fase: autoprotezione
     punti: 5
     righe:
       - azione: Indossa i dispositivi di protezione individuale
   - fase: a
-    punti: 10
+    punti: 15
     righe:
+      - azione: Fa immobilizzare manualmente il rachide cervicale
+        grave: true
       - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+        reperto: Cosciente, agitata
       - azione: Verifica le vie aeree
         reperto: Vie aeree pervie
+      - azione: Fa posizionare il collare cervicale
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Movimenti del torace superficiali
       - azione: Palpa delicatamente il torace
+        reperto: Nulla di particolare
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Assenti
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 28 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
+        reperto: SpO2 92% in aria
       - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: Saturazione in aumento
   - fase: c
     punti: 15
     righe:
+      - azione: Osserva se ci sono emorragie esterne
+        reperto: Assenti
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Presente, FC 65 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Pallida e bagnata
       - azione: Misura la PA
-        reperto: PA non rilevabile
-  - fase: sopravvivenza
-    righe:
-      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
-        reperto: Se non la allerta, lo scenario è invalidato
+        reperto: PA 100/75
   - fase: d
-    punti: 10
+    punti: 5
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
-      - azione: Parla con il paziente
-        reperto: Non collabora, agitato
+        reperto: Paziente sveglia (A)
+      - azione: Parla con la paziente
+        reperto: Cosciente, ricorda l'accaduto
       - azione: Valuta sensibilità e motilità
-        reperto: Conservate ai 4 arti
+        reperto: Deficit di motilità agli arti inferiori, sensibilità assente fino alla linea dei capezzoli
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Donna spaventata e sofferente
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: Riferisce di aver sentito un forte dolore alla schiena tuffandosi in piscina
+      - azione: Cerca altri segni esterni
+        reperto: Contusione e tumefazione alla fronte
       - azione: Valuta il dolore
       - azione: Protezione termica
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Donna di 35 anni, fumatrice, nessuna patologia
   - fase: soreu
     punti: 5
     righe:
       - azione: Stato di coscienza
       - azione: Parametri rilevati
       - azione: Problemi riscontrati
-        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
   - fase: rivalutazione
     penalita: 3
     righe:

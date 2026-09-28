@@ -2,30 +2,30 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
+numero: 18
+titolo: Donna con difficoltà respiratoria in un vivaio
 tipo: medico
 categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+fonte: "scenari:35-36"
 revisione: Rev. 2 del 27-11-2018
-msa: true
+msa: false
 forze-ordine: false
 
 filtro:
   fittizio: true
   voci:
     - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
-    - ["Luogo", "Abitazione"]
+    - ["Paziente", "Donna"]
+    - ["Luogo", "Vivaio"]
     - ["Cosciente", "Sì"]
     - ["Respira", "Sì, con fatica"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Donna di 62 anni, asmatica in terapia, in piedi appoggiata a una sedia in un vivaio, agitata, con **importante difficoltà respiratoria** ingravescente da circa 20 minuti,
+  senza miglioramento dopo 2 puff di Ventolin. Parla a fatica e non riesce a finire le frasi; sibili espiratori, **FR 30**, **SpO2 86%** in aria che sale al 90% con l'O2,
+  FC 115, PA 160/90, cute sudata e pallida. È anche ipertesa e diabetica in terapia orale.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  La griglia **non** ha la riga dei segni che compromettono la sopravvivenza e non prevede l'MSA.
 
 fasi:
   - fase: prearrivo
@@ -36,8 +36,9 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: Donna all'interno di un vivaio, agitata, in piedi appoggiata a una sedia
       - azione: Colpo d'occhio
+        reperto: Difficoltà respiratoria
       - azione: Verifica se ci sono ostacoli al trasporto
         reperto: Nessun ostacolo
   - fase: autoprotezione
@@ -47,66 +48,63 @@ fasi:
   - fase: a
     punti: 10
     righe:
-      - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+      - azione: Chiama il paziente, lo tranquillizza, si presenta e si qualifica
+        reperto: Cosciente, agitata, con importante difficoltà respiratoria
       - azione: Verifica le vie aeree
         reperto: Vie aeree pervie
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Meccanica bilaterale, dispnoica
       - azione: Palpa delicatamente il torace
+        reperto: Nessun dolore alla palpazione
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Sibili espiratori
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 30 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
+        reperto: SpO2 86% in aria
       - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: Saturazione in aumento (90%)
   - fase: c
     punti: 15
     righe:
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Presente, tachicardico, regolare; FC 115 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Sudata, pallida
       - azione: Misura la PA
-        reperto: PA non rilevabile
-  - fase: sopravvivenza
-    righe:
-      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
-        reperto: Se non la allerta, lo scenario è invalidato
+        reperto: PA 160/90
   - fase: d
     punti: 10
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
+        reperto: A
       - azione: Parla con il paziente
-        reperto: Non collabora, agitato
+        reperto: Cosciente, parla a fatica, non riesce a finire le frasi
       - azione: Valuta sensibilità e motilità
-        reperto: Conservate ai 4 arti
+        reperto: Nessun deficit motorio e sensitivo
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Donna sovrappeso
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: Dispnea ingravescente da circa 20 minuti, nessun miglioramento dopo aver preso 2 puff di Ventolin spray
       - azione: Valuta il dolore
-      - azione: Protezione termica
+        reperto: Non lamenta dolore
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Donna di 62 anni, asmatica in terapia; ipertensione, diabetica in terapia orale
+      - azione: Protezione termica
   - fase: soreu
     punti: 5
     righe:
       - azione: Stato di coscienza
       - azione: Parametri rilevati
       - azione: Problemi riscontrati
-        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
   - fase: rivalutazione
     penalita: 3
     righe:

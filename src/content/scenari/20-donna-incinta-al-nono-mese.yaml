@@ -1,0 +1,125 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+# Nella griglia le caselle MSA e forze dell'ordine non sono spuntate (`null`).
+numero: 20
+titolo: Donna incinta al nono mese
+tipo: medico
+categoria: "Medico acuto: gravida parto"
+fonte: "scenari:39-40"
+revisione: Rev. 2 del 27-11-2018
+msa: null
+forze-ordine: null
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Dolori da parto"]
+    - ["Paziente", "Donna giovane, incinta di 9 mesi"]
+    - ["Luogo", "Abitazione"]
+    - ["Cosciente", "Sì"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Donna giovane alla **prima gravidanza**, al nono mese (parto previsto **tra due giorni**), con dolori costanti e regolari
+  da un'ora, **ogni 5 minuti**. Non ha ancora voglia di spingere e non ha perso liquido; nessuna patologia.
+  È vigile (A) e tachipnoica, FR 24, SpO2 100% (rifiuta la maschera), FC 100, PA 125/85, sudata, senza segni di emorragia in atto.
+
+  La griglia **non** ha la riga dei segni che compromettono la sopravvivenza: alla SOREU si riferiscono parametri e dati
+  della gravidanza, e la SOREU dispone l'invio in **PS ginecologico**.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+        reperto: Ogni componente trasporta il materiale assegnato
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Donna giovane seduta sul divano, si sorregge la pancia con le mani; in casa con la madre
+      - azione: Colpo d'occhio
+        reperto: Donna gravida di 9 mesi con dolori da parto
+      - azione: Verifica se ci sono ostacoli al trasporto
+        reperto: Nessun pericolo né ostacolo
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+  - fase: a
+    punti: 10
+    righe:
+      - azione: Chiama la paziente, si presenta, si qualifica e la tranquillizza
+        reperto: Parla
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Tachipnoica
+      - azione: Palpa delicatamente il torace
+        reperto: Non lamenta dolore al torace
+      - azione: Ascolta i rumori respiratori
+        reperto: Nessun rumore patologico
+      - azione: Conta gli atti respiratori
+        reperto: FR 24 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 100%
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: Rifiuta la maschera dell'ossigeno
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Rileva il polso radiale
+        reperto: Presente, pieno, regolare; FC 100 battiti/min
+      - azione: Valuta la cute
+        reperto: Sudata, nessun segno evidente di emorragia in atto
+      - azione: Misura la PA
+        reperto: PA 125/85
+  - fase: d
+    punti: 10
+    righe:
+      - azione: Valuta secondo l'AVPU
+        reperto: Paziente (A)
+      - azione: Parla con la paziente
+        reperto: Cosciente
+      - azione: Valuta sensibilità e motilità
+        reperto: Conservate ai 4 arti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Chiede da quanto ha dolore
+        reperto: Dolori costanti e regolari da un'ora, ogni 5 minuti
+      - azione: Chiede se ha desiderio di spingere
+        reperto: Non ha ancora desiderio di spingere
+      - azione: Chiede della rottura del sacco amniotico
+        reperto: Non ha perso liquido
+      - azione: Chiede la data prevista del parto
+        reperto: Tra due giorni
+      - azione: Chiede dei parti precedenti
+        reperto: Prima gravidanza
+      - azione: Storia clinica
+        reperto: Nessuna patologia; AMPIA negativa
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Problemi riscontrati
+        reperto: Riferisce i parametri e i dati relativi alla gravidanza
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: La SOREU dispone l'invio in PS ginecologico
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

@@ -639,10 +639,22 @@ export const TIPI_SCENARIO = ["trauma", "medico"];
  * Fasi della griglia degli scenari, nell'ordine in cui compaiono. `grave`: se il candidato
  * non fa quello che c'è in questa fase, lo scenario è invalidato.
  */
-export const FASI_SCENARIO: { id: string, titolo: string, lettera?: string, grave?: boolean }[] = [
+/*
+ * Fasi con i punti della griglia (colonna "%") e fasi con una penalità se mancano.
+ * Il punteggio è un formato nostro: vedi `src/content/punteggio-scenario.ts`.
+ */
+export const FASI_CON_PUNTI = ["prearrivo", "scena", "autoprotezione", "dae", "a", "b", "c", "d", "e", "soreu"];
+export const FASI_CON_PENALITA = ["rivalutazione", "consegna"];
+// Riga aggiunta a ogni scenario su indicazione degli istruttori (nelle griglie non c'è).
+export const RIGA_SICUREZZA = "Chiede se la scena è sicura";
+
+export const FASI_SCENARIO: { id: string, titolo: string, lettera?: string, grave?: boolean, sicurezza?: boolean }[] = [
     { id: "prearrivo", titolo: "Prearrivo" },
     { id: "scena", titolo: "Valutazione della scena" },
-    { id: "autoprotezione", titolo: "Autoprotezione" },
+    // Indicazione degli istruttori: se l'autoprotezione non è completa è un errore (non da bocciatura).
+    { id: "autoprotezione", titolo: "Autoprotezione", sicurezza: true },
+    // Solo negli scenari con arresto cardiaco (griglia "A-B + defibrillatore").
+    { id: "dae", titolo: "Coscienza, respiro e defibrillatore" },
     { id: "a", titolo: "Vie aeree", lettera: "A" },
     { id: "b", titolo: "Respiro", lettera: "B" },
     { id: "c", titolo: "Circolo", lettera: "C" },
@@ -684,6 +696,13 @@ export function compileScenario(source: string): CompiledScenario
         if (typeof data[campo] !== "string" || !data[campo]) { errori.push(`campo \`${campo}\` mancante`); }
     }
     if (!Number.isInteger(data.numero)) { errori.push("campo `numero` mancante"); }
+    for (const campo of ["msa", "forze-ordine"])
+    {
+        if (!(campo in data) || ![true, false, null].includes(data[campo] as boolean | null))
+        {
+            errori.push(`campo \`${campo}\`: serve true, false o null`);
+        }
+    }
     if (!TIPI_SCENARIO.includes(String(data.tipo))) { errori.push("tipo non valido"); }
     if (!(/^scenari:\d+(-\d+)?$/).test(String(data.fonte))) { errori.push("fonte non valida (`scenari:<pagine>`)"); }
 
@@ -712,11 +731,40 @@ export function compileScenario(source: string): CompiledScenario
             }
             if (!riga.azione) { errori.push(`fase ${id}, riga ${numero + 1}: azione mancante`); }
 
-            return { azione: inline(riga.azione), reperto: riga.reperto ? inline(riga.reperto) : undefined };
+            return {
+                azione: inline(riga.azione),
+                reperto: riga.reperto ? inline(riga.reperto) : undefined,
+                grave: riga.grave === true ? true : undefined
+            };
         });
         if (!righe.length) { errori.push(`fase ${id}: nessuna riga`); }
 
-        return { ...definizione, id: id, righe: righe };
+        const punti = fase.punti === undefined ? undefined : Number(fase.punti);
+        const penalita = fase.penalita === undefined ? undefined : Number(fase.penalita);
+        if (FASI_CON_PUNTI.includes(id) !== (punti !== undefined))
+        {
+            errori.push(`fase ${id}: \`punti\` mancanti o di troppo`);
+        }
+        if (FASI_CON_PENALITA.includes(id) !== (penalita !== undefined))
+        {
+            errori.push(`fase ${id}: \`penalita\` mancante o di troppo`);
+        }
+        for (const valore of [punti, penalita])
+        {
+            if ((valore !== undefined) && (!Number.isInteger(valore) || (valore <= 0)))
+            {
+                errori.push(`fase ${id}: punti non validi`);
+            }
+        }
+
+        // La sicurezza della scena va chiesta in ogni scenario: è un errore grave anche se la griglia non la prevede.
+        if (id === "scena")
+        {
+            const sicurezza = { azione: RIGA_SICUREZZA, reperto: undefined, grave: true, istruttori: true };
+            righe.unshift(sicurezza as typeof righe[number]);
+        }
+
+        return { ...definizione, id: id, punti: punti, penalita: penalita, righe: righe };
     });
 
     const ordine = fasi.map(({ id }) => ids.indexOf(id));
@@ -735,8 +783,9 @@ export function compileScenario(source: string): CompiledScenario
         tipo: String(data.tipo ?? ""),
         categoria: String(data.categoria ?? ""),
         revisione: String(data.revisione ?? ""),
-        msa: data.msa === true,
-        forzeOrdine: data["forze-ordine"] === true,
+        // Caselle in cima alla griglia (allertati all'inizio); `null` se nella griglia non sono spuntate.
+        msa: (data.msa === null) ? null : (data.msa === true),
+        forzeOrdine: (data["forze-ordine"] === null) ? null : (data["forze-ordine"] === true),
         filtro: { fittizio: filtro.fittizio === true, voci: voci },
         sintesi: block(data.sintesi),
         fasi: fasi,

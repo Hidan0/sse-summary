@@ -53,8 +53,17 @@
             </p>
         </aside>
 
+        <p class="punteggio">
+            <FontAwesome icon="circle-info" />
+            Alla fine c'è un punteggio indicativo:
+            <RouterLink :to="{ name: 'scenari-punteggio' }">
+                come si calcola
+            </RouterLink>.
+        </p>
+
         <p class="text-secondary demo">
-            <FontAwesome icon="flask" /> Anteprima: per ora c'è un solo scenario e il filtro della SOREU è d'esempio.
+            <FontAwesome icon="flask" />
+            Anteprima: i filtri della SOREU sono d'esempio, ricostruiti da noi dalle griglie.
         </p>
 
         <h2>1. Modalità</h2>
@@ -141,6 +150,16 @@
             p:last-child
             {
                 margin-bottom: 0;
+            }
+        }
+
+        .punteggio
+        {
+            font-size: 0.9em;
+
+            .fa
+            {
+                color: var(--app-accent);
             }
         }
 

@@ -1,0 +1,120 @@
+# Scenario d'esame del corso SSE (griglia rev. 2 del 27-11-2018), riscritto in forma strutturata.
+# `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
+# `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
+# `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
+numero: 4
+titolo: Bambino con una pentola di acqua bollente
+tipo: trauma
+categoria: "Infortunio: ustione"
+fonte: "scenari:7-8"
+revisione: Rev. 2 del 27-11-2018
+msa: true
+forze-ordine: true
+
+filtro:
+  fittizio: true
+  voci:
+    - ["Motivo della chiamata", "Si è rovesciato addosso acqua bollente"]
+    - ["Paziente", "Bambino, 7 anni"]
+    - ["Luogo", "Abitazione"]
+    - ["Cosciente", "Sì, piange"]
+    - ["Respira", "Sì"]
+
+sintesi: |
+  Bambino di 7 anni, senza patologie, che si è rovesciato addosso una pentola di **acqua bollente**; è in braccio alla mamma, seduta sul divano.
+  È sveglio, piange, ha dolore e racconta l'accaduto; vie aeree pervie **senza segni di ustione**. Eupnoico con **FR 30**, **SpO2 100%** in aria.
+  FC 125, cute calda e sudata, **PA 105/55**. Ha **arrossamento con flittene** all'avambraccio destro e arrossamento dell'emitorace sinistro e della parte superiore dell'addome:
+  va rilevata l'estensione della lesione; le zone ustionate si raffreddano con fisiologica e si coprono con telini sterili.
+
+  La griglia **non** segnala segni che compromettono la sopravvivenza.
+
+fasi:
+  - fase: prearrivo
+    punti: 5
+    righe:
+      - azione: Assegna gli incarichi
+  - fase: scena
+    punti: 5
+    righe:
+      - azione: Chiede una descrizione della scena
+        reperto: Bambino di 7 anni in braccio alla mamma, seduta sul divano
+      - azione: Colpo d'occhio
+        reperto: Bimbo sveglio, piange, ha dolore
+      - azione: Chiede la dinamica dell'evento
+        reperto: Si è rovesciato addosso una pentola di acqua bollente
+  - fase: autoprotezione
+    punti: 5
+    righe:
+      - azione: Indossa i dispositivi di protezione individuale
+      - azione: Controlla la presenza di pericoli
+        reperto: Nessun pericolo evidente
+  - fase: a
+    punti: 15
+    righe:
+      - azione: Chiama il paziente senza scuoterlo, si presenta e si qualifica
+        reperto: Bimbo cosciente, piange, racconta l'accaduto
+      - azione: Verifica le vie aeree
+        reperto: Vie aeree pervie, nessun segno di ustione
+  - fase: b
+    punti: 15
+    righe:
+      - azione: Osserva la meccanica respiratoria
+        reperto: Eupnoico
+      - azione: Palpa delicatamente il torace
+        reperto: Arrossamento al torace e all'addome
+      - azione: Ascolta i rumori respiratori
+        reperto: Assenti
+      - azione: Conta gli atti respiratori
+        reperto: FR 30 atti/min
+      - azione: Misura la saturazione senza O2
+        reperto: SpO2 100% in aria
+      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 100%
+  - fase: c
+    punti: 15
+    righe:
+      - azione: Cerca emorragie esterne
+        reperto: Nessuna emorragia evidente
+      - azione: Rileva il polso radiale e conta la FC
+        reperto: Presente, FC 125 battiti/min
+      - azione: Valuta la cute
+        reperto: Calda, sudata
+      - azione: Misura la PA
+        reperto: PA 105/55 mmHg
+  - fase: d
+    punti: 5
+    righe:
+      - azione: Valuta secondo l'AVPU e pone domande adatte
+        reperto: Sveglio (A), ricorda l'accaduto
+      - azione: Valuta sensibilità e motilità
+        reperto: Motilità e sensibilità presenti
+  - fase: e
+    punti: 10
+    righe:
+      - azione: Non spoglia completamente il paziente, ma espone le zone interessate
+        reperto: Arrossamento con flittene all'avambraccio destro, dolore
+      - azione: Cerca altri segni esterni
+        reperto: Arrossamento dell'emitorace sinistro e della parte superiore dell'addome; rileva l'estensione della lesione
+      - azione: Protezione termica
+      - azione: Raccoglie altre notizie sul paziente
+        reperto: Bimbo di 7 anni, nessuna patologia
+  - fase: soreu
+    punti: 5
+    righe:
+      - azione: Conferma la dinamica
+      - azione: Stato di coscienza
+      - azione: Parametri rilevati
+      - azione: Lesioni rilevate
+      - azione: Patologie pregresse
+      - azione: Manovre eseguite
+        reperto: Raffredda le zone ustionate con fisiologica; copre le lesioni con telini sterili
+  - fase: rivalutazione
+    penalita: 3
+    righe:
+      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Relazione adeguata con il paziente
+      - azione: Usa presidi adeguati per il trasporto
+  - fase: consegna
+    penalita: 2
+    righe:
+      - azione: Consegna il paziente (PS o MSA) trasmettendo le informazioni raccolte in modo completo e corretto

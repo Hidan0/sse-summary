@@ -2,30 +2,32 @@
 # `azione` è ciò che la griglia si aspetta dal candidato (leader), `reperto` ciò che trova o gli viene detto.
 # `punti`: colonna "%" della griglia; `penalita`: il (-n) di rivalutazione e consegna.
 # `filtro` e `sintesi` sono nostri: il filtro vero non è nel materiale.
-numero: 14
-titolo: Bambino con difficoltà respiratoria
+numero: 24
+titolo: Uomo con affanno al quarto piano
 tipo: medico
 categoria: "Medico acuto: respiratoria"
-fonte: "scenari:27-28"
+fonte: "scenari:47-48"
 revisione: Rev. 2 del 27-11-2018
-msa: true
+msa: false
 forze-ordine: false
 
 filtro:
   fittizio: true
   voci:
     - ["Motivo della chiamata", "Difficoltà respiratoria"]
-    - ["Paziente", "Bambino, 5 anni"]
+    - ["Paziente", "Uomo, 67 anni"]
     - ["Luogo", "Abitazione"]
     - ["Cosciente", "Sì"]
     - ["Respira", "Sì, con fatica"]
 
 sintesi: |
-  Bambino di 5 anni in **grave difficoltà respiratoria**, con una crisi asmatica recente che ha richiesto un ricovero.
-  È soporoso e agitato, respira a **45 atti/min** usando i muscoli accessori, con fischi e sibili, **SpO2 89%** in aria, FC 140 con polso flebile,
-  cute marezzata e labbra cianotiche, PA non rilevabile.
+  Uomo di 67 anni con **bronchite cronica (BPCO)**, in ossigenoterapia domiciliare al bisogno e ricoverato un mese fa per polmonite.
+  La difficoltà respiratoria dura da qualche giorno ed è aumentata da circa 2 ore, con tosse continua.
+  È cosciente (A) ma parla a fatica, respira a **32 atti/min** con i muscoli accessori e rantoli quando tossisce, **SpO2 85%** in aria
+  (**92%** con l'O2); FC **140** con polso flebile, cute sudata e fredda con cianosi labiale, **PA 180/100**, edemi declivi.
+  Abita al 4° piano senza ascensore.
 
-  Ci sono **segni che compromettono la sopravvivenza**: il candidato deve allertare la SOREU, che manda l'MSA.
+  La griglia non ha la riga dei segni che compromettono la sopravvivenza e non prevede l'arrivo dell'MSA.
 
 fasi:
   - fase: prearrivo
@@ -36,10 +38,11 @@ fasi:
     punti: 5
     righe:
       - azione: Chiede una descrizione della scena
-        reperto: In casa, bimbo di 5 anni in braccio alla zia; evidente dispnea, tosse secca e stizzosa
+        reperto: Uomo seduto in casa sua; la moglie riferisce difficoltà respiratoria da qualche giorno
       - azione: Colpo d'occhio
+        reperto: Cosciente, con evidente dispnea
       - azione: Verifica se ci sono ostacoli al trasporto
-        reperto: Nessun ostacolo
+        reperto: 4° piano senza ascensore
   - fase: autoprotezione
     punti: 5
     righe:
@@ -48,69 +51,66 @@ fasi:
     punti: 10
     righe:
       - azione: Chiama il paziente, si presenta, si qualifica e lo tranquillizza
-        reperto: Soporoso, a tratti irrequieto, affaticato
+        reperto: Cosciente, parla a fatica per l'affanno
       - azione: Verifica le vie aeree
         reperto: Vie aeree pervie
   - fase: b
     punti: 15
     righe:
       - azione: Osserva la meccanica respiratoria
-        reperto: Dispnoico, usa la muscolatura accessoria, muove la testa a ogni atto, rientramento del giugulo
+        reperto: Bilaterale, tachipnoico, usa i muscoli accessori
       - azione: Palpa delicatamente il torace
+        reperto: Nessun dolore alla palpazione
       - azione: Ascolta i rumori respiratori
-        reperto: Fischi e sibili
+        reperto: Quando tossisce, rumori tipo rantolo
       - azione: Conta gli atti respiratori
-        reperto: FR 45 atti/min
+        reperto: FR 32 atti/min
       - azione: Misura la saturazione senza O2
-        reperto: SpO2 89% in aria; non tiene il saturimetro
-      - azione: Fa mettere la maschera con O2 ad alti flussi
+        reperto: SpO2 85% in aria
+      - azione: Fa mettere la maschera con O2 (almeno 8 litri)
+        reperto: Con l'O2 la saturazione sale al 92%
   - fase: c
     punti: 15
     righe:
       - azione: Rileva il polso radiale
-        reperto: Presente, flebile, tachicardico, ritmico; FC 140 battiti/min
+        reperto: Presente, flebile, regolare; FC 140 battiti/min
       - azione: Valuta la cute
-        reperto: Cute marezzata, labbra cianotiche
+        reperto: Sudata e fredda, cianosi labiale
       - azione: Misura la PA
-        reperto: PA non rilevabile
-  - fase: sopravvivenza
-    righe:
-      - azione: Allerta o fa allertare la SOREU (problema non risolvibile, rischio di vita)
-        reperto: Se non la allerta, lo scenario è invalidato
+        reperto: PA 180/100
   - fase: d
     punti: 10
     righe:
       - azione: Valuta secondo l'AVPU
-        reperto: Apre gli occhi alla chiamata (A)
+        reperto: Paziente (A)
       - azione: Parla con il paziente
-        reperto: Non collabora, agitato
+        reperto: Cosciente, riferisce fame d'aria, fa fatica a parlare
       - azione: Valuta sensibilità e motilità
         reperto: Conservate ai 4 arti
   - fase: e
     punti: 10
     righe:
       - azione: Osserva l'aspetto generale
-        reperto: Agitato
+        reperto: Uomo di 67 anni, edemi declivi
       - azione: Chiede cos'è successo
-        reperto: La zia riferisce tosse e catarro da qualche giorno
+        reperto: Da circa 2 ore la difficoltà respiratoria è aumentata, tosse continua
       - azione: Valuta il dolore
-      - azione: Protezione termica
+        reperto: Non lamenta dolore
       - azione: Storia clinica
-        reperto: Recente crisi asmatica con ricovero in ospedale
+        reperto: Bronchite cronica (BPCO), ossigenoterapia domiciliare al bisogno; ricoverato un mese fa per polmonite
+      - azione: Protezione termica
   - fase: soreu
     punti: 5
     righe:
       - azione: Stato di coscienza
       - azione: Parametri rilevati
       - azione: Problemi riscontrati
-        reperto: Deve comunicare i segni e i sintomi che compromettono la sopravvivenza
       - azione: Patologie pregresse
       - azione: Manovre eseguite
-        reperto: La SOREU comunica l'arrivo dell'MSA
   - fase: rivalutazione
     penalita: 3
     righe:
-      - azione: Rivaluta l'ABCDE e monitora i parametri vitali
+      - azione: Rivaluta l'ABCDE e i parametri vitali
       - azione: Relazione adeguata con il paziente
       - azione: Usa presidi adeguati per il trasporto
   - fase: consegna
