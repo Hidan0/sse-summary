@@ -109,3 +109,11 @@ Nel trauma la sequenza è **[[AcBCDE]]**: la "c" ricorda di proteggere la **colo
 ### Attenzione
 
 - Se le condizioni cambiano, **ricomincia dall'ABCDE primario**. [@1.2.2:4]
+
+## Negli scenari d'esame
+
+::: istruttori
+- **Non chiedere agli istruttori**: parla direttamente con il paziente.
+- **Esegui davvero le manovre** sul paziente: prendi il polso e rileva i parametri.
+- Quando tratti un problema (un'emorragia, un'FLC…) non limitarti a dire "tratto l'emorragia": **chiedi se il problema si risolve**.
+:::

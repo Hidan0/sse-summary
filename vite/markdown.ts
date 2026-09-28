@@ -222,6 +222,7 @@ export const SEZIONI_ABCDE: Record<string, string> = {
     "E": "e",
     "Dopo": "dopo"
 };
+export const CHIUSURA_ABCDE = "Negli scenari d'esame";
 export const VOCI_ABCDE: Record<string, string> = {
     "Cerca": "cerca",
     "Chiedi": "chiedi",
@@ -245,6 +246,7 @@ export interface CompiledAbcde
     frontmatter: Record<string, unknown>;
     intro: string;
     sezioni: SezioneAbcde[];
+    chiusura: string;
     errori: string[];
 }
 
@@ -257,6 +259,7 @@ function renderFragment(source: string): string
  * Le schede ABCDE hanno una struttura fissa: sezioni `## Scena`, `## A` … `## E`, `## Dopo`,
  * ognuna con sottosezioni `### Cerca`, `### Chiedi`, `### Fai`, `### Attenzione`.
  * Il testo prima della prima sezione (o della prima sottosezione) è un'introduzione.
+ * Una sezione finale `## Negli scenari d'esame` (senza sottosezioni) chiude la pagina.
  */
 export function compileAbcde(source: string): CompiledAbcde
 {
@@ -265,6 +268,7 @@ export function compileAbcde(source: string): CompiledAbcde
     const errori: string[] = [];
     const sezioni: SezioneAbcde[] = [];
     const intro: string[] = [];
+    let chiusura: string[] | undefined;
 
     let sezione: { id: string, intro: string[], voci: { tipo: string, righe: string[] }[] } | undefined;
     const chiudiSezione = () =>
@@ -283,7 +287,18 @@ export function compileAbcde(source: string): CompiledAbcde
         const h2 = (/^## (.+)$/).exec(riga);
         const h3 = (/^### (.+)$/).exec(riga);
 
-        if (h2)
+        if (h2 && (h2[1].trim() === CHIUSURA_ABCDE))
+        {
+            chiudiSezione();
+            sezione = undefined;
+            chiusura = [];
+        }
+        else if (chiusura)
+        {
+            if (h2 || h3) { errori.push(`Titolo dopo "${CHIUSURA_ABCDE}": ${riga}`); }
+            chiusura.push(riga);
+        }
+        else if (h2)
         {
             chiudiSezione();
 
@@ -316,6 +331,7 @@ export function compileAbcde(source: string): CompiledAbcde
         frontmatter: data,
         intro: renderFragment(intro.join("\n")),
         sezioni: sezioni,
+        chiusura: chiusura ? renderFragment(chiusura.join("\n")) : "",
         errori: errori
     };
 }
@@ -577,7 +593,7 @@ export default function markdown(): Plugin
 
             if (path.includes("/content/abcde/"))
             {
-                const { frontmatter, intro, sezioni } = compileAbcde(source);
+                const { frontmatter, intro, sezioni, chiusura } = compileAbcde(source);
                 if (isMeta)
                 {
                     const presenti = sezioni.map((sezione) => sezione.id);
@@ -585,7 +601,7 @@ export default function markdown(): Plugin
                     return `export default ${JSON.stringify({ frontmatter: frontmatter, sezioni: presenti })};`;
                 }
 
-                return `export default ${JSON.stringify({ frontmatter, intro, sezioni })};`;
+                return `export default ${JSON.stringify({ frontmatter, intro, sezioni, chiusura })};`;
             }
 
             const disegni = isMeta ? undefined : await disegnati();

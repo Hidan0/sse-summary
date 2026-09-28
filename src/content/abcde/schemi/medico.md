@@ -106,3 +106,11 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 3. Mantieni una **relazione adeguata con il paziente**. [@scenari:25]
 4. Usa **presidi adeguati per il trasporto**. [@scenari:25]
 5. **Consegna** a PS o MSA: trasmetti le informazioni raccolte in modo **completo e corretto**. [@scenari:26]
+
+## Negli scenari d'esame
+
+::: istruttori
+- **Non chiedere agli istruttori**: parla direttamente con il paziente.
+- **Esegui davvero le manovre** sul paziente: prendi il polso e rileva i parametri.
+- Quando tratti un problema (un'emorragia, un'FLC…) non limitarti a dire "tratto l'emorragia": **chiedi se il problema si risolve**.
+:::

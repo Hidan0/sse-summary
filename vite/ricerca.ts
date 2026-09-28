@@ -104,7 +104,7 @@ function documentoGlossario(path: string): DocumentoRicerca
  */
 function documentiAbcde(path: string): DocumentoRicerca[]
 {
-    const { frontmatter, intro, sezioni } = compileAbcde(readFileSync(path, "utf-8"));
+    const { frontmatter, intro, sezioni, chiusura } = compileAbcde(readFileSync(path, "utf-8"));
 
     const isSchema = basename(dirname(path)) === "schemi";
     const slug = isSchema ? basename(path, ".md") : parseOrdineSlug(path).slug;
@@ -121,7 +121,7 @@ function documentiAbcde(path: string): DocumentoRicerca[]
     };
 
     return [
-        { ...comune, id: `abcde:${slug}`, sezione: "", testo: testoDaHtml(intro) },
+        { ...comune, id: `abcde:${slug}`, sezione: "", testo: testoDaHtml([intro, chiusura].join(" ")) },
         ...sezioni.map(({ id, intro: introSezione, voci }) =>
         {
             const info = SEZIONI.find((sezione) => sezione.id === id);

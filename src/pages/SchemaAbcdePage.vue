@@ -52,6 +52,11 @@
                               :sezione="sezione"
                               :schema="schema" />
             </div>
+
+            <section v-if="contenuto.chiusura" class="chiusura">
+                <h2>Negli scenari d'esame</h2>
+                <MarkdownContent :html="contenuto.chiusura" />
+            </section>
         </template>
     </div>
 </template>
@@ -86,6 +91,17 @@
             display: grid;
             gap: 1.5rem;
             margin-top: 1.5rem;
+        }
+
+        .chiusura
+        {
+            margin-top: 2rem;
+
+            h2
+            {
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
         }
     }
 </style>

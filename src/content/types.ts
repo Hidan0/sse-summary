@@ -64,6 +64,7 @@ export interface AbcdeModule<T>
     frontmatter: T;
     intro: string;
     sezioni: SezioneAbcde[];
+    chiusura: string;
 }
 export interface AbcdeMeta<T>
 {
