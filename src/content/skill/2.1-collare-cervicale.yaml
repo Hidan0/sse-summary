@@ -25,4 +25,6 @@ passi:
 errori:
   - "Misura scorretta del collare"
   - "Non immobilizza la testa"
-consigli: []
+consigli:
+  - >-
+    Non spiegare come prendi la misura: basta dire **"Prendo la misura e la riporto sul presidio"**. Se ti chiedono come: è la distanza tra la proiezione del mento sul collo e il trapezio.
