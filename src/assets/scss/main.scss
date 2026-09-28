@@ -21,6 +21,12 @@
     --app-surface: #FFF;
     --app-text: #{variables.$not-quite-black};
     /*
+     * Testo dei riassunti e grassetto. Nel tema scuro il testo chiaro su fondo scuro sembra già
+     * più spesso e il grassetto si confonde: il testo corrente è un po' attenuato e il grassetto è bianco.
+     */
+    --app-text-body: var(--app-text);
+    --app-text-strong: currentColor;
+    /*
      * Nel tema chiaro grigio e blu del testo sono un po' più scuri dei colori di Bootstrap,
      * per un contrasto di almeno 5.5:1 anche sul testo piccolo (fonti, didascalie).
      */
@@ -42,11 +48,13 @@
         --app-page-bg: #1B1C1F;
         --app-surface: #26282C;
         --app-text: #E3E5E8;
-        --app-muted: #9AA1A9;
+        --app-text-body: #B6BCC3;
+        --app-text-strong: #FFF;
+        --app-muted: #8E959D;
         --app-accent: #6EA8FE;
         --bs-link-color-rgb: 110, 168, 254;
         --bs-link-hover-color-rgb: 139, 185, 254;
-        --bs-secondary-rgb: 154, 161, 169;
+        --bs-secondary-rgb: 142, 149, 157;
         --app-accent-soft: #{rgba(#6EA8FE, 0.15)};
         --app-navigation-bg: #{rgba(#1B1C1F, 0.6)};
         --app-shadow: rgba(0, 0, 0, 0.4);
@@ -55,6 +63,11 @@
         --app-callout-text-mix: 60%;
         --app-mark: #{rgba(#FFC107, 0.3)};
     }
+}
+
+b, strong
+{
+    color: var(--app-text-strong);
 }
 
 body

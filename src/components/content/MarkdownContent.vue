@@ -109,7 +109,13 @@
 
     .markdown-content
     {
+        color: var(--app-text-body);
         line-height: 1.6;
+
+        h1, h2, h3, h4
+        {
+            color: var(--app-text);
+        }
 
         h1
         {
@@ -145,6 +151,8 @@
 
             .table
             {
+                --bs-table-color: var(--app-text-body);
+
                 font-size: 0.95em;
                 margin-bottom: 0;
                 min-width: 480px;
