@@ -53,9 +53,16 @@
                 </template>
                 <template v-else>
                     <p class="kind">
-                        <FontAwesome icon="file-lines" /> Fonte
+                        <FontAwesome icon="file-lines" /> {{ infoSheet.content.fonti.length > 1 ? "Fonti" : "Fonte" }}
                     </p>
-                    <h2>{{ infoSheet.content.title }}</h2>
+                    <h2 v-if="infoSheet.content.fonti.length === 1">
+                        {{ infoSheet.content.fonti[0] }}
+                    </h2>
+                    <ul v-else class="fonti">
+                        <li v-for="fonte in infoSheet.content.fonti" :key="fonte">
+                            {{ fonte }}
+                        </li>
+                    </ul>
                     <p class="text-secondary small">
                         Le pagine si riferiscono al PDF del materiale del corso.
                     </p>
@@ -109,6 +116,12 @@
         h2
         {
             font-size: 1.4rem;
+        }
+        .fonti
+        {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding-left: 1.25rem;
         }
     }
 

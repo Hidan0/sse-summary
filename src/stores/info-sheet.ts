@@ -2,7 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 interface GlossarioContent { type: "glossario", term: string, label: string }
-interface FonteContent { type: "fonte", id: string, title: string }
+interface FonteContent { type: "fonte", fonti: string[] }
 
 export type InfoSheetContent = GlossarioContent | FonteContent;
 

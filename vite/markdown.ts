@@ -51,6 +51,11 @@ interface EnvMarkdown
 
 const GLOSSARY_RE = /\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g;
 const SOURCE_RE = /\[@([^:\]\s]+):([^\]]+)\]/g;
+/*
+ * Citazioni di fila nello stesso punto (`[@a:1] [@b:2]`), con gli spazi che le precedono:
+ * diventano un'unica icona, attaccata alla parola prima con uno spazio che non va a capo.
+ */
+const SOURCE_GROUP_RE = /[ \t]*\[@[^:\]\s]+:[^\]]+\](?:[ \t]*\[@[^:\]\s]+:[^\]]+\])*/g;
 
 function escapeHtml(text: string): string
 {
@@ -59,6 +64,102 @@ function escapeHtml(text: string): string
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;");
+}
+
+/*
+ * Icona di una o più fonti citate nello stesso punto; il dettaglio si apre al tocco.
+ */
+function fonteHtml(citazioni: string[]): string
+{
+    const attributes = [
+        "class=\"source-ref\"",
+        "role=\"button\"",
+        "tabindex=\"0\"",
+        `data-fonti="${escapeHtml(JSON.stringify(citazioni))}"`,
+        `title="${citazioni.map(escapeHtml).join("&#10;")}"`,
+        `aria-label="${citazioni.length > 1 ? "Fonti" : "Fonte"}: ${escapeHtml(citazioni.join("; "))}"`
+    ];
+
+    return `<a ${attributes.join(" ")}></a>`;
+}
+function citazioniDaHtml(html: string): string[]
+{
+    const json = html.match(/data-fonti="([^"]*)"/)?.[1] ?? "[]";
+
+    return JSON.parse(json.replace(/&quot;/g, "\"").replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&")) as string[];
+}
+
+type Token = ReturnType<InstanceType<typeof MarkdownIt>["parse"]>[number];
+
+const isFonte = (token: Token) => (token.type === "html_inline") && token.content.startsWith("<a class=\"source-ref\"");
+const isSoloFonti = (inline: Token) => (inline.children ?? []).some(isFonte) && (inline.children ?? [])
+    .every((child) => isFonte(child) || (child.type === "html_inline" && child.content === "</a>") ||
+        (child.type === "text" && !child.content.trim()));
+
+/*
+ * Le fonti scritte su una riga a sé sotto un elenco o una tabella finirebbero da sole a capo:
+ * si spostano sulla frase che introduce l'elenco, sul titolo della sezione o, dentro un riquadro,
+ * alla fine dell'ultima voce (unendole a un'eventuale icona già presente alla fine).
+ */
+type StateCore = Parameters<Parameters<InstanceType<typeof MarkdownIt>["core"]["ruler"]["push"]>[1]>[0];
+
+function spostaFontiIsolate({ tokens, Token: Costruttore }: StateCore): void
+{
+    const CHIUSURE = new Map([
+        ["bullet_list_close", "bullet_list_open"],
+        ["ordered_list_close", "ordered_list_open"],
+        ["table_close", "table_open"]
+    ]);
+
+    for (let index = tokens.length - 3; index > 0; index -= 1)
+    {
+        const [open, inline, close] = tokens.slice(index, index + 3);
+        if (open.type !== "paragraph_open" || close?.type !== "paragraph_close" || !isSoloFonti(inline)) { continue; }
+
+        const prima = tokens[index - 1];
+        const apertura = CHIUSURE.get(prima.type);
+        if (!apertura) { continue; }
+
+        let inizio = index - 2;
+        const isApertura = (token: Token) => (token.type === apertura) && (token.level === prima.level);
+        while (inizio >= 0 && !isApertura(tokens[inizio])) { inizio -= 1; }
+
+        // Di solito subito prima c'è il titolo o la frase che introduce; altrimenti si usa il titolo della sezione.
+        let precedente = inizio - 1;
+        if (!["heading_close", "paragraph_close"].includes(tokens[precedente]?.type))
+        {
+            const isTitolo = (token: Token, i: number) => (i < inizio) && (token.type === "heading_close") &&
+                (token.tag !== "h1");
+            precedente = (prima.level === 0) ? tokens.findLastIndex(isTitolo) : -1;
+        }
+        // Dentro un riquadro, in ultima battuta, l'icona va alla fine dell'ultima voce.
+        const ultimaVoce = tokens.findLastIndex((token, i) => (i > inizio) && (i < index) && (token.type === "inline"));
+        const destinazione = (precedente > 0) ? tokens[precedente - 1].children : tokens[ultimaVoce]?.children;
+        if (!destinazione) { continue; }
+
+        const citazioni = inline.children!.filter(isFonte).flatMap((child) => citazioniDaHtml(child.content));
+
+        const ultima = destinazione.at(-2);
+        if (ultima && isFonte(ultima) && destinazione.at(-1)?.content === "</a>")
+        {
+            ultima.content = fonteHtml([...citazioniDaHtml(ultima.content), ...citazioni]);
+        }
+        else
+        {
+            const spazio = new Costruttore("text", "", 0);
+            spazio.content = "\u00A0";
+            const fonte = new Costruttore("html_inline", "", 0);
+            fonte.content = fonteHtml(citazioni);
+            const fine = new Costruttore("html_inline", "", 0);
+            fine.content = "</a>";
+
+            destinazione.push(spazio, fonte, fine);
+        }
+
+        tokens.splice(index, 3);
+    }
 }
 
 function createRenderer(): InstanceType<typeof MarkdownIt>
@@ -129,6 +230,8 @@ function createRenderer(): InstanceType<typeof MarkdownIt>
     md.renderer.rules.table_close = () => "</table></div>\n";
     /* eslint-enable camelcase */
 
+    md.core.ruler.push("fonti_isolate", spostaFontiIsolate);
+
     return md;
 }
 
@@ -148,24 +251,24 @@ function replaceCustomSyntax(source: string, glossario: Set<string>, sources: Se
 
             return `<a class="glossary-term" data-term="${slug}">${escapeHtml((label ?? term).trim())}</a>`;
         })
-        .replace(SOURCE_RE, (_, id: string, pages: string) =>
+        .replace(SOURCE_GROUP_RE, (group: string, offset: number, testo: string) =>
         {
-            sources.add(id);
+            const citazioni = [...group.matchAll(SOURCE_RE)].map(([, id, pages]) =>
+            {
+                sources.add(id!);
 
-            const fonte = fonti[id];
-            const pagine = pages.split(",").map((page) => page.trim())
-                .join(", ");
-            const label = id === "scenari" ? `Scenari p. ${pagine}` : `${id} · p. ${pagine}`;
-            const title = fonte ? `${fonte.modulo} · ${fonte.titolo} · p. ${pagine}` : `Fonte sconosciuta: ${id}`;
+                const fonte = fonti[id!];
+                const pagine = pages!.split(",").map((page) => page.trim())
+                    .join(", ");
 
-            const attributes = [
-                "type=\"button\"",
-                "class=\"source-ref\"",
-                `data-source="${escapeHtml(id)}"`,
-                `title="${escapeHtml(title)}"`
-            ];
+                return fonte ? `${fonte.modulo} · ${fonte.titolo} · p. ${pagine}` : `Fonte sconosciuta: ${id}`;
+            });
 
-            return `<button ${attributes.join(" ")}>${escapeHtml(label)}</button>`;
+            // A inizio riga (per esempio sotto una tabella) si tiene il rientro, che conta per il Markdown.
+            const rientro = group.match(/^[ \t]*/)![0];
+            const spazio = (offset === 0 || testo[offset - 1] === "\n") ? rientro : (rientro ? "\u00A0" : "");
+
+            return `${spazio}${fonteHtml(citazioni)}`;
         });
 }
 

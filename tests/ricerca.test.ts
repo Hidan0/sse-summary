@@ -38,7 +38,7 @@ describe("Indice di ricerca", () =>
     it("non include fonti, tag e titoli dei riquadri nel testo", () =>
     {
         const html = "<aside><p class=\"callout-title\">In breve</p><p>CTE <strong>30:2</strong>" +
-            "<button type=\"button\" class=\"source-ref\" data-source=\"5.1\">5.1 · p. 46</button>.</p></aside>";
+            "<a class=\"source-ref\" role=\"button\" tabindex=\"0\" data-fonti=\"[]\"></a>.</p></aside>";
 
         expect(testoDaHtml(html)).toBe("CTE 30:2.");
         expect(documenti.filter(({ testo }) => (/<\/?[a-z]+[ >]| · p\. \d/).test(testo))).toEqual([]);

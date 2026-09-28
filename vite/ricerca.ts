@@ -20,7 +20,7 @@ const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">
 export function testoDaHtml(html: string): string
 {
     return html
-        .replace(/<button [^>]*class="source-ref"[\s\S]*?<\/button>/g, "")
+        .replace(/<a [^>]*class="source-ref"[\s\S]*?<\/a>/g, "")
         .replace(/<p class="callout-title">[\s\S]*?<\/p>/g, "")
         .replace(/<thead>[\s\S]*?<\/thead>/g, "")
         .replace(/<[^>]+>/g, " ")

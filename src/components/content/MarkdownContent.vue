@@ -76,7 +76,7 @@
     onMounted(aggiorna);
     watch(() => props.html, () => nextTick(aggiorna));
 
-    const onClick = (evt: MouseEvent) =>
+    const onClick = (evt: MouseEvent | KeyboardEvent) =>
     {
         const target = (evt.target as HTMLElement).closest<HTMLElement>(".glossary-term, .source-ref");
         if (!target) { return; }
@@ -89,8 +89,16 @@
         }
         else
         {
-            infoSheet.open({ type: "fonte", id: target.dataset.source!, title: target.title });
+            infoSheet.open({ type: "fonte", fonti: JSON.parse(target.dataset.fonti ?? "[]") as string[] });
         }
+    };
+    // Le icone delle fonti sono link con ruolo di pulsante: si aprono anche da tastiera.
+    const onKeydown = (evt: KeyboardEvent) =>
+    {
+        if ((evt.key !== "Enter") && (evt.key !== " ")) { return; }
+        if (!(evt.target as HTMLElement).classList.contains("source-ref")) { return; }
+
+        onClick(evt);
     };
 </script>
 
@@ -100,6 +108,7 @@
     <div ref="root"
          class="markdown-content"
          @click="onClick"
+         @keydown="onKeydown"
          v-html="html"></div>
     <!-- eslint-enable vue/no-v-html -->
 </template>
@@ -183,18 +192,36 @@
 
         .source-ref
         {
-            background-color: color-mix(in srgb, var(--app-muted) 15%, transparent);
+            background: none;
             border: none;
-            border-radius: 0.5em;
+            border-radius: 0.25em;
             color: var(--app-muted);
-            font-size: 0.75em;
-            padding: 0.1em 0.5em;
-            vertical-align: 0.15em;
-            white-space: nowrap;
+            font-size: 0.7em;
+            line-height: 1;
+            opacity: 0.7;
+            padding: 0.2em 0.25em;
+            vertical-align: 0.35em;
 
+            cursor: pointer;
+
+            &::before
+            {
+                content: "\f15c";
+                font-family: "Font Awesome 7 Free";
+                font-weight: 900;
+            }
             &:hover
             {
-                background-color: color-mix(in srgb, var(--app-muted) 30%, transparent);
+                color: var(--app-accent);
+                opacity: 1;
+            }
+
+            // Nei titoli (fonti di un elenco o di una tabella) resta della stessa grandezza del testo.
+            h2 &, h3 &, h4 &
+            {
+                font-size: 0.5em;
+                font-weight: 400;
+                vertical-align: 0.5em;
             }
         }
 
