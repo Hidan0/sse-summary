@@ -97,6 +97,10 @@
         {
             display: grid;
             gap: 0.75rem;
+
+            // Senza `minmax(0, …)` la tabella (`min-width` in MarkdownContent) allarga la colonna
+            // invece di scorrere dentro `.table-wrapper`.
+            grid-template-columns: minmax(0, 1fr);
         }
 
         .voce
