@@ -106,8 +106,8 @@
         font-size: 11px;
         font-weight: 700;
 
-        &.si { fill: #{variables.$success}; }
-        &.no { fill: #DC3545; }
+        &.si { fill: var(--app-success); }
+        &.no { fill: var(--app-danger); }
     }
 
     .d-nodo
@@ -136,8 +136,8 @@
     {
         path
         {
-            fill: color-mix(in srgb, #{variables.$success} 16%, var(--app-surface));
-            stroke: #{variables.$success};
+            fill: color-mix(in srgb, var(--app-success) 16%, var(--app-surface));
+            stroke: var(--app-success);
         }
 
         text
@@ -172,16 +172,16 @@
     {
         text { font-weight: 700; }
 
-        &.d-verde rect { fill: #198754; stroke: #198754; }
-        &.d-giallo rect { fill: #FFC107; stroke: #D39E00; }
-        &.d-rosso rect { fill: #DC3545; stroke: #DC3545; }
-        &.d-nero rect { fill: #212529; stroke: #6C757D; }
+        &.d-verde rect { fill: var(--app-success); stroke: var(--app-success); }
+        &.d-giallo rect { fill: var(--app-warning); stroke: var(--app-warning); }
+        &.d-rosso rect { fill: var(--app-danger); stroke: var(--app-danger); }
+        &.d-nero rect { fill: var(--app-dark-fill); stroke: var(--app-secondary); }
 
         &.d-verde, &.d-rosso, &.d-nero
         {
-            text { fill: #FFF; }
+            text { fill: var(--app-on-color); }
         }
 
-        &.d-giallo text { fill: #212529; }
+        &.d-giallo text { fill: var(--app-on-color); }
     }
 }

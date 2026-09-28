@@ -139,8 +139,8 @@
 
     .tab-bar
     {
-        background-color: var(--app-navigation-bg);
-        backdrop-filter: blur(10px);
+        // Opaca: sotto c'è il fondo scuro del footer nascosto, che altrimenti trasparirebbe.
+        background-color: var(--app-surface);
         bottom: 0px;
         box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.25);
         display: none;

@@ -31,7 +31,6 @@
 </template>
 
 <style lang="scss" scoped>
-    @use "sass:color";
     @use "@/assets/scss/variables";
 
     @keyframes pulse
@@ -48,7 +47,7 @@
     {
         align-items: center;
         bottom: var(--tab-bar-height);
-        color: #FFF;
+        color: var(--app-text);
         display: flex;
         flex-direction: column;
         height: var(--hidden-footer-height);
@@ -72,18 +71,16 @@
         .fa-heart
         {
             animation: pulse 2s infinite;
-            color: red;
+            color: var(--app-footer-heart);
             cursor: help;
         }
 
         .link
         {
-            $link-color: #007FFF;
-
-            --link-color: #{$link-color};
+            --link-color: var(--app-primary);
             &:hover
             {
-                --link-color: #{color.adjust($link-color, $lightness: 10%)};
+                --link-color: color-mix(in srgb, var(--app-primary) 80%, var(--app-text));
             }
 
             color: var(--link-color);

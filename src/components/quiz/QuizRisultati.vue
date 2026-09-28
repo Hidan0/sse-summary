@@ -197,8 +197,8 @@
             border-top: 4px solid var(--app-accent);
             margin-bottom: 1.5rem;
 
-            &.ok { border-top-color: variables.$success; }
-            &.ko { border-top-color: variables.$danger; }
+            &.ok { border-top-color: var(--app-success); }
+            &.ko { border-top-color: var(--app-danger); }
 
             .verdetto
             {
@@ -206,8 +206,8 @@
                 font-weight: 700;
                 margin-bottom: 0.25rem;
             }
-            &.ok .verdetto { color: variables.$success; }
-            &.ko .verdetto { color: variables.$danger; }
+            &.ok .verdetto { color: var(--app-success); }
+            &.ko .verdetto { color: var(--app-danger); }
 
             .azioni
             {
@@ -232,8 +232,8 @@
             margin-bottom: 1rem;
             padding: 0.6rem 1rem;
 
-            &.vinta { --sfida-color: #{variables.$success}; }
-            &.persa { --sfida-color: #{variables.$danger}; }
+            &.vinta { --sfida-color: var(--app-success); }
+            &.persa { --sfida-color: var(--app-danger); }
 
             p
             {
@@ -271,12 +271,12 @@
                 gap: 0.5rem;
                 margin-bottom: 0.35rem;
             }
-            .tua .fa { color: variables.$danger; margin-top: 0.25rem; }
+            .tua .fa { color: var(--app-danger); margin-top: 0.25rem; }
             .giusta
             {
                 font-weight: 500;
 
-                .fa { color: variables.$success; margin-top: 0.25rem; }
+                .fa { color: var(--app-success); margin-top: 0.25rem; }
             }
         }
 
@@ -293,7 +293,7 @@
                 font-weight: 500;
                 padding: 0.75rem 1rem;
 
-                .fa { color: variables.$success; }
+                .fa { color: var(--app-success); }
             }
 
             .spiegazione summary

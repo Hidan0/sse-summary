@@ -109,9 +109,9 @@
             box-shadow: 0px 0.125em 0.5em var(--app-shadow);
             padding: 0.75rem 1rem;
 
-            &.voce-chiedi { --voce-color: #{variables.$success}; }
-            &.voce-fai { --voce-color: #{variables.$accent}; }
-            &.voce-attenzione { --voce-color: #{variables.$danger}; }
+            &.voce-chiedi { --voce-color: var(--app-success); }
+            &.voce-fai { --voce-color: var(--app-accent-color); }
+            &.voce-attenzione { --voce-color: var(--app-danger); }
 
             .voce-titolo
             {

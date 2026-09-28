@@ -318,13 +318,13 @@
             }
             &.corretta
             {
-                background-color: color-mix(in srgb, #{variables.$success} 15%, var(--app-surface));
-                border-color: variables.$success;
+                background-color: color-mix(in srgb, var(--app-success) 15%, var(--app-surface));
+                border-color: var(--app-success);
             }
             &.sbagliata
             {
-                background-color: color-mix(in srgb, #{variables.$danger} 15%, var(--app-surface));
-                border-color: variables.$danger;
+                background-color: color-mix(in srgb, var(--app-danger) 15%, var(--app-surface));
+                border-color: var(--app-danger);
             }
         }
 
@@ -338,8 +338,8 @@
             {
                 font-weight: 700;
 
-                &.ok { color: variables.$success; }
-                &.ko { color: variables.$danger; }
+                &.ok { color: var(--app-success); }
+                &.ko { color: var(--app-danger); }
             }
         }
 
@@ -352,8 +352,8 @@
 
         .conferma
         {
-            background-color: color-mix(in srgb, #{variables.$danger} 10%, var(--app-surface));
-            border-left: 4px solid variables.$danger;
+            background-color: color-mix(in srgb, var(--app-danger) 10%, var(--app-surface));
+            border-left: 4px solid var(--app-danger);
             border-radius: 0.375rem;
             margin-top: 1rem;
             padding: 0.75rem 1rem;
@@ -364,7 +364,7 @@
 
                 .fa
                 {
-                    color: variables.$danger;
+                    color: var(--app-danger);
                 }
             }
 

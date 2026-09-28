@@ -274,8 +274,8 @@
 
         .disclaimer
         {
-            background-color: color-mix(in srgb, #{variables.$warning} 15%, var(--app-surface));
-            border-left: 4px solid variables.$warning;
+            background-color: color-mix(in srgb, var(--app-warning) 15%, var(--app-surface));
+            border-left: 4px solid var(--app-warning);
             border-radius: 0.375rem;
             display: flex;
             gap: 0.75rem;
@@ -284,7 +284,7 @@
 
             .fa
             {
-                color: variables.$warning;
+                color: var(--app-warning);
                 margin-top: 0.2rem;
             }
         }

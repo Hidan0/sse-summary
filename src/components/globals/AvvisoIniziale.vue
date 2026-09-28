@@ -79,7 +79,7 @@
     {
         background-color: var(--app-surface);
         border-radius: 0.75rem;
-        border-top: 4px solid variables.$warning;
+        border-top: 4px solid var(--app-warning);
         box-shadow: 0px 0px 2em rgba(0, 0, 0, 0.3);
         max-height: calc(100dvh - 2rem);
         max-width: 520px;
@@ -94,7 +94,7 @@
 
             .fa
             {
-                color: variables.$warning;
+                color: var(--app-warning);
             }
         }
 

@@ -227,7 +227,7 @@
 
         .callout
         {
-            --callout-color: #{variables.$primary};
+            --callout-color: var(--app-primary);
 
             background-color: color-mix(in srgb, var(--callout-color) var(--app-callout-mix), var(--app-surface));
             border-left: 4px solid var(--callout-color);
@@ -242,7 +242,7 @@
 
             .callout-title
             {
-                color: color-mix(in srgb, var(--callout-color) var(--app-callout-text-mix), white);
+                color: color-mix(in srgb, var(--callout-color) var(--app-callout-text-mix), var(--app-text));
                 font-size: 0.8em;
                 font-weight: 700;
                 letter-spacing: 0.05em;
@@ -250,12 +250,12 @@
                 text-transform: uppercase;
             }
 
-            &.callout-esame { --callout-color: #{variables.$accent}; }
-            &.callout-pericolo { --callout-color: #{variables.$danger}; }
-            &.callout-nota { --callout-color: #{variables.$secondary}; }
+            &.callout-esame { --callout-color: var(--app-accent-color); }
+            &.callout-pericolo { --callout-color: var(--app-danger); }
+            &.callout-nota { --callout-color: var(--app-secondary); }
             &.callout-istruttori
             {
-                --callout-color: #{variables.$success};
+                --callout-color: var(--app-success);
 
                 .callout-title::before
                 {
@@ -267,7 +267,7 @@
             }
             &.callout-dubbio
             {
-                --callout-color: #8540F5;
+                --callout-color: var(--app-mauve);
 
                 border-left-style: dashed;
             }

@@ -1,4 +1,96 @@
+@use "sass:color";
+@use "sass:map";
 @use "./variables";
+
+@function rgb-triplet($colore)
+{
+    @return "#{color.channel($colore, "red", $space: rgb)}, #{color.channel($colore, "green", $space: rgb)}, " +
+        "#{color.channel($colore, "blue", $space: rgb)}";
+}
+
+/*
+ * Colori dell'interfaccia per un tema, dalla palette Catppuccin (Latte per il chiaro, Mocha per lo scuro).
+ * Il tema segue le impostazioni del browser, salvo scelta manuale (vedi `src/composables/tema.ts`).
+ */
+@mixin tema($p, $scuro)
+{
+    // Fondo della pagina un po' più scuro delle schede, come nelle interfacce Catppuccin.
+    --app-page-bg: #{map.get($p, "mantle")};
+    --app-surface: #{map.get($p, "base")};
+    --app-text: #{map.get($p, "text")};
+    --app-border: #{map.get($p, "surface1")};
+
+    --app-primary: #{map.get($p, "blue")};
+    --app-secondary: #{map.get($p, "overlay1")};
+    --app-accent-color: #{map.get($p, "peach")};
+    --app-success: #{map.get($p, "green")};
+    --app-danger: #{map.get($p, "red")};
+    --app-warning: #{map.get($p, "yellow")};
+    --app-mauve: #{map.get($p, "mauve")};
+
+    // Footer nascosto (sotto la pagina): il colore più scuro della palette.
+    --app-footer-bg: #{map.get($p, "crust")};
+    --app-footer-heart: #{map.get($p, "red")};
+
+    --app-accent: var(--app-primary);
+    --app-backdrop: rgba(0, 0, 0, 0.25);
+
+    // Bootstrap: fondo, testo, bordi, link e colori delle utility.
+    --bs-body-bg: var(--app-page-bg);
+    --bs-body-color: var(--app-text);
+    --bs-emphasis-color: var(--app-text);
+    --bs-secondary-color: var(--app-muted);
+    --bs-border-color: var(--app-border);
+    --bs-secondary-bg: #{map.get($p, "surface0")};
+    --bs-tertiary-bg: #{map.get($p, "crust")};
+    --bs-link-color-rgb: #{rgb-triplet(map.get($p, "blue"))};
+    --bs-link-hover-color-rgb: #{rgb-triplet(map.get($p, "sapphire"))};
+    --bs-primary-rgb: #{rgb-triplet(map.get($p, "blue"))};
+    --bs-success-rgb: #{rgb-triplet(map.get($p, "green"))};
+    --bs-danger-rgb: #{rgb-triplet(map.get($p, "red"))};
+    --bs-warning-rgb: #{rgb-triplet(map.get($p, "yellow"))};
+
+    @if $scuro
+    {
+        /*
+         * Nel tema scuro il testo chiaro su fondo scuro sembra già più spesso: il testo dei riassunti
+         * è attenuato e il grassetto usa il colore pieno del testo, altrimenti non si distingue.
+         */
+        --app-text-body: #{map.get($p, "subtext0")};
+        --app-text-strong: #{map.get($p, "text")};
+        // Testo secondario (fonti, didascalie): almeno 5:1 sul fondo.
+        --app-muted: #{map.get($p, "overlay2")};
+        --bs-secondary-rgb: #{rgb-triplet(map.get($p, "overlay2"))};
+        // Testo sopra un colore pieno (pulsanti, esiti dei diagrammi).
+        --app-on-color: #{map.get($p, "crust")};
+        --app-dark-fill: #{map.get($p, "crust")};
+
+        --app-accent-soft: #{rgba(map.get($p, "blue"), 0.15)};
+        --app-navigation-bg: #{rgba(map.get($p, "mantle"), 0.7)};
+        --app-shadow: rgba(0, 0, 0, 0.4);
+        --app-backdrop: rgba(0, 0, 0, 0.5);
+        --app-callout-mix: 12%;
+        // Titolo dei riquadri: il colore del riquadro, spinto verso il testo per restare leggibile.
+        --app-callout-text-mix: 85%;
+        --app-mark: #{rgba(map.get($p, "yellow"), 0.3)};
+    }
+    @else
+    {
+        --app-text-body: var(--app-text);
+        --app-text-strong: currentColor;
+        --app-muted: #{map.get($p, "subtext1")};
+        --bs-secondary-rgb: #{rgb-triplet(map.get($p, "subtext1"))};
+        --app-on-color: #{map.get($p, "base")};
+        --app-dark-fill: #{map.get($p, "text")};
+
+        --app-accent-soft: #{rgba(map.get($p, "blue"), 0.1)};
+        --app-navigation-bg: #{rgba(map.get($p, "mantle"), 0.6)};
+        --app-shadow: #{rgba(map.get($p, "crust"), 0.9)};
+        --app-callout-mix: 10%;
+        --app-callout-text-mix: 70%;
+        --app-mark: #{rgba(map.get($p, "yellow"), 0.4)};
+    }
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
@@ -13,57 +105,48 @@
         --tab-bar-height: calc(3.5rem + env(safe-area-inset-bottom));
     }
 
-    /*
-     * Colori dell'interfaccia, ridefiniti per il tema scuro.
-     * Il tema segue le impostazioni del browser, salvo scelta manuale (vedi `src/composables/tema.ts`).
-     */
-    --app-page-bg: #{variables.$slightly-off-white};
-    --app-surface: #FFF;
-    --app-text: #{variables.$not-quite-black};
-    /*
-     * Testo dei riassunti e grassetto. Nel tema scuro il testo chiaro su fondo scuro sembra già
-     * più spesso e il grassetto si confonde: il testo corrente è un po' attenuato e il grassetto è bianco.
-     */
-    --app-text-body: var(--app-text);
-    --app-text-strong: currentColor;
-    /*
-     * Nel tema chiaro grigio e blu del testo sono un po' più scuri dei colori di Bootstrap,
-     * per un contrasto di almeno 5.5:1 anche sul testo piccolo (fonti, didascalie).
-     */
-    --app-muted: #5C636A;
-    --app-accent: #0A58CA;
-    --bs-link-color-rgb: 10, 88, 202;
-    --bs-link-hover-color-rgb: 8, 66, 152;
-    --bs-secondary-rgb: 92, 99, 106;
-    --app-accent-soft: #{rgba(variables.$primary, 0.1)};
-    --app-navigation-bg: #{rgba(#FFF, 0.5)};
-    --app-shadow: rgba(0, 0, 0, 0.08);
-    --app-backdrop: rgba(0, 0, 0, 0.25);
-    --app-callout-mix: 8%;
-    --app-callout-text-mix: 100%;
-    --app-mark: #{rgba(#FFC107, 0.45)};
+    @include tema(variables.$latte, $scuro: false);
 
     &[data-bs-theme="dark"]
     {
-        --app-page-bg: #1B1C1F;
-        --app-surface: #26282C;
-        --app-text: #E3E5E8;
-        --app-text-body: #B6BCC3;
-        --app-text-strong: #FFF;
-        --app-muted: #8E959D;
-        --app-accent: #6EA8FE;
-        --bs-link-color-rgb: 110, 168, 254;
-        --bs-link-hover-color-rgb: 139, 185, 254;
-        --bs-secondary-rgb: 142, 149, 157;
-        --app-accent-soft: #{rgba(#6EA8FE, 0.15)};
-        --app-navigation-bg: #{rgba(#1B1C1F, 0.6)};
-        --app-shadow: rgba(0, 0, 0, 0.4);
-        --app-backdrop: rgba(0, 0, 0, 0.5);
-        --app-callout-mix: 14%;
-        --app-callout-text-mix: 60%;
-        --app-mark: #{rgba(#FFC107, 0.3)};
+        @include tema(variables.$mocha, $scuro: true);
     }
 }
+
+.btn-primary, .btn-danger
+{
+    --btn-colore: var(--app-primary);
+
+    --bs-btn-color: var(--app-on-color);
+    --bs-btn-bg: var(--btn-colore);
+    --bs-btn-border-color: var(--btn-colore);
+    --bs-btn-hover-color: var(--app-on-color);
+    --bs-btn-hover-bg: color-mix(in srgb, var(--btn-colore) 85%, var(--app-text));
+    --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+    --bs-btn-active-color: var(--app-on-color);
+    --bs-btn-active-bg: color-mix(in srgb, var(--btn-colore) 75%, var(--app-text));
+    --bs-btn-active-border-color: var(--bs-btn-active-bg);
+    --bs-btn-disabled-color: var(--app-on-color);
+    --bs-btn-disabled-bg: var(--btn-colore);
+    --bs-btn-disabled-border-color: var(--btn-colore);
+}
+.btn-danger { --btn-colore: var(--app-danger); }
+.btn-outline-primary, .btn-outline-secondary
+{
+    --btn-colore: var(--app-primary);
+
+    --bs-btn-color: var(--btn-colore);
+    --bs-btn-border-color: var(--btn-colore);
+    --bs-btn-hover-color: var(--app-on-color);
+    --bs-btn-hover-bg: var(--btn-colore);
+    --bs-btn-hover-border-color: var(--btn-colore);
+    --bs-btn-active-color: var(--app-on-color);
+    --bs-btn-active-bg: var(--btn-colore);
+    --bs-btn-active-border-color: var(--btn-colore);
+    --bs-btn-disabled-color: var(--btn-colore);
+    --bs-btn-disabled-border-color: var(--btn-colore);
+}
+.btn-outline-secondary { --btn-colore: var(--app-muted); }
 
 b, strong
 {
@@ -72,7 +155,7 @@ b, strong
 
 body
 {
-    background-color: variables.$chrome-incognito-color;
+    background-color: var(--app-footer-bg);
     box-shadow: 0px 0px 0.5em 0px rgba(0, 0, 0, 0.5);
     color: var(--app-text);
     font-family: variables.$font-family;

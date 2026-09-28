@@ -168,20 +168,23 @@
 
             &.evidenza
             {
-                border-left: 4px solid variables.$warning;
+                --riquadro-color: var(--app-warning);
+
+                background-color: color-mix(in srgb, var(--riquadro-color) var(--app-callout-mix), var(--app-surface));
+                border-left: 4px solid var(--riquadro-color);
 
                 h2 .fa
                 {
-                    color: variables.$warning;
+                    color: var(--app-warning);
                 }
             }
             &.pericolo
             {
-                border-left-color: variables.$danger;
+                --riquadro-color: var(--app-danger);
 
                 h2 .fa
                 {
-                    color: variables.$danger;
+                    color: var(--app-danger);
                 }
             }
         }

@@ -219,7 +219,7 @@
 
                 .avviso
                 {
-                    color: variables.$warning;
+                    color: var(--app-warning);
                 }
             }
 
