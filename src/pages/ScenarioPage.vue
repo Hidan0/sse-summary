@@ -4,7 +4,12 @@
 
     import MarkdownContent from "@/components/content/MarkdownContent.vue";
     import FontAwesome from "@/components/ui/FontAwesome.vue";
-    import { calcolaPunteggio, PENALITA_AUTOPROTEZIONE, PENALITA_ERRORE_GRAVE } from "@/content/punteggio-scenario";
+    import {
+        calcolaPunteggio,
+        PARZIALE,
+        PENALITA_AUTOPROTEZIONE,
+        PENALITA_ERRORE_GRAVE
+    } from "@/content/punteggio-scenario";
     import { scenarioBySlug, TIPI_SCENARIO } from "@/content/scenari";
     import type { FaseScenario, ScenarioModule } from "@/content/types";
 
@@ -30,7 +35,8 @@
     const esaminatore = computed(() => route.query.modo !== "solo");
 
     const contenuto = ref<ScenarioModule>();
-    const spuntate = reactive(new Set<string>());
+    // Azioni spuntate, con il loro valore: 1 fatta, PARZIALE a metà (le non fatte non ci sono).
+    const spuntate = reactive(new Map<string, number>());
     const passo = ref(0);
     const terminato = ref(false);
 
@@ -85,20 +91,36 @@
     });
     const intestazione = (fase: FaseScenario) => (fase.lettera ? `${fase.lettera} · ${fase.titolo}` : fase.titolo);
 
+    // Ogni tocco passa allo stato successivo: non fatta → fatta → a metà → non fatta.
+    // Niente doppio o triplo tocco: sul telefono si confondono con lo zoom e dipendono dalla velocità.
     const alterna = (valore: string) =>
     {
-        if (spuntate.has(valore)) { spuntate.delete(valore); }
-        else { spuntate.add(valore); }
+        const attuale = spuntate.get(valore);
+
+        if (attuale === undefined) { spuntate.set(valore, 1); }
+        else if (attuale === 1) { spuntate.set(valore, PARZIALE); }
+        else { spuntate.delete(valore); }
     };
+    const statoAria = (valore: string) =>
+    {
+        const attuale = spuntate.get(valore);
+
+        return (attuale === undefined) ? "false" : ((attuale === 1) ? "true" : "mixed");
+    };
+    const numero = (valore: number) => valore.toLocaleString("it-IT");
 
     const resoconto = computed(() =>
     {
         const fasi = contenuto.value?.fasi ?? [];
-        const fatta = (fase: FaseScenario, indice: number) => spuntate.has(chiave(fase, indice));
+        const fatta = (fase: FaseScenario, indice: number) => spuntate.get(chiave(fase, indice)) ?? 0;
 
         return {
             ...calcolaPunteggio(fasi, fatta),
-            mancate: fasi.map((fase) => ({ fase: fase, righe: fase.righe.filter((_, indice) => !fatta(fase, indice)) }))
+            mancate: fasi.map((fase) => ({
+                fase: fase,
+                righe: fase.righe.map((riga, indice) => ({ riga: riga, parziale: fatta(fase, indice) > 0 }))
+                    .filter(({ riga }, indice) => fatta(fase, indice) < 1)
+            }))
                 .filter(({ righe }) => righe.length)
         };
     });
@@ -154,11 +176,13 @@
             <p class="spiegazione text-secondary">
                 <template v-if="esaminatore">
                     Leggi il filtro al candidato. Spunta le azioni man mano che le fa e digli i reperti quando li
-                    chiede o li cerca.
+                    chiede o li cerca. Un secondo tocco segna un'azione fatta a metà (in ritardo, incompleta o dopo
+                    un suggerimento), il terzo la toglie.
                 </template>
                 <template v-else>
                     Leggi il filtro. Poi, con «Avanti», compaiono una alla volta le fasi e le azioni con il loro
                     reperto: prima di andare avanti chiediti cosa faresti, e spunta le azioni che avevi pensato.
+                    Un secondo tocco le segna a metà, il terzo le toglie.
                 </template>
             </p>
 
@@ -206,19 +230,31 @@
                                         'passo-corrente': !esaminatore && corrente?.fase === indiceFase &&
                                             corrente.riga === indice
                                     }">
-                                    <label>
-                                        <input type="checkbox"
-                                               :checked="spuntate.has(chiave(fase, indice))"
-                                               :disabled="terminato"
-                                               @change="alterna(chiave(fase, indice))" />
+                                    <button type="button"
+                                            role="checkbox"
+                                            class="spunta"
+                                            :aria-checked="statoAria(chiave(fase, indice))"
+                                            :disabled="terminato"
+                                            @click="alterna(chiave(fase, indice))">
+                                        <span class="casella" :class="`stato-${statoAria(chiave(fase, indice))}`">
+                                            <FontAwesome v-if="statoAria(chiave(fase, indice)) === 'true'"
+                                                         icon="check" />
+                                            <template v-else-if="statoAria(chiave(fase, indice)) === 'mixed'">
+                                                ½
+                                            </template>
+                                        </span>
                                         <span class="azione">
                                             <span v-html="riga.azione"></span>
                                             <span v-if="riga.istruttori" class="etichetta istruttori">
                                                 dagli istruttori
                                             </span>
                                             <span v-if="riga.grave" class="etichetta grave">errore grave</span>
+                                            <span v-if="statoAria(chiave(fase, indice)) === 'mixed'"
+                                                  class="etichetta parziale">
+                                                a metà
+                                            </span>
                                         </span>
-                                    </label>
+                                    </button>
                                     <p v-if="riga.reperto"
                                        class="reperto"
                                        v-html="riga.reperto"></p>
@@ -294,7 +330,7 @@
                             <tr v-for="{ fase, fatte, totali, punti, massimo } in resoconto.fasi" :key="fase.id">
                                 <th>{{ intestazione(fase) }}</th>
                                 <td class="fatte">
-                                    {{ fatte }}/{{ totali }}
+                                    {{ numero(fatte) }}/{{ totali }}
                                 </td>
                                 <td class="punti" :class="{ persi: massimo ? punti < massimo : punti < 0 }">
                                     <template v-if="massimo">
@@ -313,7 +349,7 @@
                     </RouterLink>
 
                     <template v-if="resoconto.mancate.length">
-                        <h3>{{ esaminatore ? "Non fatte" : "Non pensate" }}</h3>
+                        <h3>{{ esaminatore ? "Non fatte o fatte a metà" : "Non pensate o pensate a metà" }}</h3>
                         <div v-for="{ fase, righe } in resoconto.mancate"
                              :key="fase.id"
                              class="mancate">
@@ -321,9 +357,10 @@
                                 {{ intestazione(fase) }}
                             </p>
                             <ul>
-                                <li v-for="(riga, indice) in righe"
-                                    :key="indice"
-                                    v-html="riga.azione"></li>
+                                <li v-for="({ riga, parziale }, indice) in righe" :key="indice">
+                                    <span v-html="riga.azione"></span>
+                                    <span v-if="parziale" class="etichetta parziale">a metà</span>
+                                </li>
                             </ul>
                         </div>
                     </template>
@@ -507,20 +544,59 @@
                 padding: 0.4rem 0;
             }
 
-            label
+            .spunta
             {
                 align-items: flex-start;
+                background: none;
+                border: none;
+                color: inherit;
                 cursor: pointer;
                 display: flex;
+                font: inherit;
                 gap: 0.6rem;
+                padding: 0;
+                text-align: left;
+                touch-action: manipulation;
+                width: 100%;
+
+                &:disabled
+                {
+                    cursor: default;
+
+                    .casella { opacity: 0.6; }
+                }
+                &:focus-visible .casella
+                {
+                    outline: 2px solid var(--app-primary);
+                    outline-offset: 2px;
+                }
             }
-            input
+            .casella
             {
-                accent-color: var(--app-primary);
+                align-items: center;
+                border: 2px solid var(--app-muted);
+                border-radius: 0.25rem;
+                color: var(--app-surface);
+                display: inline-flex;
                 flex-shrink: 0;
+                font-size: 0.8rem;
+                font-weight: 700;
                 height: 1.15rem;
+                justify-content: center;
+                line-height: 1;
                 margin-top: 0.2rem;
                 width: 1.15rem;
+
+                &.stato-true
+                {
+                    background-color: var(--app-primary);
+                    border-color: var(--app-primary);
+                }
+                &.stato-mixed
+                {
+                    background-color: var(--app-warning);
+                    border-color: var(--app-warning);
+                }
             }
             .reperto
             {
@@ -589,6 +665,7 @@
 
             &.grave { color: var(--app-danger); }
             &.istruttori { color: var(--app-success); }
+            &.parziale { color: var(--app-warning); }
         }
 
         .azioni-finali

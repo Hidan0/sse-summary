@@ -9,10 +9,13 @@ export const SOGLIA = 0.75;
 export const PENALITA_ERRORE_GRAVE = 25;
 // Autoprotezione incompleta: errore, ma da solo non basta a non superare lo scenario.
 export const PENALITA_AUTOPROTEZIONE = 10;
+// Valore di un'azione fatta a metà (in ritardo, incompleta o dopo un suggerimento).
+export const PARZIALE = 0.5;
 
 export interface DettaglioFase
 {
     fase: FaseScenario;
+    // Somma dei valori delle azioni: quelle a metà contano {@link PARZIALE}.
     fatte: number;
     totali: number;
     // Punti ottenuti (fasi con punti) o persi, come numero negativo (fasi con penalità).
@@ -32,11 +35,19 @@ export interface Punteggio
     superato: boolean;
 }
 
+/*
+ * `fatta` restituisce quanto è stata fatta un'azione: 0 (o `false`), PARZIALE, 1 (o `true`).
+ * Le azioni a metà valgono in proporzione nei punti e nelle penalità di fase, ma non fanno
+ * scattare errori gravi, invalidazione e autoprotezione incompleta: quelli riguardano
+ * solo le azioni non fatte del tutto.
+ */
 export function calcolaPunteggio(
     fasi: FaseScenario[],
-    fatta: (fase: FaseScenario, indice: number) => boolean
+    fatta: (fase: FaseScenario, indice: number) => number | boolean
 ): Punteggio
 {
+    const valore = (fase: FaseScenario, indice: number) => Number(fatta(fase, indice));
+
     const dettagli: DettaglioFase[] = [];
     const errori: RigaScenario[] = [];
     const avvertimenti: FaseScenario[] = [];
@@ -46,8 +57,9 @@ export function calcolaPunteggio(
     {
         const conteggiate = fase.righe.map((riga, indice) => ({ riga: riga, indice: indice }))
             .filter(({ riga }) => !riga.istruttori);
-        const fatte = conteggiate.filter(({ indice }) => fatta(fase, indice)).length;
+        const fatte = conteggiate.reduce((somma, { indice }) => somma + valore(fase, indice), 0);
         const totali = conteggiate.length;
+        const mancanti = conteggiate.filter(({ indice }) => !valore(fase, indice)).length;
 
         if (fase.punti)
         {
@@ -61,10 +73,10 @@ export function calcolaPunteggio(
             dettagli.push({ fase: fase, fatte: fatte, totali: totali, punti: -persi, massimo: 0 });
         }
 
-        if (fase.grave && (fatte < totali)) { invalidato = true; }
-        if (fase.sicurezza && (fatte < totali)) { avvertimenti.push(fase); }
+        if (fase.grave && mancanti) { invalidato = true; }
+        if (fase.sicurezza && mancanti) { avvertimenti.push(fase); }
 
-        errori.push(...fase.righe.filter((riga, indice) => riga.grave && !fatta(fase, indice)));
+        errori.push(...fase.righe.filter((riga, indice) => riga.grave && !valore(fase, indice)));
     }
 
     const massimo = dettagli.reduce((somma, { massimo: value }) => somma + value, 0);

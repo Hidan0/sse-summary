@@ -3,7 +3,12 @@ import { join } from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { calcolaPunteggio, PENALITA_AUTOPROTEZIONE, PENALITA_ERRORE_GRAVE } from "../src/content/punteggio-scenario";
+import {
+    calcolaPunteggio,
+    PARZIALE,
+    PENALITA_AUTOPROTEZIONE,
+    PENALITA_ERRORE_GRAVE
+} from "../src/content/punteggio-scenario";
 import type { FaseScenario } from "../src/content/types";
 import { compileScenario } from "../vite/markdown";
 
@@ -52,5 +57,31 @@ describe("Punteggio degli scenari", () =>
 
         expect(punteggio.totale).toBe(80 - 8 - 3);
         expect(punteggio.superato).toBe(true);
+    });
+    it("conta mezze le azioni fatte a metà", () =>
+    {
+        // B: 3 azioni fatte e 2 a metà su 6 = 4 (10 punti su 15); consegna tutta a metà (-1).
+        const punteggio = calcolaPunteggio(fasi, (fase, indice) =>
+        {
+            if (fase.id === "b") { return (indice < 3) ? 1 : ((indice < 5) ? PARZIALE : 0); }
+
+            return (fase.id === "consegna") ? PARZIALE : 1;
+        });
+
+        expect(punteggio.fasi.find(({ fase }) => fase.id === "b")).toMatchObject({ fatte: 4, punti: 10 });
+        expect(punteggio.totale).toBe(80 - 5 - 1);
+    });
+    it("non dà errori gravi, invalidazione o avvertimenti per le azioni a metà", () =>
+    {
+        const punteggio = calcolaPunteggio(fasi, (fase, indice) =>
+            (((fase.id === "sopravvivenza") || (fase.id === "autoprotezione") ||
+                ((fase.id === "scena") && (indice === 0))) ?
+                PARZIALE :
+                true));
+
+        expect(punteggio.invalidato).toBe(false);
+        expect(punteggio.errori).toHaveLength(0);
+        expect(punteggio.avvertimenti).toHaveLength(0);
+        expect(punteggio.totale).toBeLessThan(80);
     });
 });

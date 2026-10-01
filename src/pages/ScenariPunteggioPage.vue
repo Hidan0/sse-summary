@@ -39,6 +39,11 @@
                     15 punti con 6 azioni, 4 azioni fatte valgono 10 punti.
                 </li>
                 <li>
+                    Un'azione <strong>fatta a metà</strong> (in ritardo, incompleta o dopo un suggerimento) conta mezza:
+                    nella stessa B, 3 azioni fatte e 2 a metà valgono come 4 fatte. Non fa scattare gli errori gravi,
+                    l'invalidazione o l'autoprotezione incompleta, che riguardano solo le azioni non fatte.
+                </li>
+                <li>
                     Rivalutazione e consegna non danno punti ma, se mancano, ne tolgono come nella griglia:
                     fino a <strong>−3</strong> la rivalutazione e fino a <strong>−2</strong> la consegna, in proporzione
                     a quello che manca.
@@ -91,7 +96,8 @@
         <section>
             <h2>Da solo</h2>
             <p>
-                Le azioni che non spunti, o che non arrivi a vedere perché termini prima, contano come non fatte.
+                Le azioni che non spunti, o che non arrivi a vedere perché termini prima, contano come non fatte;
+                quelle che ti erano venute in mente solo in parte puoi segnarle a metà.
                 Il punteggio dice se ti erano venute in mente, non se le avresti eseguite bene.
             </p>
         </section>
