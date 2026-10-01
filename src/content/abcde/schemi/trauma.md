@@ -14,8 +14,13 @@ Nel trauma la sequenza è **[[AcBCDE]]**: la "c" ricorda di proteggere la **colo
 
 ### Fai
 
-- **Autoprotezione** (DPI) e incarichi all'équipe. [@scenario-trauma-libero:1]
+- Prima di arrivare sul posto, **assegna gli incarichi** all'équipe. [@scenario-trauma-libero:1]
+- **Autoprotezione** (DPI). [@scenario-trauma-libero:1]
 - Ambulanza **prima** dell'evento se le FFO non ci sono, **dopo** se le FFO proteggono già la scena; sempre con i segnalatori accesi. [@1.1.2:5]
+
+::: istruttori
+Di' solo **"Assegno gli incarichi"**, senza elencare tutto il materiale da portare giù: dire il più possibile per sembrare preparati rischia di ritorcersi contro, perché invita gli istruttori a farti domande. Puoi aggiungere che avvisi la squadra di **prepararsi a un presunto trauma**, oppure dire già **chi manterrà il rachide**. Il materiale elencalo solo se te lo chiedono esplicitamente.
+:::
 
 ### Attenzione
 

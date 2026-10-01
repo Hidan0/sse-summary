@@ -20,7 +20,12 @@ La sequenza di base per il paziente **non traumatizzato**. Le schede degli argom
 
 ### Fai
 
+- Prima di arrivare sul posto, **assegna gli incarichi** all'équipe: nelle griglie d'esame è la prima voce, nella fase di prearrivo. [@scenari:27]
 - **Autoprotezione**: indossa i DPI. [@tss-c:1]
+
+::: istruttori
+Di' solo **"Assegno gli incarichi"**, senza elencare tutto il materiale da portare giù: dire il più possibile per sembrare preparati rischia di ritorcersi contro, perché invita gli istruttori a farti domande. Il materiale elencalo solo se te lo chiedono esplicitamente.
+:::
 
 ### Attenzione
 
