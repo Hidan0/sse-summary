@@ -45,12 +45,14 @@ commento: |
   - Nel corso SSE la sequenza parte dal **[[colpo d'occhio]]** sulla vittima, prima ancora di toccarla. [@blsd-manuale:10]
 
 errori:
-  - "Insufflazioni poco efficaci o non efficaci"
-  - "Posizione delle piastre errata"
-  - "Muove il DAE o il paziente durante l'analisi"
-  - "Massaggio errato (profondità, posizione)"
-  - "Più di 10 secondi senza CTE"
-  - "Non mantiene la sicurezza"
+  - "Ventilazioni inefficaci"
+  - "CTE inefficaci"
+  - "Interruzioni ingiustificate delle CTE"
+  - "Mancata sicurezza"
+  - "Posizione delle piastre inefficace"
+  - "Non gestisce il malfunzionamento del DAE"
 consigli:
   - >-
     Mettiti alla **sinistra** del paziente: sarà più facile applicare la piastra sulla linea ascellare media.
+  - >-
+    Durante l'analisi del DAE **non toccare né muovere** il paziente o il DAE.

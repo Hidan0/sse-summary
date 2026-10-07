@@ -21,9 +21,9 @@ passi:
   - ["Alterna 15 CTE a 2 ventilazioni per due minuti (12/14 cicli)", "Efficacia delle manovre; limitazione delle interruzioni della RCP"]
 
 errori:
-  - "Insufflazioni poco efficaci o non efficaci"
-  - "Massaggio errato (profondità, posizione)"
+  - "Ventilazioni inefficaci"
+  - "CTE inefficaci"
   - "Numero di compressioni errato (rapporto 15:2)"
-  - "Più di 10 secondi senza CTE"
-  - "Non mantiene la sicurezza"
+  - "Interruzioni ingiustificate delle CTE"
+  - "Mancata sicurezza"
 consigli: []
